@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ButterfliesOfGreeceAndroid.iml" filepath="$PROJECT_DIR$/ButterfliesOfGreeceAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ButterfliesOfGreeceAndroid.iml" filepath="$PROJECT_DIR$/ButterfliesOfGreeceAndroid.iml" group="ButterfliesOfGreeceAndroid" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="ButterfliesOfGreeceAndroid/app" />
     </modules>
   </component>
 </project>
