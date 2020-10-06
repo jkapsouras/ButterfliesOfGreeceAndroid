@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Butterflies Of Greece</string>
+    <string name="field_photos">Photographs of the field</string>
+    <string name="introduction">Introduction</string>
+    <string name="about">About</string>
+    <string name="legal">Legal</string>
+    <string name="contribute">Contribute</string>
+    <string name="endangered">Endangered</string>
+    <string name="recognition">Butterflies recognition</string>
 </resources>
