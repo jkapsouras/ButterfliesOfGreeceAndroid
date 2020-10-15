@@ -6,7 +6,7 @@
     app:startDestination="@id/mainMenuFragment">
     <fragment
         android:id="@+id/mainMenuFragment"
-        android:name="gr.jkapsouras.butterfliesofgreece.MainMenuFragment"
+        android:name="gr.jkapsouras.butterfliesofgreece.main.MainMenuFragment"
         android:label="main_menu_fragment"
         tools:layout="@layout/main_menu_fragment" />
 </navigation>
