@@ -1,23 +1,37 @@
 package gr.jkapsouras.butterfliesofgreece.main
 
 import gr.jkapsouras.butterfliesofgreece.base.BasePresenter
+import gr.jkapsouras.butterfliesofgreece.base.GeneralViewState
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.IBackgroundThread
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.IMainThread
-import org.koin.core.KoinComponent
-import org.koin.core.inject
+import gr.jkapsouras.butterfliesofgreece.main.ViewStates.MenuViewStates
+import gr.jkapsouras.butterfliesofgreece.main.events.MenuUiEvents
 
 class MenuPresenter(
     backgroundThreadScheduler: IBackgroundThread,
     mainThreadScheduler: IMainThread
-) : BasePresenter(backgroundThreadScheduler, mainThreadScheduler), KoinComponent{
+) : BasePresenter(backgroundThreadScheduler, mainThreadScheduler){
 
-    override fun handleEvent(uiEvents: UiEvent) {
-        TODO("Not yet implemented")
+    private val responseMessages:Map<MenuUiEvents, MenuViewStates> = mapOf(MenuUiEvents.FieldClicked to MenuViewStates.ToField,
+        MenuUiEvents.IntroductionClicked to MenuViewStates.ToIntroduction,
+        MenuUiEvents.AboutClicked to MenuViewStates.ToAbout,
+        MenuUiEvents.ContributeClicked to MenuViewStates.ToContribute,
+        MenuUiEvents.EndangeredSpeciesClicked to MenuViewStates.ToEndangered,
+        MenuUiEvents.LegalClicked to MenuViewStates.ToLegal,
+        MenuUiEvents.RecognitionClicked to MenuViewStates.ToRecognition)
+
+    override fun handleEvent(uiEvent: UiEvent) {
+        when (uiEvent) {
+            is MenuUiEvents -> responseMessages[uiEvent]?.let{
+                state?.onNext(it)
+            }
+            else -> state?.onNext(GeneralViewState.Idle)
+        }
     }
 
     override fun setupEvents() {
-        TODO("Not yet implemented")
+
     }
 
 }

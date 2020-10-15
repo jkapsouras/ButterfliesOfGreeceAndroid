@@ -1,6 +1,7 @@
 package gr.jkapsouras.butterfliesofgreece.base.di
 
 import androidx.annotation.MainThread
+import gr.jkapsouras.butterfliesofgreece.base.BasePresenter
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.BackgroundThreadScheduler
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.IBackgroundThread
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.IMainThread
@@ -11,7 +12,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 import org.koin.core.module.Module
 import org.koin.dsl.module
 
-val appModule = module {
+val butterfliesModule = module {
     registerSchedulers(this)
     registerPresenters(this)
 }
@@ -22,5 +23,5 @@ fun registerSchedulers(module: Module){
 }
 
 fun registerPresenters(module: Module){
-    module.factory { MenuPresenter(backgroundThreadScheduler = get(), mainThreadScheduler =  get()) }
+    module.factory<BasePresenter> { MenuPresenter(backgroundThreadScheduler = get(), mainThreadScheduler =  get()) }
 }

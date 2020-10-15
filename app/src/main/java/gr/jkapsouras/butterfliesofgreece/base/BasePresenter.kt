@@ -8,7 +8,7 @@ import io.reactivex.rxjava3.subjects.PublishSubject
 abstract class BasePresenter(private val backgroundThreadScheduler : IBackgroundThread,
                              private val mainThreadScheduler:IMainThread) {
     lateinit var disposables: DisposablesWrapper
-    private val state: PublishSubject<ViewState> = PublishSubject.create<ViewState>()
+    protected val state: PublishSubject<ViewState> = PublishSubject.create<ViewState>()
     private val emitter: PublishSubject<ViewState> = PublishSubject.create<ViewState>()
 
     fun subscribe(events:Observable<UiEvent>):Observable<ViewState>{
@@ -21,7 +21,7 @@ abstract class BasePresenter(private val backgroundThreadScheduler : IBackground
         return state.observeOn(mainThreadScheduler.scheduler)
     }
 
-    abstract fun handleEvent(uiEvents:UiEvent)
+    abstract fun handleEvent(uiEvent:UiEvent)
 
     abstract fun setupEvents()
 

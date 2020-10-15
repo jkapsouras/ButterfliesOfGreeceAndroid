@@ -7,11 +7,16 @@ import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import io.reactivex.rxjava3.core.Observable
+import org.koin.android.ext.android.inject
 
 
 abstract  class BaseFragment<P> : Fragment() where P : BasePresenter{
 
-    private var presenter:P? = null
+    private val _presenter: BasePresenter by inject()
+    private var presenter: P? = null
+        get() {
+            return _presenter as P?
+        }
     lateinit var events:Observable<UiEvent>
     lateinit var components:List<UiComponent>
 
@@ -20,6 +25,7 @@ abstract  class BaseFragment<P> : Fragment() where P : BasePresenter{
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         components = initializeComponents(view as ConstraintLayout)
+
     }
 
     override fun onStart() {
@@ -40,12 +46,12 @@ abstract  class BaseFragment<P> : Fragment() where P : BasePresenter{
                         ?.disposeWith(presenter.disposables)
         }
 
-         state?.filter { it.isTransition() }?.subscribe{ viewState -> transitionStateReceived(viewState)}?.disposeWith(presenter.disposables)
+         state?.filter { it.isTransition }?.subscribe{ viewState -> transitionStateReceived(viewState)}?.disposeWith(presenter.disposables)
         state?.connect()?.disposeWith(presenter.disposables)
         presenter.setupEvents()
     }
 
-    fun transitionStateReceived(viewState:ViewState){
+    private fun transitionStateReceived(viewState:ViewState){
         Log.d(TAG, "transitionStateReceived: ${viewState.toString()}")
     }
 

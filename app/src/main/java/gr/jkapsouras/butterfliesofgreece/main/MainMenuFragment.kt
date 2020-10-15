@@ -7,11 +7,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.Constraints.TAG
 import gr.jkapsouras.butterfliesofgreece.R
+import gr.jkapsouras.butterfliesofgreece.base.BaseFragment
+import gr.jkapsouras.butterfliesofgreece.base.UiComponent
 import kotlinx.android.synthetic.main.main_menu_fragment.*
 
-class MainMenuFragment : Fragment() {
+class MainMenuFragment : BaseFragment<MenuPresenter>() {
 
     companion object {
         fun newInstance() = MainMenuFragment()
@@ -30,5 +33,9 @@ class MainMenuFragment : Fragment() {
             print("field clicked")
             Log.d(TAG, "field clicked")
         }
+    }
+
+    override fun initializeComponents(constraintLayout: ConstraintLayout): List<UiComponent> {
+        return emptyList()
     }
 }

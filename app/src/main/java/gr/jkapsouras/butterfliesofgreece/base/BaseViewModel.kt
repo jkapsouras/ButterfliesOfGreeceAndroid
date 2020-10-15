@@ -1,5 +1,7 @@
 package gr.jkapsouras.butterfliesofgreece.base
 
+import gr.jkapsouras.butterfliesofgreece.main.ViewStates.MenuViewStates
+
 //import androidx.lifecycle.ViewModel
 //import androidx.lifecycle.viewModelScope
 //import kotlinx.coroutines.channels.Channel
@@ -34,6 +36,8 @@ package gr.jkapsouras.butterfliesofgreece.base
 
 abstract class UiEvent
 
-abstract class ViewState{
-    abstract fun isTransition(): Boolean
+abstract class ViewState(val isTransition: Boolean){}
+
+sealed class GeneralViewState(isTransition:Boolean) : ViewState(isTransition) {
+    object Idle : GeneralViewState(true)
 }
