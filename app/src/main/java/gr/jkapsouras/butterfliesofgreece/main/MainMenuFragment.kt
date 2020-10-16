@@ -16,6 +16,8 @@ import kotlinx.android.synthetic.main.main_menu_fragment.*
 
 class MainMenuFragment : BaseFragment<MenuPresenter>() {
 
+    var menuComponent:MenuComponent? = null
+
     companion object {
         fun newInstance() = MainMenuFragment()
     }
@@ -29,13 +31,12 @@ class MainMenuFragment : BaseFragment<MenuPresenter>() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        btn_field.setOnClickListener {
-            print("field clicked")
-            Log.d(TAG, "field clicked")
-        }
     }
 
     override fun initializeComponents(constraintLayout: ConstraintLayout): List<UiComponent> {
-        return emptyList()
+
+        menuComponent = MenuComponent(btn_field,btn_field,btn_field,btn_field,btn_field,btn_field,btn_field)
+
+        return listOf(menuComponent!!)
     }
 }

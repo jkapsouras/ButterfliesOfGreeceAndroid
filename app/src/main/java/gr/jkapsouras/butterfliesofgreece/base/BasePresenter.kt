@@ -9,14 +9,14 @@ abstract class BasePresenter(private val backgroundThreadScheduler : IBackground
                              private val mainThreadScheduler:IMainThread) {
     lateinit var disposables: DisposablesWrapper
     protected val state: PublishSubject<ViewState> = PublishSubject.create<ViewState>()
-    private val emitter: PublishSubject<ViewState> = PublishSubject.create<ViewState>()
+    private val emitter: PublishSubject<UiEvent> = PublishSubject.create<UiEvent>()
 
     fun subscribe(events:Observable<UiEvent>):Observable<ViewState>{
         disposables = DisposablesWrapper()
 
 
         Observable.merge(events, emitter)
-            .subscribe()
+            .subscribe{event -> handleEvent(event)}
             .disposeWith(disposables)
         return state.observeOn(mainThreadScheduler.scheduler)
     }
