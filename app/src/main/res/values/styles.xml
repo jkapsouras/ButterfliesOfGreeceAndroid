@@ -8,10 +8,22 @@
         <item name="colorAccent">@color/colorAccent</item>-->
     </style>
 
-    <style name="FieldTheme" parent="Theme.AppCompat.Light">
+    <style name="FieldTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="themeName">"FieldTheme"</item>
+        <item name="background">@color/field</item>
         <item name="colorPrimary">@color/field</item>
         <item name="colorPrimaryDark">@color/field</item>
         <item name="colorAccent">@color/field_dark</item>
+        <item name="colorControlNormal">@color/field_dark</item>
+    </style>
+
+    <style name="ContributeTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="themeName">"ContributeTheme"</item>
+        <item name="background">@color/contribute</item>
+        <item name="colorPrimary">@color/contribute</item>
+        <item name="colorPrimaryDark">@color/contribute</item>
+        <item name="colorAccent">@color/contribute_dark</item>
+        <item name="colorControlNormal">@color/contribute_dark</item>
     </style>
 
 </resources>

@@ -23,6 +23,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 allprojects {
@@ -55,6 +59,7 @@ dependencies {
 //    implementation "org.koin:koin-androidx-workmanager:$koin_version"
     //implementation "org.koin:koin-androidx-compose:$koin_version"
     implementation "org.koin:koin-androidx-ext:$koin_version"
+    
 
     implementation 'com.github.reactivex:rxkotlin:3.0.1'
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'

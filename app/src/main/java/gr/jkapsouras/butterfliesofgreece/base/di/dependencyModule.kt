@@ -1,11 +1,11 @@
 package gr.jkapsouras.butterfliesofgreece.base.di
 
-import androidx.annotation.MainThread
 import gr.jkapsouras.butterfliesofgreece.base.BasePresenter
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.BackgroundThreadScheduler
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.IBackgroundThread
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.IMainThread
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.MainThreadScheduler
+import gr.jkapsouras.butterfliesofgreece.families.FamiliesPresenter
 import gr.jkapsouras.butterfliesofgreece.main.MenuPresenter
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -23,5 +23,18 @@ fun registerSchedulers(module: Module){
 }
 
 fun registerPresenters(module: Module){
-    module.factory<BasePresenter> { MenuPresenter(backgroundThreadScheduler = get(), mainThreadScheduler =  get()) }
+    module.factory{ MenuPresenter(
+        backgroundThreadScheduler = get(),
+        mainThreadScheduler =  get(),
+        presenter = Presenters.Menu
+    ) }
+    module.factory { FamiliesPresenter(
+        backgroundThreadScheduler = get(),
+        mainThreadScheduler =  get(),
+        presenter = Presenters.Families) }
+}
+
+enum class Presenters{
+    Menu,
+    Families
 }
