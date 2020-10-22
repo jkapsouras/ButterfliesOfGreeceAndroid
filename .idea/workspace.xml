@@ -14,36 +14,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efa0256b-32b0-4f2f-898e-86426287e8f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/families/FamiliesFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/families/FamiliesPresenter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/HeaderView.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/folder_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/grid_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/list_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/numbers_border.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/families_fragment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/view_header.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/gc.properties" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/circle_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/plus_icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/ButterfliesOfGreeceAndroid.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/ButterfliesOfGreeceAndroid.app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/navEditor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/navEditor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/BaseFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/BaseFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/di/dependencyModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/di/dependencyModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/main/MainMenuFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/main/MainMenuFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/main/MenuPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/main/MenuPresenter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_photos_table.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_photos_table.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/view_photos_table.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/view_photos_table.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,9 +44,9 @@
       <list>
         <option value="navigationResourceFile" />
         <option value="valueResourceFile" />
-        <option value="resourceFile" />
-        <option value="layoutResourceFile" />
         <option value="Kotlin File" />
+        <option value="layoutResourceFile" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -97,7 +73,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android-custom-view/Users/apprecot/Library/Android/sdk/sources/android-29/android/view/View.java_SELECTED" value="View" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="multi-representation-preview/Users/apprecot/Library/Android/sdk/sources/android-29/android/view/View.java_selected" value="Custom views" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
   </component>
@@ -109,6 +85,7 @@
       <recent name="gr.jkapsouras.butterfliesofgreece" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi" />
     </key>
   </component>
@@ -231,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602831139549</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="navigate to families fragment + ui of view header">
+      <created>1603315556928</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1603315556928</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -240,7 +224,8 @@
     <MESSAGE value="Adding base presenter + schedulers + uievents + viewstates + disposables" />
     <MESSAGE value="add menupresenter + improve viewstates and uievents + add application + resolve menupresenter" />
     <MESSAGE value="state received in menu component" />
-    <option name="LAST_COMMIT_MESSAGE" value="state received in menu component" />
+    <MESSAGE value="navigate to families fragment + ui of view header" />
+    <option name="LAST_COMMIT_MESSAGE" value="navigate to families fragment + ui of view header" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1018" y="452" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1603185124327">
@@ -251,10 +236,10 @@
       <screen x="0" y="23" width="2560" height="1333" />
     </state>
     <state x="744" y="351" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2560.1333@0.23.2560.1333" timestamp="1601740358846" />
-    <state x="976" y="499" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603312765013">
+    <state x="976" y="499" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603315481519">
       <screen x="0" y="23" width="2560" height="1335" />
     </state>
-    <state x="976" y="499" key="#com.intellij.fileTypes.FileTypeChooser/0.23.2560.1335@0.23.2560.1335" timestamp="1603312765013" />
+    <state x="976" y="499" key="#com.intellij.fileTypes.FileTypeChooser/0.23.2560.1335@0.23.2560.1335" timestamp="1603315481519" />
     <state x="1060" y="416" key="#com.intellij.ide.util.MemberChooser" timestamp="1603175338507">
       <screen x="0" y="23" width="2560" height="1335" />
     </state>
@@ -279,10 +264,11 @@
       <screen x="0" y="23" width="2560" height="1333" />
     </state>
     <state x="868" y="451" key="AndroidCreateResourceFileDialog/0.23.2560.1333@0.23.2560.1333" timestamp="1601739156997" />
-    <state x="790" y="294" key="CommitChangelistDialog2" timestamp="1602831139354">
-      <screen x="0" y="23" width="2560" height="1341" />
+    <state x="790" y="293" key="CommitChangelistDialog2" timestamp="1603315556637">
+      <screen x="0" y="23" width="2560" height="1335" />
     </state>
     <state x="790" y="292" key="CommitChangelistDialog2/0.23.2560.1333@0.23.2560.1333" timestamp="1601967877005" />
+    <state x="790" y="293" key="CommitChangelistDialog2/0.23.2560.1335@0.23.2560.1335" timestamp="1603315556637" />
     <state x="790" y="294" key="CommitChangelistDialog2/0.23.2560.1341@0.23.2560.1341" timestamp="1602831139354" />
     <state width="481" height="464" key="DebuggerActiveHint" timestamp="1603312171066">
       <screen x="0" y="23" width="2560" height="1335" />
@@ -290,63 +276,63 @@
     <state width="481" height="464" key="DebuggerActiveHint/0.23.2560.1335@0.23.2560.1335" timestamp="1603312171066" />
     <state width="481" height="465" key="DebuggerActiveHint/0.23.2560.1338@0.23.2560.1338" timestamp="1603028400495" />
     <state width="481" height="466" key="DebuggerActiveHint/0.23.2560.1341@0.23.2560.1341" timestamp="1602830843797" />
-    <state width="2518" height="466" key="GridCell.Tab.0.bottom" timestamp="1603313897875">
+    <state width="1259" height="466" key="GridCell.Tab.0.bottom" timestamp="1603316024168">
       <screen x="0" y="23" width="2560" height="1335" />
     </state>
     <state width="1259" height="381" key="GridCell.Tab.0.bottom/0.23.2560.1333@0.23.2560.1333" timestamp="1601991297032" />
-    <state width="2518" height="466" key="GridCell.Tab.0.bottom/0.23.2560.1335@0.23.2560.1335" timestamp="1603313897875" />
+    <state width="1259" height="466" key="GridCell.Tab.0.bottom/0.23.2560.1335@0.23.2560.1335" timestamp="1603316024168" />
     <state width="1259" height="380" key="GridCell.Tab.0.bottom/0.23.2560.1338@0.23.2560.1338" timestamp="1603030799868" />
     <state width="1259" height="381" key="GridCell.Tab.0.bottom/0.23.2560.1341@0.23.2560.1341" timestamp="1602831091163" />
     <state width="1259" height="342" key="GridCell.Tab.0.bottom/0.23.2560.1342@0.23.2560.1342" timestamp="1602653731166" />
-    <state width="2518" height="466" key="GridCell.Tab.0.center" timestamp="1603313897874">
+    <state width="1259" height="466" key="GridCell.Tab.0.center" timestamp="1603316024168">
       <screen x="0" y="23" width="2560" height="1335" />
     </state>
     <state width="1259" height="381" key="GridCell.Tab.0.center/0.23.2560.1333@0.23.2560.1333" timestamp="1601991297032" />
-    <state width="2518" height="466" key="GridCell.Tab.0.center/0.23.2560.1335@0.23.2560.1335" timestamp="1603313897874" />
+    <state width="1259" height="466" key="GridCell.Tab.0.center/0.23.2560.1335@0.23.2560.1335" timestamp="1603316024168" />
     <state width="1259" height="380" key="GridCell.Tab.0.center/0.23.2560.1338@0.23.2560.1338" timestamp="1603030799868" />
     <state width="1259" height="381" key="GridCell.Tab.0.center/0.23.2560.1341@0.23.2560.1341" timestamp="1602831091163" />
     <state width="1259" height="342" key="GridCell.Tab.0.center/0.23.2560.1342@0.23.2560.1342" timestamp="1602653731165" />
-    <state width="2518" height="466" key="GridCell.Tab.0.left" timestamp="1603313897874">
+    <state width="1259" height="466" key="GridCell.Tab.0.left" timestamp="1603316024168">
       <screen x="0" y="23" width="2560" height="1335" />
     </state>
     <state width="1259" height="381" key="GridCell.Tab.0.left/0.23.2560.1333@0.23.2560.1333" timestamp="1601991297032" />
-    <state width="2518" height="466" key="GridCell.Tab.0.left/0.23.2560.1335@0.23.2560.1335" timestamp="1603313897874" />
+    <state width="1259" height="466" key="GridCell.Tab.0.left/0.23.2560.1335@0.23.2560.1335" timestamp="1603316024168" />
     <state width="1259" height="380" key="GridCell.Tab.0.left/0.23.2560.1338@0.23.2560.1338" timestamp="1603030799867" />
     <state width="1259" height="381" key="GridCell.Tab.0.left/0.23.2560.1341@0.23.2560.1341" timestamp="1602831091162" />
     <state width="1259" height="342" key="GridCell.Tab.0.left/0.23.2560.1342@0.23.2560.1342" timestamp="1602653731165" />
-    <state width="2518" height="466" key="GridCell.Tab.0.right" timestamp="1603313897874">
+    <state width="1259" height="466" key="GridCell.Tab.0.right" timestamp="1603316024168">
       <screen x="0" y="23" width="2560" height="1335" />
     </state>
     <state width="1259" height="381" key="GridCell.Tab.0.right/0.23.2560.1333@0.23.2560.1333" timestamp="1601991297032" />
-    <state width="2518" height="466" key="GridCell.Tab.0.right/0.23.2560.1335@0.23.2560.1335" timestamp="1603313897874" />
+    <state width="1259" height="466" key="GridCell.Tab.0.right/0.23.2560.1335@0.23.2560.1335" timestamp="1603316024168" />
     <state width="1259" height="380" key="GridCell.Tab.0.right/0.23.2560.1338@0.23.2560.1338" timestamp="1603030799868" />
     <state width="1259" height="381" key="GridCell.Tab.0.right/0.23.2560.1341@0.23.2560.1341" timestamp="1602831091163" />
     <state width="1259" height="342" key="GridCell.Tab.0.right/0.23.2560.1342@0.23.2560.1342" timestamp="1602653731165" />
-    <state width="2518" height="466" key="GridCell.Tab.1.bottom" timestamp="1603313897875">
+    <state width="1259" height="466" key="GridCell.Tab.1.bottom" timestamp="1603316024169">
       <screen x="0" y="23" width="2560" height="1335" />
     </state>
-    <state width="2518" height="466" key="GridCell.Tab.1.bottom/0.23.2560.1335@0.23.2560.1335" timestamp="1603313897875" />
+    <state width="1259" height="466" key="GridCell.Tab.1.bottom/0.23.2560.1335@0.23.2560.1335" timestamp="1603316024169" />
     <state width="1259" height="469" key="GridCell.Tab.1.bottom/0.23.2560.1338@0.23.2560.1338" timestamp="1603030189050" />
     <state width="1259" height="471" key="GridCell.Tab.1.bottom/0.23.2560.1341@0.23.2560.1341" timestamp="1602831051578" />
     <state width="1259" height="472" key="GridCell.Tab.1.bottom/0.23.2560.1342@0.23.2560.1342" timestamp="1602623528116" />
-    <state width="2518" height="466" key="GridCell.Tab.1.center" timestamp="1603313897875">
+    <state width="1259" height="466" key="GridCell.Tab.1.center" timestamp="1603316024169">
       <screen x="0" y="23" width="2560" height="1335" />
     </state>
-    <state width="2518" height="466" key="GridCell.Tab.1.center/0.23.2560.1335@0.23.2560.1335" timestamp="1603313897875" />
+    <state width="1259" height="466" key="GridCell.Tab.1.center/0.23.2560.1335@0.23.2560.1335" timestamp="1603316024169" />
     <state width="1259" height="469" key="GridCell.Tab.1.center/0.23.2560.1338@0.23.2560.1338" timestamp="1603030189050" />
     <state width="1259" height="471" key="GridCell.Tab.1.center/0.23.2560.1341@0.23.2560.1341" timestamp="1602831051578" />
     <state width="1259" height="472" key="GridCell.Tab.1.center/0.23.2560.1342@0.23.2560.1342" timestamp="1602623528116" />
-    <state width="2518" height="466" key="GridCell.Tab.1.left" timestamp="1603313897875">
+    <state width="1259" height="466" key="GridCell.Tab.1.left" timestamp="1603316024169">
       <screen x="0" y="23" width="2560" height="1335" />
     </state>
-    <state width="2518" height="466" key="GridCell.Tab.1.left/0.23.2560.1335@0.23.2560.1335" timestamp="1603313897875" />
+    <state width="1259" height="466" key="GridCell.Tab.1.left/0.23.2560.1335@0.23.2560.1335" timestamp="1603316024169" />
     <state width="1259" height="469" key="GridCell.Tab.1.left/0.23.2560.1338@0.23.2560.1338" timestamp="1603030189049" />
     <state width="1259" height="471" key="GridCell.Tab.1.left/0.23.2560.1341@0.23.2560.1341" timestamp="1602831051578" />
     <state width="1259" height="472" key="GridCell.Tab.1.left/0.23.2560.1342@0.23.2560.1342" timestamp="1602623528115" />
-    <state width="2518" height="466" key="GridCell.Tab.1.right" timestamp="1603313897875">
+    <state width="1259" height="466" key="GridCell.Tab.1.right" timestamp="1603316024169">
       <screen x="0" y="23" width="2560" height="1335" />
     </state>
-    <state width="2518" height="466" key="GridCell.Tab.1.right/0.23.2560.1335@0.23.2560.1335" timestamp="1603313897875" />
+    <state width="1259" height="466" key="GridCell.Tab.1.right/0.23.2560.1335@0.23.2560.1335" timestamp="1603316024169" />
     <state width="1259" height="469" key="GridCell.Tab.1.right/0.23.2560.1338@0.23.2560.1338" timestamp="1603030189050" />
     <state width="1259" height="471" key="GridCell.Tab.1.right/0.23.2560.1341@0.23.2560.1341" timestamp="1602831051578" />
     <state width="1259" height="472" key="GridCell.Tab.1.right/0.23.2560.1342@0.23.2560.1342" timestamp="1602623528116" />
@@ -356,10 +342,11 @@
     <state x="781" y="343" key="SettingsEditor/0.23.2560.1333@0.23.2560.1333" timestamp="1601723933280" />
     <state x="1224" y="291" key="SettingsEditor/0.23.2560.1341@0.23.2560.1341" timestamp="1602762008232" />
     <state x="781" y="345" key="SettingsEditor/0.23.2560.1342@0.23.2560.1342" timestamp="1602655510369" />
-    <state x="880" y="431" key="Vcs.Push.Dialog.v2" timestamp="1602831143352">
-      <screen x="0" y="23" width="2560" height="1341" />
+    <state x="880" y="429" key="Vcs.Push.Dialog.v2" timestamp="1603315589931">
+      <screen x="0" y="23" width="2560" height="1335" />
     </state>
     <state x="880" y="429" key="Vcs.Push.Dialog.v2/0.23.2560.1333@0.23.2560.1333" timestamp="1601967889635" />
+    <state x="880" y="429" key="Vcs.Push.Dialog.v2/0.23.2560.1335@0.23.2560.1335" timestamp="1603315589931" />
     <state x="880" y="431" key="Vcs.Push.Dialog.v2/0.23.2560.1341@0.23.2560.1341" timestamp="1602831143352" />
     <state x="950" y="537" key="com.intellij.ide.util.TipDialog" timestamp="1601739862322">
       <screen x="0" y="23" width="2560" height="1333" />
