@@ -11,6 +11,7 @@ import gr.jkapsouras.butterfliesofgreece.MainActivity
 import gr.jkapsouras.butterfliesofgreece.R
 import gr.jkapsouras.butterfliesofgreece.base.BaseFragment
 import gr.jkapsouras.butterfliesofgreece.base.UiComponent
+import gr.jkapsouras.butterfliesofgreece.data.Storage
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main_menu_fragment.*
 import org.koin.android.ext.android.inject
@@ -21,6 +22,7 @@ class MainMenuFragment : BaseFragment<MenuPresenter>() {
     override val layoutResource: Int
         get() = R.layout.main_menu_fragment
     override val presenter: MenuPresenter by inject()
+    val storage : Storage by inject()
     var menuComponent:MenuComponent? = null
 
     companion object {
@@ -42,6 +44,7 @@ class MainMenuFragment : BaseFragment<MenuPresenter>() {
     override fun onStart() {
         super.onStart()
         (requireActivity() as AppCompatActivity).toolbar.visibility = View.GONE
+        storage.print()
     }
 
     override fun onResume() {
