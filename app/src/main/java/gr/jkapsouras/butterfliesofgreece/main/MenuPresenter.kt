@@ -3,7 +3,6 @@ package gr.jkapsouras.butterfliesofgreece.main
 import gr.jkapsouras.butterfliesofgreece.base.BasePresenter
 import gr.jkapsouras.butterfliesofgreece.base.GeneralViewState
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
-import gr.jkapsouras.butterfliesofgreece.base.di.Presenters
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.IBackgroundThread
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.IMainThread
 import gr.jkapsouras.butterfliesofgreece.main.ViewStates.MenuViewStates
@@ -11,7 +10,7 @@ import gr.jkapsouras.butterfliesofgreece.main.events.MenuUiEvents
 
 class MenuPresenter(
     backgroundThreadScheduler: IBackgroundThread,
-    mainThreadScheduler: IMainThread, presenter : Presenters
+    mainThreadScheduler: IMainThread
 ) : BasePresenter(backgroundThreadScheduler, mainThreadScheduler){
 
     private val responseMessages:Map<MenuUiEvents, MenuViewStates> = mapOf(MenuUiEvents.FieldClicked to MenuViewStates.ToField,
@@ -25,9 +24,9 @@ class MenuPresenter(
     override fun handleEvent(uiEvent: UiEvent) {
         when (uiEvent) {
             is MenuUiEvents -> responseMessages[uiEvent]?.let{
-                state?.onNext(it)
+                state.onNext(it)
             }
-            else -> state?.onNext(GeneralViewState.Idle)
+            else -> state.onNext(GeneralViewState.Idle)
         }
     }
 

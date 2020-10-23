@@ -1,6 +1,7 @@
 package gr.jkapsouras.butterfliesofgreece.base.di
 
 import gr.jkapsouras.butterfliesofgreece.base.BasePresenter
+import gr.jkapsouras.butterfliesofgreece.base.repositories.FamiliesRepository
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.BackgroundThreadScheduler
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.IBackgroundThread
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.IMainThread
@@ -17,6 +18,7 @@ import org.koin.dsl.module
 val butterfliesModule = module {
     registerSchedulers(this)
     registerDataSources(this)
+    registerRepositories(this)
     registerPresenters(this)
 }
 
@@ -29,19 +31,20 @@ fun registerDataSources(module: Module){
     module.single { Storage(androidContext()) }
 }
 
+fun registerRepositories(module: Module){
+    module.factory { FamiliesRepository(
+        storage = get()
+    ) }
+}
+
 fun registerPresenters(module: Module){
     module.factory{ MenuPresenter(
         backgroundThreadScheduler = get(),
-        mainThreadScheduler =  get(),
-        presenter = Presenters.Menu
+        mainThreadScheduler =  get()
     ) }
     module.factory { FamiliesPresenter(
+        familiesRepository = get(),
         backgroundThreadScheduler = get(),
-        mainThreadScheduler =  get(),
-        presenter = Presenters.Families) }
-}
-
-enum class Presenters{
-    Menu,
-    Families
+        mainThreadScheduler =  get()
+    ) }
 }

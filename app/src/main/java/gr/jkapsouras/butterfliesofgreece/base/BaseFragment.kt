@@ -44,7 +44,7 @@ abstract  class BaseFragment<P : BasePresenter> : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return initView(inflater.inflate(layoutResource, container, false));
+        return initView(inflater.inflate(layoutResource, container, false))
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -60,11 +60,9 @@ abstract  class BaseFragment<P : BasePresenter> : Fragment(){
             events = Observable.merge(events,it.uiEvents)
         }
 
-        val presenter = presenter ?: return
+        val state = presenter.subscribe(events).publish()
 
-        val state = presenter?.subscribe(events)?.publish()
-
-        components?.forEach{component->
+        components.forEach{component->
                     state?.subscribe { viewstate->
                         component.renderViewState(viewstate)
                     }
@@ -86,9 +84,9 @@ abstract  class BaseFragment<P : BasePresenter> : Fragment(){
         findNavController().navigate(R.id.navigate_to_families)
     }
 
-    fun unSubscribe()
+    private fun unSubscribe()
     {
-        presenter?.let { it.unSubscribe() }
+       presenter.unSubscribe()
 //        presenter = null
     }
 }

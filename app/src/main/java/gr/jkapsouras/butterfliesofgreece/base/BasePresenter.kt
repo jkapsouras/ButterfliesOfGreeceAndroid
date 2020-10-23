@@ -9,7 +9,7 @@ abstract class BasePresenter(private val backgroundThreadScheduler : IBackground
                              private val mainThreadScheduler:IMainThread) {
     lateinit var disposables: DisposablesWrapper
     protected val state: PublishSubject<ViewState> = PublishSubject.create<ViewState>()
-    private val emitter: PublishSubject<UiEvent> = PublishSubject.create<UiEvent>()
+    internal val emitter: PublishSubject<UiEvent> = PublishSubject.create<UiEvent>()
 
     fun subscribe(events:Observable<UiEvent>):Observable<ViewState>{
         disposables = DisposablesWrapper()

@@ -9,7 +9,7 @@ import gr.jkapsouras.butterfliesofgreece.dto.Specie
 import java.io.IOException
 
 class Storage(context: Context) {
-    private val families:List<Family>
+    val families:List<Family>
 
     init {
         val jsonData = readData(context, "data.json")
@@ -26,10 +26,6 @@ class Storage(context: Context) {
                 })
             }
         }
-    }
-
-    fun print(){
-        print(families[0].name)
     }
 }
 
