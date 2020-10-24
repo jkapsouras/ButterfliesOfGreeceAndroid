@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainMenuFragment">
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="gr.jkapsouras.butterfliesofgreece.main.MainMenuFragment"
+        android:label="main_menu_fragment"
+        tools:layout="@layout/main_menu_fragment" >
+        <action
+            android:id="@+id/navigate_to_families"
+            app:destination="@id/familiesFragment"
+            app:popUpTo="@id/mainMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/familiesFragment"
+        android:name="gr.jkapsouras.butterfliesofgreece.families.FamiliesFragment"
+        android:label="FamiliesFragment" />
+</navigation>
