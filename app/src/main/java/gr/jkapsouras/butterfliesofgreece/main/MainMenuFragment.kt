@@ -1,18 +1,14 @@
 package gr.jkapsouras.butterfliesofgreece.main
 
-import android.opengl.Visibility
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import gr.jkapsouras.butterfliesofgreece.MainActivity
 import gr.jkapsouras.butterfliesofgreece.R
 import gr.jkapsouras.butterfliesofgreece.base.BaseFragment
 import gr.jkapsouras.butterfliesofgreece.base.UiComponent
-import gr.jkapsouras.butterfliesofgreece.base.repositories.FamiliesRepository
-import gr.jkapsouras.butterfliesofgreece.data.Storage
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main_menu_fragment.*
 import org.koin.android.ext.android.inject

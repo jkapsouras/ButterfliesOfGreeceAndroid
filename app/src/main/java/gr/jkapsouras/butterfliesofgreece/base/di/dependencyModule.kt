@@ -1,7 +1,6 @@
 package gr.jkapsouras.butterfliesofgreece.base.di
 
-import gr.jkapsouras.butterfliesofgreece.base.BasePresenter
-import gr.jkapsouras.butterfliesofgreece.base.repositories.FamiliesRepository
+import gr.jkapsouras.butterfliesofgreece.repositories.FamiliesRepository
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.BackgroundThreadScheduler
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.IBackgroundThread
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.IMainThread

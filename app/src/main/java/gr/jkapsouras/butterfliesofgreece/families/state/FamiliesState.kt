@@ -2,7 +2,7 @@ package gr.jkapsouras.butterfliesofgreece.families.state
 
 import gr.jkapsouras.butterfliesofgreece.dto.Family
 
-class FamiliesState(val families: List<Family>){
+class FamiliesState(public val families: List<Family>){
 
 }
 
