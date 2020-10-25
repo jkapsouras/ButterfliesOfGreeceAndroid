@@ -37,14 +37,14 @@ class PhotosTableView  @JvmOverloads constructor(
 
     fun show()
     {
-        if (visibility == View.GONE)
+        if (visibility == View.INVISIBLE)
             visibility = View.VISIBLE
     }
 
     fun hide()
     {
         if (visibility == View.VISIBLE)
-            visibility = View.GONE
+            visibility = View.INVISIBLE
     }
 
     private fun viewEvents() : Observable<UiEvent>

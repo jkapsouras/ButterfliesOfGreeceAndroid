@@ -11,6 +11,7 @@ import gr.jkapsouras.butterfliesofgreece.R
 import gr.jkapsouras.butterfliesofgreece.base.BaseFragment
 import gr.jkapsouras.butterfliesofgreece.base.UiComponent
 import gr.jkapsouras.butterfliesofgreece.families.components.FamiliesTableComponent
+import gr.jkapsouras.butterfliesofgreece.families.components.HeaderTableComponent
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.families_fragment.*
 import org.koin.android.ext.android.inject
@@ -20,7 +21,8 @@ import java.lang.reflect.Type
 class FamiliesFragment :BaseFragment<FamiliesPresenter>(){
 
     override val presenter: FamiliesPresenter by inject()
-    var familiesTableComponent: FamiliesTableComponent? = null
+    private var familiesTableComponent: FamiliesTableComponent? = null
+    private var headerTableComponent: HeaderTableComponent? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,7 +38,8 @@ class FamiliesFragment :BaseFragment<FamiliesPresenter>(){
 
     override fun initializeComponents(constraintLayout: ConstraintLayout): List<UiComponent> {
         familiesTableComponent = FamiliesTableComponent(view_table_photos)
-        return listOf(familiesTableComponent!!)
+        headerTableComponent = HeaderTableComponent(view_header)
+        return listOf(familiesTableComponent!!, headerTableComponent!!)
     }
 
     override val layoutResource: Int
