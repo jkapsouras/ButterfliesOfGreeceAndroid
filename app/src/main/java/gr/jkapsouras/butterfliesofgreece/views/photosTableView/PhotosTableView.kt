@@ -5,10 +5,14 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.LinearLayoutManager
 import gr.jkapsouras.butterfliesofgreece.R
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.dto.Family
+import gr.jkapsouras.butterfliesofgreece.views.photosTableView.adapter.PhotosTableAdapter
+import gr.jkapsouras.butterfliesofgreece.views.photosTableView.adapter.ShowingStep
 import io.reactivex.rxjava3.core.Observable
+import kotlinx.android.synthetic.main.view_photos_table.view.*
 
 
 class PhotosTableView  @JvmOverloads constructor(
@@ -18,6 +22,7 @@ class PhotosTableView  @JvmOverloads constructor(
 ) :
     ConstraintLayout(context, attrs, defStyleAttr) {
 
+    private val source = PhotosTableAdapter()
     lateinit var view : View
     val uiEvents: Observable<UiEvent> = viewEvents()
 
@@ -48,11 +53,10 @@ class PhotosTableView  @JvmOverloads constructor(
     }
 
     fun showFamilies(families: List<Family>){
-//        source.setFamilies(families: families)
-//        source.setShowingStep(showingStep: .families)
-//        TablePhotos.separatorStyle = .none
-//                TablePhotos.dataSource = source
-//        TablePhotos.delegate = source
-//        TablePhotos.reloadData()
+        rv_photos_table.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        rv_photos_table.adapter = source
+        source.setFamilies(families)
+        source.setShowingStep( ShowingStep.Families)
+        source.notifyDataSetChanged()
     }
 }

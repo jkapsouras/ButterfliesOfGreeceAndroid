@@ -10,7 +10,9 @@ import gr.jkapsouras.butterfliesofgreece.MainActivity
 import gr.jkapsouras.butterfliesofgreece.R
 import gr.jkapsouras.butterfliesofgreece.base.BaseFragment
 import gr.jkapsouras.butterfliesofgreece.base.UiComponent
+import gr.jkapsouras.butterfliesofgreece.families.components.FamiliesTableComponent
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.families_fragment.*
 import org.koin.android.ext.android.inject
 import org.koin.ext.getScopeName
 import java.lang.reflect.Type
@@ -18,6 +20,7 @@ import java.lang.reflect.Type
 class FamiliesFragment :BaseFragment<FamiliesPresenter>(){
 
     override val presenter: FamiliesPresenter by inject()
+    var familiesTableComponent: FamiliesTableComponent? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,7 +35,8 @@ class FamiliesFragment :BaseFragment<FamiliesPresenter>(){
     }
 
     override fun initializeComponents(constraintLayout: ConstraintLayout): List<UiComponent> {
-        return emptyList()
+        familiesTableComponent = FamiliesTableComponent(view_table_photos)
+        return listOf(familiesTableComponent!!)
     }
 
     override val layoutResource: Int

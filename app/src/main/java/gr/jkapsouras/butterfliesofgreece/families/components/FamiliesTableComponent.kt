@@ -9,7 +9,7 @@ import gr.jkapsouras.butterfliesofgreece.views.photosTableView.PhotosTableView
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.subjects.PublishSubject
 
-class FamiliesTableComponent(val photosTableView: PhotosTableView) : UiComponent
+class FamiliesTableComponent(private val photosTableView: PhotosTableView) : UiComponent
 {
     private val event: PublishSubject<UiEvent> = PublishSubject.create<UiEvent>()
     override val uiEvents: Observable<UiEvent>
