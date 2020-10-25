@@ -12,9 +12,11 @@ import gr.jkapsouras.butterfliesofgreece.families.state.FamiliesState
 import gr.jkapsouras.butterfliesofgreece.families.state.with
 import gr.jkapsouras.butterfliesofgreece.families.uiEvents.FamilyEvents
 import gr.jkapsouras.butterfliesofgreece.families.viewStates.FamiliesViewViewStates
+import gr.jkapsouras.butterfliesofgreece.repositories.NavigationRepository
 import gr.jkapsouras.butterfliesofgreece.views.header.HeaderState
 import gr.jkapsouras.butterfliesofgreece.views.header.uiEvents.HeaderViewEvents
 import gr.jkapsouras.butterfliesofgreece.views.header.viewStates.HeaderViewViewStates
+import gr.jkapsouras.butterfliesofgreece.views.header.with
 
 enum class ViewArrange{
     List,
@@ -34,12 +36,13 @@ enum class ViewArrange{
 
 class FamiliesPresenter(
     val familiesRepository: FamiliesRepository,
+    val navigationRepository: NavigationRepository,
     backgroundThreadScheduler: IBackgroundThread,
     mainThreadScheduler: IMainThread
 ) : BasePresenter(backgroundThreadScheduler, mainThreadScheduler){
 
     private var familiesState: FamiliesState = FamiliesState(emptyList())
-    private val headerState: HeaderState = HeaderState(null, ViewArrange.Grid, "Families")
+    private var headerState: HeaderState = HeaderState(null, ViewArrange.Grid, "Families")
 
     override fun handleEvent(uiEvent: UiEvent) {
         when(uiEvent){
@@ -61,7 +64,10 @@ class FamiliesPresenter(
     {
         when(familyEvent){
             is FamilyEvents.FamilyClicked -> {
-            Log.d(TAG, "navigation repository not yet implemented")
+            navigationRepository
+                .selectFamilyId(familyEvent.id)
+                .subscribe{state.onNext(FamiliesViewViewStates.ToSpecies)}
+                .disposeWith(disposables)
         }
             is FamilyEvents.LoadFamilies -> {
                 familiesRepository
@@ -74,7 +80,7 @@ class FamiliesPresenter(
                     }
                     .disposeWith(disposables)
             }
-            else -> {
+            is FamilyEvents.AddPhotosForPrintClicked -> {
                 Log.d(TAG, "handleFamiliesEvents: something else")
             }
         }
@@ -82,6 +88,15 @@ class FamiliesPresenter(
 
     private fun handleHeaderViewEvents(headerEvent: HeaderViewEvents){
         when(headerEvent){
+            is HeaderViewEvents.SwitchViewStyleClicked -> {
+                navigationRepository.changeViewArrange()
+                    .map{arrange ->
+                    headerState.with((arrange))
+                }
+                    .subscribe { headerState ->
+                        state.onNext(FamiliesViewViewStates.SwitchViewStyle(headerState.currentArrange))
+                    }
+            }
             is HeaderViewEvents.SearchBarClicked -> {
                 state.onNext(HeaderViewViewStates.ToSearch)
             }

@@ -1,6 +1,8 @@
 package gr.jkapsouras.butterfliesofgreece.main
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +11,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import gr.jkapsouras.butterfliesofgreece.R
 import gr.jkapsouras.butterfliesofgreece.base.BaseFragment
 import gr.jkapsouras.butterfliesofgreece.base.UiComponent
+import gr.jkapsouras.butterfliesofgreece.repositories.NavigationRepository
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main_menu_fragment.*
 import org.koin.android.ext.android.inject
