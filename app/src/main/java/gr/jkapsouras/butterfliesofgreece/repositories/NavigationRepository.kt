@@ -13,4 +13,12 @@ class NavigationRepository(private val storage: Storage) {
         storage.changeArrange()
         return Observable.just(storage.currentArrange)
     }
+
+    fun setViewArrange(arrange:ViewArrange) : Observable<Boolean>{
+        return storage.setViewArrange(arrange)
+    }
+
+    fun getViewArrange() : Observable<ViewArrange>{
+        return Observable.just(storage.currentArrange)
+    }
 }

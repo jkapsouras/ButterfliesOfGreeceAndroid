@@ -88,14 +88,30 @@ class FamiliesPresenter(
 
     private fun handleHeaderViewEvents(headerEvent: HeaderViewEvents){
         when(headerEvent){
+            is HeaderViewEvents.InitState -> {
+                    navigationRepository.setViewArrange(headerEvent.currentArrange)
+                        .flatMap{
+                            navigationRepository.getViewArrange()
+                        }
+                        .map {
+                            headerState = headerState.with(it)
+                            headerState
+                        }
+                .subscribe{ headerState ->
+                    state.onNext(FamiliesViewViewStates.SwitchViewStyle( headerState.currentArrange))
+                }
+                        .disposeWith(disposables)
+            }
             is HeaderViewEvents.SwitchViewStyleClicked -> {
                 navigationRepository.changeViewArrange()
                     .map{arrange ->
-                    headerState.with((arrange))
+                        headerState = headerState.with((arrange))
+                        headerState
                 }
                     .subscribe { headerState ->
                         state.onNext(FamiliesViewViewStates.SwitchViewStyle(headerState.currentArrange))
                     }
+                    .disposeWith(disposables)
             }
             is HeaderViewEvents.SearchBarClicked -> {
                 state.onNext(HeaderViewViewStates.ToSearch)
@@ -103,6 +119,6 @@ class FamiliesPresenter(
             is HeaderViewEvents.PrintPhotosClicked -> {
                 state.onNext(HeaderViewViewStates.ToPrintPhotos)
             }
-}
+        }
     }
 }
