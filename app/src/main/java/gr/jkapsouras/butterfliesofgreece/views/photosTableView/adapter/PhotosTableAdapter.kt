@@ -28,11 +28,11 @@ class PhotosTableAdapter : RecyclerView.Adapter<PhotosTableViewCell>() {
     private var fromSearch = false
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotosTableViewCell {
-        return PhotosTableViewCell(LayoutInflater.from(parent.context).inflate(R.layout.row_photos_table, parent, false))
+        return PhotosTableViewCell(LayoutInflater.from(parent.context).inflate(R.layout.row_photos_table, parent, false), emitter)
     }
 
     override fun onBindViewHolder(holder: PhotosTableViewCell, position: Int) {
-        holder.update(families[position], emitter, showingStep)
+        holder.update(families[position], showingStep)
     }
 
     override fun getItemCount(): Int {

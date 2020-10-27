@@ -24,7 +24,8 @@ class PhotosTableView  @JvmOverloads constructor(
 
     private val source = PhotosTableAdapter()
     lateinit var view : View
-    val uiEvents: Observable<UiEvent> = viewEvents()
+    val uiEvents: Observable<UiEvent>
+        get() = viewEvents()
 
     init {
         initialize(context)
@@ -49,7 +50,7 @@ class PhotosTableView  @JvmOverloads constructor(
 
     private fun viewEvents() : Observable<UiEvent>
     {
-        return Observable.empty()
+        return source.emitter
     }
 
     fun showFamilies(families: List<Family>){

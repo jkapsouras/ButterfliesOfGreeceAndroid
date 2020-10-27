@@ -21,11 +21,11 @@ class PhotosCollectionAdapter : RecyclerView.Adapter<PhotosCollectionViewCell>()
     private var showingStep = ShowingStep.Families
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotosCollectionViewCell {
-        return PhotosCollectionViewCell(LayoutInflater.from(parent.context).inflate(R.layout.row_photos_collection, parent, false))
+        return PhotosCollectionViewCell(LayoutInflater.from(parent.context).inflate(R.layout.row_photos_collection, parent, false), emitter)
     }
 
     override fun onBindViewHolder(holder: PhotosCollectionViewCell, position: Int) {
-        holder.update(families[position], emitter, showingStep)
+        holder.update(families[position], showingStep)
     }
 
     override fun getItemCount(): Int {

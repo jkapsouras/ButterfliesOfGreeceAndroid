@@ -14,6 +14,8 @@ import gr.jkapsouras.butterfliesofgreece.MainActivity
 import gr.jkapsouras.butterfliesofgreece.R
 import gr.jkapsouras.butterfliesofgreece.families.FamiliesFragment
 import gr.jkapsouras.butterfliesofgreece.families.FamiliesPresenter
+import gr.jkapsouras.butterfliesofgreece.families.viewStates.FamiliesViewViewStates
+import gr.jkapsouras.butterfliesofgreece.main.ViewStates.MenuViewStates
 import io.reactivex.rxjava3.core.Observable
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.families_fragment.view.*
@@ -81,7 +83,17 @@ abstract  class BaseFragment<P : BasePresenter> : Fragment(){
 
     private fun transitionStateReceived(viewState:ViewState){
         Log.d(TAG, "transitionStateReceived: ${viewState.toString()}")
-        findNavController().navigate(R.id.navigate_to_families)
+        when (viewState) {
+            is MenuViewStates -> {
+                findNavController().navigate(R.id.navigate_to_families)
+            }
+            is FamiliesViewViewStates ->{
+                when (viewState) {
+                    is FamiliesViewViewStates.ToSpecies ->
+                        Log.d(TAG, "transitionStateReceived: ${viewState.toString()}")
+                }
+            }
+        }
     }
 
     private fun unSubscribe()

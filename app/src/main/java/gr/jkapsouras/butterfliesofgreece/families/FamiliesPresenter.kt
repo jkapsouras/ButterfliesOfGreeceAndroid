@@ -66,7 +66,8 @@ class FamiliesPresenter(
             is FamilyEvents.FamilyClicked -> {
             navigationRepository
                 .selectFamilyId(familyEvent.id)
-                .subscribe{state.onNext(FamiliesViewViewStates.ToSpecies)}
+                .subscribe{
+                    state.onNext(FamiliesViewViewStates.ToSpecies)}
                 .disposeWith(disposables)
         }
             is FamilyEvents.LoadFamilies -> {

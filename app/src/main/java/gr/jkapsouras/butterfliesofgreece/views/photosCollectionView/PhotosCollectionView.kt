@@ -23,7 +23,8 @@ class PhotosCollectionView  @JvmOverloads constructor(
 
     private val source = PhotosCollectionAdapter()
     lateinit var view: View
-    val uiEvents: Observable<UiEvent> = viewEvents()
+    val uiEvents: Observable<UiEvent>
+        get() = viewEvents()
 
     init {
         initialize(context)
@@ -48,7 +49,7 @@ class PhotosCollectionView  @JvmOverloads constructor(
 
     private fun viewEvents() : Observable<UiEvent>
     {
-        return Observable.empty()
+        return source.emitter
     }
 
     fun showFamilies(families: List<Family>){
