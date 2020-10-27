@@ -90,7 +90,7 @@ abstract  class BaseFragment<P : BasePresenter> : Fragment(){
             is FamiliesViewViewStates ->{
                 when (viewState) {
                     is FamiliesViewViewStates.ToSpecies ->
-                        Log.d(TAG, "transitionStateReceived: ${viewState.toString()}")
+                        findNavController().navigate(R.id.navigate_to_species)
                 }
             }
         }

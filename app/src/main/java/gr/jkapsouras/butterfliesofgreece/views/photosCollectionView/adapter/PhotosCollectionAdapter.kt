@@ -25,7 +25,13 @@ class PhotosCollectionAdapter : RecyclerView.Adapter<PhotosCollectionViewCell>()
     }
 
     override fun onBindViewHolder(holder: PhotosCollectionViewCell, position: Int) {
-        holder.update(families[position], showingStep)
+        when(showingStep)
+        {
+            ShowingStep.Families ->
+                holder.update(families[position], showingStep)
+            ShowingStep.Species ->
+                holder.update(species[position], showingStep)
+        }
     }
 
     override fun getItemCount(): Int {

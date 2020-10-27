@@ -12,6 +12,7 @@ import gr.jkapsouras.butterfliesofgreece.R
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
 import gr.jkapsouras.butterfliesofgreece.dto.Family
+import gr.jkapsouras.butterfliesofgreece.dto.Specie
 import gr.jkapsouras.butterfliesofgreece.families.uiEvents.FamilyEvents
 import gr.jkapsouras.butterfliesofgreece.main.events.MenuUiEvents
 import io.reactivex.rxjava3.subjects.PublishSubject
@@ -49,12 +50,28 @@ class PhotosTableViewCell(itemView: View, private val emitter: PublishSubject<Ui
         catch (e:Exception){
             itemView.iv_image_row_table.setImageDrawable(ContextCompat.getDrawable(itemView.context, R.drawable.thumb_default))
         }
-//        itemView.label_photo_table_name.clipToOutline = true
-//        ImageButterfly.image = UIImage(named: "Thumbnails/\(family.photo)", in: nil, compatibleWith: nil)
-//        if  ImageButterfly.image == nil{
-//            ImageButterfly.image = #imageLiteral(resourceName: "default")
-//        }
-//        ImageAdd.image = #imageLiteral(resourceName: "plusIcon").withRenderingMode(.alwaysTemplate)
     }
 
+    fun update(specie: Specie, showingStep:ShowingStep, fromSearch: Boolean){
+        this.showingStep = showingStep
+        itemView.label_photo_table_name.text = specie.name
+        specieId = specie.id
+        try {
+            val iden = itemView.resources.getIdentifier("thumb_${specie.imageTitle}", "drawable", itemView.context.packageName)
+            iden.let {tmpiden ->
+                val drawable = ResourcesCompat.getDrawable(itemView.resources, tmpiden, null)
+                drawable.let{
+                    itemView.iv_image_row_table.setImageResource(tmpiden)
+                }
+            }
+        }
+        catch (e:Exception){
+            itemView.iv_image_row_table.setImageDrawable(ContextCompat.getDrawable(itemView.context, R.drawable.thumb_default))
+        }
+
+        when {
+            fromSearch -> itemView.iv_add_image_row_table.visibility =  View.INVISIBLE
+            else -> itemView.iv_add_image_row_table.visibility =  View.VISIBLE
+        }
+    }
 }

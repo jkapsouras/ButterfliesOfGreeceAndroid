@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import gr.jkapsouras.butterfliesofgreece.R
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.dto.Family
+import gr.jkapsouras.butterfliesofgreece.dto.Specie
 import gr.jkapsouras.butterfliesofgreece.families.uiEvents.FamilyEvents
 import gr.jkapsouras.butterfliesofgreece.views.photosTableView.adapter.ShowingStep
 import io.reactivex.rxjava3.subjects.PublishSubject
@@ -37,6 +38,40 @@ class PhotosCollectionViewCell(itemView: View, private val emitter: PublishSubje
         try {
             val iden = itemView.resources.getIdentifier(
                 "thumb_${family.photo}",
+                "drawable",
+                itemView.context.packageName
+            )
+            iden.let { tmpiden ->
+                val drawable = ResourcesCompat.getDrawable(itemView.resources, tmpiden, null)
+                drawable.let{
+                    itemView.iv_image_row_collection.setImageResource(tmpiden)
+                }
+            }
+        }
+        catch (e: Exception){
+            itemView.iv_image_row_collection.setImageDrawable(
+                ContextCompat.getDrawable(
+                    itemView.context,
+                    R.drawable.thumb_default
+                )
+            )
+        }
+
+        itemView.cardView_image_row_collection.post {
+            val w = itemView.cardView_image_row_collection.width
+            itemView.cardView_image_row_collection.apply {
+                radius = (w/2).toDp(itemView.context).toFloat()
+            }
+        }
+    }
+
+    fun update(specie: Specie, showingStep: ShowingStep){
+        this.showingStep = showingStep
+        itemView.label_photo_collection_name.text = specie.name
+        specieId = specie.id
+        try {
+            val iden = itemView.resources.getIdentifier(
+                "thumb_${specie.imageTitle}",
                 "drawable",
                 itemView.context.packageName
             )
