@@ -10,9 +10,12 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import gr.jkapsouras.butterfliesofgreece.R
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
+import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
 import gr.jkapsouras.butterfliesofgreece.dto.Family
 import gr.jkapsouras.butterfliesofgreece.dto.Specie
 import gr.jkapsouras.butterfliesofgreece.families.uiEvents.FamilyEvents
+import gr.jkapsouras.butterfliesofgreece.photos.uiEvents.PhotosEvents
+import gr.jkapsouras.butterfliesofgreece.species.uiEvents.SpeciesEvents
 import gr.jkapsouras.butterfliesofgreece.views.photosTableView.adapter.ShowingStep
 import io.reactivex.rxjava3.subjects.PublishSubject
 import kotlinx.android.synthetic.main.row_photos_collection.view.*
@@ -26,7 +29,15 @@ class PhotosCollectionViewCell(itemView: View, private val emitter: PublishSubje
 
     init{
         itemView.setOnClickListener {
-            emitter.onNext(FamilyEvents.FamilyClicked(familyId))
+            when(showingStep)
+            {
+                ShowingStep.Families ->
+                    emitter.onNext(FamilyEvents.FamilyClicked(familyId))
+                ShowingStep.Species ->
+                          emitter.onNext(SpeciesEvents.SpecieClicked(specieId))
+                ShowingStep.Photos ->
+                    emitter.onNext(PhotosEvents.PhotoClicked(photoId))
+            }
             Log.d(Constraints.TAG, "field clicked")
         }
     }
@@ -72,6 +83,40 @@ class PhotosCollectionViewCell(itemView: View, private val emitter: PublishSubje
         try {
             val iden = itemView.resources.getIdentifier(
                 "thumb_${specie.imageTitle}",
+                "drawable",
+                itemView.context.packageName
+            )
+            iden.let { tmpiden ->
+                val drawable = ResourcesCompat.getDrawable(itemView.resources, tmpiden, null)
+                drawable.let{
+                    itemView.iv_image_row_collection.setImageResource(tmpiden)
+                }
+            }
+        }
+        catch (e: Exception){
+            itemView.iv_image_row_collection.setImageDrawable(
+                ContextCompat.getDrawable(
+                    itemView.context,
+                    R.drawable.thumb_default
+                )
+            )
+        }
+
+        itemView.cardView_image_row_collection.post {
+            val w = itemView.cardView_image_row_collection.width
+            itemView.cardView_image_row_collection.apply {
+                radius = (w/2).toDp(itemView.context).toFloat()
+            }
+        }
+    }
+
+    fun update(photo: ButterflyPhoto, showingStep:ShowingStep){
+        this.showingStep = showingStep
+        itemView.label_photo_collection_name.text = photo.author
+        photoId = photo.id
+        try {
+            val iden = itemView.resources.getIdentifier(
+                "thumb_${photo.source}",
                 "drawable",
                 itemView.context.packageName
             )

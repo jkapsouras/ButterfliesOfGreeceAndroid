@@ -11,7 +11,7 @@ import gr.jkapsouras.butterfliesofgreece.dto.Specie
 import io.reactivex.rxjava3.subjects.PublishSubject
 import kotlinx.android.synthetic.main.row_photos_table.view.*
 
-enum class ShowingStep{
+enum class ShowingStep {
     Families,
     Species,
     Photos,
@@ -28,16 +28,21 @@ class PhotosTableAdapter : RecyclerView.Adapter<PhotosTableViewCell>() {
     private var fromSearch = false
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotosTableViewCell {
-        return PhotosTableViewCell(LayoutInflater.from(parent.context).inflate(R.layout.row_photos_table, parent, false), emitter)
+        return PhotosTableViewCell(
+            LayoutInflater.from(parent.context).inflate(R.layout.row_photos_table, parent, false),
+            emitter
+        )
     }
 
     override fun onBindViewHolder(holder: PhotosTableViewCell, position: Int) {
-        when (showingStep)
-        {
+        when (showingStep) {
             ShowingStep.Families ->
                 holder.update(families[position], showingStep)
             ShowingStep.Species ->
                 holder.update(species[position], showingStep, fromSearch)
+            ShowingStep.Photos,
+            ShowingStep.PhotosToPrint ->
+                holder.update(photos[position], showingStep)
         }
     }
 
@@ -47,30 +52,29 @@ class PhotosTableAdapter : RecyclerView.Adapter<PhotosTableViewCell>() {
                 families.count()
             ShowingStep.Species ->
                 species.count()
-            ShowingStep.Photos ->
-                photos.count()
+            ShowingStep.Photos,
             ShowingStep.PhotosToPrint ->
                 photos.count()
         }
     }
 
-    fun setFamilies(families: List<Family>){
+    fun setFamilies(families: List<Family>) {
         this.families = families
     }
 
-    fun setSpecies(species: List<Specie>){
+    fun setSpecies(species: List<Specie>) {
         this.species = species
     }
 
-    fun setPhotos(photos: List<ButterflyPhoto>){
+    fun setPhotos(photos: List<ButterflyPhoto>) {
         this.photos = photos
     }
 
-    fun setShowingStep(showingStep:ShowingStep){
+    fun setShowingStep(showingStep: ShowingStep) {
         this.showingStep = showingStep
     }
 
-    fun setFromSearch(fromSearch: Boolean){
+    fun setFromSearch(fromSearch: Boolean) {
         this.fromSearch = fromSearch
     }
 }

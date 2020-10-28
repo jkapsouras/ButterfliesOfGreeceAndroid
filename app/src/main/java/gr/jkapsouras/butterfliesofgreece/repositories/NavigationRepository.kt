@@ -29,4 +29,12 @@ class NavigationRepository(private val storage: Storage) {
     fun selectSpecieId(specieId:Int) : Observable<Boolean>{
         return storage.setSpecieId(specieId)
     }
+
+    fun getSpecieId() : Observable<Int>{
+        return storage.getSpecieId()
+    }
+
+     fun selectPhotoId(photoId:Int) : Observable<Boolean>{
+        return storage.setPhotoId(photoId)
+    }
 }

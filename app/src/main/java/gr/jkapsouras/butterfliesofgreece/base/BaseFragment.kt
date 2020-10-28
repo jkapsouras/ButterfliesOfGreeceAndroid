@@ -16,6 +16,7 @@ import gr.jkapsouras.butterfliesofgreece.families.FamiliesFragment
 import gr.jkapsouras.butterfliesofgreece.families.FamiliesPresenter
 import gr.jkapsouras.butterfliesofgreece.families.viewStates.FamiliesViewViewStates
 import gr.jkapsouras.butterfliesofgreece.main.ViewStates.MenuViewStates
+import gr.jkapsouras.butterfliesofgreece.species.viewStates.SpeciesViewStates
 import io.reactivex.rxjava3.core.Observable
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.families_fragment.view.*
@@ -91,6 +92,12 @@ abstract  class BaseFragment<P : BasePresenter> : Fragment(){
                 when (viewState) {
                     is FamiliesViewViewStates.ToSpecies ->
                         findNavController().navigate(R.id.navigate_to_species)
+                }
+            }
+            is SpeciesViewStates ->{
+                when(viewState){
+                    is SpeciesViewStates.ToPhotos ->
+                        findNavController().navigate((R.id.navigate_to_photos))
                 }
             }
         }

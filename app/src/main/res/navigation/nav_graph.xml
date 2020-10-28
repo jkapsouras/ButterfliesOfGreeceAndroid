@@ -25,5 +25,13 @@
     <fragment
         android:id="@+id/speciesFragment"
         android:name="gr.jkapsouras.butterfliesofgreece.species.SpeciesFragment"
-        android:label="@string/species" />
+        android:label="@string/species" >
+        <action
+            android:id="@+id/navigate_to_photos"
+            app:destination="@id/photosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/photosFragment"
+        android:name="gr.jkapsouras.butterfliesofgreece.photos.PhotosFragment"
+        android:label="@string/photos" />
 </navigation>

@@ -8,6 +8,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import gr.jkapsouras.butterfliesofgreece.R
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
+import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
 import gr.jkapsouras.butterfliesofgreece.dto.Family
 import gr.jkapsouras.butterfliesofgreece.dto.Specie
 import gr.jkapsouras.butterfliesofgreece.views.photosCollectionView.adapter.PhotosCollectionAdapter
@@ -66,6 +67,14 @@ class PhotosCollectionView  @JvmOverloads constructor(
         rv_photos_collection.adapter = source
         source.setSpecies(species)
         source.setShowingStep( ShowingStep.Species)
+        source.notifyDataSetChanged()
+    }
+
+    fun showPhotos(photos: List<ButterflyPhoto>){
+        rv_photos_collection.layoutManager = GridLayoutManager( rv_photos_collection.context, 2, GridLayoutManager.VERTICAL, false)
+        rv_photos_collection.adapter = source
+        source.setPhotos(photos)
+        source.setShowingStep(ShowingStep.Photos)
         source.notifyDataSetChanged()
     }
 }

@@ -98,6 +98,7 @@ class SpeciesPresenter(
     private fun handleHeaderViewEvents(headerEvent: HeaderViewEvents){
         when (headerEvent) {
             is HeaderViewEvents.InitState ->{
+                headerState = headerState.with(headerEvent.currentArrange, emptyList())
                 state.onNext(SpeciesViewStates.SwitchViewStyle(headerEvent.currentArrange))
             }
 //            _ = photosToPrintRepository.getPhotosToPrint().map{photos -> HeaderState in

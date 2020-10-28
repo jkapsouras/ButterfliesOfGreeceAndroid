@@ -8,6 +8,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import gr.jkapsouras.butterfliesofgreece.R
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
+import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
 import gr.jkapsouras.butterfliesofgreece.dto.Family
 import gr.jkapsouras.butterfliesofgreece.dto.Specie
 import gr.jkapsouras.butterfliesofgreece.views.photosTableView.adapter.PhotosTableAdapter
@@ -68,6 +69,14 @@ class PhotosTableView  @JvmOverloads constructor(
         source.setSpecies(species)
         source.setShowingStep( ShowingStep.Species)
         source.setFromSearch(fromSearch)
+        source.notifyDataSetChanged()
+    }
+
+    fun showPhotos(photos: List<ButterflyPhoto>){
+        rv_photos_table.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        rv_photos_table.adapter = source
+        source.setPhotos(photos)
+        source.setShowingStep( ShowingStep.Photos)
         source.notifyDataSetChanged()
     }
 }

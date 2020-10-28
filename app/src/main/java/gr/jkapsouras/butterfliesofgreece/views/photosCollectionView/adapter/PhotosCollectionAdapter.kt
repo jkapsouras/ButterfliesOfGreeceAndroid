@@ -31,6 +31,9 @@ class PhotosCollectionAdapter : RecyclerView.Adapter<PhotosCollectionViewCell>()
                 holder.update(families[position], showingStep)
             ShowingStep.Species ->
                 holder.update(species[position], showingStep)
+            ShowingStep.Photos,
+            ShowingStep.PhotosToPrint ->
+                holder.update(photos[position], showingStep)
         }
     }
 
@@ -40,8 +43,7 @@ class PhotosCollectionAdapter : RecyclerView.Adapter<PhotosCollectionViewCell>()
                 families.count()
             ShowingStep.Species ->
                 species.count()
-            ShowingStep.Photos ->
-                photos.count()
+            ShowingStep.Photos,
             ShowingStep.PhotosToPrint ->
                 photos.count()
         }
