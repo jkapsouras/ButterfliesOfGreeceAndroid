@@ -3,13 +3,14 @@ Upgrading Butterflies of Greece app to native
 
 # Implemented
 
+- Main Screen
+
 # Implementing
 
-- Main Screen
+- Photographs of the field
 
 # To implement
 
-- Photographs of the field
 - Contribute
 - About
 - Introduction
