@@ -13,12 +13,13 @@ import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
 import gr.jkapsouras.butterfliesofgreece.dto.Family
 import gr.jkapsouras.butterfliesofgreece.dto.Specie
-import gr.jkapsouras.butterfliesofgreece.families.uiEvents.FamilyEvents
-import gr.jkapsouras.butterfliesofgreece.photos.uiEvents.PhotosEvents
-import gr.jkapsouras.butterfliesofgreece.species.uiEvents.SpeciesEvents
+import gr.jkapsouras.butterfliesofgreece.fragments.families.families.uiEvents.FamilyEvents
+import gr.jkapsouras.butterfliesofgreece.fragments.families.photos.uiEvents.PhotosEvents
+import gr.jkapsouras.butterfliesofgreece.fragments.families.species.uiEvents.SpeciesEvents
 import gr.jkapsouras.butterfliesofgreece.views.photosTableView.adapter.ShowingStep
 import io.reactivex.rxjava3.subjects.PublishSubject
 import kotlinx.android.synthetic.main.row_photos_collection.view.*
+import kotlinx.android.synthetic.main.row_photos_table.view.*
 
 class PhotosCollectionViewCell(itemView: View, private val emitter: PublishSubject<UiEvent>) : RecyclerView.ViewHolder(itemView){
 
@@ -39,6 +40,21 @@ class PhotosCollectionViewCell(itemView: View, private val emitter: PublishSubje
                     emitter.onNext(PhotosEvents.PhotoClicked(photoId))
             }
             Log.d(Constraints.TAG, "field clicked")
+        }
+
+        itemView.image_add_collection.setOnClickListener {
+            when (showingStep) {
+                ShowingStep.Families ->
+                    emitter.onNext(FamilyEvents.AddPhotosForPrintClicked(familyId))
+                ShowingStep.Species ->
+                    emitter.onNext(SpeciesEvents.AddPhotosForPrintClicked(specieId))
+                ShowingStep.Photos ->
+                    emitter.onNext(PhotosEvents.AddPhotoForPrintClicked(photoId))
+//                     case .photosToPrint:
+//                     if let photo = photo{
+//                         emitter.onNext(PrintToPdfEvents.delete(photo: photo))
+//                     }
+            }
         }
     }
 

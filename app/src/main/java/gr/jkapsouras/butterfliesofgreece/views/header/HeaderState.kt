@@ -2,14 +2,14 @@ package gr.jkapsouras.butterfliesofgreece.views.header
 
 import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
 import gr.jkapsouras.butterfliesofgreece.extensions.uniques
-import gr.jkapsouras.butterfliesofgreece.families.ViewArrange
+import gr.jkapsouras.butterfliesofgreece.fragments.families.families.ViewArrange
 
 class HeaderState(val photosToPrint:List<ButterflyPhoto>?,
                   val currentArrange: ViewArrange,
                   val headerName:String){
 }
 
-fun HeaderState.with(currentArrange:ViewArrange? = null, photosToPrint:List<ButterflyPhoto>? = null, headerName:String? = null): HeaderState {
+fun HeaderState.with(currentArrange: ViewArrange? = null, photosToPrint:List<ButterflyPhoto>? = null, headerName:String? = null): HeaderState {
     if(photosToPrint == null){
         return HeaderState(this.photosToPrint, currentArrange ?: this.currentArrange, headerName ?: this.headerName)
     }

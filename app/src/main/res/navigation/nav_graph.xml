@@ -6,7 +6,7 @@
     app:startDestination="@id/mainMenuFragment">
     <fragment
         android:id="@+id/mainMenuFragment"
-        android:name="gr.jkapsouras.butterfliesofgreece.main.MainMenuFragment"
+        android:name="gr.jkapsouras.butterfliesofgreece.fragments.families.main.MainMenuFragment"
         android:label="main_menu_fragment"
         tools:layout="@layout/main_menu_fragment" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/familiesFragment"
-        android:name="gr.jkapsouras.butterfliesofgreece.families.FamiliesFragment"
+        android:name="gr.jkapsouras.butterfliesofgreece.fragments.families.families.FamiliesFragment"
         android:label="@string/field_photos" >
         <action
             android:id="@+id/navigate_to_species"
@@ -24,7 +24,7 @@
     </fragment>
     <fragment
         android:id="@+id/speciesFragment"
-        android:name="gr.jkapsouras.butterfliesofgreece.species.SpeciesFragment"
+        android:name="gr.jkapsouras.butterfliesofgreece.fragments.families.species.SpeciesFragment"
         android:label="@string/species" >
         <action
             android:id="@+id/navigate_to_photos"
@@ -32,6 +32,6 @@
     </fragment>
     <fragment
         android:id="@+id/photosFragment"
-        android:name="gr.jkapsouras.butterfliesofgreece.photos.PhotosFragment"
+        android:name="gr.jkapsouras.butterfliesofgreece.fragments.families.photos.PhotosFragment"
         android:label="@string/photos" />
 </navigation>

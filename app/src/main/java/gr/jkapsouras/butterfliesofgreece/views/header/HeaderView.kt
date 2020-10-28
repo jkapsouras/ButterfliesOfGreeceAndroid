@@ -9,7 +9,7 @@ import androidx.core.content.ContextCompat
 import com.jakewharton.rxbinding4.view.clicks
 import gr.jkapsouras.butterfliesofgreece.R
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
-import gr.jkapsouras.butterfliesofgreece.families.ViewArrange
+import gr.jkapsouras.butterfliesofgreece.fragments.families.families.ViewArrange
 import gr.jkapsouras.butterfliesofgreece.views.header.uiEvents.HeaderViewEvents
 import io.reactivex.rxjava3.core.Observable
 import kotlinx.android.synthetic.main.view_header.view.*

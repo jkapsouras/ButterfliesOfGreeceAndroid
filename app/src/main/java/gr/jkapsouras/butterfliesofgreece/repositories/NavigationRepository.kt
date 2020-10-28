@@ -1,7 +1,7 @@
 package gr.jkapsouras.butterfliesofgreece.repositories
 
 import gr.jkapsouras.butterfliesofgreece.data.Storage
-import gr.jkapsouras.butterfliesofgreece.families.ViewArrange
+import gr.jkapsouras.butterfliesofgreece.fragments.families.families.ViewArrange
 import io.reactivex.rxjava3.core.Observable
 
 class NavigationRepository(private val storage: Storage) {
@@ -18,7 +18,7 @@ class NavigationRepository(private val storage: Storage) {
         return Observable.just(storage.currentArrange)
     }
 
-    fun setViewArrange(arrange:ViewArrange) : Observable<Boolean>{
+    fun setViewArrange(arrange: ViewArrange) : Observable<Boolean>{
         return storage.setViewArrange(arrange)
     }
 

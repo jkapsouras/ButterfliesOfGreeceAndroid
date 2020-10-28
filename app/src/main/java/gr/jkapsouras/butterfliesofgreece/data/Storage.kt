@@ -6,7 +6,7 @@ import com.google.gson.reflect.TypeToken
 import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
 import gr.jkapsouras.butterfliesofgreece.dto.Family
 import gr.jkapsouras.butterfliesofgreece.dto.Specie
-import gr.jkapsouras.butterfliesofgreece.families.ViewArrange
+import gr.jkapsouras.butterfliesofgreece.fragments.families.families.ViewArrange
 import io.reactivex.rxjava3.core.Observable
 import java.io.IOException
 import java.util.*
@@ -84,7 +84,7 @@ class Storage(context: Context) {
         return Observable.just(photoId)
     }
 
-    fun setViewArrange(currentArrange:ViewArrange) : Observable<Boolean>{
+    fun setViewArrange(currentArrange: ViewArrange) : Observable<Boolean>{
         return Observable.just(currentArrange).map{this.currentArrange = it}.map{true}
     }
 

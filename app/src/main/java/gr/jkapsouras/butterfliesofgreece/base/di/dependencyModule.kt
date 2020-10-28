@@ -1,18 +1,21 @@
 package gr.jkapsouras.butterfliesofgreece.base.di
 
-import gr.jkapsouras.butterfliesofgreece.repositories.FamiliesRepository
+import android.content.Context
+import android.content.SharedPreferences
+import android.content.res.Resources
+import gr.jkapsouras.butterfliesofgreece.R
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.BackgroundThreadScheduler
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.IBackgroundThread
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.IMainThread
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.MainThreadScheduler
 import gr.jkapsouras.butterfliesofgreece.data.Storage
-import gr.jkapsouras.butterfliesofgreece.families.FamiliesPresenter
-import gr.jkapsouras.butterfliesofgreece.main.MenuPresenter
-import gr.jkapsouras.butterfliesofgreece.photos.PhotosPresenter
-import gr.jkapsouras.butterfliesofgreece.repositories.NavigationRepository
-import gr.jkapsouras.butterfliesofgreece.repositories.PhotosRepository
-import gr.jkapsouras.butterfliesofgreece.repositories.SpeciesRepository
-import gr.jkapsouras.butterfliesofgreece.species.SpeciesPresenter
+import gr.jkapsouras.butterfliesofgreece.fragments.families.families.FamiliesPresenter
+import gr.jkapsouras.butterfliesofgreece.fragments.families.main.MenuPresenter
+import gr.jkapsouras.butterfliesofgreece.fragments.families.photos.PhotosPresenter
+import gr.jkapsouras.butterfliesofgreece.fragments.families.species.SpeciesPresenter
+import gr.jkapsouras.butterfliesofgreece.managers.CacheManager
+import gr.jkapsouras.butterfliesofgreece.managers.ICacheManager
+import gr.jkapsouras.butterfliesofgreece.repositories.*
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
 import org.koin.android.ext.koin.androidContext
@@ -33,6 +36,8 @@ fun registerSchedulers(module: Module){
 
 fun registerDataSources(module: Module){
     module.single { Storage(androidContext()) }
+    module.single<ICacheManager>{CacheManager(androidContext().getSharedPreferences(androidContext().resources.getString(
+        R.string.app_name), Context.MODE_PRIVATE))}
 }
 
 fun registerRepositories(module: Module){
@@ -48,6 +53,10 @@ fun registerRepositories(module: Module){
     module.factory { PhotosRepository(
         storage = get()
     ) }
+    module.factory { PhotosToPrintRepository(
+        storage = get(),
+        cacheManager = get()
+    ) }
 }
 
 fun registerPresenters(module: Module){
@@ -58,6 +67,7 @@ fun registerPresenters(module: Module){
     module.factory { FamiliesPresenter(
         familiesRepository = get(),
         navigationRepository = get(),
+        photosToPrintRepository = get(),
         backgroundThreadScheduler = get(),
         mainThreadScheduler =  get()
     ) }

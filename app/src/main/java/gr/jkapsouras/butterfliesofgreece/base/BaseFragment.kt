@@ -6,21 +6,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.addCallback
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import gr.jkapsouras.butterfliesofgreece.MainActivity
 import gr.jkapsouras.butterfliesofgreece.R
-import gr.jkapsouras.butterfliesofgreece.families.FamiliesFragment
-import gr.jkapsouras.butterfliesofgreece.families.FamiliesPresenter
-import gr.jkapsouras.butterfliesofgreece.families.viewStates.FamiliesViewViewStates
-import gr.jkapsouras.butterfliesofgreece.main.ViewStates.MenuViewStates
-import gr.jkapsouras.butterfliesofgreece.species.viewStates.SpeciesViewStates
+import gr.jkapsouras.butterfliesofgreece.fragments.families.families.viewStates.FamiliesViewViewStates
+import gr.jkapsouras.butterfliesofgreece.fragments.families.main.ViewStates.MenuViewStates
+import gr.jkapsouras.butterfliesofgreece.fragments.families.species.viewStates.SpeciesViewStates
 import io.reactivex.rxjava3.core.Observable
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.families_fragment.view.*
-import org.koin.android.ext.android.inject
 
 
 abstract  class BaseFragment<P : BasePresenter> : Fragment(){
