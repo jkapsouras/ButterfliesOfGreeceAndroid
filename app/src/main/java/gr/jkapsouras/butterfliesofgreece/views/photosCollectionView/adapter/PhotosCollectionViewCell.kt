@@ -48,7 +48,7 @@ class PhotosCollectionViewCell(itemView: View, private val emitter: PublishSubje
         familyId = family.id
         try {
             val iden = itemView.resources.getIdentifier(
-                "thumb_${family.photo}",
+                "thumb_big_${family.photo}",
                 "drawable",
                 itemView.context.packageName
             )
@@ -82,7 +82,7 @@ class PhotosCollectionViewCell(itemView: View, private val emitter: PublishSubje
         specieId = specie.id
         try {
             val iden = itemView.resources.getIdentifier(
-                "thumb_${specie.imageTitle}",
+                "thumb_big_${specie.imageTitle}",
                 "drawable",
                 itemView.context.packageName
             )
@@ -116,7 +116,7 @@ class PhotosCollectionViewCell(itemView: View, private val emitter: PublishSubje
         photoId = photo.id
         try {
             val iden = itemView.resources.getIdentifier(
-                "thumb_${photo.source}",
+                "thumb_big_${photo.source}",
                 "drawable",
                 itemView.context.packageName
             )
