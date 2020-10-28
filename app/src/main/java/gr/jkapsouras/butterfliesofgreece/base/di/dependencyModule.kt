@@ -9,6 +9,7 @@ import gr.jkapsouras.butterfliesofgreece.data.Storage
 import gr.jkapsouras.butterfliesofgreece.families.FamiliesPresenter
 import gr.jkapsouras.butterfliesofgreece.main.MenuPresenter
 import gr.jkapsouras.butterfliesofgreece.repositories.NavigationRepository
+import gr.jkapsouras.butterfliesofgreece.repositories.SpeciesRepository
 import gr.jkapsouras.butterfliesofgreece.species.SpeciesPresenter
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -39,6 +40,9 @@ fun registerRepositories(module: Module){
     module.factory { NavigationRepository(
         storage = get()
     ) }
+    module.factory { SpeciesRepository(
+        storage = get()
+    ) }
 }
 
 fun registerPresenters(module: Module){
@@ -53,6 +57,8 @@ fun registerPresenters(module: Module){
         mainThreadScheduler =  get()
     ) }
     module.factory{ SpeciesPresenter(
+        speciesRepository = get(),
+        navigationRepository = get(),
         backgroundThreadScheduler = get(),
         mainThreadScheduler =  get()
     ) }

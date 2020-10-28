@@ -27,7 +27,7 @@ class SpeciesCollectionComponent(private val photosCollectionView: PhotosCollect
                     print("number of families: ${viewState.species.count()}")
                     photosCollectionView.showSpecies(viewState.species)
                 }
-                is FamiliesViewViewStates.SwitchViewStyle -> {
+                is SpeciesViewStates.SwitchViewStyle -> {
                     if (viewState.currentArrange == ViewArrange.Grid) {
                         photosCollectionView.show()
                     } else {

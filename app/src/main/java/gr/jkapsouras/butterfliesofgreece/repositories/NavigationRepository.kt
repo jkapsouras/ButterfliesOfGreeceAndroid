@@ -5,8 +5,12 @@ import gr.jkapsouras.butterfliesofgreece.families.ViewArrange
 import io.reactivex.rxjava3.core.Observable
 
 class NavigationRepository(private val storage: Storage) {
-    fun selectFamilyId(familyId:Int): Observable<Int> {
-       return Observable.just(familyId)
+    fun selectFamilyId(familyId:Int): Observable<Boolean> {
+       return storage.setFamilyId(familyId)
+    }
+
+    fun getFamilyId() : Observable<Int>{
+        return storage.getFamilyId()
     }
 
     fun changeViewArrange() : Observable<ViewArrange>{
@@ -20,5 +24,9 @@ class NavigationRepository(private val storage: Storage) {
 
     fun getViewArrange() : Observable<ViewArrange>{
         return Observable.just(storage.currentArrange)
+    }
+
+    fun selectSpecieId(specieId:Int) : Observable<Boolean>{
+        return storage.setSpecieId(specieId)
     }
 }
