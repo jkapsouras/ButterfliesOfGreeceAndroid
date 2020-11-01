@@ -17,6 +17,7 @@ import gr.jkapsouras.butterfliesofgreece.repositories.NavigationRepository
 import gr.jkapsouras.butterfliesofgreece.repositories.PhotosToPrintRepository
 import gr.jkapsouras.butterfliesofgreece.views.header.HeaderState
 import gr.jkapsouras.butterfliesofgreece.views.header.uiEvents.HeaderViewEvents
+import gr.jkapsouras.butterfliesofgreece.views.header.viewStates.FromFragment
 import gr.jkapsouras.butterfliesofgreece.views.header.viewStates.HeaderViewViewStates
 import gr.jkapsouras.butterfliesofgreece.views.header.with
 import io.reactivex.rxjava3.core.Observable
@@ -99,10 +100,10 @@ class FamiliesPresenter(
                     .getPhotosToPrint()
                     .map{photos ->
                         updateHeaderState(photos, familyEvent.familyId)}
-                    .doOnNext{photoState ->
+                    .flatMap{photoState ->
                         photosToPrintRepository.savePhotosToPrint(photoState.photosToPrint ?: emptyList())}
                 .subscribe{headerState ->
-                    state.onNext(HeaderViewViewStates.UpdateFolderIcon(headerState.photosToPrint!!.count()))}
+                    state.onNext(HeaderViewViewStates.UpdateFolderIcon(headerState.count()))}
                     .disposeWith(disposables)
             }
         }
@@ -141,7 +142,7 @@ class FamiliesPresenter(
                     .disposeWith(disposables)
             }
             is HeaderViewEvents.SearchBarClicked -> {
-                state.onNext(HeaderViewViewStates.ToSearch)
+                state.onNext(HeaderViewViewStates.ToSearch(FromFragment.Families))
             }
             is HeaderViewEvents.PrintPhotosClicked -> {
                 state.onNext(HeaderViewViewStates.ToPrintPhotos)

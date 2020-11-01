@@ -12,8 +12,8 @@ private val cacheManager: ICacheManager){
         return cacheManager.getPhotosToPrint()
     }
 
-    fun savePhotosToPrint(photos:List<ButterflyPhoto>){
-        cacheManager.savePhotosToPrint(photos)
+    fun savePhotosToPrint(photos:List<ButterflyPhoto>) : Observable<List<ButterflyPhoto>>{
+        return cacheManager.savePhotosToPrint(photos).map{ photos }
     }
 
     fun delete(photo:ButterflyPhoto) : Observable<List<ButterflyPhoto>>{

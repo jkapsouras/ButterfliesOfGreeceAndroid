@@ -61,7 +61,9 @@ class Storage(context: Context) {
     }
 
     fun setFamilyId(familyId:Int) : Observable<Boolean>{
-        return Observable.just(familyId).map{ this.familyId = it }.map{true}
+        return Observable.just(familyId).map{
+            this.familyId = it }.map{
+            true}
     }
 
     fun getFamilyId() : Observable<Int>{
@@ -69,7 +71,8 @@ class Storage(context: Context) {
     }
 
     fun setSpecieId(specieId:Int) : Observable<Boolean>{
-        return Observable.just(specieId).map{this.specieId = it}.map{true}
+        return Observable.just(specieId).map{
+            this.specieId = it}.map{true}
     }
 
     fun getSpecieId() : Observable<Int>{

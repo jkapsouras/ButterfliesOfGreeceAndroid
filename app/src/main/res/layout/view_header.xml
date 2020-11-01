@@ -75,7 +75,7 @@
         android:paddingTop="8dp"
         android:paddingEnd="8dp"
         android:paddingBottom="8dp"
-        android:text="72"
+        android:text="0"
         android:textColor="@color/field"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/bt_show_added_photos"

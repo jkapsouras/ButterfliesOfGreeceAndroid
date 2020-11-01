@@ -30,4 +30,11 @@
         <item name="colorControlNormal">@color/contribute_dark</item>
     </style>
 
+    <style name="SearchTheme" parent="Widget.AppCompat.SearchView.ActionBar">
+        <item name="android:textColor">@color/field_dark</item>
+        <item name="editTextColor">@color/field_dark</item>
+        <item name="android:textColorHint">@color/field_dark</item>
+        <item name="tint">@color/field_dark</item>
+    </style>
+
 </resources>

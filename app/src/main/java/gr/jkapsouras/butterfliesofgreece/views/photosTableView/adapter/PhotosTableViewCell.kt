@@ -13,6 +13,7 @@ import gr.jkapsouras.butterfliesofgreece.dto.Family
 import gr.jkapsouras.butterfliesofgreece.dto.Specie
 import gr.jkapsouras.butterfliesofgreece.fragments.families.families.uiEvents.FamilyEvents
 import gr.jkapsouras.butterfliesofgreece.fragments.families.photos.uiEvents.PhotosEvents
+import gr.jkapsouras.butterfliesofgreece.fragments.families.search.uiEvents.SearchEvents
 import gr.jkapsouras.butterfliesofgreece.fragments.families.species.uiEvents.SpeciesEvents
 import io.reactivex.rxjava3.subjects.PublishSubject
 import kotlinx.android.synthetic.main.row_photos_table.view.*
@@ -27,6 +28,7 @@ class PhotosTableViewCell(itemView: View, private val emitter: PublishSubject<Ui
     var photo: ButterflyPhoto? = null
     var showingStep: ShowingStep? = null
     var fromSearch = false
+    lateinit var specie: Specie
 
     init {
         itemView.setOnClickListener {
@@ -36,7 +38,7 @@ class PhotosTableViewCell(itemView: View, private val emitter: PublishSubject<Ui
                 ShowingStep.Species ->
                     if (fromSearch) {
                         Log.println(Log.INFO, "", "search clicked")
-//                         emitter.onNext(SearchEvents.specieClicked(specie: species[indexPath.row]))
+                         emitter.onNext(SearchEvents.SpecieClicked(specie = this.specie))
                     } else {
                         emitter.onNext(SpeciesEvents.SpecieClicked(specieId))
                     }
@@ -94,6 +96,7 @@ class PhotosTableViewCell(itemView: View, private val emitter: PublishSubject<Ui
         this.fromSearch = fromSearch
         itemView.label_photo_table_name.text = specie.name
         specieId = specie.id
+        this.specie = specie
         try {
             val iden = itemView.resources.getIdentifier(
                 "thumb_${specie.imageTitle}",

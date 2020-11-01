@@ -16,6 +16,7 @@ import gr.jkapsouras.butterfliesofgreece.fragments.families.species.uiEvents.Spe
 import gr.jkapsouras.butterfliesofgreece.fragments.families.species.viewStates.SpeciesViewStates
 import gr.jkapsouras.butterfliesofgreece.views.header.HeaderState
 import gr.jkapsouras.butterfliesofgreece.views.header.uiEvents.HeaderViewEvents
+import gr.jkapsouras.butterfliesofgreece.views.header.viewStates.FromFragment
 import gr.jkapsouras.butterfliesofgreece.views.header.viewStates.HeaderViewViewStates
 import gr.jkapsouras.butterfliesofgreece.views.header.with
 import io.reactivex.rxjava3.core.Observable
@@ -119,7 +120,7 @@ class SpeciesPresenter(
                     .disposeWith(disposables)
             }
             is HeaderViewEvents.SearchBarClicked ->
-                state.onNext(HeaderViewViewStates.ToSearch)
+                state.onNext(HeaderViewViewStates.ToSearch(FromFragment.Species))
             is  HeaderViewEvents.PrintPhotosClicked ->
             state.onNext(HeaderViewViewStates.ToPrintPhotos)
         }

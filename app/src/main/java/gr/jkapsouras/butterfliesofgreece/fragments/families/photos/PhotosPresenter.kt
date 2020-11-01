@@ -17,6 +17,7 @@ import gr.jkapsouras.butterfliesofgreece.repositories.NavigationRepository
 import gr.jkapsouras.butterfliesofgreece.repositories.PhotosRepository
 import gr.jkapsouras.butterfliesofgreece.views.header.HeaderState
 import gr.jkapsouras.butterfliesofgreece.views.header.uiEvents.HeaderViewEvents
+import gr.jkapsouras.butterfliesofgreece.views.header.viewStates.FromFragment
 import gr.jkapsouras.butterfliesofgreece.views.header.viewStates.HeaderViewViewStates
 import gr.jkapsouras.butterfliesofgreece.views.header.with
 import io.reactivex.rxjava3.core.Observable
@@ -131,7 +132,7 @@ class PhotosPresenter(
                     .disposeWith(disposables)
             }
             is HeaderViewEvents.SearchBarClicked ->
-            state.onNext(HeaderViewViewStates.ToSearch)
+            state.onNext(HeaderViewViewStates.ToSearch(FromFragment.Photos))
             is HeaderViewEvents.PrintPhotosClicked ->
             state.onNext(HeaderViewViewStates.ToPrintPhotos)
         }
