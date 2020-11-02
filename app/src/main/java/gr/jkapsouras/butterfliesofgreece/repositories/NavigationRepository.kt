@@ -37,4 +37,8 @@ class NavigationRepository(private val storage: Storage) {
      fun selectPhotoId(photoId:Int) : Observable<Boolean>{
         return storage.setPhotoId(photoId)
     }
+
+    fun getPhotoId() : Observable<Int>{
+        return storage.getPhotoId()
+    }
 }

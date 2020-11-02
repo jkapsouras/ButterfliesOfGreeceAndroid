@@ -13,6 +13,8 @@ import androidx.navigation.fragment.findNavController
 import gr.jkapsouras.butterfliesofgreece.R
 import gr.jkapsouras.butterfliesofgreece.fragments.families.families.viewStates.FamiliesViewViewStates
 import gr.jkapsouras.butterfliesofgreece.fragments.families.main.ViewStates.MenuViewStates
+import gr.jkapsouras.butterfliesofgreece.fragments.families.modal.viewStates.ModalViewStates
+import gr.jkapsouras.butterfliesofgreece.fragments.families.photos.viewStates.PhotosViewStates
 import gr.jkapsouras.butterfliesofgreece.fragments.families.search.viewStates.SearchViewStates
 import gr.jkapsouras.butterfliesofgreece.fragments.families.species.viewStates.SpeciesViewStates
 import gr.jkapsouras.butterfliesofgreece.views.header.uiEvents.HeaderViewEvents
@@ -51,7 +53,6 @@ abstract  class BaseFragment<P : BasePresenter> : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         components = initializeComponents(view as ConstraintLayout)
-
     }
 
     override fun onStart() {
@@ -116,6 +117,18 @@ abstract  class BaseFragment<P : BasePresenter> : Fragment(){
                 when(viewState){
                     is SpeciesViewStates.ToPhotos ->
                         findNavController().navigate((R.id.navigate_to_photos))
+                }
+            }
+            is PhotosViewStates -> {
+                when(viewState){
+                    is PhotosViewStates.ToPhoto ->
+                        findNavController().navigate((R.id.navigate_to_modal))
+                }
+            }
+            is ModalViewStates -> {
+                when (viewState) {
+                    is ModalViewStates.CloseModal ->
+                        findNavController().navigateUp()
                 }
             }
         }

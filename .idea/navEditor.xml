@@ -19,7 +19,7 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_familiesFragment_to_searchFragment">
+                            <entry key="navigate_to_search_from_families">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -55,6 +55,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="modalFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="937" />
+                            <option name="y" value="-5" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="photosFragment">
                     <value>
                       <LayoutPositions>
@@ -63,6 +75,20 @@
                             <option name="x" value="675" />
                             <option name="y" value="-6" />
                           </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_photosFragment_to_modalFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="navigate_to_search_from_photos">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -75,6 +101,15 @@
                             <option name="x" value="441" />
                             <option name="y" value="463" />
                           </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="navigate_to_species_from_search">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -90,12 +125,12 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_speciesFragment_to_searchFragment">
+                            <entry key="navigate_to_photos">
                               <value>
                                 <LayoutPositions />
                               </value>
                             </entry>
-                            <entry key="navigate_to_photos">
+                            <entry key="navigate_to_search_from_species">
                               <value>
                                 <LayoutPositions />
                               </value>

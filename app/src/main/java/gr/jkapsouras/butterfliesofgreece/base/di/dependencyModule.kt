@@ -11,6 +11,7 @@ import gr.jkapsouras.butterfliesofgreece.base.schedulers.MainThreadScheduler
 import gr.jkapsouras.butterfliesofgreece.data.Storage
 import gr.jkapsouras.butterfliesofgreece.fragments.families.families.FamiliesPresenter
 import gr.jkapsouras.butterfliesofgreece.fragments.families.main.MenuPresenter
+import gr.jkapsouras.butterfliesofgreece.fragments.families.modal.ModalPresenter
 import gr.jkapsouras.butterfliesofgreece.fragments.families.photos.PhotosPresenter
 import gr.jkapsouras.butterfliesofgreece.fragments.families.search.SearchPresenter
 import gr.jkapsouras.butterfliesofgreece.fragments.families.species.SpeciesPresenter
@@ -86,6 +87,12 @@ fun registerPresenters(module: Module){
     ) }
     module.factory{ SearchPresenter(
         speciesRepository = get(),
+        navigationRepository = get(),
+        backgroundThreadScheduler = get(),
+        mainThreadScheduler =  get()
+    ) }
+    module.factory{ ModalPresenter(
+        photosRepository = get(),
         navigationRepository = get(),
         backgroundThreadScheduler = get(),
         mainThreadScheduler =  get()

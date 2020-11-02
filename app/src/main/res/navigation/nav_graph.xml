@@ -43,6 +43,9 @@
         <action
             android:id="@+id/navigate_to_search_from_photos"
             app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/navigate_to_modal"
+            app:destination="@id/modalFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -52,4 +55,7 @@
             android:id="@+id/navigate_to_species_from_search"
             app:destination="@id/photosFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/modalFragment"
+        android:name="gr.jkapsouras.butterfliesofgreece.fragments.families.modal.ModalFragment" />
 </navigation>
