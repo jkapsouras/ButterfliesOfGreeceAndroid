@@ -69,6 +69,8 @@ class FamiliesPresenter(
     }
 
     override fun setupEvents() {
+        familiesState = FamiliesState(emptyList())
+        headerState = HeaderState(null, headerState.currentArrange, "Families")
         emitter.onNext(FamilyEvents.LoadFamilies)
         emitter.onNext(HeaderViewEvents.InitState(ViewArrange.List))
     }
@@ -145,7 +147,7 @@ class FamiliesPresenter(
                 state.onNext(HeaderViewViewStates.ToSearch(FromFragment.Families))
             }
             is HeaderViewEvents.PrintPhotosClicked -> {
-                state.onNext(HeaderViewViewStates.ToPrintPhotos)
+                state.onNext(HeaderViewViewStates.ToPrintPhotos(FromFragment.Families))
             }
         }
     }

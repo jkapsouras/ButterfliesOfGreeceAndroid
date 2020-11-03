@@ -7,6 +7,7 @@ import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
 import gr.jkapsouras.butterfliesofgreece.dto.Family
 import gr.jkapsouras.butterfliesofgreece.dto.Specie
 import gr.jkapsouras.butterfliesofgreece.fragments.families.families.ViewArrange
+import gr.jkapsouras.butterfliesofgreece.fragments.families.printToPdf.state.PdfArrange
 import io.reactivex.rxjava3.core.Observable
 import java.io.IOException
 import java.util.*
@@ -17,7 +18,7 @@ class Storage(context: Context) {
     var familyId: Int = -1
     var specieId:Int = -1
     var photoId:Int = -1
-//    static var pdfArrange:PdfArrange?
+    var  arrange = PdfArrange.OnePerPage
 
     init {
         val jsonData = readData(context, "data.json")
@@ -40,13 +41,14 @@ class Storage(context: Context) {
         return families.filter{it.id == familyId}.flatMap{it.species}
     }
 
-//    func getPdfArrange() -> PdfArrange{
-//        return Storage.pdfArrange ?? PdfArrange.onePerPage
-//    }
+    fun getPdfArrange() : PdfArrange{
+        return this.arrange
+    }
 
-//    func setPdfArrange(pdfArrange:PdfArrange) -> Observable<Bool> {
-//        return Observable.from(optional: Storage.pdfArrange = pdfArrange).map({ _ in return true})
-//    }
+    fun setPdfArrange(pdfArrange:PdfArrange) : Observable<Boolean> {
+        return Observable.just(pdfArrange).map{
+            this.arrange = pdfArrange}.map{true}
+        }
 
     fun photos(specieId:Int) : List<ButterflyPhoto>{
         return species(familyId).filter{it.id == specieId}.flatMap{it.photos}

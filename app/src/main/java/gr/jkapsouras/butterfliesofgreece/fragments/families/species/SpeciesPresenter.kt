@@ -8,12 +8,14 @@ import gr.jkapsouras.butterfliesofgreece.base.schedulers.IBackgroundThread
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.IMainThread
 import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
 import gr.jkapsouras.butterfliesofgreece.fragments.families.families.ViewArrange
+import gr.jkapsouras.butterfliesofgreece.fragments.families.families.viewStates.FamiliesViewViewStates
 import gr.jkapsouras.butterfliesofgreece.repositories.NavigationRepository
 import gr.jkapsouras.butterfliesofgreece.repositories.SpeciesRepository
 import gr.jkapsouras.butterfliesofgreece.fragments.families.species.state.SpeciesState
 import gr.jkapsouras.butterfliesofgreece.fragments.families.species.state.with
 import gr.jkapsouras.butterfliesofgreece.fragments.families.species.uiEvents.SpeciesEvents
 import gr.jkapsouras.butterfliesofgreece.fragments.families.species.viewStates.SpeciesViewStates
+import gr.jkapsouras.butterfliesofgreece.repositories.PhotosToPrintRepository
 import gr.jkapsouras.butterfliesofgreece.views.header.HeaderState
 import gr.jkapsouras.butterfliesofgreece.views.header.uiEvents.HeaderViewEvents
 import gr.jkapsouras.butterfliesofgreece.views.header.viewStates.FromFragment
@@ -24,6 +26,7 @@ import io.reactivex.rxjava3.core.Observable
 class SpeciesPresenter(
     private val speciesRepository: SpeciesRepository,
     private val navigationRepository: NavigationRepository,
+    private  val photosToPrintRepository: PhotosToPrintRepository,
     backgroundThreadScheduler: IBackgroundThread,
     mainThreadScheduler: IMainThread
 ) : BasePresenter(backgroundThreadScheduler, mainThreadScheduler){
@@ -32,6 +35,8 @@ class SpeciesPresenter(
     private var headerState: HeaderState = HeaderState(null, ViewArrange.Grid, "Species")
 
     override fun setupEvents() {
+        speciesState = SpeciesState(emptyList())
+        headerState = HeaderState(null,  ViewArrange.Grid, "Species")
         Observable.zip(navigationRepository.getFamilyId(),navigationRepository.getViewArrange(),
             { familyId, currentArrange ->
                 Pair(familyId, currentArrange)
@@ -79,16 +84,20 @@ class SpeciesPresenter(
                     }
                     .disposeWith(disposables)
             is SpeciesEvents.AddPhotosForPrintClicked -> {
-//                _ = photosToPrintRepository
-//                    .getPhotosToPrint()
-//                    .map{photos in return self.updateHeaderState(photos: photos, specieId: familyId)}
-//                    .do(onNext: {photoState in self.photosToPrintRepository.savePhotosToPrint(photos: photoState.photosToPrint ?? [ButterflyPhoto]())})
-//                .subscribe(onNext: {headerState in self.state.onNext(HeaderViewViewStates.updateFolderIcon(numberOfPhotos: headerState.photosToPrint!.count))})
+                photosToPrintRepository
+                    .getPhotosToPrint()
+                    .map{photos ->
+                        updateHeaderState(photos, specieEvent.specieId)}
+                    .flatMap{photoState ->
+                        photosToPrintRepository.savePhotosToPrint(photoState.photosToPrint ?: emptyList())}
+                    .subscribe{headerState ->
+                        state.onNext(HeaderViewViewStates.UpdateFolderIcon(headerState.count()))}
+                    .disposeWith(disposables)
             }
         }
     }
 
-    fun updateHeaderState(photos:List<ButterflyPhoto>, specieId:Int) : HeaderState{
+    private fun updateHeaderState(photos:List<ButterflyPhoto>, specieId:Int) : HeaderState{
         headerState = headerState.with(null, photos)
         val specie = speciesState.species.first{it.id == specieId}
         val newPhotos = specie.photos
@@ -99,16 +108,14 @@ class SpeciesPresenter(
     private fun handleHeaderViewEvents(headerEvent: HeaderViewEvents){
         when (headerEvent) {
             is HeaderViewEvents.InitState ->{
-                headerState = headerState.with(headerEvent.currentArrange, emptyList())
-                state.onNext(SpeciesViewStates.SwitchViewStyle(headerEvent.currentArrange))
+                photosToPrintRepository.getPhotosToPrint().map{photos ->
+                        headerState = headerState.with(currentArrange = headerEvent.currentArrange, photosToPrint = photos)
+                    headerState
+                }.subscribe{
+                    state.onNext(HeaderViewViewStates.UpdateFolderIcon(numberOfPhotos = it.photosToPrint?.count() ?: 0))
+                    state.onNext(SpeciesViewStates.SwitchViewStyle(currentArrange = it.currentArrange))
+                }
             }
-//            _ = photosToPrintRepository.getPhotosToPrint().map{photos -> HeaderState in
-//                    self.headerState = self.headerState.with(arrange: currentArrange, photos: photos)
-//                return self.headerState
-//            }.subscribe(onNext: {headerState in self.state.onNext(HeaderViewViewStates.updateFolderIcon(numberOfPhotos: headerState.photosToPrint?.count ?? 0))
-//                self.state.onNext(SpeciesViewStates.SwitchViewStyle(currentArrange: headerState.currentArrange))
-//
-//            })
             is HeaderViewEvents.SwitchViewStyleClicked -> {
                 navigationRepository.changeViewArrange()
                     .map{arrange ->
@@ -122,7 +129,7 @@ class SpeciesPresenter(
             is HeaderViewEvents.SearchBarClicked ->
                 state.onNext(HeaderViewViewStates.ToSearch(FromFragment.Species))
             is  HeaderViewEvents.PrintPhotosClicked ->
-            state.onNext(HeaderViewViewStates.ToPrintPhotos)
+                state.onNext(HeaderViewViewStates.ToPrintPhotos(FromFragment.Species))
         }
     }
 }

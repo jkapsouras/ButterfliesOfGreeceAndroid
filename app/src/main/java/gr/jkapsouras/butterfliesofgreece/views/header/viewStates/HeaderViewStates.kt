@@ -6,7 +6,7 @@ sealed class HeaderViewViewStates(isTransition:Boolean) : ViewState(isTransition
     class UpdateFolderIcon(val numberOfPhotos:Int) : HeaderViewViewStates(false)
     class SetHeaderTitle(val headerTitle:String) : HeaderViewViewStates(false)
     class ToSearch(val from:FromFragment) : HeaderViewViewStates(true)
-    object ToPrintPhotos : HeaderViewViewStates(true)
+    class ToPrintPhotos(val from:FromFragment) : HeaderViewViewStates(true)
 }
 
 enum class FromFragment{

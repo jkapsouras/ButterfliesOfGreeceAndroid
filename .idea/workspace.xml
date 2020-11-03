@@ -41,514 +41,22 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efa0256b-32b0-4f2f-898e-86426287e8f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/modal/IModalPhotos.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/modal/ModalFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/modal/ModalPhotoFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/modal/ModalPresenter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/modal/adapter/ModalPhotoAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/modal/components/ModalPhotoComponent.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/modal/uiEvents/ModalEvents.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/modal/viewStates/ModalViewStates.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/close_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_001_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_001_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_002_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_002_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_002_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_002_004.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_003_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_003_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_004_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_004_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_004_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_005_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_005_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_005_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_006_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_006_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_007_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_007_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_007_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_008_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_008_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_009_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_009_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_010_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_010_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_010_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_010_004.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_010_005.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_010_006.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_011_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_011_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_011_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_012_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_012_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_012_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_013_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_013_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_013_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_014_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_014_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_014_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_015_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_015_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_015_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_017_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_017_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_017_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_018_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_018_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_018_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_018_004.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_019_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_019_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_019_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_020_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_020_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_020_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_020_004.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_021_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_021_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_022_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_022_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_022_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_023_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_023_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_023_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_024_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_024_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_025_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_025_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_025_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_025_004.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_026_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_026_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_026_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_027_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_027_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_027_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_028_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_028_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_028_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_029_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_030_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_030_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_031_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_032_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_032_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_032_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_033_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_033_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_033_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_035_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_036_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_036_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_037_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_037_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_038_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_038_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_039_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_039_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_040_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_040_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_041_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_041_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_042_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_042_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_043_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_043_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_043_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_044_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_045_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_046_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_046_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_047_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_048_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_048_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_048_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_048_004.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_049_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_049_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_049_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_050_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_050_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_050_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_050_004.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_051_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_051_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_051_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_052_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_052_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_052_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_053_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_053_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_053_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_054_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_054_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_054_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_055_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_055_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_056_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_056_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_056_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_057_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_057_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_057_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_058_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_058_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_059_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_059_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_060_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_061_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_061_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_062_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_062_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_063_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_063_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_064_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_064_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_065_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_065_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_065_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_066_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_066_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_067_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_067_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_068_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_068_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_068_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_069_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_069_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_070_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_070_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_071_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_071_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_072_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_072_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_073_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_073_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_074_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_074_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_075_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_075_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_076_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_077_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_077_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_078_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_078_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_079_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_080_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_080_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_081_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_081_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_082_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_082_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_083_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_083_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_084_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_085_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_085_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_086_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_086_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_087_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_087_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_088_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_089_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_089_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_090_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_090_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_090_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_090_004.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_091_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_091_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_091_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_092_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_092_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_093_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_093_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_094_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_094_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_095_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_096_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_096_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_097_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_097_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_098_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_099_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_099_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_100_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_100_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_101_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_101_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_102_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_102_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_103_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_103_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_104_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_104_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_105_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_105_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_106_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_106_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_107_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_107_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_107_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_108_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_108_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_109_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_109_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_110_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_110_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_111_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_112_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_112_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_112_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_113_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_113_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_114_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_115_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_115_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_116_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_116_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_117_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_117_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_117_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_117_004.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_118_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_118_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_119_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_119_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_120_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_121_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_121_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_122_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_122_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_123_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_123_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_124_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_124_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_125_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_125_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_126_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_126_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_127_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_127_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_128_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_128_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_129_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_129_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_129_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_129_004.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_130_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_130_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_131_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_132_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_133_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_133_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_134_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_134_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_135_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_136_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_136_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_137_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_137_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_138_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_138_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_139_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_139_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_140_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_140_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_141_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_141_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_142_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_142_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_143_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_143_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_144_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_144_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_145_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_145_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_145_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_145_004.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_146_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_146_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_147_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_147_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_147_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_147_004.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_147_005.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_147_006.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_148_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_148_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_148_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_149_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_149_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_151_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_151_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_152_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_153_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_153_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_154_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_154_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_155_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_156_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_157_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_158_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_159_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_160_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_161_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_162_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_163_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_164_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_165_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_166_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_166_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_166_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_166_004.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_167_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_168_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_169_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_170_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_171_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_171_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_172_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_172_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_172_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_173_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_174_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_175_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_176_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_176_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_177_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_177_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_178_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_178_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_179_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_179_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_180_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_180_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_181_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_181_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_181_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_181_004.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_182_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_182_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_183_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_183_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_184_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_184_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_185_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_185_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_186_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_186_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_186_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_187_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_187_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_188_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_188_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_188_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_189_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_189_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_190_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_190_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_191_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_191_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_192_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_192_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_192_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_193_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_194_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_194_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_195_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_195_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_196_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_196_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_197_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_197_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_198_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_199_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_200_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_201_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_201_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_202_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_203_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_204_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_204_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_205_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_205_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_206_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_207_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_207_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_208_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_208_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_209_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_210_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_210_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_211_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_211_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_212_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_212_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_213_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_214_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_214_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_215_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_215_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_216_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_217_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_217_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_218_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_218_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_219_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_219_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_219_003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_220_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_220_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_221_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_221_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_222_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_222_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_223_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_223_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_224_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_225_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_225_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_226_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_226_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_227_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_227_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_228_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_228_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_229_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_230_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_231_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_232_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_233_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_234_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_235_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_236_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_237_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_238_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_239_001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_239_002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_default.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_figure351.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_figure3510.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_figure3512.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_figure3513.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_figure3514.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_figure352.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_figure353.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_figure354.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_figure356.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_figure357.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_figure358.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_figure359a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_figure359b.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/full_figure_leptidea.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/modal_fragment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/modal_photo_fragment.xml" afterDir="false" />
+    <list default="true" id="efa0256b-32b0-4f2f-898e-86426287e8f4" name="Default Changelist" comment="print to pdf framgent / presenter / components + some of the events + add photos to print from all possible fragments">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/printToPdf/PrintToPdfFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/printToPdf/PrintToPdfPresenter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/printToPdf/components/PhotosToPrintComponent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/printToPdf/components/PhotosToPrintHeaderComponent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/printToPdf/printToPdfFragmetn.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/printToPdf/state/PrintToPdfState.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/printToPdf/uiEvents/PrintToPdfEvents.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/printToPdf/viewStates/PrintToPdfViewStates.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/headerPrintToPdfView/HeaderPrintToPdfView.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/delete_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/minus_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/print_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/print_to_pdf_fragment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/spinner_text.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/view_header_print_to_pdf.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
@@ -563,15 +71,25 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/BaseFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/BaseFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/di/dependencyModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/di/dependencyModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/repositories/NavigationRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/repositories/NavigationRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/data/Storage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/data/Storage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/families/FamiliesPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/families/FamiliesPresenter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/photos/PhotosPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/photos/PhotosPresenter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/species/SpeciesPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/species/SpeciesPresenter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/CacheManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/CacheManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/repositories/PhotosToPrintRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/repositories/PhotosToPrintRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/header/HeaderView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/header/HeaderView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/header/viewStates/HeaderViewStates.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/header/viewStates/HeaderViewStates.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosTableView/PhotosTableView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosTableView/PhotosTableView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosTableView/adapter/PhotosTableViewCell.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosTableView/adapter/PhotosTableViewCell.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[my_device]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[3cd4796c23b9]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -580,7 +98,46 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ButterfliesOfGreeceAndroid" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ButterfliesOfGreeceAndroid" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ButterfliesOfGreeceAndroid" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ButterfliesOfGreeceAndroid" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ButterfliesOfGreeceAndroid" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="android" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -588,10 +145,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="Kotlin File" />
-        <option value="layoutResourceFile" />
         <option value="Kotlin Object" />
         <option value="Kotlin Interface" />
+        <option value="layoutResourceFile" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -618,6 +175,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android-custom-view/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/header/HeaderView.kt_SELECTED" value="HeaderView" />
+    <property name="android-custom-view/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/headerPrintToPdfView/HeaderPrintToPdfView.kt_SELECTED" value="HeaderPrintToPdfView" />
     <property name="android-custom-view/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosCollectionView/PhotosCollectionView.kt_SELECTED" value="PhotosCollectionView" />
     <property name="android-custom-view/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosTableView/PhotosTableView.kt_SELECTED" value="PhotosTableView" />
     <property name="android-custom-view/Users/jkapsi/Projects/butterfliesandroid/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/header/HeaderView.kt_SELECTED" value="HeaderView" />
@@ -625,6 +183,7 @@
     <property name="android-custom-view/Users/jkapsi/Projects/butterfliesandroid/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosTableView/PhotosTableView.kt_SELECTED" value="PhotosTableView" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/font" />
     <property name="multi-representation-preview/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/header/HeaderView.kt_selected" value="Custom views" />
+    <property name="multi-representation-preview/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/headerPrintToPdfView/HeaderPrintToPdfView.kt_selected" value="Custom views" />
     <property name="multi-representation-preview/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosCollectionView/PhotosCollectionView.kt_selected" value="Custom views" />
     <property name="multi-representation-preview/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosTableView/PhotosTableView.kt_selected" value="Custom views" />
     <property name="multi-representation-preview/Users/jkapsi/Projects/butterfliesandroid/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/header/HeaderView.kt_selected" value="Custom views" />
@@ -638,21 +197,22 @@
     <option name="MODULE_TAB" value="Default Config" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/printToPdf/state" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/families" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/header" />
+    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="gr.jkapsouras.butterfliesofgreece.views.header.UiEvents" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/res/font" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="gr.jkapsouras.butterfliesofgreece" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/families" />
-      <recent name="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/header" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/font" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Android App.app">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -717,6 +277,30 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ButterfliesOfGreeceAndroid:app [androidDependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="androidDependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.ButterfliesOfGreeceAndroid:app [androidDependencies]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -841,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604228068461</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="implement modal presenter + components + fragment (no pinch to zoom)">
+      <created>1604310434918</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1604310434918</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -874,7 +465,9 @@
     <MESSAGE value="add font" />
     <MESSAGE value="add cache manager + photostoprintrepository" />
     <MESSAGE value="implement search presenter + components + fragment" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement search presenter + components + fragment" />
+    <MESSAGE value="implement modal presenter + components + fragment (no pinch to zoom)" />
+    <MESSAGE value="print to pdf framgent / presenter / components + some of the events + add photos to print from all possible fragments" />
+    <option name="LAST_COMMIT_MESSAGE" value="print to pdf framgent / presenter / components + some of the events + add photos to print from all possible fragments" />
   </component>
   <component name="WindowStateProjectService">
     <state x="365" y="238" key="#PSD" timestamp="1603653329284">
@@ -923,83 +516,84 @@
       <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state x="609" y="253" key="AndroidProcessChooserDialog/0.23.1680.954@0.23.1680.954" timestamp="1603657995945" />
-    <state x="335" y="167" key="CommitChangelistDialog2" timestamp="1604228066490">
+    <state x="335" y="167" key="CommitChangelistDialog2" timestamp="1604398531667">
       <screen x="0" y="23" width="2560" height="1335" />
     </state>
     <state x="220" y="126" key="CommitChangelistDialog2/0.23.1680.953@0.23.1680.953" timestamp="1603782805857" />
     <state x="518" y="130" key="CommitChangelistDialog2/0.23.1680.954@0.23.1680.954" timestamp="1603663747709" />
     <state x="790" y="292" key="CommitChangelistDialog2/0.23.2560.1333@0.23.2560.1333" timestamp="1601738033254" />
-    <state x="335" y="167" key="CommitChangelistDialog2/0.23.2560.1335@0.23.2560.1335" timestamp="1604228066490" />
-    <state width="495" height="464" key="DebuggerActiveHint" timestamp="1603912748277">
-      <screen x="0" y="23" width="1680" height="954" />
+    <state x="335" y="167" key="CommitChangelistDialog2/0.23.2560.1335@0.23.2560.1335" timestamp="1604398531667" />
+    <state width="755" height="650" key="DebuggerActiveHint" timestamp="1604400243158">
+      <screen x="0" y="23" width="2560" height="1335" />
     </state>
     <state width="495" height="463" key="DebuggerActiveHint/0.23.1680.953@0.23.1680.953" timestamp="1603886790782" />
     <state width="495" height="464" key="DebuggerActiveHint/0.23.1680.954@0.23.1680.954" timestamp="1603912748277" />
     <state width="495" height="466" key="DebuggerActiveHint/0.23.1680.960@0.23.1680.960" timestamp="1603811306172" />
-    <state width="1259" height="378" key="GridCell.Tab.0.bottom" timestamp="1604306676126">
+    <state width="755" height="650" key="DebuggerActiveHint/0.23.2560.1335@0.23.2560.1335" timestamp="1604400243158" />
+    <state width="1259" height="466" key="GridCell.Tab.0.bottom" timestamp="1604400171136">
       <screen x="0" y="23" width="2560" height="1335" />
     </state>
     <state width="819" height="244" key="GridCell.Tab.0.bottom/0.23.1680.953@0.23.1680.953" timestamp="1603922214093" />
     <state width="819" height="244" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1603913186769" />
     <state width="1638" height="244" key="GridCell.Tab.0.bottom/0.23.1680.960@0.23.1680.960" timestamp="1603814191961" />
     <state width="1638" height="246" key="GridCell.Tab.0.bottom/0.23.1680.961@0.23.1680.961" timestamp="1603747692750" />
-    <state width="1259" height="378" key="GridCell.Tab.0.bottom/0.23.2560.1335@0.23.2560.1335" timestamp="1604306676126" />
-    <state width="1259" height="378" key="GridCell.Tab.0.center" timestamp="1604306676126">
+    <state width="1259" height="466" key="GridCell.Tab.0.bottom/0.23.2560.1335@0.23.2560.1335" timestamp="1604400171136" />
+    <state width="1259" height="466" key="GridCell.Tab.0.center" timestamp="1604400171135">
       <screen x="0" y="23" width="2560" height="1335" />
     </state>
     <state width="819" height="244" key="GridCell.Tab.0.center/0.23.1680.953@0.23.1680.953" timestamp="1603922214093" />
     <state width="819" height="244" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1603913186767" />
     <state width="1638" height="244" key="GridCell.Tab.0.center/0.23.1680.960@0.23.1680.960" timestamp="1603814191960" />
     <state width="1638" height="246" key="GridCell.Tab.0.center/0.23.1680.961@0.23.1680.961" timestamp="1603747692749" />
-    <state width="1259" height="378" key="GridCell.Tab.0.center/0.23.2560.1335@0.23.2560.1335" timestamp="1604306676126" />
-    <state width="1259" height="378" key="GridCell.Tab.0.left" timestamp="1604306676126">
+    <state width="1259" height="466" key="GridCell.Tab.0.center/0.23.2560.1335@0.23.2560.1335" timestamp="1604400171135" />
+    <state width="1259" height="466" key="GridCell.Tab.0.left" timestamp="1604400171135">
       <screen x="0" y="23" width="2560" height="1335" />
     </state>
     <state width="819" height="244" key="GridCell.Tab.0.left/0.23.1680.953@0.23.1680.953" timestamp="1603922214092" />
     <state width="819" height="244" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1603913186766" />
     <state width="1638" height="244" key="GridCell.Tab.0.left/0.23.1680.960@0.23.1680.960" timestamp="1603814191959" />
     <state width="1638" height="246" key="GridCell.Tab.0.left/0.23.1680.961@0.23.1680.961" timestamp="1603747692749" />
-    <state width="1259" height="378" key="GridCell.Tab.0.left/0.23.2560.1335@0.23.2560.1335" timestamp="1604306676126" />
-    <state width="1259" height="378" key="GridCell.Tab.0.right" timestamp="1604306676126">
+    <state width="1259" height="466" key="GridCell.Tab.0.left/0.23.2560.1335@0.23.2560.1335" timestamp="1604400171135" />
+    <state width="1259" height="466" key="GridCell.Tab.0.right" timestamp="1604400171136">
       <screen x="0" y="23" width="2560" height="1335" />
     </state>
     <state width="819" height="244" key="GridCell.Tab.0.right/0.23.1680.953@0.23.1680.953" timestamp="1603922214093" />
     <state width="819" height="244" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1603913186768" />
     <state width="1638" height="244" key="GridCell.Tab.0.right/0.23.1680.960@0.23.1680.960" timestamp="1603814191960" />
     <state width="1638" height="246" key="GridCell.Tab.0.right/0.23.1680.961@0.23.1680.961" timestamp="1603747692750" />
-    <state width="1259" height="378" key="GridCell.Tab.0.right/0.23.2560.1335@0.23.2560.1335" timestamp="1604306676126" />
-    <state width="1259" height="466" key="GridCell.Tab.1.bottom" timestamp="1604269419205">
+    <state width="1259" height="466" key="GridCell.Tab.0.right/0.23.2560.1335@0.23.2560.1335" timestamp="1604400171136" />
+    <state width="1259" height="466" key="GridCell.Tab.1.bottom" timestamp="1604400181916">
       <screen x="0" y="23" width="2560" height="1335" />
     </state>
     <state width="819" height="244" key="GridCell.Tab.1.bottom/0.23.1680.953@0.23.1680.953" timestamp="1603922214094" />
     <state width="819" height="244" key="GridCell.Tab.1.bottom/0.23.1680.954@0.23.1680.954" timestamp="1603913208918" />
     <state width="1638" height="244" key="GridCell.Tab.1.bottom/0.23.1680.960@0.23.1680.960" timestamp="1603814191962" />
     <state width="1638" height="256" key="GridCell.Tab.1.bottom/0.23.1680.961@0.23.1680.961" timestamp="1603747337854" />
-    <state width="1259" height="466" key="GridCell.Tab.1.bottom/0.23.2560.1335@0.23.2560.1335" timestamp="1604269419205" />
-    <state width="1259" height="466" key="GridCell.Tab.1.center" timestamp="1604269419205">
+    <state width="1259" height="466" key="GridCell.Tab.1.bottom/0.23.2560.1335@0.23.2560.1335" timestamp="1604400181916" />
+    <state width="1259" height="466" key="GridCell.Tab.1.center" timestamp="1604400181916">
       <screen x="0" y="23" width="2560" height="1335" />
     </state>
     <state width="819" height="244" key="GridCell.Tab.1.center/0.23.1680.953@0.23.1680.953" timestamp="1603922214094" />
     <state width="819" height="244" key="GridCell.Tab.1.center/0.23.1680.954@0.23.1680.954" timestamp="1603913208918" />
     <state width="1638" height="244" key="GridCell.Tab.1.center/0.23.1680.960@0.23.1680.960" timestamp="1603814191961" />
     <state width="1638" height="256" key="GridCell.Tab.1.center/0.23.1680.961@0.23.1680.961" timestamp="1603747337853" />
-    <state width="1259" height="466" key="GridCell.Tab.1.center/0.23.2560.1335@0.23.2560.1335" timestamp="1604269419205" />
-    <state width="1259" height="466" key="GridCell.Tab.1.left" timestamp="1604269419204">
+    <state width="1259" height="466" key="GridCell.Tab.1.center/0.23.2560.1335@0.23.2560.1335" timestamp="1604400181916" />
+    <state width="1259" height="466" key="GridCell.Tab.1.left" timestamp="1604400181916">
       <screen x="0" y="23" width="2560" height="1335" />
     </state>
     <state width="819" height="244" key="GridCell.Tab.1.left/0.23.1680.953@0.23.1680.953" timestamp="1603922214093" />
     <state width="819" height="244" key="GridCell.Tab.1.left/0.23.1680.954@0.23.1680.954" timestamp="1603913208917" />
     <state width="1638" height="244" key="GridCell.Tab.1.left/0.23.1680.960@0.23.1680.960" timestamp="1603814191961" />
     <state width="1638" height="256" key="GridCell.Tab.1.left/0.23.1680.961@0.23.1680.961" timestamp="1603747337853" />
-    <state width="1259" height="466" key="GridCell.Tab.1.left/0.23.2560.1335@0.23.2560.1335" timestamp="1604269419204" />
-    <state width="1259" height="466" key="GridCell.Tab.1.right" timestamp="1604269419205">
+    <state width="1259" height="466" key="GridCell.Tab.1.left/0.23.2560.1335@0.23.2560.1335" timestamp="1604400181916" />
+    <state width="1259" height="466" key="GridCell.Tab.1.right" timestamp="1604400181916">
       <screen x="0" y="23" width="2560" height="1335" />
     </state>
     <state width="819" height="244" key="GridCell.Tab.1.right/0.23.1680.953@0.23.1680.953" timestamp="1603922214094" />
     <state width="819" height="244" key="GridCell.Tab.1.right/0.23.1680.954@0.23.1680.954" timestamp="1603913208918" />
     <state width="1638" height="244" key="GridCell.Tab.1.right/0.23.1680.960@0.23.1680.960" timestamp="1603814191962" />
     <state width="1638" height="256" key="GridCell.Tab.1.right/0.23.1680.961@0.23.1680.961" timestamp="1603747337853" />
-    <state width="1259" height="466" key="GridCell.Tab.1.right/0.23.2560.1335@0.23.2560.1335" timestamp="1604269419205" />
+    <state width="1259" height="466" key="GridCell.Tab.1.right/0.23.2560.1335@0.23.2560.1335" timestamp="1604400181916" />
     <state x="428" y="249" key="IDE.errors.dialog" timestamp="1603547488919">
       <screen x="0" y="23" width="1680" height="953" />
     </state>
@@ -1012,12 +606,13 @@
       <screen x="0" y="23" width="2560" height="1333" />
     </state>
     <state x="781" y="343" key="SettingsEditor/0.23.2560.1333@0.23.2560.1333" timestamp="1601723933280" />
-    <state x="578" y="313" key="Vcs.Push.Dialog.v2" timestamp="1603905486387">
-      <screen x="0" y="23" width="1680" height="953" />
+    <state x="881" y="429" key="Vcs.Push.Dialog.v2" timestamp="1604310439685">
+      <screen x="0" y="23" width="2560" height="1335" />
     </state>
     <state x="578" y="313" key="Vcs.Push.Dialog.v2/0.23.1680.953@0.23.1680.953" timestamp="1603905486387" />
     <state x="578" y="313" key="Vcs.Push.Dialog.v2/0.23.1680.954@0.23.1680.954" timestamp="1603663752065" />
     <state x="880" y="429" key="Vcs.Push.Dialog.v2/0.23.2560.1333@0.23.2560.1333" timestamp="1601738044551" />
+    <state x="881" y="429" key="Vcs.Push.Dialog.v2/0.23.2560.1335@0.23.2560.1335" timestamp="1604310439685" />
     <state x="100" y="157" width="1480" height="719" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1603911150763">
       <screen x="0" y="23" width="1680" height="953" />
     </state>
@@ -1031,22 +626,27 @@
     </state>
     <state x="696" y="445" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1680.953@0.23.1680.953" timestamp="1603547212069" />
     <state x="1060" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.2560.1333@0.23.2560.1333" timestamp="1601738259179" />
-    <state x="811" y="194" width="1117" height="1026" key="find.popup" timestamp="1604157460544">
+    <state x="811" y="194" width="1117" height="1026" key="find.popup" timestamp="1604350440360">
       <screen x="0" y="23" width="2560" height="1335" />
     </state>
     <state x="532" y="145" width="733" height="732" key="find.popup/0.23.1680.953@0.23.1680.953" timestamp="1603910063572" />
     <state x="532" y="145" width="733" height="733" key="find.popup/0.23.1680.954@0.23.1680.954" timestamp="1603832735644" />
     <state x="532" y="146" width="615" height="735" key="find.popup/0.23.1680.958@0.23.1680.958" timestamp="1603740808997" />
     <state x="532" y="146" width="733" height="738" key="find.popup/0.23.1680.961@0.23.1680.961" timestamp="1603747379502" />
-    <state x="811" y="194" width="1117" height="1026" key="find.popup/0.23.2560.1335@0.23.2560.1335" timestamp="1604157460544" />
+    <state x="811" y="194" width="1117" height="1026" key="find.popup/0.23.2560.1335@0.23.2560.1335" timestamp="1604350440360" />
     <state x="951" y="488" key="git4idea.merge.GitMergeDialog" timestamp="1601738152953">
       <screen x="0" y="23" width="2560" height="1333" />
     </state>
     <state x="951" y="488" key="git4idea.merge.GitMergeDialog/0.23.2560.1333@0.23.2560.1333" timestamp="1601738152953" />
-    <state x="505" y="257" width="670" height="676" key="search.everywhere.popup" timestamp="1603896821109">
-      <screen x="0" y="23" width="1680" height="953" />
+    <state x="946" y="325" key="run.anything.popup" timestamp="1604395578157">
+      <screen x="0" y="23" width="2560" height="1335" />
+    </state>
+    <state x="946" y="325" key="run.anything.popup/0.23.2560.1335@0.23.2560.1335" timestamp="1604395578157" />
+    <state x="770" y="351" width="1021" height="947" key="search.everywhere.popup" timestamp="1604350602549">
+      <screen x="0" y="23" width="2560" height="1335" />
     </state>
     <state x="505" y="257" width="670" height="676" key="search.everywhere.popup/0.23.1680.953@0.23.1680.953" timestamp="1603896821109" />
+    <state x="770" y="351" width="1021" height="947" key="search.everywhere.popup/0.23.2560.1335@0.23.2560.1335" timestamp="1604350602549" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1070,6 +670,36 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/search/SearchPresenter.kt</url>
           <line>50</line>
           <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/BaseFragment.kt</url>
+          <line>111</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/BaseFragment.kt</url>
+          <line>109</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/printToPdf/PrintToPdfPresenter.kt</url>
+          <line>51</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/printToPdf/PrintToPdfPresenter.kt</url>
+          <line>56</line>
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/printToPdf/PrintToPdfPresenter.kt</url>
+          <line>58</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/printToPdf/PrintToPdfPresenter.kt</url>
+          <line>71</line>
+          <option name="timeStamp" value="85" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -13,6 +13,7 @@ import gr.jkapsouras.butterfliesofgreece.fragments.families.families.FamiliesPre
 import gr.jkapsouras.butterfliesofgreece.fragments.families.main.MenuPresenter
 import gr.jkapsouras.butterfliesofgreece.fragments.families.modal.ModalPresenter
 import gr.jkapsouras.butterfliesofgreece.fragments.families.photos.PhotosPresenter
+import gr.jkapsouras.butterfliesofgreece.fragments.families.printToPdf.PrintToPdfPresenter
 import gr.jkapsouras.butterfliesofgreece.fragments.families.search.SearchPresenter
 import gr.jkapsouras.butterfliesofgreece.fragments.families.species.SpeciesPresenter
 import gr.jkapsouras.butterfliesofgreece.managers.CacheManager
@@ -76,12 +77,14 @@ fun registerPresenters(module: Module){
     module.factory{ SpeciesPresenter(
         speciesRepository = get(),
         navigationRepository = get(),
+        photosToPrintRepository = get(),
         backgroundThreadScheduler = get(),
         mainThreadScheduler =  get()
     ) }
     module.factory{ PhotosPresenter(
         photosRepository = get(),
         navigationRepository = get(),
+        photosToPrintRepository = get(),
         backgroundThreadScheduler = get(),
         mainThreadScheduler =  get()
     ) }
@@ -93,6 +96,12 @@ fun registerPresenters(module: Module){
     ) }
     module.factory{ ModalPresenter(
         photosRepository = get(),
+        navigationRepository = get(),
+        backgroundThreadScheduler = get(),
+        mainThreadScheduler =  get()
+    ) }
+    module.factory{ PrintToPdfPresenter(
+        photosToPrintRepository = get(),
         navigationRepository = get(),
         backgroundThreadScheduler = get(),
         mainThreadScheduler =  get()

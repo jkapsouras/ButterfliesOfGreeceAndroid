@@ -1,5 +1,6 @@
 package gr.jkapsouras.butterfliesofgreece.views.photosTableView.adapter
 
+import android.content.res.Resources
 import android.util.Log
 import android.view.View
 import androidx.constraintlayout.widget.Constraints
@@ -13,6 +14,7 @@ import gr.jkapsouras.butterfliesofgreece.dto.Family
 import gr.jkapsouras.butterfliesofgreece.dto.Specie
 import gr.jkapsouras.butterfliesofgreece.fragments.families.families.uiEvents.FamilyEvents
 import gr.jkapsouras.butterfliesofgreece.fragments.families.photos.uiEvents.PhotosEvents
+import gr.jkapsouras.butterfliesofgreece.fragments.families.printToPdf.uiEvents.PrintToPdfEvents
 import gr.jkapsouras.butterfliesofgreece.fragments.families.search.uiEvents.SearchEvents
 import gr.jkapsouras.butterfliesofgreece.fragments.families.species.uiEvents.SpeciesEvents
 import io.reactivex.rxjava3.subjects.PublishSubject
@@ -38,7 +40,7 @@ class PhotosTableViewCell(itemView: View, private val emitter: PublishSubject<Ui
                 ShowingStep.Species ->
                     if (fromSearch) {
                         Log.println(Log.INFO, "", "search clicked")
-                         emitter.onNext(SearchEvents.SpecieClicked(specie = this.specie))
+                        emitter.onNext(SearchEvents.SpecieClicked(specie = this.specie))
                     } else {
                         emitter.onNext(SpeciesEvents.SpecieClicked(specieId))
                     }
@@ -56,10 +58,8 @@ class PhotosTableViewCell(itemView: View, private val emitter: PublishSubject<Ui
                     emitter.onNext(SpeciesEvents.AddPhotosForPrintClicked(specieId))
                 ShowingStep.Photos ->
                     emitter.onNext(PhotosEvents.AddPhotoForPrintClicked(photoId))
-//                     case .photosToPrint:
-//                     if let photo = photo{
-//                         emitter.onNext(PrintToPdfEvents.delete(photo: photo))
-//                     }
+                ShowingStep.PhotosToPrint ->
+                    emitter.onNext(PrintToPdfEvents.Delete(photo = photo!!))
             }
             Log.d(Constraints.TAG, "field clicked")
         }
@@ -149,5 +149,7 @@ class PhotosTableViewCell(itemView: View, private val emitter: PublishSubject<Ui
                 )
             )
         }
+        var x = R.drawable.plus_icon
+        itemView.iv_add_image_row_table.setImageResource(if (showingStep == ShowingStep.Photos)  R.drawable.plus_icon else R.drawable.minus_icon)
     }
 }

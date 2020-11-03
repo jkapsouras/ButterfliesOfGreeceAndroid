@@ -2,6 +2,7 @@ package gr.jkapsouras.butterfliesofgreece.repositories
 
 import gr.jkapsouras.butterfliesofgreece.data.Storage
 import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
+import gr.jkapsouras.butterfliesofgreece.fragments.families.printToPdf.state.PdfArrange
 import gr.jkapsouras.butterfliesofgreece.managers.ICacheManager
 import io.reactivex.rxjava3.core.Observable
 
@@ -24,12 +25,12 @@ private val cacheManager: ICacheManager){
         return cacheManager.clear()
     }
 
-//    func getPdfArrange() -> Observable<PdfArrange>{
-//        return Observable.from(optional: storage.getPdfArrange())
-//    }
-//
-//    func setPdfArrange(pdfArrange:PdfArrange) -> Observable<Bool>{
-//        return storage.setPdfArrange(pdfArrange: pdfArrange)
-//    }
+    fun getPdfArrange() : Observable<PdfArrange>{
+        return Observable.just(storage.getPdfArrange())
+    }
+
+    fun setPdfArrange(pdfArrange:PdfArrange) : Observable<Boolean>{
+        return storage.setPdfArrange(pdfArrange = pdfArrange)
+    }
 
 }

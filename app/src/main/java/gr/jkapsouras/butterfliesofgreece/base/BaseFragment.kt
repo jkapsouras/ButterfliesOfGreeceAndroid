@@ -15,6 +15,7 @@ import gr.jkapsouras.butterfliesofgreece.fragments.families.families.viewStates.
 import gr.jkapsouras.butterfliesofgreece.fragments.families.main.ViewStates.MenuViewStates
 import gr.jkapsouras.butterfliesofgreece.fragments.families.modal.viewStates.ModalViewStates
 import gr.jkapsouras.butterfliesofgreece.fragments.families.photos.viewStates.PhotosViewStates
+import gr.jkapsouras.butterfliesofgreece.fragments.families.printToPdf.viewStates.PrintToPdfViewStates
 import gr.jkapsouras.butterfliesofgreece.fragments.families.search.viewStates.SearchViewStates
 import gr.jkapsouras.butterfliesofgreece.fragments.families.species.viewStates.SpeciesViewStates
 import gr.jkapsouras.butterfliesofgreece.views.header.uiEvents.HeaderViewEvents
@@ -102,6 +103,16 @@ abstract  class BaseFragment<P : BasePresenter> : Fragment(){
                                 findNavController().navigate(R.id.navigate_to_search_from_photos)
                         }
                     }
+                    is HeaderViewViewStates.ToPrintPhotos ->{
+                        when(viewState.from){
+                            FromFragment.Families ->
+                                findNavController().navigate(R.id.navigate_to_print_from_families)
+                            FromFragment.Species ->
+                                findNavController().navigate(R.id.navigate_to_print_from_species)
+                            FromFragment.Photos ->
+                                findNavController().navigate(R.id.navigate_to_print_from_photos)
+                        }
+                    }
                 }
             }
             is MenuViewStates -> {
@@ -128,6 +139,12 @@ abstract  class BaseFragment<P : BasePresenter> : Fragment(){
             is ModalViewStates -> {
                 when (viewState) {
                     is ModalViewStates.CloseModal ->
+                        findNavController().navigateUp()
+                }
+            }
+            is PrintToPdfViewStates ->{
+                when(viewState){
+                    is PrintToPdfViewStates.AllPhotosDeleted->
                         findNavController().navigateUp()
                 }
             }

@@ -79,4 +79,12 @@ class PhotosTableView  @JvmOverloads constructor(
         source.setShowingStep( ShowingStep.Photos)
         source.notifyDataSetChanged()
     }
+
+    fun showPhotosToPrint(photos: List<ButterflyPhoto>){
+        rv_photos_table.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        rv_photos_table.adapter = source
+        source.setPhotos(photos)
+        source.setShowingStep( ShowingStep.PhotosToPrint)
+        source.notifyDataSetChanged()
+    }
 }

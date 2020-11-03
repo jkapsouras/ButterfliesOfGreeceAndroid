@@ -24,6 +24,9 @@
         <action
             android:id="@+id/navigate_to_search_from_families"
             app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/navigate_to_print_from_families"
+            app:destination="@id/printToPdfFragment" />
     </fragment>
     <fragment
         android:id="@+id/speciesFragment"
@@ -35,6 +38,9 @@
         <action
             android:id="@+id/navigate_to_search_from_species"
             app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/navigate_to_print_from_species"
+            app:destination="@id/printToPdfFragment" />
     </fragment>
     <fragment
         android:id="@+id/photosFragment"
@@ -46,6 +52,9 @@
         <action
             android:id="@+id/navigate_to_modal"
             app:destination="@id/modalFragment" />
+        <action
+            android:id="@+id/navigate_to_print_from_photos"
+            app:destination="@id/printToPdfFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -58,4 +67,8 @@
     <fragment
         android:id="@+id/modalFragment"
         android:name="gr.jkapsouras.butterfliesofgreece.fragments.families.modal.ModalFragment" />
+    <fragment
+        android:id="@+id/printToPdfFragment"
+        android:name="gr.jkapsouras.butterfliesofgreece.fragments.families.printToPdf.PrintToPdfFragment"
+        android:label="PrintToPdfFragment" />
 </navigation>

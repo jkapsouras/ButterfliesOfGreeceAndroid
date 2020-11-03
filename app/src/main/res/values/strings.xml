@@ -11,4 +11,6 @@
     <string name="species">Species</string>
     <string name="photos">Photos</string>
     <string name="search">Search</string>
+    <string name="images">Images</string>
+    <style name="page">Page</style>
 </resources>

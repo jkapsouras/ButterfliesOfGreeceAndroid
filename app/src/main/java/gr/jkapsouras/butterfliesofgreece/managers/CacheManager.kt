@@ -55,12 +55,15 @@ class CacheManager(override val prefs: SharedPreferences) : ICacheManager{
 
     override fun delete(photo: ButterflyPhoto): Observable<List<ButterflyPhoto>> {
         return getPhotosToPrint()
-            .map{photos ->
-                photos.filter{ph ->
-                    !(ph.familyId == photo.familyId && ph.specieId == photo.specieId && ph.id == photo.id)}
+            .map { photos ->
+                photos.filter { ph ->
+                    !(ph.familyId == photo.familyId && ph.specieId == photo.specieId && ph.id == photo.id)
+                }
             }
-            .doOnNext {
-                savePhotosToPrint(it)
+            .flatMap { photos ->
+                savePhotosToPrint(photos).map {
+                    photos
+                }
             }
     }
 //    var contributionItems: String = "contributionItems"

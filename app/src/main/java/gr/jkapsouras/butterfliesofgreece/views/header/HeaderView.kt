@@ -37,7 +37,8 @@ class HeaderView  @JvmOverloads constructor(
     private fun viewEvents() : Observable<UiEvent>
     {
         return Observable.merge(bt_change_view_style.clicks().map{HeaderViewEvents.SwitchViewStyleClicked},
-            bt_search_species.clicks().map{HeaderViewEvents.SearchBarClicked})
+            bt_search_species.clicks().map{HeaderViewEvents.SearchBarClicked},
+            bt_show_added_photos.clicks().map{HeaderViewEvents.PrintPhotosClicked})
     }
 
     fun show()
