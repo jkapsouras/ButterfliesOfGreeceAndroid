@@ -23,9 +23,10 @@
     <style name="ContributeTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:fontFamily">@font/actypogrotesk</item>
         <item name="themeName">"ContributeTheme"</item>
-        <item name="background">@color/contribute</item>
-        <item name="colorPrimary">@color/contribute</item>
-        <item name="colorPrimaryDark">@color/contribute</item>
+        <item name="android:titleTextColor">@color/contribute_dark</item>
+        <item name="background">@color/contribute_dark</item>
+        <item name="colorPrimary">@color/contribute_dark</item>
+        <item name="colorPrimaryDark">@color/contribute_dark</item>
         <item name="colorAccent">@color/contribute_dark</item>
         <item name="colorControlNormal">@color/contribute_dark</item>
     </style>

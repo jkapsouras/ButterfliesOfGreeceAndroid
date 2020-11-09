@@ -1,5 +1,6 @@
 package gr.jkapsouras.butterfliesofgreece
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -36,6 +37,11 @@ class MainActivity : AppCompatActivity() {
             }
 
             when (destination.id){
+                R.id.contributeFragment -> {
+                    toolbar.context.setTheme(R.style.ContributeTheme)
+                    toolbar.setBackgroundColor(applicationContext.getColor(R.color.contribute))
+                    toolbar.setTitleTextColor(applicationContext.getColor(R.color.contribute_dark))
+                }
                 R.id.searchFragment ->
                     search_bar.visibility = View.VISIBLE
                 else ->
