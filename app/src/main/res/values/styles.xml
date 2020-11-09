@@ -1,11 +1,40 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:fontFamily">@font/actypogrotesk</item>
+        <!-- Customize your theme here.
+         <item name="android:fontFamily">@font/nunito</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorAccent</item>-->
+    </style>
+
+    <style name="FieldTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:fontFamily">@font/actypogrotesk</item>
+        <item name="themeName">"FieldTheme"</item>
+        <item name="background">@color/field</item>
+        <item name="colorPrimary">@color/field</item>
+        <item name="colorPrimaryDark">@color/field</item>
+        <item name="colorAccent">@color/field_dark</item>
+        <item name="colorControlNormal">@color/field_dark</item>
+    </style>
+
+    <style name="ContributeTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:fontFamily">@font/actypogrotesk</item>
+        <item name="themeName">"ContributeTheme"</item>
+        <item name="background">@color/contribute</item>
+        <item name="colorPrimary">@color/contribute</item>
+        <item name="colorPrimaryDark">@color/contribute</item>
+        <item name="colorAccent">@color/contribute_dark</item>
+        <item name="colorControlNormal">@color/contribute_dark</item>
+    </style>
+
+    <style name="SearchTheme" parent="Widget.AppCompat.SearchView.ActionBar">
+        <item name="android:textColor">@color/field_dark</item>
+        <item name="editTextColor">@color/field_dark</item>
+        <item name="android:textColorHint">@color/field_dark</item>
+        <item name="tint">@color/field_dark</item>
     </style>
 
 </resources>

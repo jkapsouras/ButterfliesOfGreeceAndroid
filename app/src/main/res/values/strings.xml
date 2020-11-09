@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Butterflies Of Greece</string>
+    <string name="field_photos">Photographs of the field</string>
+    <string name="introduction">Introduction</string>
+    <string name="about">About</string>
+    <string name="legal">Legal</string>
+    <string name="contribute">Contribute</string>
+    <string name="endangered">Endangered</string>
+    <string name="recognition">Butterflies recognition</string>
+    <string name="families">Families</string>
+    <string name="species">Species</string>
+    <string name="photos">Photos</string>
+    <string name="search">Search</string>
+    <string name="images">Images</string>
+    <string name="page">Page</string>
+    <string name="pdf_file">Pdf file</string>
 </resources>
