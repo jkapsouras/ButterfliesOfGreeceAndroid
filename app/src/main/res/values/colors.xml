@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="app_white">#ffffff</color>
     <color name="field">#e3e7f2</color>
     <color name="field_dark">#5e6ea2</color>
     <color name="introduction">#EBF4F6</color>

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="gr.jkapsouras.butterfliesofgreece">
 
-    <application
+   <application
         android:name=".base.ButterfliesApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +10,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
+       <provider
+           android:name="androidx.core.content.FileProvider"
+           android:authorities="gr.jkapsouras.butterfliesofgreece.fileprovider"
+           android:grantUriPermissions="true"
+           android:exported="false">
+           <meta-data
+               android:name="android.support.FILE_PROVIDER_PATHS"
+               android:resource="@xml/filepaths" />
+       </provider>
+       <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
             <intent-filter>

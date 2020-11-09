@@ -5,9 +5,54 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:Feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:Feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="efa0256b-32b0-4f2f-898e-86426287e8f4" name="Default Changelist" comment="various updates and startup scripts">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="efa0256b-32b0-4f2f-898e-86426287e8f4" name="Default Changelist" comment="add pdf previewer + pdf manager + export to pdf">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/FileSelectActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/previewer/PdfPreviewerFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/previewer/PdfPreviewerPresenter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/previewer/component/PdfPreviewComponent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/previewer/state/PdfPreviewerState.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/previewer/uiEvents/PdfPreviewerEvents.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/previewer/viewStates/PdfPreviewerViewStates.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/PdfManager.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/share_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/pdf_previewer_fragment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/filepaths.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
@@ -19,16 +64,31 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_2_0_2_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_solver_2_0_2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/ButterfliesOfGreeceAndroid.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/ButterfliesOfGreeceAndroid.app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/navEditor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/navEditor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/BaseFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/BaseFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/BasePresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/BasePresenter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/di/dependencyModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/di/dependencyModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/printToPdf/state/PrintToPdfState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/printToPdf/state/PrintToPdfState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[3cd4796c23b9]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -37,14 +97,65 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ButterfliesOfGreeceAndroid" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ButterfliesOfGreeceAndroid" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ButterfliesOfGreeceAndroid" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ButterfliesOfGreeceAndroid" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ButterfliesOfGreeceAndroid" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="android" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Kotlin Object" />
+        <option value="Kotlin Interface" />
+        <option value="layoutResourceFile" />
+        <option value="Kotlin File" />
+        <option value="resourceFile" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Feature/MainScreenNavigation" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -58,10 +169,50 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="my_device" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-10-31T14:38:42.921Z" />
+    <property name="ResourceManagerPrefKey.ResourceType" value="DRAWABLE" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="android-custom-view/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/header/HeaderView.kt_SELECTED" value="HeaderView" />
+    <property name="android-custom-view/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/headerPrintToPdfView/HeaderPrintToPdfView.kt_SELECTED" value="HeaderPrintToPdfView" />
+    <property name="android-custom-view/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosCollectionView/PhotosCollectionView.kt_SELECTED" value="PhotosCollectionView" />
+    <property name="android-custom-view/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosTableView/PhotosTableView.kt_SELECTED" value="PhotosTableView" />
+    <property name="android-custom-view/Users/jkapsi/Projects/butterfliesandroid/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/header/HeaderView.kt_SELECTED" value="HeaderView" />
+    <property name="android-custom-view/Users/jkapsi/Projects/butterfliesandroid/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosCollectionView/PhotosCollectionView.kt_SELECTED" value="PhotosCollectionView" />
+    <property name="android-custom-view/Users/jkapsi/Projects/butterfliesandroid/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosTableView/PhotosTableView.kt_SELECTED" value="PhotosTableView" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/font" />
+    <property name="multi-representation-preview/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/header/HeaderView.kt_selected" value="Custom views" />
+    <property name="multi-representation-preview/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/headerPrintToPdfView/HeaderPrintToPdfView.kt_selected" value="Custom views" />
+    <property name="multi-representation-preview/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosCollectionView/PhotosCollectionView.kt_selected" value="Custom views" />
+    <property name="multi-representation-preview/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosTableView/PhotosTableView.kt_selected" value="Custom views" />
+    <property name="multi-representation-preview/Users/jkapsi/Projects/butterfliesandroid/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/header/HeaderView.kt_selected" value="Custom views" />
+    <property name="multi-representation-preview/Users/jkapsi/Projects/butterfliesandroid/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosCollectionView/PhotosCollectionView.kt_selected" value="Custom views" />
+    <property name="multi-representation-preview/Users/jkapsi/Projects/butterfliesandroid/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosTableView/PhotosTableView.kt_selected" value="Custom views" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager">
+  <component name="PsdUISettings">
+    <option name="MODULE_TAB" value="Default Config" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/printToPdf/state" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/families" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/header" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="gr.jkapsouras.butterfliesofgreece.views.header.UiEvents" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="gr.jkapsouras.butterfliesofgreece" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/font" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android App.app">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -69,7 +220,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="ButterfliesOfGreeceAndroid.app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -126,6 +277,30 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ButterfliesOfGreeceAndroid:app [androidDependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="androidDependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.ButterfliesOfGreeceAndroid:app [androidDependencies]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -145,23 +320,295 @@
       <option name="project" value="LOCAL" />
       <updated>1601738033530</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="clean branch">
+      <created>1603547619785</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603547619785</updated>
+    </task>
+    <task id="LOCAL-00003" summary="start of navigation repository + families view states">
+      <created>1603561693357</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603561693357</updated>
+    </task>
+    <task id="LOCAL-00004" summary="expand families presenter + add photo table view">
+      <created>1603638726589</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1603638726589</updated>
+    </task>
+    <task id="LOCAL-00005" summary="make connection between families and table">
+      <created>1603648006579</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1603648006579</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add header view + header component + switch arrange event">
+      <created>1603663748552</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1603663748552</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add collection + various fixes">
+      <created>1603782802591</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1603782802591</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add emitter to collection view">
+      <created>1603832033708</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1603832033708</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add species but species presenter">
+      <created>1603835858269</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1603835858269</updated>
+    </task>
+    <task id="LOCAL-00010" summary="species presenter + basic flow in species fragment">
+      <created>1603887007795</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1603887007795</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add photos repository + fragment + components + states + events + presenter">
+      <created>1603901172754</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1603901172754</updated>
+    </task>
+    <task id="LOCAL-00012" summary="git lfs added">
+      <created>1603902674066</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1603902674066</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add small thumbnails">
+      <created>1603903302961</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1603903302961</updated>
+    </task>
+    <task id="LOCAL-00014" summary="add big thumbnails">
+      <created>1603904400398</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1603904400398</updated>
+    </task>
+    <task id="LOCAL-00015" summary="add font">
+      <created>1603905408272</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1603905408272</updated>
+    </task>
+    <task id="LOCAL-00016" summary="implement search presenter + components + fragment">
+      <created>1604228068461</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1604228068461</updated>
+    </task>
+    <task id="LOCAL-00017" summary="implement modal presenter + components + fragment (no pinch to zoom)">
+      <created>1604310434918</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1604310434918</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add print to pdf header events (delete all + spinner item selected)">
+      <created>1604400514283</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1604400514283</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="various updates and startup scripts" />
-    <option name="LAST_COMMIT_MESSAGE" value="various updates and startup scripts" />
+    <MESSAGE value="clean branch" />
+    <MESSAGE value="start of navigation repository + families view states" />
+    <MESSAGE value="expand families presenter + add photo table view" />
+    <MESSAGE value="make connection between families and table" />
+    <MESSAGE value="add header view + header component + switch arrange event" />
+    <MESSAGE value="add collection + various fixes" />
+    <MESSAGE value="add emitter to collection view" />
+    <MESSAGE value="add species but species presenter" />
+    <MESSAGE value="species presenter + basic flow in species fragment" />
+    <MESSAGE value="add photos repository + fragment + components + states + events + presenter" />
+    <MESSAGE value="git lfs added" />
+    <MESSAGE value="add small thumbnails" />
+    <MESSAGE value="add big thumbnails" />
+    <MESSAGE value="add font" />
+    <MESSAGE value="add cache manager + photostoprintrepository" />
+    <MESSAGE value="implement search presenter + components + fragment" />
+    <MESSAGE value="implement modal presenter + components + fragment (no pinch to zoom)" />
+    <MESSAGE value="print to pdf framgent / presenter / components + some of the events + add photos to print from all possible fragments" />
+    <MESSAGE value="add print to pdf header events (delete all + spinner item selected)" />
+    <MESSAGE value="add pdf previewer + pdf manager + export to pdf" />
+    <option name="LAST_COMMIT_MESSAGE" value="add pdf previewer + pdf manager + export to pdf" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="518" y="130" key="CommitChangelistDialog2" timestamp="1603547507559">
+    <state x="556" y="324" key="#PSD" timestamp="1604567229996">
+      <screen x="0" y="23" width="2560" height="1335" />
+    </state>
+    <state x="365" y="238" key="#PSD/0.23.1680.954@0.23.1680.954" timestamp="1603653329284" />
+    <state x="556" y="324" key="#PSD/0.23.2560.1335@0.23.2560.1335" timestamp="1604567229996" />
+    <state x="961" y="289" key="#app" timestamp="1603959045822">
+      <screen x="0" y="23" width="2560" height="1335" />
+    </state>
+    <state x="961" y="289" key="#app/0.23.2560.1335@0.23.2560.1335" timestamp="1603959045822" />
+    <state x="463" y="216" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603959054899">
+      <screen x="0" y="23" width="2560" height="1335" />
+    </state>
+    <state x="304" y="161" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.954@0.23.1680.954" timestamp="1603653268675" />
+    <state x="463" y="216" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2560.1335@0.23.2560.1335" timestamp="1603959054899" />
+    <state x="943" y="302" key="#com.intellij.ide.util.MemberChooser" timestamp="1604267222652">
+      <screen x="0" y="23" width="2560" height="1335" />
+    </state>
+    <state x="619" y="222" key="#com.intellij.ide.util.MemberChooser/0.23.1680.953@0.23.1680.953" timestamp="1603907538137" />
+    <state x="619" y="222" key="#com.intellij.ide.util.MemberChooser/0.23.1680.954@0.23.1680.954" timestamp="1603832556454" />
+    <state x="943" y="302" key="#com.intellij.ide.util.MemberChooser/0.23.2560.1335@0.23.2560.1335" timestamp="1604267222652" />
+    <state x="328" y="595" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1604254791796">
+      <screen x="0" y="23" width="2560" height="1335" />
+    </state>
+    <state x="215" y="431" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.23.1680.953@0.23.1680.953" timestamp="1603907203576" />
+    <state x="328" y="595" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.23.2560.1335@0.23.2560.1335" timestamp="1604254791796" />
+    <state x="577" y="388" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1603549483576">
       <screen x="0" y="23" width="1680" height="953" />
     </state>
-    <state x="518" y="130" key="CommitChangelistDialog2/0.23.1680.953@0.23.1680.953" timestamp="1603547507559" />
-    <state x="790" y="292" key="CommitChangelistDialog2/0.23.2560.1333@0.23.2560.1333" timestamp="1601738033254" />
-    <state x="428" y="249" key="IDE.errors.dialog" timestamp="1603547488919">
+    <state x="577" y="388" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.23.1680.953@0.23.1680.953" timestamp="1603549483575" />
+    <state x="542" y="298" width="602" height="403" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1603548189004">
       <screen x="0" y="23" width="1680" height="953" />
+    </state>
+    <state x="542" y="298" width="602" height="403" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.23.1680.953@0.23.1680.953" timestamp="1603548189004" />
+    <state x="652" y="380" key="AndroidCreateResourceDirectoryDialog" timestamp="1603984584110">
+      <screen x="0" y="23" width="2560" height="1335" />
+    </state>
+    <state x="428" y="278" key="AndroidCreateResourceDirectoryDialog/0.23.1680.953@0.23.1680.953" timestamp="1603904673945" />
+    <state x="652" y="380" key="AndroidCreateResourceDirectoryDialog/0.23.2560.1335@0.23.2560.1335" timestamp="1603984584110" />
+    <state x="652" y="380" key="AndroidCreateResourceFileDialog" timestamp="1604254988744">
+      <screen x="0" y="23" width="2560" height="1335" />
+    </state>
+    <state x="428" y="278" key="AndroidCreateResourceFileDialog/0.23.1680.953@0.23.1680.953" timestamp="1603873235308" />
+    <state x="652" y="380" key="AndroidCreateResourceFileDialog/0.23.2560.1335@0.23.2560.1335" timestamp="1604254988744" />
+    <state x="609" y="253" key="AndroidProcessChooserDialog" timestamp="1603657995945">
+      <screen x="0" y="23" width="1680" height="954" />
+    </state>
+    <state x="609" y="253" key="AndroidProcessChooserDialog/0.23.1680.954@0.23.1680.954" timestamp="1603657995945" />
+    <state x="335" y="167" key="CommitChangelistDialog2" timestamp="1604910414999">
+      <screen x="0" y="23" width="2560" height="1335" />
+    </state>
+    <state x="220" y="126" key="CommitChangelistDialog2/0.23.1680.953@0.23.1680.953" timestamp="1603782805857" />
+    <state x="518" y="130" key="CommitChangelistDialog2/0.23.1680.954@0.23.1680.954" timestamp="1603663747709" />
+    <state x="790" y="292" key="CommitChangelistDialog2/0.23.2560.1333@0.23.2560.1333" timestamp="1601738033254" />
+    <state x="335" y="167" key="CommitChangelistDialog2/0.23.2560.1335@0.23.2560.1335" timestamp="1604910414999" />
+    <state width="755" height="650" key="DebuggerActiveHint" timestamp="1604763135828">
+      <screen x="0" y="23" width="2560" height="1335" />
+    </state>
+    <state width="495" height="463" key="DebuggerActiveHint/0.23.1680.953@0.23.1680.953" timestamp="1603886790782" />
+    <state width="495" height="464" key="DebuggerActiveHint/0.23.1680.954@0.23.1680.954" timestamp="1603912748277" />
+    <state width="495" height="466" key="DebuggerActiveHint/0.23.1680.960@0.23.1680.960" timestamp="1603811306172" />
+    <state width="755" height="650" key="DebuggerActiveHint/0.23.2560.1335@0.23.2560.1335" timestamp="1604763135828" />
+    <state width="1259" height="378" key="GridCell.Tab.0.bottom" timestamp="1604910063429">
+      <screen x="0" y="23" width="2560" height="1335" />
+    </state>
+    <state width="819" height="244" key="GridCell.Tab.0.bottom/0.23.1680.953@0.23.1680.953" timestamp="1603922214093" />
+    <state width="819" height="244" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1603913186769" />
+    <state width="1638" height="244" key="GridCell.Tab.0.bottom/0.23.1680.960@0.23.1680.960" timestamp="1603814191961" />
+    <state width="1638" height="246" key="GridCell.Tab.0.bottom/0.23.1680.961@0.23.1680.961" timestamp="1603747692750" />
+    <state width="1259" height="378" key="GridCell.Tab.0.bottom/0.23.2560.1335@0.23.2560.1335" timestamp="1604910063429" />
+    <state width="1259" height="378" key="GridCell.Tab.0.center" timestamp="1604910063428">
+      <screen x="0" y="23" width="2560" height="1335" />
+    </state>
+    <state width="819" height="244" key="GridCell.Tab.0.center/0.23.1680.953@0.23.1680.953" timestamp="1603922214093" />
+    <state width="819" height="244" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1603913186767" />
+    <state width="1638" height="244" key="GridCell.Tab.0.center/0.23.1680.960@0.23.1680.960" timestamp="1603814191960" />
+    <state width="1638" height="246" key="GridCell.Tab.0.center/0.23.1680.961@0.23.1680.961" timestamp="1603747692749" />
+    <state width="1259" height="378" key="GridCell.Tab.0.center/0.23.2560.1335@0.23.2560.1335" timestamp="1604910063428" />
+    <state width="1259" height="378" key="GridCell.Tab.0.left" timestamp="1604910063428">
+      <screen x="0" y="23" width="2560" height="1335" />
+    </state>
+    <state width="819" height="244" key="GridCell.Tab.0.left/0.23.1680.953@0.23.1680.953" timestamp="1603922214092" />
+    <state width="819" height="244" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1603913186766" />
+    <state width="1638" height="244" key="GridCell.Tab.0.left/0.23.1680.960@0.23.1680.960" timestamp="1603814191959" />
+    <state width="1638" height="246" key="GridCell.Tab.0.left/0.23.1680.961@0.23.1680.961" timestamp="1603747692749" />
+    <state width="1259" height="378" key="GridCell.Tab.0.left/0.23.2560.1335@0.23.2560.1335" timestamp="1604910063428" />
+    <state width="1259" height="378" key="GridCell.Tab.0.right" timestamp="1604910063429">
+      <screen x="0" y="23" width="2560" height="1335" />
+    </state>
+    <state width="819" height="244" key="GridCell.Tab.0.right/0.23.1680.953@0.23.1680.953" timestamp="1603922214093" />
+    <state width="819" height="244" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1603913186768" />
+    <state width="1638" height="244" key="GridCell.Tab.0.right/0.23.1680.960@0.23.1680.960" timestamp="1603814191960" />
+    <state width="1638" height="246" key="GridCell.Tab.0.right/0.23.1680.961@0.23.1680.961" timestamp="1603747692750" />
+    <state width="1259" height="378" key="GridCell.Tab.0.right/0.23.2560.1335@0.23.2560.1335" timestamp="1604910063429" />
+    <state width="1259" height="466" key="GridCell.Tab.1.bottom" timestamp="1604874757399">
+      <screen x="0" y="23" width="2560" height="1335" />
+    </state>
+    <state width="819" height="244" key="GridCell.Tab.1.bottom/0.23.1680.953@0.23.1680.953" timestamp="1603922214094" />
+    <state width="819" height="244" key="GridCell.Tab.1.bottom/0.23.1680.954@0.23.1680.954" timestamp="1603913208918" />
+    <state width="1638" height="244" key="GridCell.Tab.1.bottom/0.23.1680.960@0.23.1680.960" timestamp="1603814191962" />
+    <state width="1638" height="256" key="GridCell.Tab.1.bottom/0.23.1680.961@0.23.1680.961" timestamp="1603747337854" />
+    <state width="1259" height="466" key="GridCell.Tab.1.bottom/0.23.2560.1335@0.23.2560.1335" timestamp="1604874757399" />
+    <state width="1259" height="466" key="GridCell.Tab.1.center" timestamp="1604874757399">
+      <screen x="0" y="23" width="2560" height="1335" />
+    </state>
+    <state width="819" height="244" key="GridCell.Tab.1.center/0.23.1680.953@0.23.1680.953" timestamp="1603922214094" />
+    <state width="819" height="244" key="GridCell.Tab.1.center/0.23.1680.954@0.23.1680.954" timestamp="1603913208918" />
+    <state width="1638" height="244" key="GridCell.Tab.1.center/0.23.1680.960@0.23.1680.960" timestamp="1603814191961" />
+    <state width="1638" height="256" key="GridCell.Tab.1.center/0.23.1680.961@0.23.1680.961" timestamp="1603747337853" />
+    <state width="1259" height="466" key="GridCell.Tab.1.center/0.23.2560.1335@0.23.2560.1335" timestamp="1604874757399" />
+    <state width="1259" height="466" key="GridCell.Tab.1.left" timestamp="1604874757399">
+      <screen x="0" y="23" width="2560" height="1335" />
+    </state>
+    <state width="819" height="244" key="GridCell.Tab.1.left/0.23.1680.953@0.23.1680.953" timestamp="1603922214093" />
+    <state width="819" height="244" key="GridCell.Tab.1.left/0.23.1680.954@0.23.1680.954" timestamp="1603913208917" />
+    <state width="1638" height="244" key="GridCell.Tab.1.left/0.23.1680.960@0.23.1680.960" timestamp="1603814191961" />
+    <state width="1638" height="256" key="GridCell.Tab.1.left/0.23.1680.961@0.23.1680.961" timestamp="1603747337853" />
+    <state width="1259" height="466" key="GridCell.Tab.1.left/0.23.2560.1335@0.23.2560.1335" timestamp="1604874757399" />
+    <state width="1259" height="466" key="GridCell.Tab.1.right" timestamp="1604874757399">
+      <screen x="0" y="23" width="2560" height="1335" />
+    </state>
+    <state width="819" height="244" key="GridCell.Tab.1.right/0.23.1680.953@0.23.1680.953" timestamp="1603922214094" />
+    <state width="819" height="244" key="GridCell.Tab.1.right/0.23.1680.954@0.23.1680.954" timestamp="1603913208918" />
+    <state width="1638" height="244" key="GridCell.Tab.1.right/0.23.1680.960@0.23.1680.960" timestamp="1603814191962" />
+    <state width="1638" height="256" key="GridCell.Tab.1.right/0.23.1680.961@0.23.1680.961" timestamp="1603747337853" />
+    <state width="1259" height="466" key="GridCell.Tab.1.right/0.23.2560.1335@0.23.2560.1335" timestamp="1604874757399" />
+    <state x="652" y="340" key="IDE.errors.dialog" timestamp="1604771410012">
+      <screen x="0" y="23" width="2560" height="1335" />
     </state>
     <state x="428" y="249" key="IDE.errors.dialog/0.23.1680.953@0.23.1680.953" timestamp="1603547488919" />
+    <state x="652" y="340" key="IDE.errors.dialog/0.23.2560.1335@0.23.2560.1335" timestamp="1604771410012" />
     <state x="168" y="107" key="MergeDialog" timestamp="1603547238383">
       <screen x="0" y="23" width="1680" height="953" />
     </state>
@@ -170,10 +617,17 @@
       <screen x="0" y="23" width="2560" height="1333" />
     </state>
     <state x="781" y="343" key="SettingsEditor/0.23.2560.1333@0.23.2560.1333" timestamp="1601723933280" />
-    <state x="880" y="429" key="Vcs.Push.Dialog.v2" timestamp="1601738044551">
-      <screen x="0" y="23" width="2560" height="1333" />
+    <state x="881" y="429" key="Vcs.Push.Dialog.v2" timestamp="1604310439685">
+      <screen x="0" y="23" width="2560" height="1335" />
     </state>
+    <state x="578" y="313" key="Vcs.Push.Dialog.v2/0.23.1680.953@0.23.1680.953" timestamp="1603905486387" />
+    <state x="578" y="313" key="Vcs.Push.Dialog.v2/0.23.1680.954@0.23.1680.954" timestamp="1603663752065" />
     <state x="880" y="429" key="Vcs.Push.Dialog.v2/0.23.2560.1333@0.23.2560.1333" timestamp="1601738044551" />
+    <state x="881" y="429" key="Vcs.Push.Dialog.v2/0.23.2560.1335@0.23.2560.1335" timestamp="1604310439685" />
+    <state x="100" y="157" width="1480" height="719" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1603911150763">
+      <screen x="0" y="23" width="1680" height="953" />
+    </state>
+    <state x="100" y="157" width="1480" height="719" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1680.953@0.23.1680.953" timestamp="1603911150763" />
     <state x="950" y="537" key="com.intellij.ide.util.TipDialog" timestamp="1601721672960">
       <screen x="0" y="23" width="2560" height="1333" />
     </state>
@@ -183,9 +637,82 @@
     </state>
     <state x="696" y="445" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1680.953@0.23.1680.953" timestamp="1603547212069" />
     <state x="1060" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.2560.1333@0.23.2560.1333" timestamp="1601738259179" />
+    <state x="811" y="194" width="1117" height="1026" key="find.popup" timestamp="1604350440360">
+      <screen x="0" y="23" width="2560" height="1335" />
+    </state>
+    <state x="532" y="145" width="733" height="732" key="find.popup/0.23.1680.953@0.23.1680.953" timestamp="1603910063572" />
+    <state x="532" y="145" width="733" height="733" key="find.popup/0.23.1680.954@0.23.1680.954" timestamp="1603832735644" />
+    <state x="532" y="146" width="615" height="735" key="find.popup/0.23.1680.958@0.23.1680.958" timestamp="1603740808997" />
+    <state x="532" y="146" width="733" height="738" key="find.popup/0.23.1680.961@0.23.1680.961" timestamp="1603747379502" />
+    <state x="811" y="194" width="1117" height="1026" key="find.popup/0.23.2560.1335@0.23.2560.1335" timestamp="1604350440360" />
     <state x="951" y="488" key="git4idea.merge.GitMergeDialog" timestamp="1601738152953">
       <screen x="0" y="23" width="2560" height="1333" />
     </state>
     <state x="951" y="488" key="git4idea.merge.GitMergeDialog/0.23.2560.1333@0.23.2560.1333" timestamp="1601738152953" />
+    <state x="946" y="325" key="run.anything.popup" timestamp="1604395578157">
+      <screen x="0" y="23" width="2560" height="1335" />
+    </state>
+    <state x="946" y="325" key="run.anything.popup/0.23.2560.1335@0.23.2560.1335" timestamp="1604395578157" />
+    <state x="770" y="351" width="1021" height="947" key="search.everywhere.popup" timestamp="1604350602549">
+      <screen x="0" y="23" width="2560" height="1335" />
+    </state>
+    <state x="505" y="257" width="670" height="676" key="search.everywhere.popup/0.23.1680.953@0.23.1680.953" timestamp="1603896821109" />
+    <state x="770" y="351" width="1021" height="947" key="search.everywhere.popup/0.23.2560.1335@0.23.2560.1335" timestamp="1604350602549" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/CacheManager.kt</url>
+          <line>33</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/search/SearchPresenter.kt</url>
+          <line>52</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/search/SearchPresenter.kt</url>
+          <line>54</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/search/SearchPresenter.kt</url>
+          <line>50</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/BaseFragment.kt</url>
+          <line>112</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/BaseFragment.kt</url>
+          <line>110</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/printToPdf/PrintToPdfPresenter.kt</url>
+          <line>51</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/printToPdf/PrintToPdfPresenter.kt</url>
+          <line>71</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/previewer/component/PdfPreviewComponent.kt</url>
+          <line>60</line>
+          <option name="timeStamp" value="114" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/PdfManager.kt</url>
+          <line>111</line>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

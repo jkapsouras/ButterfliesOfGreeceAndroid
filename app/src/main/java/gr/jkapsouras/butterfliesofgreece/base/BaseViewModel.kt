@@ -1,7 +1,5 @@
 package gr.jkapsouras.butterfliesofgreece.base
 
-import gr.jkapsouras.butterfliesofgreece.main.ViewStates.MenuViewStates
-
 //import androidx.lifecycle.ViewModel
 //import androidx.lifecycle.viewModelScope
 //import kotlinx.coroutines.channels.Channel
