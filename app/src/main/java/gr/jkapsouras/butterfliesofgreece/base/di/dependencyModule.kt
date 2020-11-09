@@ -13,6 +13,7 @@ import gr.jkapsouras.butterfliesofgreece.fragments.families.families.FamiliesPre
 import gr.jkapsouras.butterfliesofgreece.fragments.families.main.MenuPresenter
 import gr.jkapsouras.butterfliesofgreece.fragments.families.modal.ModalPresenter
 import gr.jkapsouras.butterfliesofgreece.fragments.families.photos.PhotosPresenter
+import gr.jkapsouras.butterfliesofgreece.fragments.families.previewer.PdfPreviewPresenter
 import gr.jkapsouras.butterfliesofgreece.fragments.families.printToPdf.PrintToPdfPresenter
 import gr.jkapsouras.butterfliesofgreece.fragments.families.search.SearchPresenter
 import gr.jkapsouras.butterfliesofgreece.fragments.families.species.SpeciesPresenter
@@ -103,6 +104,11 @@ fun registerPresenters(module: Module){
     module.factory{ PrintToPdfPresenter(
         photosToPrintRepository = get(),
         navigationRepository = get(),
+        backgroundThreadScheduler = get(),
+        mainThreadScheduler =  get()
+    ) }
+    module.factory{ PdfPreviewPresenter(
+        photosToPrintRepository = get(),
         backgroundThreadScheduler = get(),
         mainThreadScheduler =  get()
     ) }

@@ -146,6 +146,8 @@ abstract  class BaseFragment<P : BasePresenter> : Fragment(){
                 when(viewState){
                     is PrintToPdfViewStates.AllPhotosDeleted->
                         findNavController().navigateUp()
+                    is PrintToPdfViewStates.ToPrintPreview ->
+                        findNavController().navigate(R.id.navigate_to_previewer)
                 }
             }
         }

@@ -5,8 +5,8 @@ import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
 enum class PdfArrange(private val screenName: String){
     OnePerPage("1"),
     TwoPerPage("2"),
-    FourPerPage("3"),
-    SixPerPage("4");
+    FourPerPage("4"),
+    SixPerPage("6");
 
     override fun toString(): String {
         return screenName

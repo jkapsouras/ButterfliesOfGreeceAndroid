@@ -5,8 +5,9 @@ import gr.jkapsouras.butterfliesofgreece.base.schedulers.IMainThread
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.subjects.PublishSubject
 
-abstract class BasePresenter(private val backgroundThreadScheduler : IBackgroundThread,
-                             private val mainThreadScheduler:IMainThread) {
+abstract class BasePresenter(
+    internal val backgroundThreadScheduler : IBackgroundThread,
+    private val mainThreadScheduler:IMainThread) {
     lateinit var disposables: DisposablesWrapper
     protected val state: PublishSubject<ViewState> = PublishSubject.create<ViewState>()
     internal val emitter: PublishSubject<UiEvent> = PublishSubject.create<UiEvent>()

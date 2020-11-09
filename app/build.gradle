@@ -7,7 +7,7 @@ android {
     buildToolsVersion "29.0.3"
     defaultConfig {
         applicationId "gr.jkapsouras.butterfliesofgreece"
-        minSdkVersion 23
+        minSdkVersion 27
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -27,6 +27,11 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    aaptOptions
+            {
+                cruncherEnabled = false
+            }
 }
 
 allprojects {
@@ -49,7 +54,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.3.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
@@ -60,7 +65,7 @@ dependencies {
     implementation "org.koin:koin-androidx-viewmodel:$koin_version"
     implementation "org.koin:koin-androidx-fragment:$koin_version"
     implementation "org.koin:koin-androidx-ext:$koin_version"
-    implementation "androidx.constraintlayout:constraintlayout:2.0.2"
+    implementation "androidx.constraintlayout:constraintlayout:2.0.4"
     
 
     implementation 'com.github.reactivex:rxkotlin:3.0.1'
@@ -90,6 +95,7 @@ dependencies {
     implementation 'com.jakewharton.rxbinding4:rxbinding-viewpager2:4.0.0'
     implementation 'com.jakewharton.rxbinding4:rxbinding-material:4.0.0'
 
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
 
     def appCenterSdkVersion = '3.3.1'
     implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"

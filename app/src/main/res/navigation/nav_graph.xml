@@ -70,5 +70,13 @@
     <fragment
         android:id="@+id/printToPdfFragment"
         android:name="gr.jkapsouras.butterfliesofgreece.fragments.families.printToPdf.PrintToPdfFragment"
-        android:label="PrintToPdfFragment" />
+        android:label="PrintToPdfFragment" >
+        <action
+            android:id="@+id/navigate_to_previewer"
+            app:destination="@id/pdfPreviewerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pdfPreviewerFragment"
+        android:name="gr.jkapsouras.butterfliesofgreece.fragments.families.previewer.PdfPreviewerFragment"
+        android:label="@string/pdf_file" />
 </navigation>

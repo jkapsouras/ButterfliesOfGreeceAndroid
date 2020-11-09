@@ -12,5 +12,6 @@
     <string name="photos">Photos</string>
     <string name="search">Search</string>
     <string name="images">Images</string>
-    <style name="page">Page</style>
+    <string name="page">Page</string>
+    <string name="pdf_file">Pdf file</string>
 </resources>
