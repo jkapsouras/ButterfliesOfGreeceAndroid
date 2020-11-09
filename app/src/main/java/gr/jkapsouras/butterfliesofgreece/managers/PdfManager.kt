@@ -1,6 +1,5 @@
 package gr.jkapsouras.butterfliesofgreece.managers
 
-import android.app.Application
 import android.content.ContentValues.TAG
 import android.content.Context
 import android.graphics.Bitmap
@@ -9,14 +8,11 @@ import android.graphics.Paint
 import android.graphics.Rect
 import android.graphics.pdf.PdfDocument
 import android.graphics.pdf.PdfDocument.PageInfo
-import android.os.Environment
 import android.util.Log
 import android.view.View
 import gr.jkapsouras.butterfliesofgreece.R
 import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
-import gr.jkapsouras.butterfliesofgreece.fragments.families.printToPdf.state.PdfArrange
-import org.koin.dsl.koinApplication
-import java.io.ByteArrayOutputStream
+import gr.jkapsouras.butterfliesofgreece.fragments.printToPdf.state.PdfArrange
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException

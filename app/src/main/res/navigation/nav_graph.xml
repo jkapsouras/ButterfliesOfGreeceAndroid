@@ -6,17 +6,20 @@
     app:startDestination="@id/mainMenuFragment">
     <fragment
         android:id="@+id/mainMenuFragment"
-        android:name="gr.jkapsouras.butterfliesofgreece.fragments.families.main.MainMenuFragment"
+        android:name="gr.jkapsouras.butterfliesofgreece.fragments.main.MainMenuFragment"
         android:label="main_menu_fragment"
         tools:layout="@layout/main_menu_fragment" >
         <action
             android:id="@+id/navigate_to_families"
             app:destination="@id/familiesFragment"
             app:popUpTo="@id/mainMenuFragment" />
+        <action
+            android:id="@+id/navigate_to_contribute"
+            app:destination="@id/contributeFragment" />
     </fragment>
     <fragment
         android:id="@+id/familiesFragment"
-        android:name="gr.jkapsouras.butterfliesofgreece.fragments.families.families.FamiliesFragment"
+        android:name="gr.jkapsouras.butterfliesofgreece.fragments.families.FamiliesFragment"
         android:label="@string/field_photos" >
         <action
             android:id="@+id/navigate_to_species"
@@ -30,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/speciesFragment"
-        android:name="gr.jkapsouras.butterfliesofgreece.fragments.families.species.SpeciesFragment"
+        android:name="gr.jkapsouras.butterfliesofgreece.fragments.species.SpeciesFragment"
         android:label="@string/species" >
         <action
             android:id="@+id/navigate_to_photos"
@@ -44,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/photosFragment"
-        android:name="gr.jkapsouras.butterfliesofgreece.fragments.families.photos.PhotosFragment"
+        android:name="gr.jkapsouras.butterfliesofgreece.fragments.photos.PhotosFragment"
         android:label="@string/photos" >
         <action
             android:id="@+id/navigate_to_search_from_photos"
@@ -58,7 +61,7 @@
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="gr.jkapsouras.butterfliesofgreece.fragments.families.search.SearchFragment"
+        android:name="gr.jkapsouras.butterfliesofgreece.fragments.search.SearchFragment"
         android:label="@string/search" >
         <action
             android:id="@+id/navigate_to_species_from_search"
@@ -66,10 +69,10 @@
     </fragment>
     <fragment
         android:id="@+id/modalFragment"
-        android:name="gr.jkapsouras.butterfliesofgreece.fragments.families.modal.ModalFragment" />
+        android:name="gr.jkapsouras.butterfliesofgreece.fragments.modal.ModalFragment" />
     <fragment
         android:id="@+id/printToPdfFragment"
-        android:name="gr.jkapsouras.butterfliesofgreece.fragments.families.printToPdf.PrintToPdfFragment"
+        android:name="gr.jkapsouras.butterfliesofgreece.fragments.printToPdf.PrintToPdfFragment"
         android:label="PrintToPdfFragment" >
         <action
             android:id="@+id/navigate_to_previewer"
@@ -77,6 +80,10 @@
     </fragment>
     <fragment
         android:id="@+id/pdfPreviewerFragment"
-        android:name="gr.jkapsouras.butterfliesofgreece.fragments.families.previewer.PdfPreviewerFragment"
+        android:name="gr.jkapsouras.butterfliesofgreece.fragments.previewer.PdfPreviewerFragment"
         android:label="@string/pdf_file" />
+    <fragment
+        android:id="@+id/contributeFragment"
+        android:name="gr.jkapsouras.butterfliesofgreece.fragments.contribute.ContributeFragment"
+        android:label="@string/contribute" />
 </navigation>

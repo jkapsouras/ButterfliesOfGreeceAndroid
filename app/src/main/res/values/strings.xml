@@ -14,4 +14,15 @@
     <string name="images">Images</string>
     <string name="page">Page</string>
     <string name="pdf_file">Pdf file</string>
+    <string name="send_info">Share info with the author</string>
+    <string name="photo_name">Photo name</string>
+    <string name="date">Date</string>
+    <string name="altitude">Altitude</string>
+    <string name="place">Place</string>
+    <string name="longitude">Longitude</string>
+    <string name="latitude">Latitude</string>
+    <string name="stage">Stage</string>
+    <string name="genus_species">Genus species</string>
+    <string name="name_species">Name species</string>
+    <string name="comments">Comments</string>
 </resources>

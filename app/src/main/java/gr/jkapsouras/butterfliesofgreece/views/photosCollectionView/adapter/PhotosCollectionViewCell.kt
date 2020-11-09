@@ -13,13 +13,12 @@ import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
 import gr.jkapsouras.butterfliesofgreece.dto.Family
 import gr.jkapsouras.butterfliesofgreece.dto.Specie
-import gr.jkapsouras.butterfliesofgreece.fragments.families.families.uiEvents.FamilyEvents
-import gr.jkapsouras.butterfliesofgreece.fragments.families.photos.uiEvents.PhotosEvents
-import gr.jkapsouras.butterfliesofgreece.fragments.families.species.uiEvents.SpeciesEvents
+import gr.jkapsouras.butterfliesofgreece.fragments.families.uiEvents.FamilyEvents
+import gr.jkapsouras.butterfliesofgreece.fragments.photos.uiEvents.PhotosEvents
+import gr.jkapsouras.butterfliesofgreece.fragments.species.uiEvents.SpeciesEvents
 import gr.jkapsouras.butterfliesofgreece.views.photosTableView.adapter.ShowingStep
 import io.reactivex.rxjava3.subjects.PublishSubject
 import kotlinx.android.synthetic.main.row_photos_collection.view.*
-import kotlinx.android.synthetic.main.row_photos_table.view.*
 
 class PhotosCollectionViewCell(itemView: View, private val emitter: PublishSubject<UiEvent>) : RecyclerView.ViewHolder(itemView){
 

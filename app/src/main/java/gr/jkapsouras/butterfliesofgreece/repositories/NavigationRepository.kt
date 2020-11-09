@@ -1,7 +1,7 @@
 package gr.jkapsouras.butterfliesofgreece.repositories
 
 import gr.jkapsouras.butterfliesofgreece.data.Storage
-import gr.jkapsouras.butterfliesofgreece.fragments.families.families.ViewArrange
+import gr.jkapsouras.butterfliesofgreece.fragments.families.ViewArrange
 import io.reactivex.rxjava3.core.Observable
 
 class NavigationRepository(private val storage: Storage) {

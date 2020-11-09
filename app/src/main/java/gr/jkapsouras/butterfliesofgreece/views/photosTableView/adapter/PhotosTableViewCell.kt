@@ -1,6 +1,5 @@
 package gr.jkapsouras.butterfliesofgreece.views.photosTableView.adapter
 
-import android.content.res.Resources
 import android.util.Log
 import android.view.View
 import androidx.constraintlayout.widget.Constraints
@@ -12,11 +11,11 @@ import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
 import gr.jkapsouras.butterfliesofgreece.dto.Family
 import gr.jkapsouras.butterfliesofgreece.dto.Specie
-import gr.jkapsouras.butterfliesofgreece.fragments.families.families.uiEvents.FamilyEvents
-import gr.jkapsouras.butterfliesofgreece.fragments.families.photos.uiEvents.PhotosEvents
-import gr.jkapsouras.butterfliesofgreece.fragments.families.printToPdf.uiEvents.PrintToPdfEvents
-import gr.jkapsouras.butterfliesofgreece.fragments.families.search.uiEvents.SearchEvents
-import gr.jkapsouras.butterfliesofgreece.fragments.families.species.uiEvents.SpeciesEvents
+import gr.jkapsouras.butterfliesofgreece.fragments.families.uiEvents.FamilyEvents
+import gr.jkapsouras.butterfliesofgreece.fragments.photos.uiEvents.PhotosEvents
+import gr.jkapsouras.butterfliesofgreece.fragments.printToPdf.uiEvents.PrintToPdfEvents
+import gr.jkapsouras.butterfliesofgreece.fragments.search.uiEvents.SearchEvents
+import gr.jkapsouras.butterfliesofgreece.fragments.species.uiEvents.SpeciesEvents
 import io.reactivex.rxjava3.subjects.PublishSubject
 import kotlinx.android.synthetic.main.row_photos_table.view.*
 import java.lang.Exception

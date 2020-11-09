@@ -37,4 +37,27 @@
         <item name="tint">@color/field_dark</item>
     </style>
 
+    <style name="Widget.Design.TextInputLayout" parent="AppTheme">
+        <item name="hintTextAppearance">@style/AppTheme.TextFloatLabelAppearance</item>
+        <item name="errorTextAppearance">@style/AppTheme.TextErrorAppearance</item>
+        <item name="counterTextAppearance">@style/TextAppearance.Design.Counter</item>
+        <item name="counterOverflowTextAppearance">@style/TextAppearance.Design.Counter.Overflow</item>
+    </style>
+
+    <style name="editTheme" parent="Widget.AppCompat.SearchView.ActionBar">
+        <item name="colorControlNormal">@color/contribute_dark</item>
+        <item name="colorControlActivated">@color/contribute_dark</item>
+        <item name="colorControlHighlight">@color/contribute_dark</item>
+    </style>
+
+    <style name="AppTheme.TextFloatLabelAppearance" parent="TextAppearance.Design.Hint">
+        <!-- Floating label appearance here -->
+        <item name="android:textColor">@color/contribute_dark</item>
+    </style>
+
+    <style name="AppTheme.TextErrorAppearance" parent="TextAppearance.Design.Error">
+        <!-- Error message appearance here -->
+        <item name="android:textColor">@color/contribute_dark</item>
+    </style>
+
 </resources>

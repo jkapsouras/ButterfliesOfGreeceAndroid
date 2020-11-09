@@ -2,7 +2,7 @@ package gr.jkapsouras.butterfliesofgreece.views.header
 
 import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
 import gr.jkapsouras.butterfliesofgreece.extensions.uniques
-import gr.jkapsouras.butterfliesofgreece.fragments.families.families.ViewArrange
+import gr.jkapsouras.butterfliesofgreece.fragments.families.ViewArrange
 
 class HeaderState(val photosToPrint:List<ButterflyPhoto>?,
                   val currentArrange: ViewArrange,

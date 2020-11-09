@@ -2,7 +2,7 @@ package gr.jkapsouras.butterfliesofgreece.repositories
 
 import gr.jkapsouras.butterfliesofgreece.data.Storage
 import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
-import gr.jkapsouras.butterfliesofgreece.fragments.families.printToPdf.state.PdfArrange
+import gr.jkapsouras.butterfliesofgreece.fragments.printToPdf.state.PdfArrange
 import gr.jkapsouras.butterfliesofgreece.managers.ICacheManager
 import io.reactivex.rxjava3.core.Observable
 
