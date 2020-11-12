@@ -2,11 +2,12 @@ package gr.jkapsouras.butterfliesofgreece.fragments.contribute.uiEvents
 
 import android.location.Location
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
+import java.time.LocalDate
 import java.util.*
 
 sealed class ContributeEvents: UiEvent() {
     object TextDateClicked : ContributeEvents()
-    class ButtonDoneClicked(val date: Date): ContributeEvents()
+    class ButtonDoneClicked(val date: LocalDate): ContributeEvents()
     class LocationFetched(val location: Location): ContributeEvents()
     class TextNameSet(val name:String): ContributeEvents()
     class TextAltitudeSet(val altitude:String): ContributeEvents()

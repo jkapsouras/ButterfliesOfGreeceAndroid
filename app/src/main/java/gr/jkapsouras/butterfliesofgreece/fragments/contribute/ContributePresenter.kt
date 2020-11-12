@@ -2,6 +2,7 @@ package gr.jkapsouras.butterfliesofgreece.fragments.contribute
 
 import android.content.ContentValues.TAG
 import android.util.Log
+import gr.jkapsouras.butterfliesofgreece.MainActivity
 import gr.jkapsouras.butterfliesofgreece.base.BasePresenter
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.base.disposeWith
@@ -13,49 +14,62 @@ import gr.jkapsouras.butterfliesofgreece.fragments.contribute.state.prepareHtmlF
 import gr.jkapsouras.butterfliesofgreece.fragments.contribute.state.with
 import gr.jkapsouras.butterfliesofgreece.fragments.contribute.uiEvents.ContributeEvents
 import gr.jkapsouras.butterfliesofgreece.fragments.contribute.viewStates.ContributeViewStates
+import gr.jkapsouras.butterfliesofgreece.managers.ILocationManager
+import gr.jkapsouras.butterfliesofgreece.managers.LocationState
 import gr.jkapsouras.butterfliesofgreece.repositories.ContributionRepository
-import gr.jkapsouras.butterfliesofgreece.repositories.FamiliesRepository
-import gr.jkapsouras.butterfliesofgreece.repositories.NavigationRepository
-import gr.jkapsouras.butterfliesofgreece.repositories.PhotosToPrintRepository
+import java.time.format.DateTimeFormatter
 
 class ContributePresenter(
-//    val locationManager: LocationManager,
+    val locationManager: ILocationManager,
     val contributionRepository: ContributionRepository,
     backgroundThreadScheduler: IBackgroundThread,
     mainThreadScheduler: IMainThread
 ) : BasePresenter(backgroundThreadScheduler, mainThreadScheduler){
 
-    var contributeState: ContributeState = ContributeState(ContributionItem("", "", "", "", "", "", "", "", "", ""), "", "")
+    var contributeState: ContributeState = ContributeState(
+        ContributionItem(
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ), "", ""
+    )
 
+    fun setActivity(activity: MainActivity)
+    {
+        locationManager.activity = activity
+        locationManager.subscribe()
+    }
 
     override fun setupEvents() {
-
-//        locationManager.getPermissionStatus().subscribe{state ->
-//                when (state){
-//            case .askLocation:
-//            self.locationManager.askForLocation()
-//            case .askPermission:
-//            self.locationManager.askForPermissions()
-//            case .showSettings:
-//            self.state.onNext(ContributeViewStates.ShowSettingsDialog)
-//            default:
-//            break
-//        }
-//        }
-//        .disposeBy(disposables)
+        locationManager.getPermissionStatus().subscribe { state ->
+            when (state) {
+                LocationState.AskLocation ->
+                    locationManager.askForLocation()
+                LocationState.AskPermission ->
+                    locationManager.askForPermissions()
+                LocationState.ShowSettings ->
+                    this.state.onNext(ContributeViewStates.ShowSettingsDialog)
+            }
+        }
+            .disposeWith(disposables)
 //
-//        locationManager.locationObs.observeOn(backgroundThreadScheduler.scheduler).subscribe{locationState ->
-//                when (locationState){
-//            case .showLocation(let location):
-//            self.emitter.onNext(ContributeEvents.locationFetched(location: location))
-//            case .locationErrored:
-//            self.state.onNext(ContributeViewStates.showLocationError)
-//            default:
-//            break
-//        }
-//
-//        }
-//            .disposeBy(disposables)
+        locationManager.locationObs.observeOn(backgroundThreadScheduler.scheduler)
+            .subscribe { locationState ->
+                when (locationState) {
+                    is LocationState.ShowLocation ->
+                        emitter.onNext(ContributeEvents.LocationFetched(location = locationState.location))
+                    LocationState.LocationErrored ->
+                        state.onNext(ContributeViewStates.ShowLocationError)
+                }
+            }
+            .disposeWith(disposables)
     }
 
     override fun handleEvent(uiEvent: UiEvent) {
@@ -66,10 +80,11 @@ class ContributePresenter(
                         state.onNext(ContributeViewStates.ShowDatePicker)
                     is ContributeEvents.ButtonDoneClicked -> {
                         state.onNext(ContributeViewStates.HideDatePicker)
-//                        let formatter : DateFormatter = DateFormatter ()
+                        val formatter: DateTimeFormatter =
+                            DateTimeFormatter.ofPattern("dd/MM/yyyy")
 //                        formatter.dateFormat = "dd/MM/yyyy"
 //                        let dateStr = formatter . string (from: date)
-                        val dateStr = uiEvent.date.toString()
+                        val dateStr = uiEvent.date.format(formatter)
                         contributeState = contributeState.with(date = dateStr)
                         state.onNext(ContributeViewStates.SetDate(date = dateStr))
                     }

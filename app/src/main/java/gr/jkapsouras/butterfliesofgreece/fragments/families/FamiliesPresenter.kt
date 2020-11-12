@@ -1,5 +1,7 @@
 package gr.jkapsouras.butterfliesofgreece.fragments.families
 
+import android.location.LocationManager
+import gr.jkapsouras.butterfliesofgreece.MainActivity
 import gr.jkapsouras.butterfliesofgreece.base.BasePresenter
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.base.disposeWith
@@ -11,6 +13,7 @@ import gr.jkapsouras.butterfliesofgreece.fragments.families.state.FamiliesState
 import gr.jkapsouras.butterfliesofgreece.fragments.families.state.with
 import gr.jkapsouras.butterfliesofgreece.fragments.families.uiEvents.FamilyEvents
 import gr.jkapsouras.butterfliesofgreece.fragments.families.viewStates.FamiliesViewViewStates
+import gr.jkapsouras.butterfliesofgreece.managers.ILocationManager
 import gr.jkapsouras.butterfliesofgreece.repositories.NavigationRepository
 import gr.jkapsouras.butterfliesofgreece.repositories.PhotosToPrintRepository
 import gr.jkapsouras.butterfliesofgreece.views.header.HeaderState

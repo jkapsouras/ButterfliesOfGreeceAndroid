@@ -1,12 +1,14 @@
 package gr.jkapsouras.butterfliesofgreece.base.di
 
 import android.content.Context
+import gr.jkapsouras.butterfliesofgreece.MainActivity
 import gr.jkapsouras.butterfliesofgreece.R
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.BackgroundThreadScheduler
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.IBackgroundThread
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.IMainThread
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.MainThreadScheduler
 import gr.jkapsouras.butterfliesofgreece.data.Storage
+import gr.jkapsouras.butterfliesofgreece.fragments.contribute.ContributePresenter
 import gr.jkapsouras.butterfliesofgreece.fragments.families.FamiliesPresenter
 import gr.jkapsouras.butterfliesofgreece.fragments.main.MenuPresenter
 import gr.jkapsouras.butterfliesofgreece.fragments.modal.ModalPresenter
@@ -17,11 +19,14 @@ import gr.jkapsouras.butterfliesofgreece.fragments.search.SearchPresenter
 import gr.jkapsouras.butterfliesofgreece.fragments.species.SpeciesPresenter
 import gr.jkapsouras.butterfliesofgreece.managers.CacheManager
 import gr.jkapsouras.butterfliesofgreece.managers.ICacheManager
+import gr.jkapsouras.butterfliesofgreece.managers.ILocationManager
+import gr.jkapsouras.butterfliesofgreece.managers.LocationManager
 import gr.jkapsouras.butterfliesofgreece.repositories.*
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.module.Module
+import org.koin.core.parameter.parametersOf
 import org.koin.dsl.module
 
 val butterfliesModule = module {
@@ -40,6 +45,7 @@ fun registerDataSources(module: Module){
     module.single { Storage(androidContext()) }
     module.single<ICacheManager>{CacheManager(androidContext().getSharedPreferences(androidContext().resources.getString(
         R.string.app_name), Context.MODE_PRIVATE))}
+    module.single<ILocationManager> {LocationManager()}
 }
 
 fun registerRepositories(module: Module){
@@ -57,6 +63,9 @@ fun registerRepositories(module: Module){
     ) }
     module.factory { PhotosToPrintRepository(
         storage = get(),
+        cacheManager = get()
+    ) }
+    module.factory { ContributionRepository(
         cacheManager = get()
     ) }
 }
@@ -107,6 +116,12 @@ fun registerPresenters(module: Module){
     ) }
     module.factory{ PdfPreviewPresenter(
         photosToPrintRepository = get(),
+        backgroundThreadScheduler = get(),
+        mainThreadScheduler =  get()
+    ) }
+    module.factory { ContributePresenter(
+        locationManager = get(),
+        contributionRepository = get(),
         backgroundThreadScheduler = get(),
         mainThreadScheduler =  get()
     ) }

@@ -9,9 +9,11 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import gr.jkapsouras.butterfliesofgreece.R
 import gr.jkapsouras.butterfliesofgreece.base.BaseFragment
 import gr.jkapsouras.butterfliesofgreece.base.UiComponent
+import gr.jkapsouras.butterfliesofgreece.managers.LocationManager
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main_menu_fragment.*
 import org.koin.android.ext.android.inject
+import org.koin.core.parameter.parametersOf
 
 
 class MainMenuFragment : BaseFragment<MenuPresenter>() {
@@ -20,6 +22,7 @@ class MainMenuFragment : BaseFragment<MenuPresenter>() {
         get() = R.layout.main_menu_fragment
     override val presenter: MenuPresenter by inject()
     var menuComponent:MenuComponent? = null
+
 
     companion object {
         fun newInstance() = MainMenuFragment()
@@ -33,6 +36,8 @@ class MainMenuFragment : BaseFragment<MenuPresenter>() {
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
+
+
         super.onActivityCreated(savedInstanceState)
     }
 

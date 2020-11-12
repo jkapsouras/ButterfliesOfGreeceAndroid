@@ -73,6 +73,8 @@
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
                     android:textColor="@color/contribute_dark"
+                    android:clickable="true"
+                    android:focusable="false"
                     android:textSize="@dimen/edit_text_size" />
             </com.google.android.material.textfield.TextInputLayout>
 
