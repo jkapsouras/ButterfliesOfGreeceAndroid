@@ -25,4 +25,6 @@
     <string name="genus_species">Genus species</string>
     <string name="name_species">Name species</string>
     <string name="comments">Comments</string>
+    <string name="contribution_added">Your record has been added!</string>
+    <string name="contribution_not_added">Your record has not been added!</string>
 </resources>

@@ -24,7 +24,7 @@ class PdfPreviewPresenter(
 ) : BasePresenter(backgroundThreadScheduler, mainThreadScheduler) {
 
     var pdfState: PdfPreviewerState = PdfPreviewerState("", emptyList(), PdfArrange.OnePerPage)
-    var pdfCreator: PdfManager = PdfManager()
+    private val pdfCreator: PdfManager = PdfManager()
     private lateinit var view: View
     private lateinit var context:Context
 

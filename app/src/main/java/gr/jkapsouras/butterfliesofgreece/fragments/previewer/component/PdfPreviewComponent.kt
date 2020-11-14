@@ -21,6 +21,7 @@ import io.reactivex.rxjava3.subjects.PublishSubject
 import java.io.File
 
 
+@SuppressLint("RestrictedApi")
 class PdfPreviewComponent(val activity: Activity, val pdfView: PDFView, val button:FloatingActionButton, var progressBar: ProgressBar) : UiComponent {
 //    let controller:PdfPreviewViewController
 //    let navigationItem:UINavigationItem
@@ -62,7 +63,6 @@ class PdfPreviewComponent(val activity: Activity, val pdfView: PDFView, val butt
                             .enableSwipe(true)
                             .spacing(8)
                             .load()
-
 
                     progressBar.visibility = View.GONE
                     pdfView.visibility = View.VISIBLE

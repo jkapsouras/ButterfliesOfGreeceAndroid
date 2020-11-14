@@ -1,22 +1,28 @@
 package gr.jkapsouras.butterfliesofgreece.views.contributeView
 
+import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Context
-import android.icu.util.LocaleData
+import android.content.DialogInterface
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.widget.addTextChangedListener
+import com.jakewharton.rxbinding4.view.clicks
 import gr.jkapsouras.butterfliesofgreece.MainActivity
 import gr.jkapsouras.butterfliesofgreece.R
+import gr.jkapsouras.butterfliesofgreece.base.DisposablesWrapper
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
+import gr.jkapsouras.butterfliesofgreece.base.disposeWith
 import gr.jkapsouras.butterfliesofgreece.fragments.contribute.uiEvents.ContributeEvents
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.subjects.PublishSubject
+import kotlinx.android.synthetic.main.dialog_generic.view.*
 import kotlinx.android.synthetic.main.view_contribute.view.*
 import java.time.LocalDate
-import java.util.*
+
 
 class ContributeView  @JvmOverloads constructor(
     context: Context,
@@ -27,6 +33,7 @@ class ContributeView  @JvmOverloads constructor(
 
     private val emitter = PublishSubject.create<UiEvent>()
     lateinit var view : View
+    lateinit var dialog: AlertDialog
     val uiEvents: Observable<UiEvent>
         get() = viewEvents()
 
@@ -79,6 +86,18 @@ class ContributeView  @JvmOverloads constructor(
             emitter.onNext(ContributeEvents.TextCommentsSet(edit_comments.text.toString()))
         }
 
+        button_add_contribute.setOnClickListener {
+            emitter.onNext(ContributeEvents.AddClicked)
+        }
+
+        button_share_contribute.setOnClickListener {
+            emitter.onNext(ContributeEvents.ExportClicked)
+        }
+
+        button_print.setOnClickListener {
+            emitter.onNext(ContributeEvents.SharePdf)
+        }
+
         return emitter
     }
 
@@ -87,7 +106,15 @@ class ContributeView  @JvmOverloads constructor(
 
         val tmpDialog = DatePickerDialog(view.context)
         tmpDialog.setOnDateSetListener { view, year, month, dayOfMonth ->
-            emitter.onNext(ContributeEvents.ButtonDoneClicked(LocalDate.of(year, month, dayOfMonth)))
+            emitter.onNext(
+                ContributeEvents.ButtonDoneClicked(
+                    LocalDate.of(
+                        year,
+                        month,
+                        dayOfMonth
+                    )
+                )
+            )
         }
         tmpDialog.show()
     }
@@ -96,11 +123,11 @@ class ContributeView  @JvmOverloads constructor(
 //        ViewDate.alpha = 0
     }
 
-    fun setDate(date:String){
+    fun setDate(date: String){
        edit_date.setText(date)
     }
 
-    fun setLocation(latitude:String, longitude:String){
+    fun setLocation(latitude: String, longitude: String){
         edit_longitude.setText(longitude)
         edit_latitude.setText(latitude)
         edit_longitude.isClickable = false
@@ -123,16 +150,34 @@ class ContributeView  @JvmOverloads constructor(
 //        controller.present(alert, animated: true)
     }
 
-    fun showItem(added: Boolean, controller: MainActivity){
-//        if added{
-//            let alert = UIAlertController(title: Translations.Contribution, message: Translations.ContributionAdded, preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: Translations.Ok, style: .default, handler: nil))
-//            controller.present(alert, animated: true)
-//        }
-//        else{
-//            let alert = UIAlertController(title: Translations.Contribution, message: Translations.ContributionNotAdded, preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: Translations.Ok, style: .default, handler: nil))
-//            controller.present(alert, animated: true)
-//        }
+     fun showItem(added: Boolean, controller: MainActivity){
+        if (added){
+
+            val builder = AlertDialog.Builder(view.context)
+
+            with(builder)
+            {
+                setTitle(view.context.getString(R.string.contribute))
+                setMessage(view.context.getString(R.string.contribution_added))
+                setCancelable(false)
+                setPositiveButton("ok") { _, _ ->
+
+                }
+                show()
+            }
+        }
+        else{
+            val builder = AlertDialog.Builder(view.context)
+            with(builder)
+            {
+                setTitle(view.context.getString(R.string.contribute))
+                setMessage(view.context.getString(R.string.contribution_not_added))
+                setCancelable(false)
+                setPositiveButton("ok") { _, _ ->
+
+                }
+                show()
+            }
+        }
     }
 }

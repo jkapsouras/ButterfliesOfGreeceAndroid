@@ -2,89 +2,146 @@ package gr.jkapsouras.butterfliesofgreece.managers
 
 import android.content.ContentValues.TAG
 import android.content.Context
+import android.content.Context.WINDOW_SERVICE
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Paint
 import android.graphics.Rect
 import android.graphics.pdf.PdfDocument
 import android.graphics.pdf.PdfDocument.PageInfo
+import android.print.PrintAttributes
+import android.print.PrintManager
+import android.util.DisplayMetrics
 import android.util.Log
 import android.view.View
+import android.view.WindowManager
+import android.webkit.WebResourceRequest
+import android.webkit.WebView
+import android.webkit.WebViewClient
+import androidx.core.content.ContextCompat.getSystemService
 import gr.jkapsouras.butterfliesofgreece.R
 import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
 import gr.jkapsouras.butterfliesofgreece.fragments.printToPdf.state.PdfArrange
+import kotlinx.android.synthetic.main.view_contribute.view.*
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 
 
-class PdfManager{
+class PdfManager {
     private var document: PdfDocument = PdfDocument()
     private val pageWidth = 8.5 * 72.0
     private val pageHeight = 11 * 72.0
 
-     fun createPdf(view: View, context: Context, photos: List<ButterflyPhoto>, pdfArrange: PdfArrange) : String {
+    fun createRecordsTable(view: View, html: String): String {
+
+        val wv = view.webView_contribute
+
+        wv.loadDataWithBaseURL(null, html, "text/html; charset=UTF-8", "UTF-8", null)
+
+        return html
+    }
+
+    fun createWebPrintJob(context: Context, webView: WebView) {
+
+        val printManager = context.getSystemService(Context.PRINT_SERVICE) as PrintManager
+
+        val printAdapter = webView.createPrintDocumentAdapter("ButterfliesExport")
+
+        val jobName = "ButterfliesExport"// getString(R.string.app_name) + " Print Test"
+
+        printManager.print(
+            jobName, printAdapter,
+            PrintAttributes.Builder()
+                .setMediaSize(PrintAttributes.MediaSize.UNKNOWN_LANDSCAPE)
+                .build()
+        )
+    }
+
+
+     fun createPdf(
+         view: View,
+         context: Context,
+         photos: List<ButterflyPhoto>,
+         pdfArrange: PdfArrange
+     ) : String {
 
          val pageInfo = PageInfo.Builder(pageWidth.toInt(), pageHeight.toInt(), 1).create()
 
          when (pdfArrange){
-             PdfArrange.OnePerPage ->{
-                 for(photo in photos){
+             PdfArrange.OnePerPage -> {
+                 for (photo in photos) {
                      val page = addOneImageWithText(view, photo, pageInfo)
                      document.finishPage(page)
                  }
              }
-             PdfArrange.TwoPerPage->{
-                 for (i in 0..photos.count() step 2){
-                     if (i >= photos.count()){
+             PdfArrange.TwoPerPage -> {
+                 for (i in 0..photos.count() step 2) {
+                     if (i >= photos.count()) {
                          break
                      }
-                     if (i+1 >= photos.count()){
+                     if (i + 1 >= photos.count()) {
                          break
                      }
-                     val page = addTwoImagesWithText(view, photos[i], photos[i+1], pageInfo)
+                     val page = addTwoImagesWithText(view, photos[i], photos[i + 1], pageInfo)
                      document.finishPage(page)
                  }
              }
-             PdfArrange.FourPerPage ->{
-                 for (i in 0..photos.count() step 4){
-                     if (i >= photos.count()){
+             PdfArrange.FourPerPage -> {
+                 for (i in 0..photos.count() step 4) {
+                     if (i >= photos.count()) {
                          break
                      }
-                     if (i+1 >= photos.count()){
+                     if (i + 1 >= photos.count()) {
                          break
                      }
-                     if (i+2 >= photos.count()){
+                     if (i + 2 >= photos.count()) {
                          break
                      }
-                     if (i+3 >= photos.count()){
+                     if (i + 3 >= photos.count()) {
                          break
                      }
-                     val page = addFourImagesWithText(view, photos[i], photos[i+1],photos[i+2], photos[i+3], pageInfo)
+                     val page = addFourImagesWithText(
+                         view,
+                         photos[i],
+                         photos[i + 1],
+                         photos[i + 2],
+                         photos[i + 3],
+                         pageInfo
+                     )
                      document.finishPage(page)
                  }
              }
-             PdfArrange.SixPerPage ->{
-                 for (i in 0..photos.count() step 6){
-                     if (i >= photos.count()){
+             PdfArrange.SixPerPage -> {
+                 for (i in 0..photos.count() step 6) {
+                     if (i >= photos.count()) {
                          break
                      }
-                     if (i+1 >= photos.count()){
+                     if (i + 1 >= photos.count()) {
                          break
                      }
-                     if (i+2 >= photos.count()){
+                     if (i + 2 >= photos.count()) {
                          break
                      }
-                     if (i+3 >= photos.count()){
+                     if (i + 3 >= photos.count()) {
                          break
                      }
-                     if (i+4 >= photos.count()){
+                     if (i + 4 >= photos.count()) {
                          break
                      }
-                     if (i+5 >= photos.count()){
+                     if (i + 5 >= photos.count()) {
                          break
                      }
-                     val page = addSixImagesWithText(view, photos[i], photos[i+1],photos[i+2], photos[i+3],photos[i+4],photos[i+5], pageInfo)
+                     val page = addSixImagesWithText(
+                         view,
+                         photos[i],
+                         photos[i + 1],
+                         photos[i + 2],
+                         photos[i + 3],
+                         photos[i + 4],
+                         photos[i + 5],
+                         pageInfo
+                     )
                      document.finishPage(page)
                  }
              }
@@ -183,7 +240,12 @@ class PdfManager{
         return page
     }
 
-    private fun addTwoImagesWithText(view: View, photo1: ButterflyPhoto,photo2: ButterflyPhoto, pageInfo: PageInfo) : PdfDocument.Page {
+    private fun addTwoImagesWithText(
+        view: View,
+        photo1: ButterflyPhoto,
+        photo2: ButterflyPhoto,
+        pageInfo: PageInfo
+    ) : PdfDocument.Page {
 
         val textPaint =
             Paint().apply {
@@ -329,7 +391,7 @@ class PdfManager{
             imageRect2.left,
             imageRect2.top + imageRect2.height(),
             imageRect2.left + imageRect2.width(),
-            imageRect2.top +imageRect2.height() + firstLineBounds2.height() + secondLineBounds2.height() + 32
+            imageRect2.top + imageRect2.height() + firstLineBounds2.height() + secondLineBounds2.height() + 32
         )
 
         page.canvas.drawRect(
@@ -371,7 +433,14 @@ class PdfManager{
         return page
     }
 
-    private fun addFourImagesWithText(view: View, photo1: ButterflyPhoto,photo2: ButterflyPhoto,photo3: ButterflyPhoto,photo4: ButterflyPhoto, pageInfo: PageInfo) : PdfDocument.Page {
+    private fun addFourImagesWithText(
+        view: View,
+        photo1: ButterflyPhoto,
+        photo2: ButterflyPhoto,
+        photo3: ButterflyPhoto,
+        photo4: ButterflyPhoto,
+        pageInfo: PageInfo
+    ) : PdfDocument.Page {
 
         val textPaint =
             Paint().apply {
@@ -515,7 +584,7 @@ class PdfManager{
             imageRect2.left,
             imageRect2.top + imageRect2.height(),
             imageRect2.left + imageRect2.width(),
-            imageRect2.top +imageRect2.height() + firstLineBounds2.height() + secondLineBounds2.height() + 32
+            imageRect2.top + imageRect2.height() + firstLineBounds2.height() + secondLineBounds2.height() + 32
         )
 
         page.canvas.drawRect(
@@ -587,9 +656,9 @@ class PdfManager{
         val image3X = imageRect1.left
         val imageRect3 = Rect(
             image3X,
-            (pageHeight/2).toInt(),
+            (pageHeight / 2).toInt(),
             scb3.first + image3X,
-            scb3.second + (pageHeight/2).toInt()
+            scb3.second + (pageHeight / 2).toInt()
         )
         page.canvas.drawBitmap(b3, null, imageRect3, null)
 
@@ -599,7 +668,7 @@ class PdfManager{
             imageRect3.left,
             imageRect3.top + imageRect3.height(),
             imageRect3.left + imageRect3.width(),
-            imageRect3.top +imageRect3.height() + firstLineBounds3.height() + secondLineBounds3.height() + 32
+            imageRect3.top + imageRect3.height() + firstLineBounds3.height() + secondLineBounds3.height() + 32
         )
 
         page.canvas.drawRect(
@@ -671,9 +740,9 @@ class PdfManager{
         val image4X = imageRect1.left + imageRect1.width()
         val imageRect4 = Rect(
             image4X,
-            (pageHeight/2).toInt(),
+            (pageHeight / 2).toInt(),
             scb4.first + image4X,
-            scb4.second + (pageHeight/2).toInt()
+            scb4.second + (pageHeight / 2).toInt()
         )
         page.canvas.drawBitmap(b4, null, imageRect4, null)
 
@@ -683,7 +752,7 @@ class PdfManager{
             imageRect4.left,
             imageRect4.top + imageRect4.height(),
             imageRect4.left + imageRect4.width(),
-            imageRect4.top +imageRect4.height() + firstLineBounds4.height() + secondLineBounds4.height() + 32
+            imageRect4.top + imageRect4.height() + firstLineBounds4.height() + secondLineBounds4.height() + 32
         )
 
         page.canvas.drawRect(
@@ -725,7 +794,16 @@ class PdfManager{
         return page
     }
 
-    private fun addSixImagesWithText(view: View, photo1: ButterflyPhoto,photo2: ButterflyPhoto,photo3: ButterflyPhoto,photo4: ButterflyPhoto,photo5: ButterflyPhoto,photo6: ButterflyPhoto, pageInfo: PageInfo) : PdfDocument.Page {
+    private fun addSixImagesWithText(
+        view: View,
+        photo1: ButterflyPhoto,
+        photo2: ButterflyPhoto,
+        photo3: ButterflyPhoto,
+        photo4: ButterflyPhoto,
+        photo5: ButterflyPhoto,
+        photo6: ButterflyPhoto,
+        pageInfo: PageInfo
+    ) : PdfDocument.Page {
 
         val textPaint =
             Paint().apply {
@@ -869,7 +947,7 @@ class PdfManager{
             imageRect2.left,
             imageRect2.top + imageRect2.height(),
             imageRect2.left + imageRect2.width(),
-            imageRect2.top +imageRect2.height() + firstLineBounds2.height() + secondLineBounds2.height() + 32
+            imageRect2.top + imageRect2.height() + firstLineBounds2.height() + secondLineBounds2.height() + 32
         )
 
         page.canvas.drawRect(
@@ -953,7 +1031,7 @@ class PdfManager{
             imageRect3.left,
             imageRect3.top + imageRect3.height(),
             imageRect3.left + imageRect3.width(),
-            imageRect3.top +imageRect3.height() + firstLineBounds3.height() + secondLineBounds3.height() + 32
+            imageRect3.top + imageRect3.height() + firstLineBounds3.height() + secondLineBounds3.height() + 32
         )
 
         page.canvas.drawRect(
@@ -1025,9 +1103,9 @@ class PdfManager{
         val image4X = imageRect1.left
         val imageRect4 = Rect(
             image4X,
-            (pageHeight/2).toInt(),
+            (pageHeight / 2).toInt(),
             scb4.first + image4X,
-            scb4.second + (pageHeight/2).toInt()
+            scb4.second + (pageHeight / 2).toInt()
         )
         page.canvas.drawBitmap(b4, null, imageRect4, null)
 
@@ -1037,7 +1115,7 @@ class PdfManager{
             imageRect4.left,
             imageRect4.top + imageRect4.height(),
             imageRect4.left + imageRect4.width(),
-            imageRect4.top +imageRect4.height() + firstLineBounds4.height() + secondLineBounds4.height() + 32
+            imageRect4.top + imageRect4.height() + firstLineBounds4.height() + secondLineBounds4.height() + 32
         )
 
         page.canvas.drawRect(
@@ -1109,9 +1187,9 @@ class PdfManager{
         val image5X = imageRect1.right
         val imageRect5 = Rect(
             image5X,
-            (pageHeight/2).toInt(),
+            (pageHeight / 2).toInt(),
             scb5.first + image5X,
-            scb5.second + (pageHeight/2).toInt()
+            scb5.second + (pageHeight / 2).toInt()
         )
         page.canvas.drawBitmap(b5, null, imageRect5, null)
 
@@ -1121,7 +1199,7 @@ class PdfManager{
             imageRect5.left,
             imageRect5.top + imageRect5.height(),
             imageRect5.left + imageRect5.width(),
-            imageRect5.top +imageRect5.height() + firstLineBounds5.height() + secondLineBounds5.height() + 32
+            imageRect5.top + imageRect5.height() + firstLineBounds5.height() + secondLineBounds5.height() + 32
         )
 
         page.canvas.drawRect(
@@ -1193,9 +1271,9 @@ class PdfManager{
         val image6X = imageRect2.right
         val imageRect6 = Rect(
             image6X,
-            (pageHeight/2).toInt(),
+            (pageHeight / 2).toInt(),
             scb6.first + image6X,
-            scb6.second + (pageHeight/2).toInt()
+            scb6.second + (pageHeight / 2).toInt()
         )
         page.canvas.drawBitmap(b6, null, imageRect6, null)
 
@@ -1205,7 +1283,7 @@ class PdfManager{
             imageRect6.left,
             imageRect6.top + imageRect6.height(),
             imageRect6.left + imageRect6.width(),
-            imageRect6.top +imageRect6.height() + firstLineBounds6.height() + secondLineBounds6.height() + 32
+            imageRect6.top + imageRect6.height() + firstLineBounds6.height() + secondLineBounds6.height() + 32
         )
 
         page.canvas.drawRect(

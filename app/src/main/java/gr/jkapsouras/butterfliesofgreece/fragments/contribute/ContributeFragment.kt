@@ -29,6 +29,8 @@ class ContributeFragment : BaseFragment<ContributePresenter>(){
 
     override fun initView(view: View): View {
         presenter.setActivity(requireActivity() as MainActivity)
+        presenter.setView(view)
+        presenter.setContext(requireContext())
         return view
     }
 

@@ -1,7 +1,9 @@
 package gr.jkapsouras.butterfliesofgreece.fragments.contribute
 
 import android.content.ContentValues.TAG
+import android.content.Context
 import android.util.Log
+import android.view.View
 import gr.jkapsouras.butterfliesofgreece.MainActivity
 import gr.jkapsouras.butterfliesofgreece.base.BasePresenter
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
@@ -16,6 +18,7 @@ import gr.jkapsouras.butterfliesofgreece.fragments.contribute.uiEvents.Contribut
 import gr.jkapsouras.butterfliesofgreece.fragments.contribute.viewStates.ContributeViewStates
 import gr.jkapsouras.butterfliesofgreece.managers.ILocationManager
 import gr.jkapsouras.butterfliesofgreece.managers.LocationState
+import gr.jkapsouras.butterfliesofgreece.managers.PdfManager
 import gr.jkapsouras.butterfliesofgreece.repositories.ContributionRepository
 import java.time.format.DateTimeFormatter
 
@@ -40,6 +43,18 @@ class ContributePresenter(
             ""
         ), "", ""
     )
+    private lateinit var view: View
+    private lateinit var context:Context
+
+    fun setView(view: View)
+    {
+        this.view = view
+    }
+
+    fun setContext(context: Context)
+    {
+        this.context=context
+    }
 
     fun setActivity(activity: MainActivity)
     {
@@ -135,10 +150,9 @@ class ContributePresenter(
                             .doOnNext { items ->
                                 contributeState =
                                     contributeState.prepareHtmlForExport(items = items)
-//                            let pdfManager = PdfManager ()
-//                            self.contributeState =
-//                                self.contributeState.with(pdfData:pdfManager. createRecordsTable (html: self.contributeState.exportedHtml, printRenderer: UIPrintPageRenderer()))
-//                            self.state.onNext(ContributeViewStates.showExtractedPdf(pdfData: self. contributeState . pdfData ?? Data ()))
+                                val pdfCreator = PdfManager()
+                            contributeState = contributeState.with(pdfData = pdfCreator.createRecordsTable (view = view, html = contributeState.exportedHtml))
+                            state.onNext(ContributeViewStates.ShowExtractedPdf(pdfData = contributeState.pdfData ?: ""))
                             }
                             .flatMap {
                                 contributionRepository.delete()
@@ -146,12 +160,13 @@ class ContributePresenter(
                             .subscribe { Log.d(TAG, "all good") }
                             .disposeWith(disposables)
                     }
-                    ContributeEvents.SharePdf ->
+                    ContributeEvents.SharePdf -> {
                         state.onNext(
                             ContributeViewStates.ShowShareDialog(
                                 pdfData = contributeState.pdfData ?: ""
                             )
                         )
+                    }
                     ContributeEvents.InstructionsClicked ->
                         state.onNext(ContributeViewStates.ShowInstructions)
                     ContributeEvents.ClosePdf ->
