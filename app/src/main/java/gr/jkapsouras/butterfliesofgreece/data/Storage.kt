@@ -6,8 +6,8 @@ import com.google.gson.reflect.TypeToken
 import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
 import gr.jkapsouras.butterfliesofgreece.dto.Family
 import gr.jkapsouras.butterfliesofgreece.dto.Specie
-import gr.jkapsouras.butterfliesofgreece.fragments.families.families.ViewArrange
-import gr.jkapsouras.butterfliesofgreece.fragments.families.printToPdf.state.PdfArrange
+import gr.jkapsouras.butterfliesofgreece.fragments.families.ViewArrange
+import gr.jkapsouras.butterfliesofgreece.fragments.printToPdf.state.PdfArrange
 import io.reactivex.rxjava3.core.Observable
 import java.io.IOException
 import java.util.*

@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/contribute"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="0dp">
+
+        <TextView
+            android:id="@+id/label_contribute_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/header_height"
+            android:background="@color/contribute_dark"
+            android:textColor="@color/contribute"
+            android:text="@string/send_info"
+            android:gravity="center"
+            android:textSize="@dimen/title"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/label_photo_name"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="@dimen/medium"
+               android:paddingStart="@dimen/small"
+               android:paddingEnd="@dimen/small"
+               android:hint="@string/photo_name"
+               android:theme="@style/editTheme"
+               android:textColorHint="@color/contribute_dark"
+               app:layout_constraintTop_toBottomOf="@+id/label_contribute_header"
+               app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_photo_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:textColor="@color/contribute_dark"
+                android:textSize="@dimen/edit_text_size" />
+           </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/label_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium"
+                android:paddingStart="@dimen/small"
+                android:paddingEnd="@dimen/small"
+                android:hint="@string/date"
+                android:textColorHint="@color/contribute_dark"
+                android:theme="@style/editTheme"
+                app:layout_constraintTop_toBottomOf="@+id/label_photo_name"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:textColor="@color/contribute_dark"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:textSize="@dimen/edit_text_size" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/label_altitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium"
+                android:paddingStart="@dimen/small"
+                android:paddingEnd="@dimen/small"
+                android:hint="@string/altitude"
+                android:textColorHint="@color/contribute_dark"
+                android:theme="@style/editTheme"
+                app:layout_constraintTop_toBottomOf="@+id/label_date"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_altitude"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:textColor="@color/contribute_dark"
+                    android:textSize="@dimen/edit_text_size" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/label_place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium"
+                android:paddingStart="@dimen/small"
+                android:paddingEnd="@dimen/small"
+                android:hint="@string/place"
+                android:textColorHint="@color/contribute_dark"
+                android:theme="@style/editTheme"
+                app:layout_constraintTop_toBottomOf="@+id/label_altitude"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_place"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:textColor="@color/contribute_dark"
+                    android:textSize="@dimen/edit_text_size" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/label_longitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium"
+                android:paddingStart="@dimen/small"
+                android:paddingEnd="@dimen/small"
+                android:hint="@string/longitude"
+                android:textColorHint="@color/contribute_dark"
+                android:theme="@style/editTheme"
+                app:layout_constraintTop_toBottomOf="@+id/label_place"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_longitude"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:textColor="@color/contribute_dark"
+                    android:textSize="@dimen/edit_text_size" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/label_latitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium"
+                android:paddingStart="@dimen/small"
+                android:paddingEnd="@dimen/small"
+                android:hint="@string/latitude"
+                android:textColorHint="@color/contribute_dark"
+                android:theme="@style/editTheme"
+                app:layout_constraintTop_toBottomOf="@+id/label_longitude"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_latitude"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:textColor="@color/contribute_dark"
+                    android:textSize="@dimen/edit_text_size" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/label_stage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium"
+                android:paddingStart="@dimen/small"
+                android:paddingEnd="@dimen/small"
+                android:hint="@string/stage"
+                android:textColorHint="@color/contribute_dark"
+                android:theme="@style/editTheme"
+                app:layout_constraintTop_toBottomOf="@+id/label_latitude"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_stage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:textColor="@color/contribute_dark"
+                    android:textSize="@dimen/edit_text_size" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/label_genus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium"
+                android:paddingStart="@dimen/small"
+                android:paddingEnd="@dimen/small"
+                android:hint="@string/genus_species"
+                android:textColorHint="@color/contribute_dark"
+                android:theme="@style/editTheme"
+                app:layout_constraintTop_toBottomOf="@+id/label_stage"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_genus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:textColor="@color/contribute_dark"
+                    android:textSize="@dimen/edit_text_size" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/label_name_species"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium"
+                android:paddingStart="@dimen/small"
+                android:paddingEnd="@dimen/small"
+                android:hint="@string/name_species"
+                android:textColorHint="@color/contribute_dark"
+                android:theme="@style/editTheme"
+                app:layout_constraintTop_toBottomOf="@+id/label_genus"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_name_species"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:textColor="@color/contribute_dark"
+                    android:textSize="@dimen/edit_text_size" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/label_comments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium"
+                android:paddingStart="@dimen/small"
+                android:paddingEnd="@dimen/small"
+                android:hint="@string/comments"
+                android:textColorHint="@color/contribute_dark"
+                android:theme="@style/editTheme"
+                app:layout_constraintTop_toBottomOf="@+id/label_name_species"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_comments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:minLines="4"
+                    android:imeOptions="actionNext"
+                    android:textColor="@color/contribute_dark"
+                    android:textSize="@dimen/edit_text_size" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageButton
+                android:id="@+id/button_add_contribute"
+                android:layout_width="@dimen/header_height"
+                android:layout_height="@dimen/header_height"
+                android:src="@drawable/plus_icon"
+                android:scaleType="fitCenter"
+                android:background="@color/contribute"
+                android:tint="@color/contribute_dark"
+                android:padding="@dimen/medium"
+                app:layout_constraintTop_toBottomOf="@+id/label_comments"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/button_share_contribute"
+                />
+
+            <ImageButton
+                android:id="@+id/button_share_contribute"
+                android:layout_width="@dimen/header_height"
+                android:layout_height="@dimen/header_height"
+                android:src="@drawable/share_icon"
+                android:tint="@color/contribute_dark"
+                android:background="@color/contribute"
+                android:scaleType="fitCenter"
+                android:padding="@dimen/medium"
+                app:layout_constraintTop_toBottomOf="@+id/label_comments"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/button_add_contribute"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <WebView
+        android:id="@+id/webView_contribute"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@color/contribute_dark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/button_print"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/share_icon"
+        app:fabSize="normal"
+        android:visibility="gone"
+        android:tint="@color/field"
+        android:backgroundTint="@color/field_dark"
+        android:padding="@dimen/medium"
+        android:layout_margin="@dimen/medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

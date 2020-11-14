@@ -1,7 +1,6 @@
 package gr.jkapsouras.butterfliesofgreece.base
 
 import android.content.ContentValues.TAG
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,14 +10,13 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import gr.jkapsouras.butterfliesofgreece.R
-import gr.jkapsouras.butterfliesofgreece.fragments.families.families.viewStates.FamiliesViewViewStates
-import gr.jkapsouras.butterfliesofgreece.fragments.families.main.ViewStates.MenuViewStates
-import gr.jkapsouras.butterfliesofgreece.fragments.families.modal.viewStates.ModalViewStates
-import gr.jkapsouras.butterfliesofgreece.fragments.families.photos.viewStates.PhotosViewStates
-import gr.jkapsouras.butterfliesofgreece.fragments.families.printToPdf.viewStates.PrintToPdfViewStates
-import gr.jkapsouras.butterfliesofgreece.fragments.families.search.viewStates.SearchViewStates
-import gr.jkapsouras.butterfliesofgreece.fragments.families.species.viewStates.SpeciesViewStates
-import gr.jkapsouras.butterfliesofgreece.views.header.uiEvents.HeaderViewEvents
+import gr.jkapsouras.butterfliesofgreece.fragments.families.viewStates.FamiliesViewViewStates
+import gr.jkapsouras.butterfliesofgreece.fragments.main.ViewStates.MenuViewStates
+import gr.jkapsouras.butterfliesofgreece.fragments.modal.viewStates.ModalViewStates
+import gr.jkapsouras.butterfliesofgreece.fragments.photos.viewStates.PhotosViewStates
+import gr.jkapsouras.butterfliesofgreece.fragments.printToPdf.viewStates.PrintToPdfViewStates
+import gr.jkapsouras.butterfliesofgreece.fragments.search.viewStates.SearchViewStates
+import gr.jkapsouras.butterfliesofgreece.fragments.species.viewStates.SpeciesViewStates
 import gr.jkapsouras.butterfliesofgreece.views.header.viewStates.FromFragment
 import gr.jkapsouras.butterfliesofgreece.views.header.viewStates.HeaderViewViewStates
 import io.reactivex.rxjava3.core.Observable
@@ -116,7 +114,12 @@ abstract  class BaseFragment<P : BasePresenter> : Fragment(){
                 }
             }
             is MenuViewStates -> {
-                findNavController().navigate(R.id.navigate_to_families)
+                when (viewState) {
+                    is MenuViewStates.ToField ->
+                        findNavController().navigate(R.id.navigate_to_families)
+                    is MenuViewStates.ToContribute ->
+                        findNavController().navigate(R.id.navigate_to_contribute)
+                }
             }
             is FamiliesViewViewStates ->{
                 when (viewState) {

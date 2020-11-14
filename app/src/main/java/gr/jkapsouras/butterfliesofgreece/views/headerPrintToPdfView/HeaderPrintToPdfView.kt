@@ -8,11 +8,10 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.jakewharton.rxbinding4.view.clicks
-import com.jakewharton.rxbinding4.widget.itemClicks
 import gr.jkapsouras.butterfliesofgreece.R
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
-import gr.jkapsouras.butterfliesofgreece.fragments.families.printToPdf.state.PdfArrange
-import gr.jkapsouras.butterfliesofgreece.fragments.families.printToPdf.uiEvents.PrintToPdfEvents
+import gr.jkapsouras.butterfliesofgreece.fragments.printToPdf.state.PdfArrange
+import gr.jkapsouras.butterfliesofgreece.fragments.printToPdf.uiEvents.PrintToPdfEvents
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.subjects.PublishSubject
 import kotlinx.android.synthetic.main.view_header_print_to_pdf.view.*
