@@ -20,6 +20,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="endangeredFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-349" />
+                            <option name="y" value="-8" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="familiesFragment">
                     <value>
                       <LayoutPositions>
@@ -62,6 +74,11 @@
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="navigate_to_contribute">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="navigate_to_families">
                               <value>
                                 <LayoutPositions />
