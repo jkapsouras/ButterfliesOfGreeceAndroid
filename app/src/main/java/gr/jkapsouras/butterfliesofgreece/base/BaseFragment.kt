@@ -119,6 +119,8 @@ abstract  class BaseFragment<P : BasePresenter> : Fragment(){
                         findNavController().navigate(R.id.navigate_to_families)
                     is MenuViewStates.ToContribute ->
                         findNavController().navigate(R.id.navigate_to_contribute)
+                    is MenuViewStates.ToEndangered ->
+                        findNavController().navigate(R.id.navigate_to_endangered)
                 }
             }
             is FamiliesViewViewStates ->{
