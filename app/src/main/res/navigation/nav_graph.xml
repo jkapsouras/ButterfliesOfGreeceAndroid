@@ -16,6 +16,9 @@
         <action
             android:id="@+id/navigate_to_contribute"
             app:destination="@id/contributeFragment" />
+        <action
+            android:id="@+id/navigate_to_endangered"
+            app:destination="@id/endangeredFragment" />
     </fragment>
     <fragment
         android:id="@+id/familiesFragment"
@@ -86,4 +89,8 @@
         android:id="@+id/contributeFragment"
         android:name="gr.jkapsouras.butterfliesofgreece.fragments.contribute.ContributeFragment"
         android:label="@string/contribute" />
+    <fragment
+        android:id="@+id/endangeredFragment"
+        android:name="gr.jkapsouras.butterfliesofgreece.fragments.endangered.EndangeredFragment"
+        android:label="@string/endangered" />
 </navigation>
