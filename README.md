@@ -5,15 +5,15 @@ Upgrading Butterflies of Greece app to native
 
 - Main Screen
 - Photographs of the field
+- Contribute
 
 # Implementing
 
-- Contribute
+- Endangered
 
 # To implement
 
 - About
 - Introduction
-- Endangered
 - Online recognition
 - Offline recognition
