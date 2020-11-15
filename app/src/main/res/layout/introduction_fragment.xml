@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/introduction"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="0dp">
+
+    <TextView
+        android:id="@+id/label_introduction_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/introduction_dark"
+        android:textColor="@color/introduction"
+        android:text="@string/introduction_title"
+        android:padding="@dimen/medium"
+        android:textSize="@dimen/title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/label_introduction_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/introduction_dark"
+        android:textColor="@color/introduction"
+        android:text="@string/introduction_subtitle"
+        android:paddingEnd="@dimen/medium"
+        android:paddingStart="@dimen/medium"
+        android:paddingBottom="@dimen/medium"
+        android:textSize="@dimen/photos"
+        app:layout_constraintTop_toBottomOf="@id/label_introduction_title"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+        <TextView
+            android:id="@+id/introduction_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/photos"
+            android:background="@color/introduction"
+            android:textColor="@color/introduction_dark"
+            android:text="@string/introduction_message"
+            android:padding="@dimen/medium"
+            app:layout_constraintTop_toBottomOf="@id/label_introduction_subtitle"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <Button
+            android:id="@+id/button_intro_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/introduction_dark"
+            android:layout_marginStart="@dimen/medium"
+            android:layout_marginEnd="@dimen/medium"
+            android:text="@string/field_photos"
+            android:textSize="@dimen/title"
+            android:textColor="@color/introduction"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/introduction_message"
+        />
+
+        <TextView
+            android:id="@+id/label_introduction_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/medium"
+            android:textSize="@dimen/photos"
+            android:textColor="@color/introduction_dark"
+            android:text="@string/introduction_field"
+            android:background="@drawable/introduction_sharp_border"
+            app:layout_constraintStart_toStartOf="@id/button_intro_field"
+            app:layout_constraintEnd_toEndOf="@id/button_intro_field"
+            app:layout_constraintTop_toBottomOf="@id/button_intro_field"
+            />
+
+        <Button
+            android:id="@+id/button_intro_legal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/introduction_dark"
+            android:layout_marginTop="@dimen/medium"
+            android:layout_marginStart="@dimen/medium"
+            android:layout_marginEnd="@dimen/medium"
+            android:text="@string/legal"
+            android:textSize="@dimen/title"
+            android:textColor="@color/introduction"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_introduction_text"
+            />
+
+        <TextView
+            android:id="@+id/label_legacy_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/medium"
+            android:textSize="@dimen/photos"
+            android:textColor="@color/introduction_dark"
+            android:text="@string/introduction_legacy"
+            android:background="@drawable/introduction_sharp_border"
+            android:linksClickable="true"
+            android:autoLink="all"
+            app:layout_constraintStart_toStartOf="@id/button_intro_legal"
+            app:layout_constraintEnd_toEndOf="@id/button_intro_legal"
+            app:layout_constraintTop_toBottomOf="@id/button_intro_legal"
+            />
+
+        <Button
+            android:id="@+id/button_intro_about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/introduction_dark"
+            android:layout_marginTop="@dimen/medium"
+            android:layout_marginStart="@dimen/medium"
+            android:layout_marginEnd="@dimen/medium"
+            android:text="@string/about"
+            android:textSize="@dimen/title"
+            android:textColor="@color/introduction"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_legacy_text"
+            />
+
+        <TextView
+            android:id="@+id/label_about_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/medium"
+            android:textSize="@dimen/photos"
+            android:textColor="@color/introduction_dark"
+            android:text="@string/introduction_about"
+            android:background="@drawable/introduction_sharp_border"
+            android:linksClickable="true"
+            android:autoLink="all"
+            app:layout_constraintStart_toStartOf="@id/button_intro_about"
+            app:layout_constraintEnd_toEndOf="@id/button_intro_about"
+            app:layout_constraintTop_toBottomOf="@id/button_intro_about"
+            />
+
+        <Button
+            android:id="@+id/button_intro_contribute"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/introduction_dark"
+            android:layout_marginTop="@dimen/medium"
+            android:layout_marginStart="@dimen/medium"
+            android:layout_marginEnd="@dimen/medium"
+            android:text="@string/contribute"
+            android:textSize="@dimen/title"
+            android:textColor="@color/introduction"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_about_text"
+            />
+
+        <TextView
+            android:id="@+id/label_contribute_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/medium"
+            android:textSize="@dimen/photos"
+            android:textColor="@color/introduction_dark"
+            android:text="@string/introduction_contribute"
+            android:background="@drawable/introduction_sharp_border"
+            android:linksClickable="true"
+            android:autoLink="all"
+            app:layout_constraintStart_toStartOf="@id/button_intro_contribute"
+            app:layout_constraintEnd_toEndOf="@id/button_intro_contribute"
+            app:layout_constraintTop_toBottomOf="@id/button_intro_contribute"
+            />
+
+        <Button
+            android:id="@+id/button_intro_endangered"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/introduction_dark"
+            android:layout_marginTop="@dimen/medium"
+            android:layout_marginStart="@dimen/medium"
+            android:layout_marginEnd="@dimen/medium"
+            android:text="@string/endangered"
+            android:textSize="@dimen/title"
+            android:textColor="@color/introduction"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_contribute_text"
+            />
+
+        <TextView
+            android:id="@+id/label_endangered_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/medium"
+            android:textSize="@dimen/photos"
+            android:textColor="@color/introduction_dark"
+            android:text="@string/introduction_endangered"
+            android:background="@drawable/introduction_sharp_border"
+            android:linksClickable="true"
+            android:autoLink="all"
+            app:layout_constraintStart_toStartOf="@id/button_intro_endangered"
+            app:layout_constraintEnd_toEndOf="@id/button_intro_endangered"
+            app:layout_constraintTop_toBottomOf="@id/button_intro_endangered"
+            />
+
+        <Button
+            android:id="@+id/button_intro_recognition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/introduction_dark"
+            android:layout_marginTop="@dimen/medium"
+            android:layout_marginStart="@dimen/medium"
+            android:layout_marginEnd="@dimen/medium"
+            android:text="@string/endangered"
+            android:textSize="@dimen/title"
+            android:textColor="@color/introduction"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_endangered_text"
+            />
+
+        <TextView
+            android:id="@+id/label_recognition_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/medium"
+            android:layout_marginBottom="@dimen/medium"
+            android:textSize="@dimen/photos"
+            android:textColor="@color/introduction_dark"
+            android:text="@string/introduction_recognition"
+            android:background="@drawable/introduction_sharp_border"
+            android:linksClickable="true"
+            android:autoLink="all"
+            app:layout_constraintStart_toStartOf="@id/button_intro_recognition"
+            app:layout_constraintEnd_toEndOf="@id/button_intro_recognition"
+            app:layout_constraintTop_toBottomOf="@id/button_intro_recognition"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
