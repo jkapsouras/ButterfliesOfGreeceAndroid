@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Butterflies Of Greece</string>
     <string name="field_photos">Photographs of the field</string>
@@ -28,4 +29,98 @@
     <string name="contribution_added">Your record has been added!</string>
     <string name="contribution_not_added">Your record has not been added!</string>
     <string name="endangered_title">The list of the 235 butterflies of Greece with species included in: THE RED BOOK OF THREATENED ANIMALS OF GREECE (and STATUS), Numa et. al for Mediterranean butterflies, THE LAW IN GREECE, CITES, BERNE CONVENTION and 92/43 HABITATS DIRECTIVE of EU\nSome of the butterflies (with YELLOW fill in cells) are under a special protection in Greece.</string>
+    <string name="introduction_title">How to use this application</string>
+    <string name="introduction_subtitle">Photographs of the Butterflies of Greece for identification in the field</string>
+    <string name="introduction_message">In order to make the identification of the butterflies in the field easier we present here 476 photographs. We present 165 new photographs taken from 2009-2015 while the rest 311 photographs have been published in the book. These photographs can be found in the field tab.\nIn this application you can find:</string>
+    <string name="introduction_field">There is a selection of photographs for identification of the 237 butterflies of Greece in the field. You can navigate from families to species and then to the photos. Just tap on a family, or a specie, or a photo thumbnail. You can also extract images on a pdf file. Just tap the PLUS icon in order to add an image or all images of a specie or a family. Once you have selected all the images you want, tap the export button and choose the size of the exported photos. A search option is also included in the photographs of the field section.</string>
+    <string name="introduction_legacy">In Legacy section, you can find detailed instructions from the Ministry of Environment for how to make an application and obtain a permission for research, investigation, photography, cinematography, collecting, capturing and exporting from Greece animals and plants (including butterflies). The application should be addressed to: Ministry for Environment and Energy, Directorate General for the Protection and Development of Forests and the Rural Environment, Directorate of Forest Management, Halkokondili 31, 104 32 Athens GREECE e-mail: diaxeirisi.dason@gmail.com. You can also find this information in https://yperdiavgeia.gr/decisions/downloadPdf/15680414</string>
+    <string name="introduction_about">Information about the author of the book: ΤΗΕ BUTTERFLIES OF GREECE</string>
+    <string name="introduction_contribute">Your records of the butterflies of Greece could be very useful for the protection of the butterflies and the environment in Greece. Keep your records and photographs taken always accompanied with the exact locality, coordinates (latitude and longitude) and altitude (m). Also keep any other information associated with the butterflies (eg number individuals of males or females seen, mating behavior, host plants etc). You can add this information in the contribute section. Use the form and the insert button to store data in your device and tap the export button in order to print all your records in a pdf file. You can then send this file alongside with your photos to the author pamperis@otenet.gr</string>
+    <string name="introduction_endangered">The are notes for those of the 235 species of the butterflies of Greece, which are listed in various lists, for protection and study in Greece:
+    \n1. Twenty nine species are listed in: ΛΕΓΑΚΙΣ, ΑΝΑΣΤΑΣΙΟΣ: Ασπόνδυλα. In: ΛΕΓΑΚΙΣ Α. και Π. Μαραγκού (επιμέλεια έκδοσης), Το κόκκινο βιβλίο των απειλούμενων Ζώων της Ελλάδας. Ελληνική Ζωωλογική Εταιρεία. Αθήνα 2009
+    \n2. Three species are listed in:  NUMA, C.,  et al (2016). The status and distribution of Mediterranean butterflies. IUCN, Malaga, Spain. x + 32 pp.3.
+    \n3. Forty three species are listed in:  ΠΔ 67/1981
+    \n4. One species are listed in:  CITES
+    \n5. Eight species are listed in:  BERNE CONVENTION Appendix II
+    \n6. Three species are listed in:  92/43 HABITATS DIRECTIVE ANNEX II
+    \n7. Nine species are listed in:  92/43 HABITATS DIRECTIVE ANNEX IV</string>
+    <string name="introduction_recognition">In this Application your photograph can be recognized by a system designed to compare photos with AI (Artificial Intelligence). My personal database of photographs had been used for training the AI system.
+    Accuracy can be further improved by adding more identified photos from the users. Users of this page are invited to upload their photos for recognition and then send them to contribute to the better training of the AI system. The more photographs in the training set, the bigger the accuracy of the system.
+    The results for some of the 235 species of butterflies of Greece are presented grouped in complexes; the reasons for this is that there are limits in identification using only photographs as input, in this AI (=Artificial Intelligence) system. For the moment recognition in the following species is not accurate:
+    \n
+    \n&#8226; Pieris napi / balcana complex
+    \n&#8226; Colias crocea / erate complex
+    \n&#8226; Lepidea sinapis / juvernica complex
+    \n&#8226; Plebejus argus / idas / argyrognomon complex
+    \n&#8226; Polyommatus ripartii / timfristos complex
+    \n&#8226; Melitaea athalia / aurelia complex
+    \n&#8226; Hipparchia fagi / syriaca complex
+    \n&#8226; Hipparchia senthes / volgensis / cretica / christenseni / mersina complex
+    \n&#8226; Pseudochazara anthelea / amalthea complex
+    \n&#8226; Maniola telmessia / chia / hallicarnassus complex
+    \n&#8226; Gegenes pumilio / nostrodamus complex.
+    \n
+    \nIdentification of the above species could be improved only after a discovery of new crucial characters on the wings and better AI system.
+    It is recommended that users, before resorting to the Application, first search for the answer in their books, on various websites, etc., and then resort to the Application to confirm their conclusion. The research in the field, the suffering of the effort with perseverance and patience, the contact with the relevant books is the sure but uphill way, to improve in the recognition of the butterflies. Quick Recognition with Application is good but do not blindly trust it and always doubt the results.</string>
 </resources>
+
+    <!--"introduction_field" = "There is a selection of photographs for identification of the 237 butterflies of Greece in the field. You can navigate from families to species and then to the photos. Just tap on a family, or a specie, or a photo thumbnail. You can also extract images on a pdf file. Just tap the PLUS icon in order to add an image or all images of a specie or a family. Once you have selected all the images you want, tap the export button and choose the size of the exported photos. A search option is also included in the photographs of the field section.";
+    "introduction_legacy" = "In Legacy section, you can find detailed instructions from the Ministry of Environment for how to make an application and obtain a permission for research, investigation, photography, cinematography, collecting, capturing and exporting from Greece animals and plants (including butterflies). The application should be addressed to: Ministry for Environment and Energy, Directorate General for the Protection and Development of Forests and the Rural Environment, Directorate of Forest Management, Halkokondili 31, 104 32 Athens GREECE e-mail: diaxeirisi.dason@gmail.com. You can also find this information in https://yperdiavgeia.gr/decisions/downloadPdf/15680414";
+    "introduction_about" = "Information about the author of the book: ΤΗΕ BUTTERFLIES OF GREECE";
+    "introduction_contribute" = "Your records of the butterflies of Greece could be very useful for the protection of the butterflies and the environment in Greece. Keep your records and photographs taken always accompanied with the exact locality, coordinates (latitude and longitude) and altitude (m). Also keep any other information associated with the butterflies (eg number individuals of males or females seen, mating behavior, host plants etc). You can add this information in the contribute section. Use the form and the insert button to store data in your device and tap the export button in order to print all your records in a pdf file. You can then send this file alongside with your photos to the author pamperis@otenet.gr";
+    "introduction_endangered" = "The are notes for those of the 235 species of the butterflies of Greece, which are listed in various lists, for protection and study in Greece:
+    1. Twenty nine species are listed in: ΛΕΓΑΚΙΣ, ΑΝΑΣΤΑΣΙΟΣ: Ασπόνδυλα. In: ΛΕΓΑΚΙΣ Α. και Π. Μαραγκού (επιμέλεια έκδοσης), Το κόκκινο βιβλίο των απειλούμενων Ζώων της Ελλάδας. Ελληνική Ζωωλογική Εταιρεία. Αθήνα 2009
+    2. Three species are listed in:  NUMA, C.,  et al (2016). The status and distribution of Mediterranean butterflies. IUCN, Malaga, Spain. x + 32 pp.3.
+    3. Forty three species are listed in:  ΠΔ 67/1981
+    4. One species are listed in:  CITES
+    5. Eight species are listed in:  BERNE CONVENTION Appendix II
+    6. Three species are listed in:  92/43 HABITATS DIRECTIVE ANNEX II
+    7. Nine species are listed in:  92/43 HABITATS DIRECTIVE ANNEX IV";
+    "introduction_recognition" = "In this Application your photograph can be recognized by a system designed to compare photos with AI (Artificial Intelligence). My personal database of photographs had been used for training the AI system.
+    Accuracy can be further improved by adding more identified photos from the users. Users of this page are invited to upload their photos for recognition and then send them to contribute to the better training of the AI system. The more photographs in the training set, the bigger the accuracy of the system.
+    The results for some of the 235 species of butterflies of Greece are presented grouped in complexes; the reasons for this is that there are limits in identification using only photographs as input, in this AI (=Artificial Intelligence) system. For the moment recognition in the following species is not accurate:
+
+    \U2022 Pieris napi/balcana complex
+    \U2022 Colias crocea/erate complex
+    \U2022 Lepidea sinapis/juvernica complex
+    \U2022 Plebejus argus/idas/argyrognomon complex
+    \U2022 Polyommatus ripartii/timfristos complex
+    \U2022 Melitaea athalia/aurelia complex
+    \U2022 Hipparchia fagi/syriaca complex
+    \U2022 Hipparchia senthes/volgensis/cretica/christenseni/mersina complex
+    \U2022 Pseudochazara anthelea/amalthea complex
+    \U2022 Maniola telmessia/chia/hallicarnassus complex
+    \U2022 Gegenes pumilio/nostrodamus complex.
+
+    Identification of the above species could be improved only after a discovery of new crucial characters on the wings and better AI system.
+    It is recommended that users, before resorting to the Application, first search for the answer in their books, on various websites, etc., and then resort to the Application to confirm their conclusion. The research in the field, the suffering of the effort with perseverance and patience, the contact with the relevant books is the sure but uphill way, to improve in the recognition of the butterflies. Quick Recognition with Application is good but don't blindly trust it and always doubt the results.";
+    "introduction_field" = "Υπάρχει μια συλλογή φωτογραφιών για την αναγνώριση των 235 πεταλούδων της Ελλάδας στο πεδίο. Μπορείς να περιηγηθείς από τις οικογένειες στα είδη και από εκεί στις φωτογραφίες. Απλά κλίκαρε μια οικογένεια, ένα είδος ή μια μικρογραφία εικόνας. Μπορείς επίσης να εξάγεις τις φωτογραφίες σε ένα αρχείο pdf. Απλά κλίκαρε στο PLUS εικονίδιο για να προσθέσεις μια εικόνα ή όλες τις εικόνες από ένα είδος ή όλες τις εικόνες από μια οικογένεια. Μόλις επιλέξεις τις εικόνες που θέλεις, κάνε κλικ στο πλήκτρο εξαγωγή και επέλεξε το μέγεθος των εικόνων. Μία επιλογή αναζήτησης προσφέρεται επίσης.";
+    "introduction_legacy" = "Στο τμήμα Νομικά, μπορείς να βρεις πληροφορίες που εξέδωσε το Υπουργείο Περιβάλλοντος σχετικά με τη διαδικασία χορήγησης αδειών για την εκπόνηση ερευνών, εξερευνήσεων, φωτογράφησης, κινηματογράφησης, σύλληψης, συλλογής και εξαγωγής από την Ελλάδα, που αφορούν είδη χλωρίδας και πανίδας (όπου συμπεριλαμβάνονται και οι πεταλούδες). Η αίτηση να απευθύνεται στο: ΥΠΟΥΡΓΕΙΟ ΠΕΡΙΒΑΛΛΟΝΤΟΣ ΚΑΙ ΕΝΕΡΓΕΙΑΣ, ΓΕΝΙΚΗ ∆/ΝΣΗ ΑΝΑΠΤΥΞΗΣ & ΠΡΟΣΤΑΣΙΑΣ ∆ΑΣΩΝ & ΑΓΡΟΠΕΡΙΒΑΛΛΟΝΤΟΣ, ∆/ΝΣΗ ∆ΙΑΧΕΙΡΙΣΗΣ ∆ΑΣΩΝ & ∆.Π.   Χαλκοκονδύλη 31 Ταχ. Κωδ. : 104 32 ΑΘΗΝΑ ΕΛΛΑΔΑ e-mail: diaxeirisi.dason@gmail.com. Μπορείς επίσης να βρεις αυτές τις πληροφορίες στο https://yperdiavgeia.gr/decisions/downloadPdf/15680414";
+    "introduction_about" = "Πληροφορίες σχετικά με τον συγγραφέα του βιβλίου: ΟΙ ΠΕΤΑΛΟΥΔΕΣ ΤΗΣ ΕΛΛΑΔΑΣ";
+    "introduction_contribute" = "Οι καταγραφές σου των πεταλούδων της Ελλάδας μπορούν να είναι πολύ χρήσιμες για την προστασία των πεταλούδων και του περιβάλλοντος της Ελλάδας. Κρατήστε τις καταγραφές σας και τις φωτογραφίες που πήρατε πάντα συνοδευόμενες με στοιχεία για την ακριβή τοποθεσία, τις γεωγραφικές συντεταγμένες (γεωγραφικό πλάτος και μήκος) και το υψόμετρο (m). Σημειώστε επίσης κάθε επί πλέον πληροφορία που σχετίζεται με τις πεταλούδες (πχ ο αριθμός αρσενικών ή θηλυκών ατόμων που παρατηρήθηκαν, η συμπεριφορά ζευγαρώματος, φυτά ξενιστές κλπ). Μπορείς να προσθέσεις αυτές τις πληροφορίες στο τμήμα Συμμετοχή. Χρησιμοποίησε τη φόρμα και το πλήκτρο εισαγωγή για να αποθηκεύσεις δεδομένα στην εφαρμογή σου. Κάνε κλικ στο πλήκτρο εξαγωγή για να εξάγεις όλα τα δεδομένα σου σε ένα pdf αρχείο. Μπορείς να στείλεις αυτό το αρχείο μαζί με τις αντίστοιχες φωτογραφίες σου στον συγγραφέα μέσω e-mail (pamperis@otenet.gr).";
+    "introduction_endangered" = "Καταγράφονται όσα από τα 235 είδη των πεταλούδων της Ελλάδας, συμπεριλαμβάνονται σε διάφορους καταλόγους όπου περιγράφονται οι απειλές και τα σχετικά με την προστασία των στην Ελλάδα:
+    1. Είκοσι εννέα είδη συμπεριλαμβάνονται στο: ΛΕΓΑΚΙΣ, ΑΝΑΣΤΑΣΙΟΣ: Ασπόνδυλα. In: ΛΕΓΑΚΙΣ Α. και Π. Μαραγκού (επιμέλεια έκδοσης), Το κόκκινο βιβλίο των απειλούμενων Ζώων της Ελλάδας. Ελληνική Ζωωλογική Εταιρεία. Αθήνα 2009
+    2. Τρία είδη συμπεριλαμβάνονται στο: NUMA, C.,  et al (2016). The status and distribution of Mediterranean butterflies. IUCN, Malaga, Spain. x + 32 pp.3.
+    3. Σαράντα τρία είδη συμπεριλαμβάνονται στο: ΠΔ 67/1981
+    4. Ένα είδος συμπεριλαμβάνεαι στο: CITES
+    5. Οκτώ είδη συμπεριλαμβάνονται στο: BERNE CONVENTION Appendix II
+    6. Τρία είδη συμπεριλαμβάνονται στο: 92/43 HABITATS DIRECTIVE ANNEX II
+    7. Εννέα είδη συμπεριλαμβάνονται στο: 92/43 HABITATS DIRECTIVE ANNEX IV";
+    "introduction_recognition" = "Σε αυτή την Εφαρμογή μπορείτε να αναγνωρίσετε την φωτογραφία μιάς πεταλούδας, με την βοήθεια ενός συστήματος, που συγκρίνει φωτογραφίες με Τεχνητή Νοημοσύνη (AI= Artificial Intelligence). Για το σκοπό αυτό χρησιμοποιήθηκε αρχικά το προσωπικό αρχείο των φωτογραφιών πεταλούδων από την Ελλάδα.\nΗ ακρίβεια της αναγνώρισης μπορεί να βελτιωθεί περισσότερο αν προστεθούν σε αυτή την βάση περισσότερες φωτογραφίες πεταλούδων, με σωστή αναγνώριση του είδους από τους χρήστες της. Οι χρήστες καλούνται να ανεβάσουν τις φωτογραφίες τους για αναγνώριση και αν το επιθυμούν να στείλουν τις φωτογραφίες τους για καταχώρηση σε αυτή την εφαρμογή, επειδή όσο περισσότερες φωτογραφίες έχουν καταχωρηθεί σε αυτή τόσο μεγαλύτερη ακρίβεια της αναγνώρισης προκύπτει.\n
+    Μερικά από τα  235 ειδη των πεταλούδων της Ελλάδας παρουσιάζονται σε ομάδες (complexes) γιατί υπάρχουν όρια στην αναγνώριση με τις φωτογραφίες με αυτή την Τεχνητή Νοημοσύνη (AI= Artificial Intelligence) και προς το παρον δεν ειναι εφικτή η αναγνώριση σε επίπεδο είδους:\n
+
+    \U2022 Pieris napi/balcana complex
+    \U2022 Colias crocea/erate complex
+    \U2022 Lepidea sinapis/juvernica complex
+    \U2022 Plebejus argus/idas/argyrognomon complex
+    \U2022 Polyommatus ripartii/timfristos complex
+    \U2022 Melitaea athalia/aurelia complex
+    \U2022 Hipparchia fagi/syriaca comple
+    \U2022 Hipparchia senthes/volgensis/cretica/christenseni/mersina complex
+    \U2022 Pseudochazara anthelea/amalthea complex
+    \U2022 Maniola telmessia/chia/hallicarnassus complex
+    \U2022Gegenes pumilio/nostrodamus complex.
+
+    Η αναγνώριση των ειδών αυτών των ομάδων μπορεί να βελτιωθεί αν επινοηθούν νέα εργαλεία ανάλυσης AI και εξευρεθούν νέα χαρακτηριστικά των φτερών σημαντικά στην αναγνώριση.\n
+    Προτείνεται στους χρήστες πριν καταφύγουν στην Εφαρμογή να ψάξουν πρώτα να βρουν την απάντηση στα βιβλία τους, σε διάφορους ιστότοπους κλπ, και μετά να καταφύγουν στην Εφαρμογή γιά να επιβεβαιώσουν το συμπέρασμά τους. Η έρευνα στο πεδίο, η βάσανος της προσπάθειας με επιμονή και υπομονή, η επαφή με τα σχετικά βιβλία είναι ο σίγουρος, αλλά ανηφορικός, δρόμος γιά να βελτιωθεί κάποιος στην αναγνώριση των πεταλούδων. Καλή είναι η γρήγορη αναγνώριση με την Εφαρμογή αλλά μην την εμπιστεύεστε τυφλά και πάντα να αμφιβάλετε για τις αναγνωρίσεις. ";
+    -->

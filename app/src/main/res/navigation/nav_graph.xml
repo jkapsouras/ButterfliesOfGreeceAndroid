@@ -19,6 +19,9 @@
         <action
             android:id="@+id/navigate_to_endangered"
             app:destination="@id/endangeredFragment" />
+        <action
+            android:id="@+id/navigate_to_introduction"
+            app:destination="@id/introductionFragment" />
     </fragment>
     <fragment
         android:id="@+id/familiesFragment"
@@ -93,4 +96,8 @@
         android:id="@+id/endangeredFragment"
         android:name="gr.jkapsouras.butterfliesofgreece.fragments.endangered.EndangeredFragment"
         android:label="@string/endangered" />
+    <fragment
+        android:id="@+id/introductionFragment"
+        android:name="gr.jkapsouras.butterfliesofgreece.fragments.introduction.IntroductionFragment"
+        android:label="@string/introduction" />
 </navigation>

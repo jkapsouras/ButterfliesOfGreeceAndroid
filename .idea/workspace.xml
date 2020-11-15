@@ -42,16 +42,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efa0256b-32b0-4f2f-898e-86426287e8f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/species.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/endangered/EndangeredFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/endangered_fragment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/introduction/IntroductionFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/introduction_sharp_border.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/introduction_fragment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/navEditor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/navEditor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/BaseFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/BaseFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/main/MainMenuFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/main/MainMenuFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/main/MenuComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/main/MenuComponent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosTableView/adapter/PhotosTableViewCell.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosTableView/adapter/PhotosTableViewCell.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,9 +129,9 @@
         <option value="Class" />
         <option value="Kotlin Object" />
         <option value="Kotlin Interface" />
-        <option value="resourceFile" />
         <option value="layoutResourceFile" />
         <option value="Kotlin File" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -170,21 +183,21 @@
     <option name="MODULE_TAB" value="Default Config" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="gr.jkapsouras.butterfliesofgreece.views.header.UiEvents" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/gradle/wrapper" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/font" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="gr.jkapsouras.butterfliesofgreece" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/assets" />
       <recent name="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/printToPdf/state" />
       <recent name="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/families" />
       <recent name="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/header" />
-    </key>
-    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="gr.jkapsouras.butterfliesofgreece.views.header.UiEvents" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="gr.jkapsouras.butterfliesofgreece" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/gradle/wrapper" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/font" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.app">
@@ -661,14 +674,14 @@
       <screen x="0" y="23" width="2560" height="1333" />
     </state>
     <state x="781" y="343" key="SettingsEditor/0.23.2560.1333@0.23.2560.1333" timestamp="1601723933280" />
-    <state x="881" y="429" key="Vcs.Push.Dialog.v2" timestamp="1605366248677">
+    <state x="881" y="429" key="Vcs.Push.Dialog.v2" timestamp="1605377810686">
       <screen x="0" y="25" width="2560" height="1328" />
     </state>
     <state x="578" y="313" key="Vcs.Push.Dialog.v2/0.23.1680.953@0.23.1680.953" timestamp="1603905486387" />
     <state x="578" y="313" key="Vcs.Push.Dialog.v2/0.23.1680.954@0.23.1680.954" timestamp="1603663752065" />
     <state x="880" y="429" key="Vcs.Push.Dialog.v2/0.23.2560.1333@0.23.2560.1333" timestamp="1601738044551" />
     <state x="881" y="429" key="Vcs.Push.Dialog.v2/0.23.2560.1335@0.23.2560.1335" timestamp="1604935084564" />
-    <state x="881" y="429" key="Vcs.Push.Dialog.v2/0.25.2560.1328@0.25.2560.1328" timestamp="1605366248677" />
+    <state x="881" y="429" key="Vcs.Push.Dialog.v2/0.25.2560.1328@0.25.2560.1328" timestamp="1605377810686" />
     <state width="1280" height="643" key="XDebugger.FullValuePopup" timestamp="1605278938271">
       <screen x="0" y="23" width="2560" height="1332" />
     </state>

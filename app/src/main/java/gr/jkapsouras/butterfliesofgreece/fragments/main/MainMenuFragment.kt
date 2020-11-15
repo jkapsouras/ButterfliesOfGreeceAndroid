@@ -71,7 +71,7 @@ class MainMenuFragment : BaseFragment<MenuPresenter>() {
             btn_field,
             btn_contribute,
             btn_field,
-            btn_field,
+            btn_introduction,
             btn_endangered,
             btn_field,
             btn_field

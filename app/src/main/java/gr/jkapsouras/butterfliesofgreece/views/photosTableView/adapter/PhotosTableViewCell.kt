@@ -148,7 +148,6 @@ class PhotosTableViewCell(itemView: View, private val emitter: PublishSubject<Ui
                 )
             )
         }
-        var x = R.drawable.plus_icon
         itemView.iv_add_image_row_table.setImageResource(if (showingStep == ShowingStep.Photos)  R.drawable.plus_icon else R.drawable.minus_icon)
     }
 }
