@@ -48,8 +48,13 @@ class MenuComponent : UiComponent
             Log.d(Constraints.TAG, "endangered clicked")
         }
 
-        introduction.setOnClickListener {
+        introductionButton.setOnClickListener {
             emitter.onNext(MenuUiEvents.IntroductionClicked)
+            Log.d(Constraints.TAG, "endangered clicked")
+        }
+
+        aboutButton.setOnClickListener {
+            emitter.onNext(MenuUiEvents.AboutClicked)
             Log.d(Constraints.TAG, "endangered clicked")
         }
 

@@ -22,6 +22,9 @@
         <action
             android:id="@+id/navigate_to_introduction"
             app:destination="@id/introductionFragment" />
+        <action
+            android:id="@+id/navigate_to_about"
+            app:destination="@id/aboutFragment" />
     </fragment>
     <fragment
         android:id="@+id/familiesFragment"
@@ -100,4 +103,8 @@
         android:id="@+id/introductionFragment"
         android:name="gr.jkapsouras.butterfliesofgreece.fragments.introduction.IntroductionFragment"
         android:label="@string/introduction" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="gr.jkapsouras.butterfliesofgreece.fragments.about.AboutFragment"
+        android:label="@string/about" />
 </navigation>
