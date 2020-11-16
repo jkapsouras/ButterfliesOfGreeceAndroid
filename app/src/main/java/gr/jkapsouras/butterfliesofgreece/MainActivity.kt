@@ -65,6 +65,11 @@ class MainActivity : AppCompatActivity() {
                     toolbar.setBackgroundColor(applicationContext.getColor(R.color.about))
                     toolbar.setTitleTextColor(applicationContext.getColor(R.color.about_dark))
                 }
+                R.id.legalFragment -> {
+                    toolbar.context.setTheme(R.style.LegalTheme)
+                    toolbar.setBackgroundColor(applicationContext.getColor(R.color.legal))
+                    toolbar.setTitleTextColor(applicationContext.getColor(R.color.legal_dark))
+                }
                 R.id.searchFragment ->
                     search_bar.visibility = View.VISIBLE
                 else ->

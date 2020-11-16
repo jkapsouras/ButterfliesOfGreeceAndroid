@@ -92,8 +92,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="12" />
-                            <option name="y" value="12" />
+                            <option name="x" value="231" />
+                            <option name="y" value="-367" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -131,11 +131,6 @@
                               </value>
                             </entry>
                             <entry key="navigate_to_introduction">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                            <entry key="navigate_to_legal_fragment">
                               <value>
                                 <LayoutPositions />
                               </value>

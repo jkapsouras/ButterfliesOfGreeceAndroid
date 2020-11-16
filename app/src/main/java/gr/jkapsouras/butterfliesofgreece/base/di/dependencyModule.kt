@@ -10,6 +10,7 @@ import gr.jkapsouras.butterfliesofgreece.base.schedulers.MainThreadScheduler
 import gr.jkapsouras.butterfliesofgreece.data.Storage
 import gr.jkapsouras.butterfliesofgreece.fragments.contribute.ContributePresenter
 import gr.jkapsouras.butterfliesofgreece.fragments.families.FamiliesPresenter
+import gr.jkapsouras.butterfliesofgreece.fragments.legal.LegalPresenter
 import gr.jkapsouras.butterfliesofgreece.fragments.main.MenuPresenter
 import gr.jkapsouras.butterfliesofgreece.fragments.modal.ModalPresenter
 import gr.jkapsouras.butterfliesofgreece.fragments.photos.PhotosPresenter
@@ -122,6 +123,10 @@ fun registerPresenters(module: Module){
     module.factory { ContributePresenter(
         locationManager = get(),
         contributionRepository = get(),
+        backgroundThreadScheduler = get(),
+        mainThreadScheduler =  get()
+    ) }
+    module.factory { LegalPresenter(
         backgroundThreadScheduler = get(),
         mainThreadScheduler =  get()
     ) }

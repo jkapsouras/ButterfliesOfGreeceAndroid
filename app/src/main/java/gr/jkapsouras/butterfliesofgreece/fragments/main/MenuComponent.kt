@@ -58,6 +58,11 @@ class MenuComponent : UiComponent
             Log.d(Constraints.TAG, "endangered clicked")
         }
 
+        legalButton.setOnClickListener {
+            emitter.onNext(MenuUiEvents.LegalClicked)
+            Log.d(Constraints.TAG, "endangered clicked")
+        }
+
         //        Observable.merge(FieldButton.rx.tap.map{tap in
 //            MenuEvent.fieldClicked as UiEvent},
 //    ContributeButton.rx.tap.map{tap in
