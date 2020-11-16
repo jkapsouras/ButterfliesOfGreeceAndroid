@@ -123,6 +123,8 @@ abstract  class BaseFragment<P : BasePresenter> : Fragment(){
                         findNavController().navigate(R.id.navigate_to_endangered)
                     is MenuViewStates.ToIntroduction ->
                         findNavController().navigate(R.id.navigate_to_introduction)
+                    is MenuViewStates.ToAbout ->
+                        findNavController().navigate(R.id.navigate_to_about)
                 }
             }
             is FamiliesViewViewStates ->{

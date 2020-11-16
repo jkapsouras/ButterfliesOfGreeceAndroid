@@ -53,6 +53,17 @@
         <item name="colorControlNormal">@color/introduction_dark</item>
     </style>
 
+    <style name="AboutTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:fontFamily">@font/actypogrotesk</item>
+        <item name="themeName">"AboutTheme"</item>
+        <item name="android:titleTextColor">@color/about_dark</item>
+        <item name="background">@color/about_dark</item>
+        <item name="colorPrimary">@color/about_dark</item>
+        <item name="colorPrimaryDark">@color/about_dark</item>
+        <item name="colorAccent">@color/about_dark</item>
+        <item name="colorControlNormal">@color/about_dark</item>
+    </style>
+
     <style name="SearchTheme" parent="Widget.AppCompat.SearchView.ActionBar">
         <item name="android:textColor">@color/field_dark</item>
         <item name="editTextColor">@color/field_dark</item>

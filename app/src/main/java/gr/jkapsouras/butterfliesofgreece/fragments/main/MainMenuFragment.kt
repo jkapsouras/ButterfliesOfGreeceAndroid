@@ -70,7 +70,7 @@ class MainMenuFragment : BaseFragment<MenuPresenter>() {
         menuComponent = MenuComponent(
             btn_field,
             btn_contribute,
-            btn_field,
+            btn_about,
             btn_introduction,
             btn_endangered,
             btn_field,
