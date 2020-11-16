@@ -15,4 +15,5 @@
     <color name="endangered_dark">#b16b73</color>
     <color name="recognition">#E8EEE8</color>
     <color name="recognition_dark">#6b9972</color>
+    <color name="gray">#808080</color>
 </resources>
