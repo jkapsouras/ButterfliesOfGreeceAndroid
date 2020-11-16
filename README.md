@@ -9,12 +9,12 @@ Upgrading Butterflies of Greece app to native
 - Endangered
 - About
 - Introduction
+- Legal
 
 # Implementing
 
-- Legal
+- Online recognition
+- Offline recognition
 
 # To implement
 
-- Online recognition
-- Offline recognition
