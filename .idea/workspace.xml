@@ -42,9 +42,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efa0256b-32b0-4f2f-898e-86426287e8f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/introduction/IntroductionFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/introduction_sharp_border.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/introduction_fragment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
@@ -53,18 +50,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/navEditor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/navEditor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/BaseFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/BaseFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/main/MainMenuFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/main/MainMenuFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/main/MenuComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/main/MenuComponent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosTableView/adapter/PhotosTableViewCell.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosTableView/adapter/PhotosTableViewCell.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +125,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="Feature/Introduction" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -183,21 +170,21 @@
     <option name="MODULE_TAB" value="Default Config" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="gr.jkapsouras.butterfliesofgreece.views.header.UiEvents" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/gradle/wrapper" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/font" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="gr.jkapsouras.butterfliesofgreece" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/assets" />
       <recent name="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/printToPdf/state" />
       <recent name="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/families" />
       <recent name="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/header" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="gr.jkapsouras.butterfliesofgreece.views.header.UiEvents" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="gr.jkapsouras.butterfliesofgreece" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/gradle/wrapper" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/font" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.app">
@@ -581,7 +568,7 @@
     <state width="755" height="649" key="DebuggerActiveHint/0.23.2560.1332@0.23.2560.1332" timestamp="1605278938300" />
     <state width="755" height="650" key="DebuggerActiveHint/0.23.2560.1335@0.23.2560.1335" timestamp="1604995742467" />
     <state width="755" height="648" key="DebuggerActiveHint/0.25.2560.1328@0.25.2560.1328" timestamp="1605377444529" />
-    <state width="1259" height="358" key="GridCell.Tab.0.bottom" timestamp="1605377437335">
+    <state width="1259" height="358" key="GridCell.Tab.0.bottom" timestamp="1605473549373">
       <screen x="0" y="25" width="2560" height="1328" />
     </state>
     <state width="819" height="244" key="GridCell.Tab.0.bottom/0.23.1680.953@0.23.1680.953" timestamp="1603922214093" />
@@ -590,8 +577,8 @@
     <state width="1638" height="246" key="GridCell.Tab.0.bottom/0.23.1680.961@0.23.1680.961" timestamp="1603747692750" />
     <state width="1259" height="446" key="GridCell.Tab.0.bottom/0.23.2560.1332@0.23.2560.1332" timestamp="1605281945130" />
     <state width="1259" height="466" key="GridCell.Tab.0.bottom/0.23.2560.1335@0.23.2560.1335" timestamp="1604999981236" />
-    <state width="1259" height="358" key="GridCell.Tab.0.bottom/0.25.2560.1328@0.25.2560.1328" timestamp="1605377437335" />
-    <state width="1259" height="358" key="GridCell.Tab.0.center" timestamp="1605377437334">
+    <state width="1259" height="358" key="GridCell.Tab.0.bottom/0.25.2560.1328@0.25.2560.1328" timestamp="1605473549373" />
+    <state width="1259" height="358" key="GridCell.Tab.0.center" timestamp="1605473549372">
       <screen x="0" y="25" width="2560" height="1328" />
     </state>
     <state width="819" height="244" key="GridCell.Tab.0.center/0.23.1680.953@0.23.1680.953" timestamp="1603922214093" />
@@ -600,8 +587,8 @@
     <state width="1638" height="246" key="GridCell.Tab.0.center/0.23.1680.961@0.23.1680.961" timestamp="1603747692749" />
     <state width="1259" height="446" key="GridCell.Tab.0.center/0.23.2560.1332@0.23.2560.1332" timestamp="1605281945129" />
     <state width="1259" height="466" key="GridCell.Tab.0.center/0.23.2560.1335@0.23.2560.1335" timestamp="1604999981235" />
-    <state width="1259" height="358" key="GridCell.Tab.0.center/0.25.2560.1328@0.25.2560.1328" timestamp="1605377437334" />
-    <state width="1259" height="358" key="GridCell.Tab.0.left" timestamp="1605377437334">
+    <state width="1259" height="358" key="GridCell.Tab.0.center/0.25.2560.1328@0.25.2560.1328" timestamp="1605473549372" />
+    <state width="1259" height="358" key="GridCell.Tab.0.left" timestamp="1605473549372">
       <screen x="0" y="25" width="2560" height="1328" />
     </state>
     <state width="819" height="244" key="GridCell.Tab.0.left/0.23.1680.953@0.23.1680.953" timestamp="1603922214092" />
@@ -610,8 +597,8 @@
     <state width="1638" height="246" key="GridCell.Tab.0.left/0.23.1680.961@0.23.1680.961" timestamp="1603747692749" />
     <state width="1259" height="446" key="GridCell.Tab.0.left/0.23.2560.1332@0.23.2560.1332" timestamp="1605281945129" />
     <state width="1259" height="466" key="GridCell.Tab.0.left/0.23.2560.1335@0.23.2560.1335" timestamp="1604999981235" />
-    <state width="1259" height="358" key="GridCell.Tab.0.left/0.25.2560.1328@0.25.2560.1328" timestamp="1605377437334" />
-    <state width="1259" height="358" key="GridCell.Tab.0.right" timestamp="1605377437334">
+    <state width="1259" height="358" key="GridCell.Tab.0.left/0.25.2560.1328@0.25.2560.1328" timestamp="1605473549372" />
+    <state width="1259" height="358" key="GridCell.Tab.0.right" timestamp="1605473549373">
       <screen x="0" y="25" width="2560" height="1328" />
     </state>
     <state width="819" height="244" key="GridCell.Tab.0.right/0.23.1680.953@0.23.1680.953" timestamp="1603922214093" />
@@ -620,7 +607,7 @@
     <state width="1638" height="246" key="GridCell.Tab.0.right/0.23.1680.961@0.23.1680.961" timestamp="1603747692750" />
     <state width="1259" height="446" key="GridCell.Tab.0.right/0.23.2560.1332@0.23.2560.1332" timestamp="1605281945129" />
     <state width="1259" height="466" key="GridCell.Tab.0.right/0.23.2560.1335@0.23.2560.1335" timestamp="1604999981235" />
-    <state width="1259" height="358" key="GridCell.Tab.0.right/0.25.2560.1328@0.25.2560.1328" timestamp="1605377437334" />
+    <state width="1259" height="358" key="GridCell.Tab.0.right/0.25.2560.1328@0.25.2560.1328" timestamp="1605473549373" />
     <state width="1259" height="443" key="GridCell.Tab.1.bottom" timestamp="1605365595800">
       <screen x="0" y="25" width="2560" height="1328" />
     </state>
@@ -749,16 +736,6 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/search/SearchPresenter.kt</url>
           <line>50</line>
           <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/BaseFragment.kt</url>
-          <line>110</line>
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/BaseFragment.kt</url>
-          <line>108</line>
-          <option name="timeStamp" value="80" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/printToPdf/PrintToPdfPresenter.kt</url>
