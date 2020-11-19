@@ -42,28 +42,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efa0256b-32b0-4f2f-898e-86426287e8f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/dto/Prediction.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/RecognitionFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/RecognitionPresenter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/component/RecognitionComponent.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/state/RecognitionState.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/uiEvents/RecognitionEvents.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/viewStates/RecognitionViewStates.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/recognition_border_circle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/recognition_fragment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/view_recognition.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/network/IImageApi.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/recognitionView/RecognitionView.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/ButterfliesOfGreeceAndroid.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/ButterfliesOfGreeceAndroid.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/repositories/FamiliesRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/repositories/FamiliesRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[3cd4796c23b9]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[my_device]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -120,10 +119,10 @@
       <list>
         <option value="Class" />
         <option value="Kotlin Object" />
-        <option value="Kotlin Interface" />
-        <option value="Kotlin File" />
         <option value="layoutResourceFile" />
         <option value="resourceFile" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Interface" />
       </list>
     </option>
   </component>
@@ -155,6 +154,7 @@
     <property name="android-custom-view/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/headerPrintToPdfView/HeaderPrintToPdfView.kt_SELECTED" value="HeaderPrintToPdfView" />
     <property name="android-custom-view/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosCollectionView/PhotosCollectionView.kt_SELECTED" value="PhotosCollectionView" />
     <property name="android-custom-view/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosTableView/PhotosTableView.kt_SELECTED" value="PhotosTableView" />
+    <property name="android-custom-view/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/recognitionView/RecognitionView.kt_SELECTED" value="RecognitionView" />
     <property name="android-custom-view/Users/jkapsi/Projects/butterfliesandroid/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/header/HeaderView.kt_SELECTED" value="HeaderView" />
     <property name="android-custom-view/Users/jkapsi/Projects/butterfliesandroid/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosCollectionView/PhotosCollectionView.kt_SELECTED" value="PhotosCollectionView" />
     <property name="android-custom-view/Users/jkapsi/Projects/butterfliesandroid/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosTableView/PhotosTableView.kt_SELECTED" value="PhotosTableView" />
@@ -164,6 +164,7 @@
     <property name="multi-representation-preview/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/headerPrintToPdfView/HeaderPrintToPdfView.kt_selected" value="Custom views" />
     <property name="multi-representation-preview/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosCollectionView/PhotosCollectionView.kt_selected" value="Custom views" />
     <property name="multi-representation-preview/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosTableView/PhotosTableView.kt_selected" value="Custom views" />
+    <property name="multi-representation-preview/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/recognitionView/RecognitionView.kt_selected" value="Custom views" />
     <property name="multi-representation-preview/Users/jkapsi/Projects/butterfliesandroid/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/header/HeaderView.kt_selected" value="Custom views" />
     <property name="multi-representation-preview/Users/jkapsi/Projects/butterfliesandroid/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosCollectionView/PhotosCollectionView.kt_selected" value="Custom views" />
     <property name="multi-representation-preview/Users/jkapsi/Projects/butterfliesandroid/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosTableView/PhotosTableView.kt_selected" value="Custom views" />
@@ -478,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605534935607</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="add recognition view + presenter + events + state + viewstate (no functionality)">
+      <created>1605689506915</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1605689506915</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -494,7 +502,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add header view + header component + switch arrange event" />
     <MESSAGE value="add collection + various fixes" />
     <MESSAGE value="add emitter to collection view" />
     <MESSAGE value="add species but species presenter" />
@@ -519,7 +526,8 @@
     <MESSAGE value="update workspace.xml" />
     <MESSAGE value="nothing special" />
     <MESSAGE value="update develop" />
-    <option name="LAST_COMMIT_MESSAGE" value="update develop" />
+    <MESSAGE value="add recognition view + presenter + events + state + viewstate (no functionality)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add recognition view + presenter + events + state + viewstate (no functionality)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1032" y="376" key="#Auto_Import" timestamp="1605683742073">
@@ -576,7 +584,7 @@
       <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state x="609" y="253" key="AndroidProcessChooserDialog/0.23.1680.954@0.23.1680.954" timestamp="1603657995945" />
-    <state x="335" y="169" key="CommitChangelistDialog2" timestamp="1605534932674">
+    <state x="335" y="169" key="CommitChangelistDialog2" timestamp="1605689506237">
       <screen x="0" y="25" width="2560" height="1328" />
     </state>
     <state x="220" y="126" key="CommitChangelistDialog2/0.23.1680.953@0.23.1680.953" timestamp="1603782805857" />
@@ -584,7 +592,7 @@
     <state x="335" y="167" key="CommitChangelistDialog2/0.23.2560.1332@0.23.2560.1332" timestamp="1605214513264" />
     <state x="790" y="292" key="CommitChangelistDialog2/0.23.2560.1333@0.23.2560.1333" timestamp="1601738033254" />
     <state x="335" y="167" key="CommitChangelistDialog2/0.23.2560.1335@0.23.2560.1335" timestamp="1604948002787" />
-    <state x="335" y="169" key="CommitChangelistDialog2/0.25.2560.1328@0.25.2560.1328" timestamp="1605534932674" />
+    <state x="335" y="169" key="CommitChangelistDialog2/0.25.2560.1328@0.25.2560.1328" timestamp="1605689506237" />
     <state width="755" height="648" key="DebuggerActiveHint" timestamp="1605377444529">
       <screen x="0" y="25" width="2560" height="1328" />
     </state>
