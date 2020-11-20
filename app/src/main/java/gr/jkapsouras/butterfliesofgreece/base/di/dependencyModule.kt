@@ -22,13 +22,18 @@ import gr.jkapsouras.butterfliesofgreece.managers.CacheManager
 import gr.jkapsouras.butterfliesofgreece.managers.ICacheManager
 import gr.jkapsouras.butterfliesofgreece.managers.ILocationManager
 import gr.jkapsouras.butterfliesofgreece.managers.LocationManager
+import gr.jkapsouras.butterfliesofgreece.network.IImageApi
 import gr.jkapsouras.butterfliesofgreece.repositories.*
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
+import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.module.Module
 import org.koin.core.parameter.parametersOf
 import org.koin.dsl.module
+import retrofit2.Retrofit
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
+import retrofit2.converter.gson.GsonConverterFactory
 
 val butterfliesModule = module {
     registerSchedulers(this)
@@ -71,63 +76,103 @@ fun registerRepositories(module: Module){
     ) }
 }
 
-fun registerPresenters(module: Module){
-    module.factory{ MenuPresenter(
-        backgroundThreadScheduler = get(),
-        mainThreadScheduler =  get()
-    ) }
-    module.factory { FamiliesPresenter(
-        familiesRepository = get(),
-        navigationRepository = get(),
-        photosToPrintRepository = get(),
-        backgroundThreadScheduler = get(),
-        mainThreadScheduler =  get()
-    ) }
-    module.factory{ SpeciesPresenter(
-        speciesRepository = get(),
-        navigationRepository = get(),
-        photosToPrintRepository = get(),
-        backgroundThreadScheduler = get(),
-        mainThreadScheduler =  get()
-    ) }
-    module.factory{ PhotosPresenter(
-        photosRepository = get(),
-        navigationRepository = get(),
-        photosToPrintRepository = get(),
-        backgroundThreadScheduler = get(),
-        mainThreadScheduler =  get()
-    ) }
-    module.factory{ SearchPresenter(
-        speciesRepository = get(),
-        navigationRepository = get(),
-        backgroundThreadScheduler = get(),
-        mainThreadScheduler =  get()
-    ) }
-    module.factory{ ModalPresenter(
-        photosRepository = get(),
-        navigationRepository = get(),
-        backgroundThreadScheduler = get(),
-        mainThreadScheduler =  get()
-    ) }
-    module.factory{ PrintToPdfPresenter(
-        photosToPrintRepository = get(),
-        navigationRepository = get(),
-        backgroundThreadScheduler = get(),
-        mainThreadScheduler =  get()
-    ) }
-    module.factory{ PdfPreviewPresenter(
-        photosToPrintRepository = get(),
-        backgroundThreadScheduler = get(),
-        mainThreadScheduler =  get()
-    ) }
-    module.factory { ContributePresenter(
-        locationManager = get(),
-        contributionRepository = get(),
-        backgroundThreadScheduler = get(),
-        mainThreadScheduler =  get()
-    ) }
-    module.factory { LegalPresenter(
-        backgroundThreadScheduler = get(),
-        mainThreadScheduler =  get()
-    ) }
+fun registerPresenters(module: Module) {
+    module.factory {
+        MenuPresenter(
+            backgroundThreadScheduler = get(),
+            mainThreadScheduler = get()
+        )
+    }
+    module.factory {
+        FamiliesPresenter(
+            recognitionRepository = get(),
+            familiesRepository = get(),
+            navigationRepository = get(),
+            photosToPrintRepository = get(),
+            backgroundThreadScheduler = get(),
+            mainThreadScheduler = get()
+        )
+    }
+    module.factory {
+        SpeciesPresenter(
+            speciesRepository = get(),
+            navigationRepository = get(),
+            photosToPrintRepository = get(),
+            backgroundThreadScheduler = get(),
+            mainThreadScheduler = get()
+        )
+    }
+    module.factory {
+        PhotosPresenter(
+            photosRepository = get(),
+            navigationRepository = get(),
+            photosToPrintRepository = get(),
+            backgroundThreadScheduler = get(),
+            mainThreadScheduler = get()
+        )
+    }
+    module.factory {
+        SearchPresenter(
+            speciesRepository = get(),
+            navigationRepository = get(),
+            backgroundThreadScheduler = get(),
+            mainThreadScheduler = get()
+        )
+    }
+    module.factory {
+        ModalPresenter(
+            photosRepository = get(),
+            navigationRepository = get(),
+            backgroundThreadScheduler = get(),
+            mainThreadScheduler = get()
+        )
+    }
+    module.factory {
+        PrintToPdfPresenter(
+            photosToPrintRepository = get(),
+            navigationRepository = get(),
+            backgroundThreadScheduler = get(),
+            mainThreadScheduler = get()
+        )
+    }
+    module.factory {
+        PdfPreviewPresenter(
+            photosToPrintRepository = get(),
+            backgroundThreadScheduler = get(),
+            mainThreadScheduler = get()
+        )
+    }
+    module.factory {
+        ContributePresenter(
+            locationManager = get(),
+            contributionRepository = get(),
+            backgroundThreadScheduler = get(),
+            mainThreadScheduler = get()
+        )
+    }
+    module.factory {
+        LegalPresenter(
+            backgroundThreadScheduler = get(),
+            mainThreadScheduler = get()
+        )
+    }
+
+    module.factory { provideOkHttpClient() }
+    module.factory { provideForecastApi(get()) }
+    module.single { provideRetrofit(get()) }
+
+    module.factory { RecognitionRepository(get()) }
 }
+    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
+        return Retrofit.Builder().baseUrl("https://cat-fact.herokuapp.com").client(okHttpClient)
+            .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+            .build()
+    }
+
+    fun provideOkHttpClient(): OkHttpClient {
+        return OkHttpClient().newBuilder().build()
+    }
+
+fun provideForecastApi(retrofit: Retrofit): IImageApi = retrofit.create(IImageApi::class.java)
+

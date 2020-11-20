@@ -7,8 +7,10 @@ import gr.jkapsouras.butterfliesofgreece.base.schedulers.IMainThread
 import gr.jkapsouras.butterfliesofgreece.fragments.recognition.state.RecognitionState
 import gr.jkapsouras.butterfliesofgreece.fragments.recognition.uiEvents.RecognitionEvents
 import gr.jkapsouras.butterfliesofgreece.fragments.recognition.viewStates.RecognitionViewStates
+import gr.jkapsouras.butterfliesofgreece.repositories.RecognitionRepository
 
-class RecognitionPresenter(backgroundThreadScheduler: IBackgroundThread,
+class RecognitionPresenter(recognitionRepository: RecognitionRepository,
+    backgroundThreadScheduler: IBackgroundThread,
                            mainThreadScheduler: IMainThread
 ) : BasePresenter(backgroundThreadScheduler, mainThreadScheduler){
 
