@@ -8,19 +8,37 @@
         android:id="@+id/image_recognized"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/label_recognized"
         />
 
+    <ImageButton
+        android:id="@+id/button_close_recognition_view"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/close_icon"
+        android:tint="@color/recognition_dark"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        android:layout_margin="@dimen/medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
     <TextView
         android:id="@+id/label_recognized"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/medium"
+        android:visibility="gone"
+        android:textColor="@color/recognition_dark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_recognized"
         />
 
     <androidx.constraintlayout.widget.Guideline
@@ -60,5 +78,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guide_recognition"
         />
+
+    <ProgressBar
+        android:id="@+id/loading_recognition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/recognition_dark"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

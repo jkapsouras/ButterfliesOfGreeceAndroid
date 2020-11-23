@@ -81,9 +81,14 @@
     <string name="live_recognition">Live recognition</string>
     <string name="recognize_online">Perform online recognition</string>
     <string name="recognize_offline">Perform offline recognition</string>
+    <string name="photo_recognized_first">The above butterfly recognized to belong in specie</string>
+    <string name="photo_recognized_second">with probability</string>
 </resources>
 
  <!--
+ "photo_recognized_first" = "The above butterfly recognized to belong in specie";
+"photo_recognized_second" = "with probability";
+"live_recognition" = "Live recognition";
  "recognize_online" = "Perform online recognition";
 "recognize_offline" = "Perform offline recognition";
  "recognition_title" = "Recognition";

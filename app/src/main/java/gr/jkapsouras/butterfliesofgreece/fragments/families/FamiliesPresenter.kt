@@ -2,6 +2,7 @@ package gr.jkapsouras.butterfliesofgreece.fragments.families
 
 import android.location.LocationManager
 import android.util.Log
+import com.jakewharton.rxbinding4.internal.checkMainThread
 import gr.jkapsouras.butterfliesofgreece.MainActivity
 import gr.jkapsouras.butterfliesofgreece.base.BasePresenter
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
@@ -43,7 +44,6 @@ enum class ViewArrange{
 }
 
 class FamiliesPresenter(
-    val recognitionRepository: RecognitionRepository,
     val familiesRepository: FamiliesRepository,
     val navigationRepository: NavigationRepository,
     val photosToPrintRepository: PhotosToPrintRepository,
@@ -74,13 +74,15 @@ class FamiliesPresenter(
     }
 
     override fun setupEvents() {
-        recognitionRepository.test()
-            .map{
-                    it.text
-            }
-            .subscribe{
-                Log.d(TAG, it)
-            }
+//        recognitionRepository.test()
+//            .subscribeOn(backgroundThreadScheduler.scheduler)
+//            .map{
+//                    it.text
+//            }
+//            .observeOn(mainThreadScheduler.scheduler)
+//            .subscribe{
+//                Log.d(TAG, it)
+//            }
         familiesState = FamiliesState(emptyList())
         headerState = HeaderState(null, headerState.currentArrange, "Families")
         emitter.onNext(FamilyEvents.LoadFamilies)

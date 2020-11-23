@@ -7,7 +7,7 @@ import io.reactivex.rxjava3.subjects.PublishSubject
 
 abstract class BasePresenter(
     internal val backgroundThreadScheduler : IBackgroundThread,
-    private val mainThreadScheduler:IMainThread) {
+    internal val mainThreadScheduler:IMainThread) {
     lateinit var disposables: DisposablesWrapper
     protected val state: PublishSubject<ViewState> = PublishSubject.create<ViewState>()
     internal val emitter: PublishSubject<UiEvent> = PublishSubject.create<UiEvent>()

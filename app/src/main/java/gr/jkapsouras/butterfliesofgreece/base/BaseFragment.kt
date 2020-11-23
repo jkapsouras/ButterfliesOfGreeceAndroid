@@ -127,6 +127,8 @@ abstract  class BaseFragment<P : BasePresenter> : Fragment(){
                         findNavController().navigate(R.id.navigate_to_about)
                     is MenuViewStates.ToLegal ->
                         findNavController().navigate(R.id.navigate_to_legal_fragment)
+                    is MenuViewStates.ToRecognition ->
+                        findNavController().navigate(R.id.navigate_to_recognition_fragment)
                 }
             }
             is FamiliesViewViewStates ->{
