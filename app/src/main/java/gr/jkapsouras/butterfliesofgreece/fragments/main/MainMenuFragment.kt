@@ -74,7 +74,7 @@ class MainMenuFragment : BaseFragment<MenuPresenter>() {
             btn_introduction,
             btn_endangered,
             btn_legal,
-            btn_field
+            btn_recognition
         )
 
         return listOf(menuComponent!!)

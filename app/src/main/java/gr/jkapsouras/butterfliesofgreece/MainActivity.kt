@@ -1,31 +1,46 @@
 package gr.jkapsouras.butterfliesofgreece
 
+import android.R.attr
+import android.app.Activity
+import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Color
+import android.graphics.Bitmap
+import android.graphics.ImageDecoder
+import android.net.Uri
 import android.os.Bundle
+import android.os.StrictMode
+import android.provider.MediaStore
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
+import gr.jkapsouras.butterfliesofgreece.base.UiEvent
+import gr.jkapsouras.butterfliesofgreece.fragments.recognition.uiEvents.Permissions
+import gr.jkapsouras.butterfliesofgreece.fragments.recognition.uiEvents.RecognitionEvents
 import gr.jkapsouras.butterfliesofgreece.managers.LocationManager
-import gr.jkapsouras.butterfliesofgreece.managers.LocationState
 import io.reactivex.rxjava3.subjects.PublishSubject
 import kotlinx.android.synthetic.main.activity_main.*
-import org.koin.android.ext.android.inject
-import org.koin.core.parameter.parametersOf
+
 
 class MainActivity : AppCompatActivity() {
     val emitter: PublishSubject<Boolean> = PublishSubject.create()
+    val emitterEvents: PublishSubject<UiEvent> = PublishSubject.create()
+    var imageUri: Uri? = null
+    var imageBitmap: Bitmap? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
+
+        StrictMode.setThreadPolicy(policy)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -70,6 +85,11 @@ class MainActivity : AppCompatActivity() {
                     toolbar.setBackgroundColor(applicationContext.getColor(R.color.legal))
                     toolbar.setTitleTextColor(applicationContext.getColor(R.color.legal_dark))
                 }
+                R.id.recognitionFragment -> {
+                    toolbar.context.setTheme(R.style.RecognitionTheme)
+                    toolbar.setBackgroundColor(applicationContext.getColor(R.color.recognition))
+                    toolbar.setTitleTextColor(applicationContext.getColor(R.color.recognition_dark))
+                }
                 R.id.searchFragment ->
                     search_bar.visibility = View.VISIBLE
                 else ->
@@ -81,8 +101,18 @@ class MainActivity : AppCompatActivity() {
             .setupWithNavController(navController, appBarConfiguration)
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>,
-                                   grantResults: IntArray) {
+    override fun onStart() {
+        super.onStart()
+        if(imageUri!=null)
+            emitterEvents.onNext(RecognitionEvents.PhotoChosen(imageUri))
+        else if(imageBitmap!=null)
+            emitterEvents.onNext(RecognitionEvents.PhotoTaken(imageBitmap!!))
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int, permissions: Array<String>,
+        grantResults: IntArray
+    ) {
         Log.i(LocationManager.TAG, "onRequestPermissionResult")
         if (requestCode == LocationManager.REQUEST_PERMISSIONS_REQUEST_CODE) {
             if (grantResults.isEmpty()) {
@@ -121,5 +151,51 @@ class MainActivity : AppCompatActivity() {
 //                    })
             }
         }
+        else if(requestCode == PERMISSION_CODE) {
+            if (grantResults.isEmpty()) {
+                // If user interaction was interrupted, the permission request is cancelled and you
+                // receive empty arrays.
+                Log.i(LocationManager.TAG, "User interaction was cancelled.")
+                emitterEvents.onNext(RecognitionEvents.PermissionDenied)
+            } else if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission granted.
+//                getLastLocation()
+                Log.i(LocationManager.TAG, "granted")
+                emitterEvents.onNext(RecognitionEvents.PermissionGranted(Permissions.Gallery))
+            }
+        }
+        else if(requestCode == PERMISSION_CODE_CAMERA) {
+            if (grantResults.isEmpty()) {
+                // If user interaction was interrupted, the permission request is cancelled and you
+                // receive empty arrays.
+                Log.i(LocationManager.TAG, "User interaction was cancelled.")
+                emitterEvents.onNext(RecognitionEvents.PermissionDenied)
+            } else if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission granted.
+//                getLastLocation()
+                Log.i(LocationManager.TAG, "granted")
+                emitterEvents.onNext(RecognitionEvents.PermissionGranted(Permissions.Camera))
+            }
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK && (requestCode == IMAGE_PICK_CODE)){
+            imageUri = data?.data
+        }
+        else if(resultCode == Activity.RESULT_OK && requestCode == USE_CAMERA){
+            imageBitmap =(data?.extras?.get("data") as Bitmap)
+        }
+    }
+
+
+
+    companion object {
+
+        private const val IMAGE_PICK_CODE = 1000
+        private const val PERMISSION_CODE = 1001
+        private const val PERMISSION_CODE_CAMERA = 201
+        private const val USE_CAMERA = 200
     }
 }

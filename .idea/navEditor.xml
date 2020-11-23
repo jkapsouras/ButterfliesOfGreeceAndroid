@@ -135,6 +135,11 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
+                            <entry key="navigate_to_legal_fragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                           </map>
                         </option>
                       </LayoutPositions>
@@ -212,6 +217,18 @@
                               </value>
                             </entry>
                           </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="recognitionFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-595" />
+                            <option name="y" value="43" />
+                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>

@@ -58,4 +58,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         />
 
+    <gr.jkapsouras.butterfliesofgreece.views.recognitionView.RecognitionView
+        android:id="@+id/view_recognition_online_offline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:background="@color/app_white"
+        android:elevation="2dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
