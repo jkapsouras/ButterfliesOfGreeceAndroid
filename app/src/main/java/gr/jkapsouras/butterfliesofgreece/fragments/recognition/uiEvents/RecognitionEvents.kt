@@ -11,11 +11,16 @@ sealed class RecognitionEvents : UiEvent() {
     object ChoosePhotoClicked: RecognitionEvents()
     class PhotoChosen(val image: Uri?): RecognitionEvents()
     object TakePhotoClicked: RecognitionEvents()
-    class PhotoTaken(image:Image): RecognitionEvents()
+    class PhotoTaken(val image:Bitmap): RecognitionEvents()
     object LiveRecognitionClicked: RecognitionEvents()
     object CloseClicked: RecognitionEvents()
     object CloseLiveClicked: RecognitionEvents()
     class LiveImageTaken(image:Image): RecognitionEvents()
     object PermissionDenied : RecognitionEvents()
-    object PermissionGranted : RecognitionEvents()
+    class PermissionGranted(val permission: Permissions) : RecognitionEvents()
+}
+
+sealed class Permissions{
+    object Camera : Permissions()
+    object Gallery : Permissions()
 }

@@ -1,6 +1,7 @@
 package gr.jkapsouras.butterfliesofgreece.views.recognitionView
 
 import android.content.Context
+import android.graphics.Bitmap
 import android.net.Uri
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -48,11 +49,24 @@ class RecognitionView  @JvmOverloads constructor(
         button_offline_recognition.setOnClickListener {
             emitter.onNext(RecognitionEvents.OfflineClicked)
         }
+
+        button_close_recognition_view.setOnClickListener {
+            emitter.onNext(RecognitionEvents.CloseClicked)
+        }
+
         return emitter
     }
 
     fun showSelectedImage(image: Uri){
         image_recognized.setImageURI(image)
+        button_online_recognition.visibility = View.VISIBLE
+        button_offline_recognition.visibility = View.VISIBLE
+        label_recognized.text = ""
+        label_recognized.visibility = View.GONE
+    }
+
+    fun showSelectedImage(image: Bitmap){
+        image_recognized.setImageBitmap(image)
         button_online_recognition.visibility = View.VISIBLE
         button_offline_recognition.visibility = View.VISIBLE
         label_recognized.text = ""

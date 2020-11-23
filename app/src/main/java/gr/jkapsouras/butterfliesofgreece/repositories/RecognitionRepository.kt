@@ -8,6 +8,7 @@ import android.provider.MediaStore
 import androidx.loader.content.CursorLoader
 import gr.jkapsouras.butterfliesofgreece.MainActivity
 import gr.jkapsouras.butterfliesofgreece.dto.Avatar
+import gr.jkapsouras.butterfliesofgreece.dto.BAvatar
 import gr.jkapsouras.butterfliesofgreece.dto.Predictions
 import gr.jkapsouras.butterfliesofgreece.network.IImageApi
 import io.reactivex.rxjava3.core.Observable
@@ -39,6 +40,24 @@ class RecognitionRepository(private val api: IImageApi) {
 
           val requestFile =
               RequestBody.create(MediaType.parse(activity.contentResolver.getType(image.uri)), leftImageFile)
+
+        return api.uploadImage(requestFile)//, descBody)
+    }
+
+    fun recognize(image: BAvatar) : Observable<Predictions>{
+
+        val newbitmap = Bitmap.createScaledBitmap(image.image, 600, 600, false)
+
+        val baos = ByteArrayOutputStream()
+        newbitmap.compress(Bitmap.CompressFormat.JPEG, 70, baos)
+        val bitmapdata: ByteArray = baos.toByteArray()
+        val compressedBitmap = BitmapFactory.decodeByteArray(bitmapdata, 0, bitmapdata.count())
+        var fileName:String = "avatar"
+        val leftImageFile = convertBitmapToFile(fileName, compressedBitmap)
+        //creating request body for file
+
+        val requestFile =
+            RequestBody.create(MediaType.parse("image/*"), leftImageFile)
 
         return api.uploadImage(requestFile)//, descBody)
     }

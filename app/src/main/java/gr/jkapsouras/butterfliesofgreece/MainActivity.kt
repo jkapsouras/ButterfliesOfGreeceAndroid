@@ -22,6 +22,7 @@ import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
+import gr.jkapsouras.butterfliesofgreece.fragments.recognition.uiEvents.Permissions
 import gr.jkapsouras.butterfliesofgreece.fragments.recognition.uiEvents.RecognitionEvents
 import gr.jkapsouras.butterfliesofgreece.managers.LocationManager
 import io.reactivex.rxjava3.subjects.PublishSubject
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
     val emitter: PublishSubject<Boolean> = PublishSubject.create()
     val emitterEvents: PublishSubject<UiEvent> = PublishSubject.create()
     var imageUri: Uri? = null
+    var imageBitmap: Bitmap? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -101,7 +103,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        emitterEvents.onNext(RecognitionEvents.PhotoChosen(imageUri))
+        if(imageUri!=null)
+            emitterEvents.onNext(RecognitionEvents.PhotoChosen(imageUri))
+        else if(imageBitmap!=null)
+            emitterEvents.onNext(RecognitionEvents.PhotoTaken(imageBitmap!!))
     }
 
     override fun onRequestPermissionsResult(
@@ -156,15 +161,31 @@ class MainActivity : AppCompatActivity() {
                 // Permission granted.
 //                getLastLocation()
                 Log.i(LocationManager.TAG, "granted")
-                emitterEvents.onNext(RecognitionEvents.PermissionGranted)
+                emitterEvents.onNext(RecognitionEvents.PermissionGranted(Permissions.Gallery))
+            }
+        }
+        else if(requestCode == PERMISSION_CODE_CAMERA) {
+            if (grantResults.isEmpty()) {
+                // If user interaction was interrupted, the permission request is cancelled and you
+                // receive empty arrays.
+                Log.i(LocationManager.TAG, "User interaction was cancelled.")
+                emitterEvents.onNext(RecognitionEvents.PermissionDenied)
+            } else if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission granted.
+//                getLastLocation()
+                Log.i(LocationManager.TAG, "granted")
+                emitterEvents.onNext(RecognitionEvents.PermissionGranted(Permissions.Camera))
             }
         }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE){
+        if (resultCode == Activity.RESULT_OK && (requestCode == IMAGE_PICK_CODE)){
             imageUri = data?.data
+        }
+        else if(resultCode == Activity.RESULT_OK && requestCode == USE_CAMERA){
+            imageBitmap =(data?.extras?.get("data") as Bitmap)
         }
     }
 
@@ -174,5 +195,7 @@ class MainActivity : AppCompatActivity() {
 
         private const val IMAGE_PICK_CODE = 1000
         private const val PERMISSION_CODE = 1001
+        private const val PERMISSION_CODE_CAMERA = 201
+        private const val USE_CAMERA = 200
     }
 }
