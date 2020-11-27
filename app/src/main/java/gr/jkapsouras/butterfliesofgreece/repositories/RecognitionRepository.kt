@@ -9,7 +9,9 @@ import androidx.loader.content.CursorLoader
 import gr.jkapsouras.butterfliesofgreece.MainActivity
 import gr.jkapsouras.butterfliesofgreece.dto.Avatar
 import gr.jkapsouras.butterfliesofgreece.dto.BAvatar
+import gr.jkapsouras.butterfliesofgreece.dto.Prediction
 import gr.jkapsouras.butterfliesofgreece.dto.Predictions
+import gr.jkapsouras.butterfliesofgreece.managers.recognition.RecognitionManager
 import gr.jkapsouras.butterfliesofgreece.network.IImageApi
 import io.reactivex.rxjava3.core.Observable
 import okhttp3.MediaType
@@ -60,6 +62,19 @@ class RecognitionRepository(private val api: IImageApi) {
             RequestBody.create(MediaType.parse("image/*"), leftImageFile)
 
         return api.uploadImage(requestFile)//, descBody)
+    }
+
+    fun offlineRecognize(avatar: Avatar) : Observable<List<Prediction>>{
+        val bitmap = MediaStore.Images.Media.getBitmap(activity.getContentResolver(), avatar.uri)
+        val newbitmap = Bitmap.createScaledBitmap(bitmap, 600, 600, false)
+        val recognizeManager = RecognitionManager(bitmap = newbitmap, activity)
+        return Observable.just(recognizeManager.recognize())
+    }
+
+    fun offlineRecognize(bitmap: BAvatar) : Observable<List<Prediction>>{
+        val newbitmap = Bitmap.createScaledBitmap(bitmap.image, 600, 600, false)
+        val recognizeManager = RecognitionManager(bitmap = newbitmap, activity)
+        return Observable.just(recognizeManager.recognize())
     }
 
     private fun getRealPathFromURI(contentUri: Uri): String? {

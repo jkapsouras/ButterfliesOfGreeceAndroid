@@ -20,11 +20,13 @@ import gr.jkapsouras.butterfliesofgreece.fragments.main.events.MenuUiEvents
 import gr.jkapsouras.butterfliesofgreece.fragments.recognition.uiEvents.RecognitionEvents
 import gr.jkapsouras.butterfliesofgreece.fragments.recognition.viewStates.RecognitionViewStates
 import gr.jkapsouras.butterfliesofgreece.managers.LocationManager.Companion.TAG
+import gr.jkapsouras.butterfliesofgreece.views.cameraView.CameraView
 import gr.jkapsouras.butterfliesofgreece.views.recognitionView.RecognitionView
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.subjects.PublishSubject
 
-class RecognitionComponent(private val activity:MainActivity, private val chooseButton: Button, private val takePhotoButton: Button, private val recognitionView: RecognitionView) : UiComponent {
+class RecognitionComponent(private val activity:MainActivity, private val chooseButton: Button, private val takePhotoButton: Button,
+                           private val liveSessionButton: Button, private val recognitionView: RecognitionView, private val cameraView: CameraView) : UiComponent {
 
     private val event: PublishSubject<UiEvent> = PublishSubject.create<UiEvent>()
     override val uiEvents: Observable<UiEvent>
@@ -41,9 +43,16 @@ class RecognitionComponent(private val activity:MainActivity, private val choose
             Log.d(Constraints.TAG, "take photo clicked")
         }
 
+        liveSessionButton.setOnClickListener {
+            event.onNext(RecognitionEvents.LiveRecognitionClicked)
+            Log.d(Constraints.TAG, "live clicked")
+        }
+
         uiEvents = Observable.merge(recognitionView.uiEvents, event, activity.emitterEvents)
 
         recognitionView.visibility = View.GONE
+
+        cameraView.activity = activity
     }
 
     private fun pickImageFromGallery() {
@@ -122,6 +131,10 @@ class RecognitionComponent(private val activity:MainActivity, private val choose
                 is RecognitionViewStates.ImageRecognized -> {
                     recognitionView.hideLoading()
                     recognitionView.imageRecognized(predictions = viewState.predictions)
+                }
+                is RecognitionViewStates.ShowLiveRecognitionView -> {
+                    cameraView.visibility = View.VISIBLE
+                    cameraView.showCamera()
                 }
                 else ->
                     print("default state")

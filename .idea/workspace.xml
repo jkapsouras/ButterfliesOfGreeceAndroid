@@ -42,8 +42,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efa0256b-32b0-4f2f-898e-86426287e8f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/model.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/words.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/recognition/Classes.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/recognition/RecognitionManager.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/cameraView/CameraView.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/view_camera.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
@@ -52,6 +54,7 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
@@ -63,15 +66,12 @@
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/dto/Avatar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/dto/Avatar.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/RecognitionFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/RecognitionFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/RecognitionPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/RecognitionPresenter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/component/RecognitionComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/component/RecognitionComponent.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/state/RecognitionState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/state/RecognitionState.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/uiEvents/RecognitionEvents.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/uiEvents/RecognitionEvents.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/viewStates/RecognitionViewStates.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/viewStates/RecognitionViewStates.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/repositories/RecognitionRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/repositories/RecognitionRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/recognitionView/RecognitionView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/recognitionView/RecognitionView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/recognition_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/recognition_fragment.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,10 +135,11 @@
       <list>
         <option value="Class" />
         <option value="Kotlin Object" />
-        <option value="layoutResourceFile" />
         <option value="Kotlin Interface" />
         <option value="Kotlin File" />
         <option value="resourceFile" />
+        <option value="layoutResourceFile" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -165,6 +166,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="android-custom-view/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/cameraView/CameraView.kt_SELECTED" value="CameraView" />
     <property name="android-custom-view/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/contributeView/ContributeView.kt_SELECTED" value="ContributeView" />
     <property name="android-custom-view/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/header/HeaderView.kt_SELECTED" value="HeaderView" />
     <property name="android-custom-view/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/headerPrintToPdfView/HeaderPrintToPdfView.kt_SELECTED" value="HeaderPrintToPdfView" />
@@ -175,6 +177,8 @@
     <property name="android-custom-view/Users/jkapsi/Projects/butterfliesandroid/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosCollectionView/PhotosCollectionView.kt_SELECTED" value="PhotosCollectionView" />
     <property name="android-custom-view/Users/jkapsi/Projects/butterfliesandroid/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosTableView/PhotosTableView.kt_SELECTED" value="PhotosTableView" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/assets" />
+    <property name="multi-representation-preview/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/cameraView/CameraView.kt_selected" value="Custom views" />
+    <property name="multi-representation-preview/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/cameraView/cameraView.kt_selected" value="Custom views" />
     <property name="multi-representation-preview/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/contributeView/ContributeView.kt_selected" value="Custom views" />
     <property name="multi-representation-preview/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/header/HeaderView.kt_selected" value="Custom views" />
     <property name="multi-representation-preview/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/headerPrintToPdfView/HeaderPrintToPdfView.kt_selected" value="Custom views" />
@@ -509,7 +513,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606143348836</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="take image from camera added">
+      <created>1606167632520</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1606167632520</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -525,7 +536,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add emitter to collection view" />
     <MESSAGE value="add species but species presenter" />
     <MESSAGE value="species presenter + basic flow in species fragment" />
     <MESSAGE value="add photos repository + fragment + components + states + events + presenter" />
@@ -550,7 +560,8 @@
     <MESSAGE value="update develop" />
     <MESSAGE value="add recognition view + presenter + events + state + viewstate (no functionality)" />
     <MESSAGE value="add online recognition" />
-    <option name="LAST_COMMIT_MESSAGE" value="add online recognition" />
+    <MESSAGE value="take image from camera added" />
+    <option name="LAST_COMMIT_MESSAGE" value="take image from camera added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1032" y="376" key="#Auto_Import" timestamp="1605683742073">
@@ -608,7 +619,7 @@
       <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state x="609" y="253" key="AndroidProcessChooserDialog/0.23.1680.954@0.23.1680.954" timestamp="1603657995945" />
-    <state x="335" y="169" key="CommitChangelistDialog2" timestamp="1606143344956">
+    <state x="335" y="169" key="CommitChangelistDialog2" timestamp="1606167628800">
       <screen x="0" y="25" width="2560" height="1328" />
     </state>
     <state x="220" y="126" key="CommitChangelistDialog2/0.23.1680.953@0.23.1680.953" timestamp="1603782805857" />
@@ -616,8 +627,8 @@
     <state x="335" y="167" key="CommitChangelistDialog2/0.23.2560.1332@0.23.2560.1332" timestamp="1605214513264" />
     <state x="790" y="292" key="CommitChangelistDialog2/0.23.2560.1333@0.23.2560.1333" timestamp="1601738033254" />
     <state x="335" y="167" key="CommitChangelistDialog2/0.23.2560.1335@0.23.2560.1335" timestamp="1604948002787" />
-    <state x="335" y="169" key="CommitChangelistDialog2/0.25.2560.1328@0.25.2560.1328" timestamp="1606143344956" />
-    <state width="755" height="648" key="DebuggerActiveHint" timestamp="1606164163377">
+    <state x="335" y="169" key="CommitChangelistDialog2/0.25.2560.1328@0.25.2560.1328" timestamp="1606167628800" />
+    <state width="755" height="648" key="DebuggerActiveHint" timestamp="1606226968774">
       <screen x="0" y="25" width="2560" height="1328" />
     </state>
     <state width="495" height="463" key="DebuggerActiveHint/0.23.1680.953@0.23.1680.953" timestamp="1603886790782" />
@@ -625,8 +636,8 @@
     <state width="495" height="466" key="DebuggerActiveHint/0.23.1680.960@0.23.1680.960" timestamp="1603811306172" />
     <state width="755" height="649" key="DebuggerActiveHint/0.23.2560.1332@0.23.2560.1332" timestamp="1605278938300" />
     <state width="755" height="650" key="DebuggerActiveHint/0.23.2560.1335@0.23.2560.1335" timestamp="1604995742467" />
-    <state width="755" height="648" key="DebuggerActiveHint/0.25.2560.1328@0.25.2560.1328" timestamp="1606164163377" />
-    <state width="1259" height="443" key="GridCell.Tab.0.bottom" timestamp="1606165067354">
+    <state width="755" height="648" key="DebuggerActiveHint/0.25.2560.1328@0.25.2560.1328" timestamp="1606226968774" />
+    <state width="1259" height="358" key="GridCell.Tab.0.bottom" timestamp="1606496345799">
       <screen x="0" y="25" width="2560" height="1328" />
     </state>
     <state width="819" height="244" key="GridCell.Tab.0.bottom/0.23.1680.953@0.23.1680.953" timestamp="1603922214093" />
@@ -636,8 +647,8 @@
     <state width="1259" height="446" key="GridCell.Tab.0.bottom/0.23.2560.1332@0.23.2560.1332" timestamp="1605281945130" />
     <state width="1259" height="466" key="GridCell.Tab.0.bottom/0.23.2560.1335@0.23.2560.1335" timestamp="1604999981236" />
     <state width="819" height="242" key="GridCell.Tab.0.bottom/0.25.1680.946@0.25.1680.946" timestamp="1605823316199" />
-    <state width="1259" height="443" key="GridCell.Tab.0.bottom/0.25.2560.1328@0.25.2560.1328" timestamp="1606165067354" />
-    <state width="1259" height="443" key="GridCell.Tab.0.center" timestamp="1606165067354">
+    <state width="1259" height="358" key="GridCell.Tab.0.bottom/0.25.2560.1328@0.25.2560.1328" timestamp="1606496345799" />
+    <state width="1259" height="358" key="GridCell.Tab.0.center" timestamp="1606496345799">
       <screen x="0" y="25" width="2560" height="1328" />
     </state>
     <state width="819" height="244" key="GridCell.Tab.0.center/0.23.1680.953@0.23.1680.953" timestamp="1603922214093" />
@@ -647,8 +658,8 @@
     <state width="1259" height="446" key="GridCell.Tab.0.center/0.23.2560.1332@0.23.2560.1332" timestamp="1605281945129" />
     <state width="1259" height="466" key="GridCell.Tab.0.center/0.23.2560.1335@0.23.2560.1335" timestamp="1604999981235" />
     <state width="819" height="242" key="GridCell.Tab.0.center/0.25.1680.946@0.25.1680.946" timestamp="1605823316199" />
-    <state width="1259" height="443" key="GridCell.Tab.0.center/0.25.2560.1328@0.25.2560.1328" timestamp="1606165067354" />
-    <state width="1259" height="443" key="GridCell.Tab.0.left" timestamp="1606165067354">
+    <state width="1259" height="358" key="GridCell.Tab.0.center/0.25.2560.1328@0.25.2560.1328" timestamp="1606496345799" />
+    <state width="1259" height="358" key="GridCell.Tab.0.left" timestamp="1606496345798">
       <screen x="0" y="25" width="2560" height="1328" />
     </state>
     <state width="819" height="244" key="GridCell.Tab.0.left/0.23.1680.953@0.23.1680.953" timestamp="1603922214092" />
@@ -658,8 +669,8 @@
     <state width="1259" height="446" key="GridCell.Tab.0.left/0.23.2560.1332@0.23.2560.1332" timestamp="1605281945129" />
     <state width="1259" height="466" key="GridCell.Tab.0.left/0.23.2560.1335@0.23.2560.1335" timestamp="1604999981235" />
     <state width="819" height="242" key="GridCell.Tab.0.left/0.25.1680.946@0.25.1680.946" timestamp="1605823316198" />
-    <state width="1259" height="443" key="GridCell.Tab.0.left/0.25.2560.1328@0.25.2560.1328" timestamp="1606165067354" />
-    <state width="1259" height="443" key="GridCell.Tab.0.right" timestamp="1606165067354">
+    <state width="1259" height="358" key="GridCell.Tab.0.left/0.25.2560.1328@0.25.2560.1328" timestamp="1606496345798" />
+    <state width="1259" height="358" key="GridCell.Tab.0.right" timestamp="1606496345799">
       <screen x="0" y="25" width="2560" height="1328" />
     </state>
     <state width="819" height="244" key="GridCell.Tab.0.right/0.23.1680.953@0.23.1680.953" timestamp="1603922214093" />
@@ -669,8 +680,8 @@
     <state width="1259" height="446" key="GridCell.Tab.0.right/0.23.2560.1332@0.23.2560.1332" timestamp="1605281945129" />
     <state width="1259" height="466" key="GridCell.Tab.0.right/0.23.2560.1335@0.23.2560.1335" timestamp="1604999981235" />
     <state width="819" height="242" key="GridCell.Tab.0.right/0.25.1680.946@0.25.1680.946" timestamp="1605823316199" />
-    <state width="1259" height="443" key="GridCell.Tab.0.right/0.25.2560.1328@0.25.2560.1328" timestamp="1606165067354" />
-    <state width="1259" height="443" key="GridCell.Tab.1.bottom" timestamp="1606165092343">
+    <state width="1259" height="358" key="GridCell.Tab.0.right/0.25.2560.1328@0.25.2560.1328" timestamp="1606496345799" />
+    <state width="1259" height="443" key="GridCell.Tab.1.bottom" timestamp="1606496123231">
       <screen x="0" y="25" width="2560" height="1328" />
     </state>
     <state width="819" height="244" key="GridCell.Tab.1.bottom/0.23.1680.953@0.23.1680.953" timestamp="1603922214094" />
@@ -680,8 +691,8 @@
     <state width="1259" height="446" key="GridCell.Tab.1.bottom/0.23.2560.1332@0.23.2560.1332" timestamp="1605281945131" />
     <state width="1259" height="466" key="GridCell.Tab.1.bottom/0.23.2560.1335@0.23.2560.1335" timestamp="1604999990779" />
     <state width="819" height="242" key="GridCell.Tab.1.bottom/0.25.1680.946@0.25.1680.946" timestamp="1605823307658" />
-    <state width="1259" height="443" key="GridCell.Tab.1.bottom/0.25.2560.1328@0.25.2560.1328" timestamp="1606165092343" />
-    <state width="1259" height="443" key="GridCell.Tab.1.center" timestamp="1606165092343">
+    <state width="1259" height="443" key="GridCell.Tab.1.bottom/0.25.2560.1328@0.25.2560.1328" timestamp="1606496123231" />
+    <state width="1259" height="443" key="GridCell.Tab.1.center" timestamp="1606496123231">
       <screen x="0" y="25" width="2560" height="1328" />
     </state>
     <state width="819" height="244" key="GridCell.Tab.1.center/0.23.1680.953@0.23.1680.953" timestamp="1603922214094" />
@@ -691,8 +702,8 @@
     <state width="1259" height="446" key="GridCell.Tab.1.center/0.23.2560.1332@0.23.2560.1332" timestamp="1605281945130" />
     <state width="1259" height="466" key="GridCell.Tab.1.center/0.23.2560.1335@0.23.2560.1335" timestamp="1604999990779" />
     <state width="819" height="242" key="GridCell.Tab.1.center/0.25.1680.946@0.25.1680.946" timestamp="1605823307657" />
-    <state width="1259" height="443" key="GridCell.Tab.1.center/0.25.2560.1328@0.25.2560.1328" timestamp="1606165092343" />
-    <state width="1259" height="443" key="GridCell.Tab.1.left" timestamp="1606165092343">
+    <state width="1259" height="443" key="GridCell.Tab.1.center/0.25.2560.1328@0.25.2560.1328" timestamp="1606496123231" />
+    <state width="1259" height="443" key="GridCell.Tab.1.left" timestamp="1606496123231">
       <screen x="0" y="25" width="2560" height="1328" />
     </state>
     <state width="819" height="244" key="GridCell.Tab.1.left/0.23.1680.953@0.23.1680.953" timestamp="1603922214093" />
@@ -702,8 +713,8 @@
     <state width="1259" height="446" key="GridCell.Tab.1.left/0.23.2560.1332@0.23.2560.1332" timestamp="1605281945130" />
     <state width="1259" height="466" key="GridCell.Tab.1.left/0.23.2560.1335@0.23.2560.1335" timestamp="1604999990779" />
     <state width="819" height="242" key="GridCell.Tab.1.left/0.25.1680.946@0.25.1680.946" timestamp="1605823307657" />
-    <state width="1259" height="443" key="GridCell.Tab.1.left/0.25.2560.1328@0.25.2560.1328" timestamp="1606165092343" />
-    <state width="1259" height="443" key="GridCell.Tab.1.right" timestamp="1606165092343">
+    <state width="1259" height="443" key="GridCell.Tab.1.left/0.25.2560.1328@0.25.2560.1328" timestamp="1606496123231" />
+    <state width="1259" height="443" key="GridCell.Tab.1.right" timestamp="1606496123231">
       <screen x="0" y="25" width="2560" height="1328" />
     </state>
     <state width="819" height="244" key="GridCell.Tab.1.right/0.23.1680.953@0.23.1680.953" timestamp="1603922214094" />
@@ -713,7 +724,7 @@
     <state width="1259" height="446" key="GridCell.Tab.1.right/0.23.2560.1332@0.23.2560.1332" timestamp="1605281945130" />
     <state width="1259" height="466" key="GridCell.Tab.1.right/0.23.2560.1335@0.23.2560.1335" timestamp="1604999990779" />
     <state width="819" height="242" key="GridCell.Tab.1.right/0.25.1680.946@0.25.1680.946" timestamp="1605823307657" />
-    <state width="1259" height="443" key="GridCell.Tab.1.right/0.25.2560.1328@0.25.2560.1328" timestamp="1606165092343" />
+    <state width="1259" height="443" key="GridCell.Tab.1.right/0.25.2560.1328@0.25.2560.1328" timestamp="1606496123231" />
     <state x="652" y="340" key="IDE.errors.dialog" timestamp="1605534341089">
       <screen x="0" y="25" width="2560" height="1328" />
     </state>
@@ -729,14 +740,14 @@
     </state>
     <state x="781" y="343" key="SettingsEditor/0.23.2560.1333@0.23.2560.1333" timestamp="1601723933280" />
     <state x="781" y="344" key="SettingsEditor/0.25.2560.1328@0.25.2560.1328" timestamp="1605534148725" />
-    <state x="881" y="429" key="Vcs.Push.Dialog.v2" timestamp="1605558995272">
+    <state x="881" y="429" key="Vcs.Push.Dialog.v2" timestamp="1606167632795">
       <screen x="0" y="25" width="2560" height="1328" />
     </state>
     <state x="578" y="313" key="Vcs.Push.Dialog.v2/0.23.1680.953@0.23.1680.953" timestamp="1603905486387" />
     <state x="578" y="313" key="Vcs.Push.Dialog.v2/0.23.1680.954@0.23.1680.954" timestamp="1603663752065" />
     <state x="880" y="429" key="Vcs.Push.Dialog.v2/0.23.2560.1333@0.23.2560.1333" timestamp="1601738044551" />
     <state x="881" y="429" key="Vcs.Push.Dialog.v2/0.23.2560.1335@0.23.2560.1335" timestamp="1604935084564" />
-    <state x="881" y="429" key="Vcs.Push.Dialog.v2/0.25.2560.1328@0.25.2560.1328" timestamp="1605558995272" />
+    <state x="881" y="429" key="Vcs.Push.Dialog.v2/0.25.2560.1328@0.25.2560.1328" timestamp="1606167632795" />
     <state width="1280" height="643" key="XDebugger.FullValuePopup" timestamp="1606127210142">
       <screen x="0" y="25" width="2560" height="1328" />
     </state>
@@ -755,7 +766,7 @@
     </state>
     <state x="696" y="445" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1680.953@0.23.1680.953" timestamp="1603547212069" />
     <state x="1060" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.2560.1333@0.23.2560.1333" timestamp="1601738259179" />
-    <state x="811" y="195" width="1117" height="1021" key="find.popup" timestamp="1606125020470">
+    <state x="811" y="195" width="1117" height="1021" key="find.popup" timestamp="1606227024452">
       <screen x="0" y="25" width="2560" height="1328" />
     </state>
     <state x="532" y="145" width="733" height="732" key="find.popup/0.23.1680.953@0.23.1680.953" timestamp="1603910063572" />
@@ -764,7 +775,7 @@
     <state x="532" y="146" width="733" height="738" key="find.popup/0.23.1680.961@0.23.1680.961" timestamp="1603747379502" />
     <state x="811" y="194" width="1117" height="1024" key="find.popup/0.23.2560.1332@0.23.2560.1332" timestamp="1605046892744" />
     <state x="811" y="194" width="1117" height="1026" key="find.popup/0.23.2560.1335@0.23.2560.1335" timestamp="1604997630365" />
-    <state x="811" y="195" width="1117" height="1021" key="find.popup/0.25.2560.1328@0.25.2560.1328" timestamp="1606125020470" />
+    <state x="811" y="195" width="1117" height="1021" key="find.popup/0.25.2560.1328@0.25.2560.1328" timestamp="1606227024452" />
     <state x="951" y="488" key="git4idea.merge.GitMergeDialog" timestamp="1601738152953">
       <screen x="0" y="23" width="2560" height="1333" />
     </state>
@@ -959,48 +970,83 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/MainActivity.kt</url>
-          <line>163</line>
+          <line>164</line>
           <option name="timeStamp" value="211" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/MainActivity.kt</url>
-          <line>158</line>
+          <line>159</line>
           <option name="timeStamp" value="212" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/MainActivity.kt</url>
-          <line>171</line>
+          <line>172</line>
           <option name="timeStamp" value="213" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/MainActivity.kt</url>
-          <line>176</line>
+          <line>177</line>
           <option name="timeStamp" value="214" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/RecognitionPresenter.kt</url>
-          <line>66</line>
-          <option name="timeStamp" value="216" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/MainActivity.kt</url>
-          <line>184</line>
-          <option name="timeStamp" value="217" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/RecognitionPresenter.kt</url>
-          <line>65</line>
-          <option name="timeStamp" value="219" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/MainActivity.kt</url>
-          <line>187</line>
+          <line>189</line>
           <option name="timeStamp" value="220" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/RecognitionPresenter.kt</url>
           <line>89</line>
           <option name="timeStamp" value="221" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/RecognitionPresenter.kt</url>
+          <line>113</line>
+          <option name="timeStamp" value="222" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/recognition/RecognitionManager.kt</url>
+          <line>19</line>
+          <option name="timeStamp" value="223" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/recognition/RecognitionManager.kt</url>
+          <line>27</line>
+          <option name="timeStamp" value="224" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/recognition/RecognitionManager.kt</url>
+          <line>32</line>
+          <option name="timeStamp" value="225" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/RecognitionPresenter.kt</url>
+          <line>102</line>
+          <option name="timeStamp" value="226" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/RecognitionPresenter.kt</url>
+          <line>107</line>
+          <option name="timeStamp" value="227" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/recognition/RecognitionManager.kt</url>
+          <line>48</line>
+          <option name="timeStamp" value="228" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/state/RecognitionState.kt</url>
+          <line>17</line>
+          <option name="timeStamp" value="229" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/state/RecognitionState.kt</url>
+          <line>19</line>
+          <option name="timeStamp" value="231" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/RecognitionPresenter.kt</url>
+          <line>123</line>
+          <option name="timeStamp" value="232" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -24,7 +24,7 @@ class RecognitionFragment : BaseFragment<RecognitionPresenter>(){
     }
 
     override fun initializeComponents(constraintLayout: ConstraintLayout): List<UiComponent> {
-        recognitionComponent = RecognitionComponent(requireActivity() as MainActivity, button_choose_image, button_capture_image, view_recognition_online_offline)
+        recognitionComponent = RecognitionComponent(requireActivity() as MainActivity, button_choose_image, button_capture_image, button_live_session, view_recognition_online_offline, view_live_session)
         return listOf(recognitionComponent!!)
     }
 

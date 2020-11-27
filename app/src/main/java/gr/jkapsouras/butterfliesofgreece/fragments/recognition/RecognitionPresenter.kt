@@ -99,6 +99,43 @@ class RecognitionPresenter(
                          .disposeWith(disposables)
                  }
              }
+             RecognitionEvents.OfflineClicked -> {
+                 state.onNext(RecognitionViewStates.RecognitionStarted)
+                 if (recognitionState.imageData != null) {
+                     Observable.just(1)
+                         .subscribeOn(backgroundThreadScheduler.scheduler)
+                         .flatMap {
+                             var result = recognitionRepository.offlineRecognize(Avatar(recognitionState.imageData!!))
+                             result
+                         }
+                         .subscribeBy(onNext = {
+                             recognitionState =
+                                 recognitionState.with(predictions = it)
+                             state.onNext(RecognitionViewStates.ImageRecognized(predictions = recognitionState.predictions))
+                         }, onError = {
+                             Log.d(TAG, "handleRecognitionEvents: ${it.localizedMessage}")
+                         })
+                         .disposeWith(disposables)
+                 }
+                 else if(recognitionState.image!=null) {
+                     Observable.just(1)
+                         .subscribeOn(backgroundThreadScheduler.scheduler)
+                         .flatMap {
+                             var result = recognitionRepository.offlineRecognize(BAvatar(recognitionState.image!!))
+                             result
+                         }
+                         .subscribeBy(onNext = {
+                             recognitionState =
+                                 recognitionState.with(predictions = it)
+                             state.onNext(RecognitionViewStates.ImageRecognized(predictions = recognitionState.predictions))
+                         }, onError = {
+                             Log.d(TAG, "handleRecognitionEvents: ${it.localizedMessage}")
+                         })
+                         .disposeWith(disposables)
+                 }
+             }
+             RecognitionEvents.LiveRecognitionClicked->
+                 state.onNext(RecognitionViewStates.ShowLiveRecognitionView)
              RecognitionEvents.CloseClicked ->
                  state.onNext(RecognitionViewStates.CloseRecognitionView)
          }

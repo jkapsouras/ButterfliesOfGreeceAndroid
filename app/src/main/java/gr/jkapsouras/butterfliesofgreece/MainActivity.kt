@@ -1,5 +1,6 @@
 package gr.jkapsouras.butterfliesofgreece
 
+import android.Manifest
 import android.R.attr
 import android.app.Activity
 import android.content.Intent
@@ -183,9 +184,11 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK && (requestCode == IMAGE_PICK_CODE)){
             imageUri = data?.data
+            imageBitmap = null
         }
         else if(resultCode == Activity.RESULT_OK && requestCode == USE_CAMERA){
             imageBitmap =(data?.extras?.get("data") as Bitmap)
+            imageUri = null
         }
     }
 
@@ -197,5 +200,10 @@ class MainActivity : AppCompatActivity() {
         private const val PERMISSION_CODE = 1001
         private const val PERMISSION_CODE_CAMERA = 201
         private const val USE_CAMERA = 200
+
+         const val TAG = "CameraXBasic"
+         const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
+         const val REQUEST_CODE_PERMISSIONS = 10
+        val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
     }
 }
