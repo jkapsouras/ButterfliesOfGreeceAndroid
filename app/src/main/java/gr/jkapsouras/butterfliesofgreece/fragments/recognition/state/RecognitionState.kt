@@ -14,8 +14,10 @@ class RecognitionState (
 
     fun RecognitionState.with(image:Bitmap? = null, imageData:Uri? = null, predictions:List<Prediction>? = null) : RecognitionState {
         return when {
-            image!=null -> RecognitionState(image = image, imageData =  null, predictions =  predictions ?: this.predictions)
-            imageData!=null -> RecognitionState(image = null, imageData =  imageData, predictions =  predictions ?: this.predictions)
+            image!=null ->
+                RecognitionState(image = image, imageData =  null, predictions =  predictions ?: this.predictions)
+            imageData!=null ->
+                RecognitionState(image = null, imageData =  imageData, predictions =  predictions ?: this.predictions)
             else -> RecognitionState(
                 image = image ?: this.image,
                 imageData = imageData ?: this.imageData,
