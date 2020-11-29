@@ -41,7 +41,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efa0256b-32b0-4f2f-898e-86426287e8f4" name="Default Changelist" comment="add live recognition">
+    <list default="true" id="efa0256b-32b0-4f2f-898e-86426287e8f4" name="Default Changelist" comment="delete aab">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -515,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606669133121</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="delete aab">
+      <created>1606672135117</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1606672135117</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -532,7 +539,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="species presenter + basic flow in species fragment" />
     <MESSAGE value="add photos repository + fragment + components + states + events + presenter" />
     <MESSAGE value="git lfs added" />
     <MESSAGE value="add small thumbnails" />
@@ -557,13 +563,18 @@
     <MESSAGE value="add online recognition" />
     <MESSAGE value="take image from camera added" />
     <MESSAGE value="add live recognition" />
-    <option name="LAST_COMMIT_MESSAGE" value="add live recognition" />
+    <MESSAGE value="delete aab" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete aab" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1032" y="376" key="#Auto_Import" timestamp="1605683742073">
       <screen x="0" y="25" width="2560" height="1328" />
     </state>
     <state x="1032" y="376" key="#Auto_Import/0.25.2560.1328@0.25.2560.1328" timestamp="1605683742073" />
+    <state x="718" y="378" key="#Notifications" timestamp="1606675735649">
+      <screen x="0" y="25" width="1680" height="946" />
+    </state>
+    <state x="718" y="378" key="#Notifications/0.25.1680.946@0.25.1680.946" timestamp="1606675735649" />
     <state x="556" y="324" key="#PSD" timestamp="1605858924120">
       <screen x="0" y="25" width="2560" height="1328" />
     </state>
@@ -635,6 +646,10 @@
     <state width="755" height="650" key="DebuggerActiveHint/0.23.2560.1335@0.23.2560.1335" timestamp="1604995742467" />
     <state width="496" height="462" key="DebuggerActiveHint/0.25.1680.946@0.25.1680.946" timestamp="1606514249177" />
     <state width="755" height="648" key="DebuggerActiveHint/0.25.2560.1328@0.25.2560.1328" timestamp="1606226968774" />
+    <state x="306" y="184" key="DiffContextDialog" timestamp="1606676687700">
+      <screen x="0" y="25" width="1680" height="946" />
+    </state>
+    <state x="306" y="184" key="DiffContextDialog/0.25.1680.946@0.25.1680.946" timestamp="1606676687700" />
     <state width="1638" height="242" key="GridCell.Tab.0.bottom" timestamp="1606582009266">
       <screen x="0" y="25" width="1680" height="946" />
     </state>
@@ -738,14 +753,14 @@
     </state>
     <state x="781" y="343" key="SettingsEditor/0.23.2560.1333@0.23.2560.1333" timestamp="1601723933280" />
     <state x="781" y="344" key="SettingsEditor/0.25.2560.1328@0.25.2560.1328" timestamp="1605534148725" />
-    <state x="578" y="313" key="Vcs.Push.Dialog.v2" timestamp="1606669161915">
+    <state x="578" y="313" key="Vcs.Push.Dialog.v2" timestamp="1606676693103">
       <screen x="0" y="25" width="1680" height="946" />
     </state>
     <state x="578" y="313" key="Vcs.Push.Dialog.v2/0.23.1680.953@0.23.1680.953" timestamp="1603905486387" />
     <state x="578" y="313" key="Vcs.Push.Dialog.v2/0.23.1680.954@0.23.1680.954" timestamp="1603663752065" />
     <state x="880" y="429" key="Vcs.Push.Dialog.v2/0.23.2560.1333@0.23.2560.1333" timestamp="1601738044551" />
     <state x="881" y="429" key="Vcs.Push.Dialog.v2/0.23.2560.1335@0.23.2560.1335" timestamp="1604935084564" />
-    <state x="578" y="313" key="Vcs.Push.Dialog.v2/0.25.1680.946@0.25.1680.946" timestamp="1606669161915" />
+    <state x="578" y="313" key="Vcs.Push.Dialog.v2/0.25.1680.946@0.25.1680.946" timestamp="1606676693103" />
     <state x="881" y="429" key="Vcs.Push.Dialog.v2/0.25.2560.1328@0.25.2560.1328" timestamp="1606167632795" />
     <state width="1280" height="643" key="XDebugger.FullValuePopup" timestamp="1606127210142">
       <screen x="0" y="25" width="2560" height="1328" />
