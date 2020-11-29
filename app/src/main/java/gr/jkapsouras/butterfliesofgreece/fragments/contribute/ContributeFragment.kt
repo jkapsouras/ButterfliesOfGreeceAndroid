@@ -2,16 +2,12 @@ package gr.jkapsouras.butterfliesofgreece.fragments.contribute
 
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.sansoft.butterflies.R
 import gr.jkapsouras.butterfliesofgreece.MainActivity
-import gr.jkapsouras.butterfliesofgreece.R
 import gr.jkapsouras.butterfliesofgreece.base.BaseFragment
 import gr.jkapsouras.butterfliesofgreece.base.UiComponent
 import gr.jkapsouras.butterfliesofgreece.fragments.contribute.components.ContributeComponent
-import gr.jkapsouras.butterfliesofgreece.fragments.families.FamiliesPresenter
-import gr.jkapsouras.butterfliesofgreece.fragments.families.components.FamiliesTableComponent
-import gr.jkapsouras.butterfliesofgreece.fragments.families.components.HeaderTableComponent
 import kotlinx.android.synthetic.main.contribute_fragment.*
-import kotlinx.android.synthetic.main.families_fragment.*
 import org.koin.android.ext.android.inject
 
 class ContributeFragment : BaseFragment<ContributePresenter>(){

@@ -48,7 +48,7 @@ class RecognitionComponent(private val activity:MainActivity, private val choose
             Log.d(Constraints.TAG, "live clicked")
         }
 
-        uiEvents = Observable.merge(recognitionView.uiEvents, event, activity.emitterEvents)
+        uiEvents = Observable.merge(recognitionView.uiEvents, event, activity.emitterEvents, cameraView.uiEvents)
 
         recognitionView.visibility = View.GONE
 
@@ -136,8 +136,13 @@ class RecognitionComponent(private val activity:MainActivity, private val choose
                     cameraView.visibility = View.VISIBLE
                     cameraView.showCamera()
                 }
-                else ->
-                    print("default state")
+                is RecognitionViewStates.LiveImageRecognized -> {
+                    cameraView.setResultToSession(predictions = viewState.predictions)
+                }
+                RecognitionViewStates.CloseLiveRecognitionView -> {
+                    cameraView.visibility = View.GONE
+                    cameraView.hideCamera()
+                }
             }
         }
     }

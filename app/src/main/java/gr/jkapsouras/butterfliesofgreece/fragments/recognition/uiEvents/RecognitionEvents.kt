@@ -15,7 +15,7 @@ sealed class RecognitionEvents : UiEvent() {
     object LiveRecognitionClicked: RecognitionEvents()
     object CloseClicked: RecognitionEvents()
     object CloseLiveClicked: RecognitionEvents()
-    class LiveImageTaken(image:Image): RecognitionEvents()
+    class LiveImageTaken(val image:Bitmap): RecognitionEvents()
     object PermissionDenied : RecognitionEvents()
     class PermissionGranted(val permission: Permissions) : RecognitionEvents()
 }
@@ -23,4 +23,5 @@ sealed class RecognitionEvents : UiEvent() {
 sealed class Permissions{
     object Camera : Permissions()
     object Gallery : Permissions()
+    object LiveSession : Permissions()
 }

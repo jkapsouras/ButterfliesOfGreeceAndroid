@@ -1,8 +1,8 @@
 package gr.jkapsouras.butterfliesofgreece.base.di
 
 import android.content.Context
+import com.sansoft.butterflies.R
 import gr.jkapsouras.butterfliesofgreece.MainActivity
-import gr.jkapsouras.butterfliesofgreece.R
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.BackgroundThreadScheduler
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.IBackgroundThread
 import gr.jkapsouras.butterfliesofgreece.base.schedulers.IMainThread

@@ -2,8 +2,8 @@ package gr.jkapsouras.butterfliesofgreece.fragments.recognition
 
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.sansoft.butterflies.R
 import gr.jkapsouras.butterfliesofgreece.MainActivity
-import gr.jkapsouras.butterfliesofgreece.R
 import gr.jkapsouras.butterfliesofgreece.base.BaseFragment
 import gr.jkapsouras.butterfliesofgreece.base.UiComponent
 import gr.jkapsouras.butterfliesofgreece.fragments.recognition.component.RecognitionComponent

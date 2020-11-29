@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="gr.jkapsouras.butterfliesofgreece">
+    package="com.sansoft.butterflies">
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -10,7 +10,7 @@
         android:required="false" />
     <uses-permission android:name="android.permission.CAMERA" />
    <application
-        android:name=".base.ButterfliesApplication"
+        android:name="gr.jkapsouras.butterfliesofgreece.base.ButterfliesApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -21,7 +21,7 @@
         android:theme="@style/AppTheme">
        <provider
            android:name="androidx.core.content.FileProvider"
-           android:authorities="gr.jkapsouras.butterfliesofgreece.fileprovider"
+           android:authorities="com.sansoft.butterflies.fileprovider"
            android:grantUriPermissions="true"
            android:exported="false">
            <meta-data
@@ -29,7 +29,7 @@
                android:resource="@xml/filepaths" />
        </provider>
        <activity
-            android:name=".MainActivity"
+            android:name="gr.jkapsouras.butterfliesofgreece.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

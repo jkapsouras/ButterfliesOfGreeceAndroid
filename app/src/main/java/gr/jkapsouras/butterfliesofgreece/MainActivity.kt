@@ -1,20 +1,16 @@
 package gr.jkapsouras.butterfliesofgreece
 
 import android.Manifest
-import android.R.attr
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import android.graphics.ImageDecoder
 import android.net.Uri
 import android.os.Bundle
 import android.os.StrictMode
-import android.provider.MediaStore
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -22,6 +18,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
+import com.sansoft.butterflies.R
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.fragments.recognition.uiEvents.Permissions
 import gr.jkapsouras.butterfliesofgreece.fragments.recognition.uiEvents.RecognitionEvents
@@ -96,10 +93,11 @@ class MainActivity : AppCompatActivity() {
                 else ->
                     search_bar.visibility = View.GONE
             }
+            val appBarConfiguration = AppBarConfiguration(navController.graph)
+            toolbar.setupWithNavController(navController, appBarConfiguration)
         }
         val appBarConfiguration = AppBarConfiguration(navController.graph)
-        findViewById<Toolbar>(R.id.toolbar)
-            .setupWithNavController(navController, appBarConfiguration)
+        toolbar.setupWithNavController(navController, appBarConfiguration)
     }
 
     override fun onStart() {
@@ -176,6 +174,19 @@ class MainActivity : AppCompatActivity() {
 //                getLastLocation()
                 Log.i(LocationManager.TAG, "granted")
                 emitterEvents.onNext(RecognitionEvents.PermissionGranted(Permissions.Camera))
+            }
+        }
+        else if(requestCode == REQUEST_CODE_PERMISSIONS) {
+            if (grantResults.isEmpty()) {
+                // If user interaction was interrupted, the permission request is cancelled and you
+                // receive empty arrays.
+                Log.i(LocationManager.TAG, "User interaction was cancelled.")
+                emitterEvents.onNext(RecognitionEvents.PermissionDenied)
+            } else if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission granted.
+//                getLastLocation()
+                Log.i(LocationManager.TAG, "granted")
+                emitterEvents.onNext(RecognitionEvents.PermissionGranted(Permissions.LiveSession))
             }
         }
     }

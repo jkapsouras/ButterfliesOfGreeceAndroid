@@ -29,7 +29,7 @@ class RecognitionPresenter(
 
     var recognitionState:RecognitionState = RecognitionState(null, null, emptyList())
 //    private var modelDataHandler: ModelDataHandler = ModelDataHandler()
-//    var processing = false
+    var processing = false
 
     fun setActivity(activity: MainActivity)
     {
@@ -59,6 +59,8 @@ class RecognitionPresenter(
                      state.onNext(RecognitionViewStates.ShowGallery)
                      Permissions.Camera ->
                          state.onNext(RecognitionViewStates.ShowCamera)
+                     Permissions.LiveSession ->
+                         state.onNext(RecognitionViewStates.ShowLiveRecognitionView)
                  }
              RecognitionEvents.PermissionDenied ->
                  state.onNext(RecognitionViewStates.ShowPermissionDenied)
@@ -138,6 +140,33 @@ class RecognitionPresenter(
                  state.onNext(RecognitionViewStates.ShowLiveRecognitionView)
              RecognitionEvents.CloseClicked ->
                  state.onNext(RecognitionViewStates.CloseRecognitionView)
+             is RecognitionEvents.LiveImageTaken ->{
+                 Observable.just(1)
+                     .filter{
+                         !processing
+                     }
+                     .subscribeOn(backgroundThreadScheduler.scheduler)
+                     .map{
+                         recognitionState = recognitionState.with(image = recognitionEvent.image)
+                         recognitionState
+                     }
+                     .flatMap {
+                         processing = true
+                         var result = recognitionRepository.offlineRecognize(BAvatar(recognitionState.image!!))
+                         result
+                     }
+                     .subscribeBy(onNext = {
+                         processing = false
+                         recognitionState =
+                             recognitionState.with(predictions = it)
+                         state.onNext(RecognitionViewStates.LiveImageRecognized(predictions = recognitionState.predictions))
+                     }, onError = {
+                         Log.d(TAG, "handleRecognitionEvents: ${it.localizedMessage}")
+                     })
+                     .disposeWith(disposables)
+             }
+             RecognitionEvents.CloseLiveClicked ->
+                 state.onNext(RecognitionViewStates.CloseLiveRecognitionView)
          }
      }
 }

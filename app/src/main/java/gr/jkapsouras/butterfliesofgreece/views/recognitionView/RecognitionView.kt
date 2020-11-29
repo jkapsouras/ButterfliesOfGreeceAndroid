@@ -7,14 +7,12 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
-import gr.jkapsouras.butterfliesofgreece.R
+import com.sansoft.butterflies.R
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.dto.Prediction
-import gr.jkapsouras.butterfliesofgreece.fragments.contribute.uiEvents.ContributeEvents
 import gr.jkapsouras.butterfliesofgreece.fragments.recognition.uiEvents.RecognitionEvents
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.subjects.PublishSubject
-import kotlinx.android.synthetic.main.view_contribute.view.*
 import kotlinx.android.synthetic.main.view_recognition.view.*
 
 class RecognitionView  @JvmOverloads constructor(
