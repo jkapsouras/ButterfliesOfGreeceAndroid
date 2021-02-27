@@ -74,7 +74,7 @@ class ModalPhotoFragment : Fragment(){
         val position = requireArguments().getInt(ARG_POSITION)
         try {
             val iden = iv_modal_photo.resources.getIdentifier(
-                "full_${photos[position]}",
+                "thumb_big_${photos[position]}",
                 "drawable",
                 iv_modal_photo.context.packageName
             )

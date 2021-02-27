@@ -33,13 +33,30 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/medium"
-        android:visibility="gone"
+        android:visibility="visible"
         android:textColor="@color/recognition_dark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button_save"
         app:layout_constraintTop_toBottomOf="@id/image_recognized"
         />
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginBottom="@dimen/medium"
+        android:background="@drawable/recognition_border_circle"
+        android:textColor="@color/recognition_dark"
+        android:textSize="@dimen/edit_text_size"
+        android:padding="@dimen/medium"
+        android:text="@string/save"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_recognized"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_recognition"

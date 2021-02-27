@@ -52,6 +52,10 @@ class RecognitionView  @JvmOverloads constructor(
             emitter.onNext(RecognitionEvents.CloseClicked)
         }
 
+        button_save.setOnClickListener {
+            emitter.onNext(RecognitionEvents.SaveImage)
+        }
+
         return emitter
     }
 
@@ -61,6 +65,7 @@ class RecognitionView  @JvmOverloads constructor(
         button_offline_recognition.visibility = View.VISIBLE
         label_recognized.text = ""
         label_recognized.visibility = View.GONE
+        button_save.visibility = View.GONE
     }
 
     fun showSelectedImage(image: Bitmap){
@@ -69,6 +74,7 @@ class RecognitionView  @JvmOverloads constructor(
         button_offline_recognition.visibility = View.VISIBLE
         label_recognized.text = ""
         label_recognized.visibility = View.GONE
+        button_save.visibility = View.GONE
     }
 
     fun showLoading() {
@@ -89,5 +95,6 @@ class RecognitionView  @JvmOverloads constructor(
         label_recognized.visibility = View.VISIBLE
         label_recognized.text =
             "${label_recognized.context.getString(R.string.photo_recognized_first)} ${predictions[0].butterflyClass}"//" \(Translations.RecognizedSecond) \(predictions[0].prob)%"
+        button_save.visibility = View.VISIBLE
     }
 }

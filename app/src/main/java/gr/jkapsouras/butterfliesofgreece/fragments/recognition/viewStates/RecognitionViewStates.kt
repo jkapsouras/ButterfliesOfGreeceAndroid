@@ -18,4 +18,6 @@ sealed class RecognitionViewStates(isTransition:Boolean) : ViewState(isTransitio
     object ShowLiveRecognitionView : RecognitionViewStates(false)
     object CloseLiveRecognitionView : RecognitionViewStates(false)
     object ShowPermissionDenied : RecognitionViewStates(false)
+    class ImageSaved(val image: Uri, val name: String) : RecognitionViewStates(false)
+    class ImageSavedBitmap(val image: Bitmap, val name: String) : RecognitionViewStates(false)
 }

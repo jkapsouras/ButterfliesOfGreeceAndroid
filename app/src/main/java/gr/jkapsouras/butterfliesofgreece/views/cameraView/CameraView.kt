@@ -158,7 +158,7 @@ class CameraView  @JvmOverloads constructor(
 //            val pixels = data.map { it.toInt() and 0xFF }
 //            val luma = pixels.average()
 
-            val bitmap = image.imageToBitmap(0f)
+            val bitmap = image.toBitmap()
 //            val bitmap = imageProxyToBitmap(image)
 
             counter += 1
@@ -215,7 +215,7 @@ class CameraView  @JvmOverloads constructor(
                 Rect(
                     0, 0,
                     this.width, this.height
-                ), 50, out
+                ), 100, out
             )
             val imageBytes = out.toByteArray()
             val bm = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)

@@ -33,7 +33,7 @@ class RecognitionRepository(private val api: IImageApi) {
           val newbitmap = Bitmap.createScaledBitmap(bitmap, 600, 600, false)
 
           val baos = ByteArrayOutputStream()
-          newbitmap.compress(Bitmap.CompressFormat.JPEG, 70, baos)
+          newbitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
           val bitmapdata: ByteArray = baos.toByteArray()
           val compressedBitmap = BitmapFactory.decodeByteArray(bitmapdata, 0, bitmapdata.count())
           var fileName:String = "avatar"
@@ -51,7 +51,7 @@ class RecognitionRepository(private val api: IImageApi) {
         val newbitmap = Bitmap.createScaledBitmap(image.image, 600, 600, false)
 
         val baos = ByteArrayOutputStream()
-        newbitmap.compress(Bitmap.CompressFormat.JPEG, 70, baos)
+        newbitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
         val bitmapdata: ByteArray = baos.toByteArray()
         val compressedBitmap = BitmapFactory.decodeByteArray(bitmapdata, 0, bitmapdata.count())
         var fileName:String = "avatar"
@@ -95,7 +95,7 @@ class RecognitionRepository(private val api: IImageApi) {
 
         //Convert bitmap to byte array
         val bos = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 0 /*ignored for PNG*/, bos)
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100 /*ignored for PNG*/, bos)
         val bitMapData = bos.toByteArray()
 
         //write the bytes in file

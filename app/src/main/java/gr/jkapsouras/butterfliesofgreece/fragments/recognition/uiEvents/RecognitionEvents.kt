@@ -18,6 +18,7 @@ sealed class RecognitionEvents : UiEvent() {
     class LiveImageTaken(val image:Bitmap): RecognitionEvents()
     object PermissionDenied : RecognitionEvents()
     class PermissionGranted(val permission: Permissions) : RecognitionEvents()
+    object SaveImage:RecognitionEvents()
 }
 
 sealed class Permissions{

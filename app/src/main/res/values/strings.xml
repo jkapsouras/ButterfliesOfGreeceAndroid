@@ -83,9 +83,15 @@
     <string name="recognize_offline">Perform offline recognition</string>
     <string name="photo_recognized_first">The above butterfly recognized to belong in specie</string>
     <string name="photo_recognized_second">with probability</string>
+    <string name="save">Save photo</string>
+    <string name="saved">Photo saved</string>
+    <string name="save_error">Save error</string>
 </resources>
 
  <!--
+ "saved" = "Photo saved";
+"saved_message" = "Your photo has been saved to your phone";
+"save_error" = "Save error";
  "photo_recognized_first" = "The above butterfly recognized to belong in specie";
 "photo_recognized_second" = "with probability";
 "live_recognition" = "Live recognition";
