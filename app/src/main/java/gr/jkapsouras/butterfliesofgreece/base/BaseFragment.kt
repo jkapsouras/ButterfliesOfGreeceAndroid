@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import gr.jkapsouras.butterfliesofgreece.R
+import com.sansoft.butterflies.R
 import gr.jkapsouras.butterfliesofgreece.fragments.families.viewStates.FamiliesViewViewStates
 import gr.jkapsouras.butterfliesofgreece.fragments.main.ViewStates.MenuViewStates
 import gr.jkapsouras.butterfliesofgreece.fragments.modal.viewStates.ModalViewStates
@@ -127,6 +127,8 @@ abstract  class BaseFragment<P : BasePresenter> : Fragment(){
                         findNavController().navigate(R.id.navigate_to_about)
                     is MenuViewStates.ToLegal ->
                         findNavController().navigate(R.id.navigate_to_legal_fragment)
+                    is MenuViewStates.ToRecognition ->
+                        findNavController().navigate(R.id.navigate_to_recognition_fragment)
                 }
             }
             is FamiliesViewViewStates ->{

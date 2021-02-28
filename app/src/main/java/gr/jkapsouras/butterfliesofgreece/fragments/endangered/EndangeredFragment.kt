@@ -5,9 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import gr.jkapsouras.butterfliesofgreece.R
+import com.sansoft.butterflies.R
 import kotlinx.android.synthetic.main.endangered_fragment.*
-import java.io.File
 
 class EndangeredFragment : Fragment() {
 

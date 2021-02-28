@@ -10,7 +10,7 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import gr.jkapsouras.butterfliesofgreece.R
+import com.sansoft.butterflies.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.modal_photo_fragment.*
 import java.lang.Exception
@@ -74,7 +74,7 @@ class ModalPhotoFragment : Fragment(){
         val position = requireArguments().getInt(ARG_POSITION)
         try {
             val iden = iv_modal_photo.resources.getIdentifier(
-                "full_${photos[position]}",
+                "thumb_big_${photos[position]}",
                 "drawable",
                 iv_modal_photo.context.packageName
             )

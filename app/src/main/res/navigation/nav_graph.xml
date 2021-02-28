@@ -28,6 +28,9 @@
         <action
             android:id="@+id/navigate_to_legal_fragment"
             app:destination="@id/legalFragment" />
+        <action
+            android:id="@+id/navigate_to_recognition_fragment"
+            app:destination="@id/recognitionFragment" />
     </fragment>
     <fragment
         android:id="@+id/familiesFragment"
@@ -114,4 +117,8 @@
         android:id="@+id/legalFragment"
         android:name="gr.jkapsouras.butterfliesofgreece.fragments.legal.LegalFragment"
         android:label="@string/legal" />
+    <fragment
+        android:id="@+id/recognitionFragment"
+        android:name="gr.jkapsouras.butterfliesofgreece.fragments.recognition.RecognitionFragment"
+        android:label="@string/recognition" />
 </navigation>

@@ -76,8 +76,32 @@
     <string name="legal_link_first">pdf</string>
     <string name="legal_link_second">the site of the Ministry of Environment</string>
     <string name="legal_link_third">here</string>
+    <string name="choose_photo">Choose from gallery</string>
+    <string name="take_photo">Take a photo</string>
+    <string name="live_recognition">Live recognition</string>
+    <string name="recognize_online">Perform online recognition</string>
+    <string name="recognize_offline">Perform offline recognition</string>
+    <string name="photo_recognized_first">The above butterfly recognized to belong in specie</string>
+    <string name="photo_recognized_second">with probability</string>
+    <string name="save">Save photo</string>
+    <string name="saved">Photo saved</string>
+    <string name="save_error">Save error</string>
 </resources>
 
  <!--
+ "saved" = "Photo saved";
+"saved_message" = "Your photo has been saved to your phone";
+"save_error" = "Save error";
+ "photo_recognized_first" = "The above butterfly recognized to belong in specie";
+"photo_recognized_second" = "with probability";
+"live_recognition" = "Live recognition";
+ "recognize_online" = "Perform online recognition";
+"recognize_offline" = "Perform offline recognition";
+ "recognition_title" = "Recognition";
+"recognize_online" = "Perform online recognition";
+"recognize_offline" = "Perform offline recognition";
+"choose_photo" = "Choose from gallery";
+"take_photo" = "Take a photo";
+live_recognition" = "Live recognition";
     "legal_popup" = "Here you can check the legal information about contributing to the app. You can also find this information in this pdf.\nYou can find the necessary information for the application forms in the site of the Ministry of Environment and the application form as a pdf file here.";
     -->

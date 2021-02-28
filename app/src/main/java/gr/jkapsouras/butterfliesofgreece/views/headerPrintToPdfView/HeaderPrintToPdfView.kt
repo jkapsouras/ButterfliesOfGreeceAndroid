@@ -8,7 +8,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.jakewharton.rxbinding4.view.clicks
-import gr.jkapsouras.butterfliesofgreece.R
+import com.sansoft.butterflies.R
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.fragments.printToPdf.state.PdfArrange
 import gr.jkapsouras.butterfliesofgreece.fragments.printToPdf.uiEvents.PrintToPdfEvents

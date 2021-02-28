@@ -1,31 +1,57 @@
 package gr.jkapsouras.butterfliesofgreece
 
+import android.Manifest
+import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.ContentResolver
+import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Color
+import android.database.Cursor
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
+import android.os.StrictMode
+import android.provider.MediaStore
+import android.provider.OpenableColumns
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider.getUriForFile
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
+import com.sansoft.butterflies.R
+import com.yalantis.ucrop.UCrop
+import gr.jkapsouras.butterfliesofgreece.base.UiEvent
+import gr.jkapsouras.butterfliesofgreece.fragments.recognition.uiEvents.Permissions
+import gr.jkapsouras.butterfliesofgreece.fragments.recognition.uiEvents.RecognitionEvents
 import gr.jkapsouras.butterfliesofgreece.managers.LocationManager
-import gr.jkapsouras.butterfliesofgreece.managers.LocationState
 import io.reactivex.rxjava3.subjects.PublishSubject
 import kotlinx.android.synthetic.main.activity_main.*
-import org.koin.android.ext.android.inject
-import org.koin.core.parameter.parametersOf
+import java.io.File
+import java.io.IOException
+import java.text.SimpleDateFormat
+import java.util.*
+
 
 class MainActivity : AppCompatActivity() {
     val emitter: PublishSubject<Boolean> = PublishSubject.create()
+    val emitterEvents: PublishSubject<UiEvent> = PublishSubject.create()
+    var imageUri: Uri? = null
+    var imageBitmap: Bitmap? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
+
+        StrictMode.setThreadPolicy(policy)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -70,19 +96,35 @@ class MainActivity : AppCompatActivity() {
                     toolbar.setBackgroundColor(applicationContext.getColor(R.color.legal))
                     toolbar.setTitleTextColor(applicationContext.getColor(R.color.legal_dark))
                 }
+                R.id.recognitionFragment -> {
+                    toolbar.context.setTheme(R.style.RecognitionTheme)
+                    toolbar.setBackgroundColor(applicationContext.getColor(R.color.recognition))
+                    toolbar.setTitleTextColor(applicationContext.getColor(R.color.recognition_dark))
+                }
                 R.id.searchFragment ->
                     search_bar.visibility = View.VISIBLE
                 else ->
                     search_bar.visibility = View.GONE
             }
+            val appBarConfiguration = AppBarConfiguration(navController.graph)
+            toolbar.setupWithNavController(navController, appBarConfiguration)
         }
         val appBarConfiguration = AppBarConfiguration(navController.graph)
-        findViewById<Toolbar>(R.id.toolbar)
-            .setupWithNavController(navController, appBarConfiguration)
+        toolbar.setupWithNavController(navController, appBarConfiguration)
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>,
-                                   grantResults: IntArray) {
+    override fun onStart() {
+        super.onStart()
+        if(imageUri!=null)
+            emitterEvents.onNext(RecognitionEvents.PhotoChosen(imageUri))
+        else if(imageBitmap!=null)
+            emitterEvents.onNext(RecognitionEvents.PhotoTaken(imageBitmap!!))
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int, permissions: Array<String>,
+        grantResults: IntArray
+    ) {
         Log.i(LocationManager.TAG, "onRequestPermissionResult")
         if (requestCode == LocationManager.REQUEST_PERMISSIONS_REQUEST_CODE) {
             if (grantResults.isEmpty()) {
@@ -121,5 +163,154 @@ class MainActivity : AppCompatActivity() {
 //                    })
             }
         }
+        else if(requestCode == PERMISSION_CODE) {
+            if (grantResults.isEmpty()) {
+                // If user interaction was interrupted, the permission request is cancelled and you
+                // receive empty arrays.
+                Log.i(LocationManager.TAG, "User interaction was cancelled.")
+                emitterEvents.onNext(RecognitionEvents.PermissionDenied)
+            } else if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission granted.
+//                getLastLocation()
+                Log.i(LocationManager.TAG, "granted")
+                emitterEvents.onNext(RecognitionEvents.PermissionGranted(Permissions.Gallery))
+            }
+        }
+        else if(requestCode == PERMISSION_CODE_CAMERA) {
+            if (grantResults.isEmpty()) {
+                // If user interaction was interrupted, the permission request is cancelled and you
+                // receive empty arrays.
+                Log.i(LocationManager.TAG, "User interaction was cancelled.")
+                emitterEvents.onNext(RecognitionEvents.PermissionDenied)
+            } else if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission granted.
+//                getLastLocation()
+                Log.i(LocationManager.TAG, "granted")
+                emitterEvents.onNext(RecognitionEvents.PermissionGranted(Permissions.Camera))
+            }
+        }
+        else if(requestCode == REQUEST_CODE_PERMISSIONS) {
+            if (grantResults.isEmpty()) {
+                // If user interaction was interrupted, the permission request is cancelled and you
+                // receive empty arrays.
+                Log.i(LocationManager.TAG, "User interaction was cancelled.")
+                emitterEvents.onNext(RecognitionEvents.PermissionDenied)
+            } else if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission granted.
+//                getLastLocation()
+                Log.i(LocationManager.TAG, "granted")
+                emitterEvents.onNext(RecognitionEvents.PermissionGranted(Permissions.LiveSession))
+            }
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK && (requestCode == IMAGE_PICK_CODE)){
+            var tmpimageUri = data?.data
+            cropImage(tmpimageUri!!)
+            imageBitmap = null// MediaStore.Images.Media.getBitmap(this.contentResolver, data?.data)
+
+            imageUri = null
+        }
+        else if(resultCode == Activity.RESULT_OK && requestCode == USE_CAMERA){
+            cropImage(getCacheImagePath("temp.jpg")!!)
+            imageBitmap = null
+
+            imageUri = null
+        }
+        else if(resultCode == Activity.RESULT_OK && requestCode == UCrop.REQUEST_CROP)
+        {
+            val resultUri = UCrop.getOutput(data!!)
+            imageBitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, resultUri)
+            imageUri = null
+        }
+        else if(requestCode == UCrop.REQUEST_CROP)
+        {
+            imageBitmap = null
+            imageUri = null
+        }
+    }
+
+    @SuppressLint("SimpleDateFormat")
+    @Throws(IOException::class)
+    fun createImageFile(): File? {
+        // Create an image file name
+        val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
+        val imageFileName = "JPEG_" + timeStamp + "_"
+        val storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+        val image = File.createTempFile(
+            imageFileName,  /* prefix */
+            ".jpg",  /* suffix */
+            storageDir /* directory */
+        )
+
+        // Save a file: path for use with ACTION_VIEW intents
+        CurrentPhotoPath = image.absolutePath
+        return image
+    }
+
+    private fun cropImage(sourceUri: Uri) {
+        val destinationUri = Uri.fromFile(
+            File(
+                cacheDir, queryName(
+                    contentResolver, sourceUri
+                )
+            )
+        )
+        val options = UCrop.Options()
+        options.setCompressionQuality(IMAGE_COMPRESSION)
+        options.setToolbarColor(ContextCompat.getColor(this, R.color.recognition_dark))
+        options.setStatusBarColor(ContextCompat.getColor(this, R.color.recognition_dark))
+        options.setActiveControlsWidgetColor(ContextCompat.getColor(this, R.color.recognition_dark))
+        if (lockAspectRatio) options.withAspectRatio(
+            ASPECT_RATIO_X.toFloat(),
+            ASPECT_RATIO_Y.toFloat()
+        )
+
+        if (setBitmapMaxWidthHeight)
+            options.withMaxResultSize(bitmapMaxWidth, bitmapMaxHeight)
+        UCrop.of(sourceUri, destinationUri)
+            .withOptions(options)
+            .start(this)
+    }
+
+    fun getCacheImagePath(fileName: String): Uri? {
+        val path = File(externalCacheDir, "camera")
+        if (!path.exists()) path.mkdirs()
+        val image = File(path, fileName)
+        val x = getUriForFile(this, "$packageName.fileprovider", image)
+        return x
+    }
+
+    private fun queryName(resolver: ContentResolver, uri: Uri): String? {
+        val returnCursor: Cursor = resolver.query(uri, null, null, null, null)!!
+        val nameIndex: Int = returnCursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)
+        returnCursor.moveToFirst()
+        val name: String = returnCursor.getString(nameIndex)
+        returnCursor.close()
+        return name
+    }
+
+
+    companion object {
+
+        var CurrentPhotoPath = ""
+        private const val bitmapMaxWidth = 1000
+        private const val bitmapMaxHeight = 1000
+        private const val setBitmapMaxWidthHeight = false
+        private const val lockAspectRatio = false
+        private const val ASPECT_RATIO_Y = 9.0
+        private const val ASPECT_RATIO_X = 16.0
+        private const val IMAGE_COMPRESSION = 100
+        private const val IMAGE_PICK_CODE = 1000
+        private const val PERMISSION_CODE = 1001
+        private const val PERMISSION_CODE_CAMERA = 201
+        private const val USE_CAMERA = 200
+
+        const val TAG = "CameraXBasic"
+        const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
+        const val REQUEST_CODE_PERMISSIONS = 10
+        val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
     }
 }

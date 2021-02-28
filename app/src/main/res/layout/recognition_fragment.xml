@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/recognition"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Button
+        android:id="@+id/button_choose_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/medium"
+        android:layout_marginStart="@dimen/medium"
+        android:layout_marginEnd="@dimen/medium"
+        android:layout_marginBottom="@dimen/small"
+        android:background="@drawable/recognition_border"
+        android:textColor="@color/recognition_dark"
+        android:textSize="@dimen/title"
+        android:text="@string/choose_photo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button_capture_image"
+        />
+
+    <Button
+        android:id="@+id/button_capture_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/small"
+        android:layout_marginStart="@dimen/medium"
+        android:layout_marginEnd="@dimen/medium"
+        android:layout_marginBottom="@dimen/small"
+        android:background="@drawable/recognition_border"
+        android:textColor="@color/recognition_dark"
+        android:textSize="@dimen/title"
+        android:text="@string/take_photo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_choose_image"
+        app:layout_constraintBottom_toTopOf="@+id/button_live_session"
+        />
+
+    <Button
+        android:id="@+id/button_live_session"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/small"
+        android:layout_marginStart="@dimen/medium"
+        android:layout_marginEnd="@dimen/medium"
+        android:layout_marginBottom="@dimen/medium"
+        android:background="@drawable/recognition_border"
+        android:textColor="@color/recognition_dark"
+        android:textSize="@dimen/title"
+        android:text="@string/live_recognition"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_capture_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <gr.jkapsouras.butterfliesofgreece.views.recognitionView.RecognitionView
+        android:id="@+id/view_recognition_online_offline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:background="@color/app_white"
+        android:elevation="2dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <gr.jkapsouras.butterfliesofgreece.views.cameraView.CameraView
+        android:id="@+id/view_live_session"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:background="@color/app_white"
+        android:elevation="3dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
