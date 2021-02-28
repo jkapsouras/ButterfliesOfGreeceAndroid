@@ -3,6 +3,7 @@
     <ANNOTATIONS>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e83f37470201e4b55466a6d6658bec16/jetified-appcenter-crashes-3.3.1/annotations.zip!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bbb4301c08dc81e10a2e0d88dcab153e/jetified-appcenter-crashes-3.3.1/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2b09c6a48431ee113e08247522aaa3cb/jetified-appcenter-crashes-3.3.1/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/421a179246b6a2a33e0880290cd89659/jetified-appcenter-crashes-3.3.1/res" />
@@ -12,6 +13,10 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bbb4301c08dc81e10a2e0d88dcab153e/jetified-appcenter-crashes-3.3.1/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bbb4301c08dc81e10a2e0d88dcab153e/jetified-appcenter-crashes-3.3.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bbb4301c08dc81e10a2e0d88dcab153e/jetified-appcenter-crashes-3.3.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8c61138762fc32d3c32bd810c51d53bc/jetified-appcenter-crashes-3.3.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2b09c6a48431ee113e08247522aaa3cb/jetified-appcenter-crashes-3.3.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2b09c6a48431ee113e08247522aaa3cb/jetified-appcenter-crashes-3.3.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2b09c6a48431ee113e08247522aaa3cb/jetified-appcenter-crashes-3.3.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.microsoft.appcenter/appcenter-crashes/3.3.1/f21ab4c4230b9d2b96c0baf769f333032034bf4c/appcenter-crashes-3.3.1-javadoc.jar!/" />
