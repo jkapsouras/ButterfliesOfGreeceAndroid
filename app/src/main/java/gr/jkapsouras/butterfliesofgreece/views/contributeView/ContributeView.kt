@@ -11,8 +11,8 @@ import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.widget.addTextChangedListener
 import com.jakewharton.rxbinding4.view.clicks
+import com.sansoft.butterflies.R
 import gr.jkapsouras.butterfliesofgreece.MainActivity
-import gr.jkapsouras.butterfliesofgreece.R
 import gr.jkapsouras.butterfliesofgreece.base.DisposablesWrapper
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.base.disposeWith

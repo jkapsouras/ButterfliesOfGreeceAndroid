@@ -3,6 +3,7 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:fontFamily">@font/actypogrotesk</item>
+        <item name="android:windowBackground">@drawable/splash</item>
         <!-- Customize your theme here.
          <item name="android:fontFamily">@font/nunito</item>
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -73,6 +74,17 @@
         <item name="colorPrimaryDark">@color/legal_dark</item>
         <item name="colorAccent">@color/legal_dark</item>
         <item name="colorControlNormal">@color/legal_dark</item>
+    </style>
+
+    <style name="RecognitionTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:fontFamily">@font/actypogrotesk</item>
+        <item name="themeName">"RecognitionTheme"</item>
+        <item name="android:titleTextColor">@color/recognition_dark</item>
+        <item name="background">@color/recognition_dark</item>
+        <item name="colorPrimary">@color/recognition_dark</item>
+        <item name="colorPrimaryDark">@color/recognition_dark</item>
+        <item name="colorAccent">@color/recognition_dark</item>
+        <item name="colorControlNormal">@color/recognition_dark</item>
     </style>
 
     <style name="SearchTheme" parent="Widget.AppCompat.SearchView.ActionBar">

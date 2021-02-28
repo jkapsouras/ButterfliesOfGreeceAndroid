@@ -6,6 +6,7 @@ import io.reactivex.rxjava3.core.Observable
 
 class FamiliesRepository(private val storage:Storage) {
     fun getAllFamilies() : Observable<List<Family>> {
+
         return Observable.just(storage.families)
     }
 }
