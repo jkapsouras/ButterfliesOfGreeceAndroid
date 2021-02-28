@@ -2,7 +2,6 @@ package gr.jkapsouras.butterfliesofgreece.managers
 
 import android.content.ContentValues.TAG
 import android.content.Context
-import android.content.Context.WINDOW_SERVICE
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Paint
@@ -11,15 +10,10 @@ import android.graphics.pdf.PdfDocument
 import android.graphics.pdf.PdfDocument.PageInfo
 import android.print.PrintAttributes
 import android.print.PrintManager
-import android.util.DisplayMetrics
 import android.util.Log
 import android.view.View
-import android.view.WindowManager
-import android.webkit.WebResourceRequest
 import android.webkit.WebView
-import android.webkit.WebViewClient
-import androidx.core.content.ContextCompat.getSystemService
-import gr.jkapsouras.butterfliesofgreece.R
+import com.sansoft.butterflies.R
 import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
 import gr.jkapsouras.butterfliesofgreece.fragments.printToPdf.state.PdfArrange
 import kotlinx.android.synthetic.main.view_contribute.view.*

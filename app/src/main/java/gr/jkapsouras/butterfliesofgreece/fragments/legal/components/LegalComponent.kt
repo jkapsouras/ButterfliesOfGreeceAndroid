@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import com.github.barteksc.pdfviewer.PDFView
-import gr.jkapsouras.butterfliesofgreece.R
+import com.sansoft.butterflies.R
 import gr.jkapsouras.butterfliesofgreece.base.UiComponent
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.base.ViewState

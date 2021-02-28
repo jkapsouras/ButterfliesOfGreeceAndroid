@@ -20,7 +20,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@drawable/close_icon"
-        android:tint="@color/field_dark"
+        android:tint="@color/field"
         android:scaleType="fitCenter"
         android:background="@android:color/transparent"
         android:layout_margin="@dimen/medium"

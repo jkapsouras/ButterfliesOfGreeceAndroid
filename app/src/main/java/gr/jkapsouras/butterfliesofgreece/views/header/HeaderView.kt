@@ -7,7 +7,7 @@ import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import com.jakewharton.rxbinding4.view.clicks
-import gr.jkapsouras.butterfliesofgreece.R
+import com.sansoft.butterflies.R
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.fragments.families.ViewArrange
 import gr.jkapsouras.butterfliesofgreece.views.header.uiEvents.HeaderViewEvents
