@@ -15,6 +15,8 @@ import gr.jkapsouras.butterfliesofgreece.fragments.recognition.uiEvents.Permissi
 import gr.jkapsouras.butterfliesofgreece.fragments.recognition.uiEvents.RecognitionEvents
 import gr.jkapsouras.butterfliesofgreece.fragments.recognition.viewStates.RecognitionViewStates
 import gr.jkapsouras.butterfliesofgreece.managers.LocationManager.Companion.TAG
+import gr.jkapsouras.butterfliesofgreece.managers.detection.DetectionManager
+import gr.jkapsouras.butterfliesofgreece.managers.detection.Detector
 import gr.jkapsouras.butterfliesofgreece.repositories.RecognitionRepository
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.kotlin.subscribeBy
@@ -28,12 +30,14 @@ class RecognitionPresenter(
 ) : BasePresenter(backgroundThreadScheduler, mainThreadScheduler){
 
     var recognitionState:RecognitionState = RecognitionState(null, null, emptyList())
+    var detector:DetectionManager = DetectionManager()
 //    private var modelDataHandler: ModelDataHandler = ModelDataHandler()
     var processing = false
 
     fun setActivity(activity: MainActivity)
     {
        recognitionRepository.activity = activity
+        detector.activity = activity
     }
 
     override fun setupEvents() {
@@ -152,6 +156,11 @@ class RecognitionPresenter(
                      }
                      .flatMap {
                          processing = true
+
+                         detector.bitmap = recognitionState.image!!
+                         detector.createDetector()
+                         val results = detector.recognizeImage()
+
                          var result = recognitionRepository.offlineRecognize(BAvatar(recognitionState.image!!))
                          result
                      }

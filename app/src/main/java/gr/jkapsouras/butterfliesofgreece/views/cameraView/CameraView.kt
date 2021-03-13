@@ -19,6 +19,7 @@ import com.sansoft.butterflies.R
 import gr.jkapsouras.butterfliesofgreece.MainActivity
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.fragments.recognition.uiEvents.RecognitionEvents
+import gr.jkapsouras.butterfliesofgreece.managers.detection.Detector
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.subjects.PublishSubject
 import kotlinx.android.synthetic.main.view_camera.view.*
@@ -105,7 +106,13 @@ class CameraView  @JvmOverloads constructor(
             val imageAnalyzer = ImageAnalysis.Builder()
                 .build()
                 .also {
-                    it.setAnalyzer(cameraExecutor, LuminosityAnalyzer(emitter, counter))
+                    it.setAnalyzer(
+                        cameraExecutor, LuminosityAnalyzer(
+                            emitter,
+                            counter,
+                            view.context
+                        )
+                    )
 //                    { luma ->
 ////                        Log.d(MainActivity.TAG, "Average luminosity: $luma")
 //                        activity.runOnUiThread {
@@ -141,7 +148,8 @@ class CameraView  @JvmOverloads constructor(
 
     private class LuminosityAnalyzer(
         private val emitter: PublishSubject<UiEvent>,
-        private var counter: Int
+        private var counter: Int,
+        private val context: Context
     ) : ImageAnalysis.Analyzer {
 
         private fun ByteBuffer.toByteArray(): ByteArray {
@@ -163,11 +171,16 @@ class CameraView  @JvmOverloads constructor(
 
             counter += 1
 
-//            if(counter>=25) {
+            if(counter>=25) {
                 Log.i("tsg", "counter: $counter")
                 emitter.onNext(RecognitionEvents.LiveImageTaken(bitmap!!))
                 counter = 0
-//            }
+
+
+//                ImageUtils.saveBitmap(bitmap!!, context, "tempFolder");
+//                val results: List<Detector.Recognition> = detector.recognizeImage(croppedBitmap)
+
+            }
 
 //            listener(0.0)
             image.close()
