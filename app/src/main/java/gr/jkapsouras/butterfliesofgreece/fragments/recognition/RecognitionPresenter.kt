@@ -1,5 +1,8 @@
 package gr.jkapsouras.butterfliesofgreece.fragments.recognition
 
+import android.graphics.Bitmap
+import android.graphics.Matrix
+import android.graphics.Rect
 import android.util.Log
 import gr.jkapsouras.butterfliesofgreece.MainActivity
 import gr.jkapsouras.butterfliesofgreece.base.BasePresenter
@@ -16,11 +19,10 @@ import gr.jkapsouras.butterfliesofgreece.fragments.recognition.uiEvents.Recognit
 import gr.jkapsouras.butterfliesofgreece.fragments.recognition.viewStates.RecognitionViewStates
 import gr.jkapsouras.butterfliesofgreece.managers.LocationManager.Companion.TAG
 import gr.jkapsouras.butterfliesofgreece.managers.detection.DetectionManager
-import gr.jkapsouras.butterfliesofgreece.managers.detection.Detector
 import gr.jkapsouras.butterfliesofgreece.repositories.RecognitionRepository
+import gr.jkapsouras.butterfliesofgreece.utils.ImageUtils
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.kotlin.subscribeBy
-import java.io.File
 import java.util.*
 
 class RecognitionPresenter(
@@ -29,7 +31,15 @@ class RecognitionPresenter(
     mainThreadScheduler: IMainThread
 ) : BasePresenter(backgroundThreadScheduler, mainThreadScheduler){
 
-    var recognitionState:RecognitionState = RecognitionState(null, null, emptyList())
+    var recognitionState:RecognitionState = RecognitionState(
+        null,
+        null,
+        null,
+        -1,
+        Matrix(),
+        emptyList(),
+        emptyList()
+    )
     var detector:DetectionManager = DetectionManager()
 //    private var modelDataHandler: ModelDataHandler = ModelDataHandler()
     var processing = false
@@ -60,7 +70,7 @@ class RecognitionPresenter(
              is RecognitionEvents.PermissionGranted ->
                  when (recognitionEvent.permission) {
                      Permissions.Gallery ->
-                     state.onNext(RecognitionViewStates.ShowGallery)
+                         state.onNext(RecognitionViewStates.ShowGallery)
                      Permissions.Camera ->
                          state.onNext(RecognitionViewStates.ShowCamera)
                      Permissions.LiveSession ->
@@ -74,13 +84,13 @@ class RecognitionPresenter(
                      state.onNext(RecognitionViewStates.ShowRecognitionView(recognitionState.imageData!!))
                  }
              }
-             is RecognitionEvents.PhotoTaken ->{
+             is RecognitionEvents.PhotoTaken -> {
                  recognitionState = recognitionState.with(image = recognitionEvent.image)
                  state.onNext(RecognitionViewStates.ShowRecognitionViewBitmap(recognitionState.image!!))
              }
              RecognitionEvents.OnlineClicked -> {
-                         state.onNext(RecognitionViewStates.RecognitionStarted)
-                 if(recognitionState.imageData!=null) {
+                 state.onNext(RecognitionViewStates.RecognitionStarted)
+                 if (recognitionState.imageData != null) {
                      recognitionRepository.recognize(Avatar(recognitionState.imageData!!))
                          .subscribeOn(backgroundThreadScheduler.scheduler)
                          .subscribeBy(onNext = { predictions ->
@@ -91,8 +101,7 @@ class RecognitionPresenter(
                              Log.d(TAG, "handleRecognitionEvents: ${it.localizedMessage}")
                          })
                          .disposeWith(disposables)
-                 }
-                 else if(recognitionState.image!=null){
+                 } else if (recognitionState.image != null) {
                      recognitionRepository.recognize(BAvatar(recognitionState.image!!))
                          .subscribeOn(backgroundThreadScheduler.scheduler)
                          .subscribeBy(onNext = { predictions ->
@@ -111,7 +120,11 @@ class RecognitionPresenter(
                      Observable.just(1)
                          .subscribeOn(backgroundThreadScheduler.scheduler)
                          .flatMap {
-                             var result = recognitionRepository.offlineRecognize(Avatar(recognitionState.imageData!!))
+                             var result = recognitionRepository.offlineRecognize(
+                                 Avatar(
+                                     recognitionState.imageData!!
+                                 )
+                             )
                              result
                          }
                          .subscribeBy(onNext = {
@@ -122,12 +135,15 @@ class RecognitionPresenter(
                              Log.d(TAG, "handleRecognitionEvents: ${it.localizedMessage}")
                          })
                          .disposeWith(disposables)
-                 }
-                 else if(recognitionState.image!=null) {
+                 } else if (recognitionState.image != null) {
                      Observable.just(1)
                          .subscribeOn(backgroundThreadScheduler.scheduler)
                          .flatMap {
-                             var result = recognitionRepository.offlineRecognize(BAvatar(recognitionState.image!!))
+                             var result = recognitionRepository.offlineRecognize(
+                                 BAvatar(
+                                     recognitionState.image!!
+                                 )
+                             )
                              result
                          }
                          .subscribeBy(onNext = {
@@ -140,56 +156,74 @@ class RecognitionPresenter(
                          .disposeWith(disposables)
                  }
              }
-             RecognitionEvents.LiveRecognitionClicked->
+             RecognitionEvents.LiveRecognitionClicked ->
                  state.onNext(RecognitionViewStates.ShowLiveRecognitionView)
              RecognitionEvents.CloseClicked ->
                  state.onNext(RecognitionViewStates.CloseRecognitionView)
-             is RecognitionEvents.LiveImageTaken ->{
+             is RecognitionEvents.LiveImageTaken -> {
                  Observable.just(1)
-                     .filter{
+                     .filter {
                          !processing
                      }
                      .subscribeOn(backgroundThreadScheduler.scheduler)
-                     .map{
-                         recognitionState = recognitionState.with(image = recognitionEvent.image)
+                     .map {
+                         val width = recognitionEvent.image.width
+                         val height = recognitionEvent.image.height
+                         val orientation = recognitionEvent.orientation
+                         var matrix = recognitionEvent.cropToFrameTransform
+
+                         recognitionState = recognitionState.with(
+                             initImage = recognitionEvent.initBitmap,
+                             image = recognitionEvent.image,
+                             width = width,
+                             height = height,
+                             imageOrientation = orientation,
+                             matrix = matrix
+                         )
                          recognitionState
                      }
                      .flatMap {
                          processing = true
-
-                         detector.bitmap = recognitionState.image!!
                          detector.createDetector()
-                         val results = detector.recognizeImage()
-
-                         var result = recognitionRepository.offlineRecognize(BAvatar(recognitionState.image!!))
-                         result
+                         detector.bitmap = it.image!!
+    val result = detector.recognizeImage()
+                         recognitionState = recognitionState.with(detections = result)
+//                         var result = recognitionRepository.offlineRecognize(BAvatar(recognitionState.image!!))
+                         Observable.just(recognitionState)
                      }
-                     .subscribeBy(onNext = {
+                     .subscribe {
                          processing = false
-                         recognitionState =
-                             recognitionState.with(predictions = it)
-                         state.onNext(RecognitionViewStates.LiveImageRecognized(predictions = recognitionState.predictions))
-                     }, onError = {
-                         Log.d(TAG, "handleRecognitionEvents: ${it.localizedMessage}")
-                     })
+//                         recognitionState =
+//                             recognitionState.with(detections = it)
+                         state.onNext(RecognitionViewStates.LiveImageRecognized(detections = it.detections, orientation = it.imageOrientation, image = it.initImage!!, matrix = it.matrix!!))
+                     }
+//                     .subscribeBy(onNext = {
+//                         processing = false
+//                         recognitionState =
+//                             recognitionState.with(detections = it)
+////                         state.onNext(RecognitionViewStates.LiveImageRecognized(predictions = recognitionState.predictions))
+//                     }, onError = {
+//                         Log.d(TAG, "handleRecognitionEvents: ${it.localizedMessage}")
+//                     })
                      .disposeWith(disposables)
              }
              RecognitionEvents.CloseLiveClicked ->
                  state.onNext(RecognitionViewStates.CloseLiveRecognitionView)
              RecognitionEvents.SaveImage -> {
-                 if (recognitionState.imageData!=null) {
+                 if (recognitionState.imageData != null) {
                      state.onNext(
                          RecognitionViewStates.ImageSaved(
-                             image =  recognitionState.imageData!!,
+                             image = recognitionState.imageData!!,
                              name = recognitionState.predictions[0].butterflyClass
-                     ))
-                 }
-                 else if (recognitionState.image!=null) {
+                         )
+                     )
+                 } else if (recognitionState.image != null) {
                      state.onNext(
                          RecognitionViewStates.ImageSavedBitmap(
-                             image =  recognitionState.image!!,
+                             image = recognitionState.image!!,
                              name = recognitionState.predictions[0].butterflyClass
-                         ))
+                         )
+                     )
                  }
              }
          }

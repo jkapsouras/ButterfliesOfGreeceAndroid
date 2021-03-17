@@ -8,7 +8,7 @@ import java.io.IOException
 
 class DetectionManager() {
     private val TF_OD_API_INPUT_SIZE = 300
-    private val TF_OD_API_IS_QUANTIZED = true
+    private val TF_OD_API_IS_QUANTIZED = false
     private val TF_OD_API_MODEL_FILE = "detect.tflite"
     private val TF_OD_API_LABELS_FILE = "labelmap.txt"
 

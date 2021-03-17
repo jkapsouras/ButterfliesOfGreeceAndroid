@@ -6,11 +6,9 @@ import android.graphics.Bitmap
 import android.graphics.RectF
 import android.os.Trace
 import android.util.Log
+import gr.jkapsouras.butterfliesofgreece.managers.recognition.ImageNetClasses
 import org.tensorflow.lite.Interpreter
-import java.io.BufferedReader
-import java.io.FileInputStream
-import java.io.IOException
-import java.io.InputStreamReader
+import java.io.*
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import java.nio.MappedByteBuffer
@@ -140,7 +138,7 @@ class TFLiteObjectDetectionAPIModel private constructor() : Detector {
             )
             recognitions.add(
                 Detector.RecognitionDetection(
-                    "" + i, labels[outputClasses!![0][i].toInt()], outputScores!![0][i], detection
+                    "" + i, labels[outputClasses!![0][i].toInt() + 1], outputScores!![0][i], detection
                 )
             )
         }
@@ -220,6 +218,19 @@ class TFLiteObjectDetectionAPIModel private constructor() : Detector {
         ): Detector {
             val d = TFLiteObjectDetectionAPIModel()
             val modelFile: MappedByteBuffer = loadModelFile(context.getAssets(), modelFilename)
+
+            val x = assetFilePath(context, "labelmap.txt")
+
+            val inputStream: InputStream = File(x).inputStream()
+            val lineList = mutableListOf<String>()
+
+            inputStream.bufferedReader().forEachLine { lineList.add(it) }
+//            lineList.forEach{println(">  " + it)}
+
+            for(line in lineList)
+            {
+                d.labels.add(line)
+            }
 //            val metadata = MetadataExtractor(modelFile)
 //            BufferedReader(
 //                InputStreamReader(
@@ -274,6 +285,25 @@ class TFLiteObjectDetectionAPIModel private constructor() : Detector {
             }
             d.numDetections = FloatArray(1)
             return d
+        }
+
+        @Throws(IOException::class)
+        fun assetFilePath(context: Context, assetName: String?): String? {
+            val file = File(context.filesDir, assetName)
+            if (file.exists() && file.length() > 0) {
+                return file.absolutePath
+            }
+            context.assets.open(assetName!!).use { `is` ->
+                FileOutputStream(file).use { os ->
+                    val buffer = ByteArray(4 * 1024)
+                    var read: Int
+                    while (`is`.read(buffer).also { read = it } != -1) {
+                        os.write(buffer, 0, read)
+                    }
+                    os.flush()
+                }
+                return file.absolutePath
+            }
         }
     }
 }

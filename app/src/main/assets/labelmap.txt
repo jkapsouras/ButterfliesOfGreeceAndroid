@@ -28,9 +28,9 @@ Brintesia circe
 Cacyreus marshalli
 Callophrys rubi
 Carcharodus alceae
-Carcharodus orientalis floccifera complex
+Carcharodus floccifera
 Carcharodus lavatherae
-Carcharodus orientalis floccifera complex
+Carcharodus orientalis
 Carcharodus stauderi
 Carterocephalus palaemon
 Celastrina argiolus
@@ -132,7 +132,7 @@ Melitaea phoebe
 Melitaea trivia
 Minois dryas
 Muschampia cribrellum
-Muschampia alta proteides complex
+Muschampia proto
 Muschampia tessellum
 Neolysandra coelestina
 Neptis rivularis
@@ -184,8 +184,8 @@ Pseudochazara orestes
 Pseudochazara tisiphone
 Pseudophilotes bavius
 Pseudophilotes vicrama
-Pyrgus alveus armoricanus complex
-Pyrgus alveus armoricanus complex
+Pyrgus alveus
+Pyrgus armoricanus
 Pyrgus carthami
 Pyrgus cinarae
 Pyrgus malvae
@@ -218,3 +218,4 @@ Zerynthia cerisy
 Zerynthia cretica
 Zerynthia polyxena
 Zizeeria karsandra
+
