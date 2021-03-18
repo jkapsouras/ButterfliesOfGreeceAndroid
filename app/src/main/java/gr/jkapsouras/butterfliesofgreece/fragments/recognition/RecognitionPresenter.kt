@@ -19,7 +19,9 @@ import gr.jkapsouras.butterfliesofgreece.fragments.recognition.uiEvents.Recognit
 import gr.jkapsouras.butterfliesofgreece.fragments.recognition.viewStates.RecognitionViewStates
 import gr.jkapsouras.butterfliesofgreece.managers.LocationManager.Companion.TAG
 import gr.jkapsouras.butterfliesofgreece.managers.detection.DetectionManager
+import gr.jkapsouras.butterfliesofgreece.managers.detection.Detector
 import gr.jkapsouras.butterfliesofgreece.repositories.RecognitionRepository
+import gr.jkapsouras.butterfliesofgreece.repositories.SpeciesRepository
 import gr.jkapsouras.butterfliesofgreece.utils.ImageUtils
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.kotlin.subscribeBy
@@ -27,6 +29,7 @@ import java.util.*
 
 class RecognitionPresenter(
     val recognitionRepository: RecognitionRepository,
+    val speciesRepository: SpeciesRepository,
     backgroundThreadScheduler: IBackgroundThread,
     mainThreadScheduler: IMainThread
 ) : BasePresenter(backgroundThreadScheduler, mainThreadScheduler){
@@ -186,8 +189,47 @@ class RecognitionPresenter(
                          processing = true
                          detector.createDetector()
                          detector.bitmap = it.image!!
-    val result = detector.recognizeImage()
-                         recognitionState = recognitionState.with(detections = result)
+                         val result = detector.recognizeImage()
+                         val species = speciesRepository.getAllSpecies()
+                         val newResults : MutableList<Detector.RecognitionDetection> = LinkedList<Detector.RecognitionDetection>()
+                         for(r in result!!)
+                         {
+//                             let objIndex = zip.0!.inferences.firstIndex(where: {r in
+//                                 specie = zip.1.first{s in s.name.lowercased() == r.className.lowercased()}
+//                             return (specie != nil && specie!.isEndangered != nil && (specie?.isEndangered == true))
+//                         });
+                            val specie = species.firstOrNull() {
+                                it.name == r!!.title ?: ""
+                            }
+                             if(specie!=null) {
+                                 var tmpString = specie!!.name
+                                 if (specie!!.isEndangered == true) {
+                                     tmpString += "\n" + specie!!.endangeredText
+                                 }
+                                 newResults.add(
+                                     Detector.RecognitionDetection(
+                                         r!!.id,
+                                         tmpString,
+                                         r!!.confidence,
+                                         specie!!.isEndangered ?: false,
+                                         r!!.getLocation()
+                                     )
+                                 )
+                             }
+                             else
+                             {
+                                 newResults.add(
+                                     Detector.RecognitionDetection(
+                                         r!!.id,
+                                         r!!.title,
+                                         r!!.confidence,
+                                         false,
+                                         r!!.getLocation()
+                                     )
+                                 )
+                             }
+                         }
+                         recognitionState = recognitionState.with(detections = newResults)
 //                         var result = recognitionRepository.offlineRecognize(BAvatar(recognitionState.image!!))
                          Observable.just(recognitionState)
                      }

@@ -7,7 +7,11 @@ data class Specie (val id:Int,
                    @SerializedName("imgtitle")
                    val imageTitle: String,
                    val photos:List<ButterflyPhoto>,
-                   var familyId: Int = -1)
+                   var familyId: Int = -1,
+                   @SerializedName("endangered")
+                    val isEndangered: Boolean?,
+                   @SerializedName("endangered_text")
+                    val endangeredText: String?)
 {
 
 }

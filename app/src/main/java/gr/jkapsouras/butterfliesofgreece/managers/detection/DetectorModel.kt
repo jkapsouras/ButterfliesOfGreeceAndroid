@@ -138,7 +138,7 @@ class TFLiteObjectDetectionAPIModel private constructor() : Detector {
             )
             recognitions.add(
                 Detector.RecognitionDetection(
-                    "" + i, labels[outputClasses!![0][i].toInt() + 1], outputScores!![0][i], detection
+                    "" + i, labels[outputClasses!![0][i].toInt() + 1], outputScores!![0][i],false, detection
                 )
             )
         }

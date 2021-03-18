@@ -35,12 +35,12 @@ class MultiBoxTracker(context: Context) {
     @Synchronized
     fun drawDebug(canvas: Canvas) {
         val textPaint = Paint()
-        textPaint.setColor(Color.WHITE)
-        textPaint.setTextSize(60.0f)
+        textPaint.color = Color.WHITE
+        textPaint.textSize = 60.0f
         val boxPaint = Paint()
-        boxPaint.setColor(Color.RED)
-        boxPaint.setAlpha(200)
-        boxPaint.setStyle(Paint.Style.STROKE)
+        boxPaint.color = Color.RED
+        boxPaint.alpha = 200
+        boxPaint.style = Paint.Style.STROKE
         for ((first, rect) in screenRects) {
             canvas.drawRect(rect, boxPaint)
             canvas.drawText("" + first, rect.left, rect.top, textPaint)
@@ -78,7 +78,7 @@ class MultiBoxTracker(context: Context) {
             getFrameToCanvasMatrix()!!.mapRect(trackedPos)
             boxPaint.setColor(recognition.color)
             val cornerSize = Math.min(trackedPos.width(), trackedPos.height()) / 8.0f
-            canvas.drawRect(trackedPos,boxPaint)
+//            canvas.drawRect(trackedPos,boxPaint)
             canvas.drawRoundRect(trackedPos, cornerSize, cornerSize, boxPaint)
             val labelString = if (!TextUtils.isEmpty(recognition.title)) String.format(
                 "%s %.2f", recognition.title,
@@ -86,9 +86,18 @@ class MultiBoxTracker(context: Context) {
             ) else String.format("%.2f", 100 * recognition.detectionConfidence)
             //            borderedText.drawText(canvas, trackedPos.left + cornerSize, trackedPos.top,
             // labelString);
-            borderedText.drawText(
-                canvas, trackedPos.left + cornerSize, trackedPos.top, "$labelString%", boxPaint
-            )
+            if("$labelString%".contains("\n"))
+            {
+                val texts = "$labelString%".split("\n")
+                borderedText.drawLines(
+                    canvas, trackedPos.left + cornerSize, trackedPos.top, texts, boxPaint
+                )
+            }
+            else {
+                borderedText.drawText(
+                    canvas, trackedPos.left + cornerSize, trackedPos.top, "$labelString%", boxPaint
+                )
+            }
         }
     }
 
@@ -125,7 +134,12 @@ class MultiBoxTracker(context: Context) {
             trackedRecognition.detectionConfidence = first
             trackedRecognition.location = RectF(second.getLocation())
             trackedRecognition.title = second.title
-            trackedRecognition.color = COLORS[trackedObjects.size]
+            if(second.isEndangered) {
+                trackedRecognition.color = COLORS[1]
+            }
+            else{
+                trackedRecognition.color = COLORS[0]
+            }
             trackedObjects.add(trackedRecognition)
             if (trackedObjects.size >= COLORS.size) {
                 break
@@ -146,19 +160,19 @@ class MultiBoxTracker(context: Context) {
         private val COLORS = intArrayOf(
             Color.BLUE,
             Color.RED,
-            Color.GREEN,
-            Color.YELLOW,
-            Color.CYAN,
-            Color.MAGENTA,
-            Color.WHITE,
-            Color.parseColor("#55FF55"),
-            Color.parseColor("#FFA500"),
-            Color.parseColor("#FF8888"),
-            Color.parseColor("#AAAAFF"),
-            Color.parseColor("#FFFFAA"),
-            Color.parseColor("#55AAAA"),
-            Color.parseColor("#AA33AA"),
-            Color.parseColor("#0D0068")
+//            Color.GREEN,
+//            Color.YELLOW,
+//            Color.CYAN,
+//            Color.MAGENTA,
+//            Color.WHITE,
+//            Color.parseColor("#55FF55"),
+//            Color.parseColor("#FFA500"),
+//            Color.parseColor("#FF8888"),
+//            Color.parseColor("#AAAAFF"),
+//            Color.parseColor("#FFFFAA"),
+//            Color.parseColor("#55AAAA"),
+//            Color.parseColor("#AA33AA"),
+//            Color.parseColor("#0D0068")
         )
     }
 
@@ -173,7 +187,7 @@ class MultiBoxTracker(context: Context) {
         boxPaint.strokeJoin=Join.ROUND
         boxPaint.strokeMiter=100F
         textSizePx = TypedValue.applyDimension(
-            TypedValue.COMPLEX_UNIT_DIP, TEXT_SIZE_DIP, context.getResources().getDisplayMetrics()
+            TypedValue.COMPLEX_UNIT_DIP, TEXT_SIZE_DIP, context.resources.displayMetrics
         )
         borderedText = BorderedText(textSizePx)
     }
