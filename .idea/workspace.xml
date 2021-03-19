@@ -42,28 +42,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efa0256b-32b0-4f2f-898e-86426287e8f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/thumb_240_001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/thumb_241_001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/thumb_big_240_001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/thumb_big_241_001.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/di/dependencyModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/base/di/dependencyModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/data/Storage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/data/Storage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/dto/Specie.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/dto/Specie.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/species.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/species.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/RecognitionPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/RecognitionPresenter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/detection/Detector.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/detection/Detector.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/detection/DetectorModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/detection/DetectorModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/repositories/SpeciesRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/repositories/SpeciesRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/cameraView/BorderedText.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/cameraView/BorderedText.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/cameraView/MultiBoxTracker.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/cameraView/MultiBoxTracker.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/thumb_220_001.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/thumb_220_002.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/thumb_big_220_001.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/thumb_big_220_002.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/component/RecognitionComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/component/RecognitionComponent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/uiEvents/RecognitionEvents.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/uiEvents/RecognitionEvents.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/cameraView/CameraView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/cameraView/CameraView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/recognitionView/RecognitionView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/recognitionView/RecognitionView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/view_camera.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/view_camera.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,6 +150,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="BundleExportedModule" value="ButterfliesOfGreeceAndroid.app" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="3cd4796c23b9" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-02-28T14:39:31.559Z" />
     <property name="ResourceManagerPrefKey.ResourceType" value="DRAWABLE" />
@@ -170,7 +168,7 @@
     <property name="android-custom-view/Users/jkapsi/Projects/butterfliesandroid/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/header/HeaderView.kt_SELECTED" value="HeaderView" />
     <property name="android-custom-view/Users/jkapsi/Projects/butterfliesandroid/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosCollectionView/PhotosCollectionView.kt_SELECTED" value="PhotosCollectionView" />
     <property name="android-custom-view/Users/jkapsi/Projects/butterfliesandroid/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/photosTableView/PhotosTableView.kt_SELECTED" value="PhotosTableView" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/assets" />
     <property name="multi-representation-preview/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/cameraView/CameraView.kt_selected" value="Custom views" />
     <property name="multi-representation-preview/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/cameraView/OverlayView.kt_selected" value="Custom views" />
     <property name="multi-representation-preview/Users/apprecot/Documents/Workspace/ButterfliesOfGreeceAndroid/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/cameraView/cameraView.kt_selected" value="Custom views" />
@@ -192,23 +190,23 @@
     <option name="MODULE_TAB" value="Default Config" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="gr.jkapsouras.butterfliesofgreece.views.header.UiEvents" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/assets" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/gradle/wrapper" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/font" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="gr.jkapsouras.butterfliesofgreece" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/assets" />
       <recent name="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/printToPdf/state" />
       <recent name="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/families" />
       <recent name="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/header" />
-    </key>
-    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="gr.jkapsouras.butterfliesofgreece.views.header.UiEvents" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="gr.jkapsouras.butterfliesofgreece" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
-      <recent name="$PROJECT_DIR$/app/src/main/assets" />
-      <recent name="$PROJECT_DIR$/gradle/wrapper" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/font" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.app">
@@ -537,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616020388772</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="add proper colors in detection +&#10;add endangered in species and detection +&#10;add small changes in strings.xml">
+      <created>1616105882270</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1616105882270</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -553,7 +558,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="git lfs added" />
     <MESSAGE value="add small thumbnails" />
     <MESSAGE value="add big thumbnails" />
     <MESSAGE value="add font" />
@@ -578,7 +582,8 @@
     <MESSAGE value="add live session" />
     <MESSAGE value="add some missing translations" />
     <MESSAGE value="add detection and tracking objects in overlayview" />
-    <option name="LAST_COMMIT_MESSAGE" value="add detection and tracking objects in overlayview" />
+    <MESSAGE value="add proper colors in detection +&#10;add endangered in species and detection +&#10;add small changes in strings.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="add proper colors in detection +&#10;add endangered in species and detection +&#10;add small changes in strings.xml" />
   </component>
   <component name="WindowStateProjectService">
     <state x="805" y="433" key="#PSD" timestamp="1614549833667">
@@ -589,51 +594,51 @@
       <screen x="0" y="25" width="2560" height="1345" />
     </state>
     <state x="961" y="293" key="#app/0.25.2560.1345@0.25.2560.1345" timestamp="1614512525700" />
-    <state x="1018" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615836231352">
+    <state x="1018" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1616178084570">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state x="1018" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.2560.1341@0.25.2560.1341" timestamp="1615836231352" />
-    <state x="335" y="171" key="CommitChangelistDialog2" timestamp="1616020385419">
+    <state x="1018" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.2560.1341@0.25.2560.1341" timestamp="1616178084570" />
+    <state x="335" y="171" key="CommitChangelistDialog2" timestamp="1616105881024">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state x="335" y="171" key="CommitChangelistDialog2/0.25.2560.1341@0.25.2560.1341" timestamp="1616020385419" />
+    <state x="335" y="171" key="CommitChangelistDialog2/0.25.2560.1341@0.25.2560.1341" timestamp="1616105881024" />
     <state x="335" y="171" key="CommitChangelistDialog2/0.25.2560.1345@0.25.2560.1345" timestamp="1614524003706" />
-    <state width="512" height="466" key="DebuggerActiveHint" timestamp="1616103000477">
+    <state width="512" height="466" key="DebuggerActiveHint" timestamp="1616182169780">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state width="512" height="466" key="DebuggerActiveHint/0.25.2560.1341@0.25.2560.1341" timestamp="1616103000477" />
-    <state width="1259" height="464" key="GridCell.Tab.0.bottom" timestamp="1616105266649">
+    <state width="512" height="466" key="DebuggerActiveHint/0.25.2560.1341@0.25.2560.1341" timestamp="1616182169780" />
+    <state width="1259" height="464" key="GridCell.Tab.0.bottom" timestamp="1616183056910">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state width="1259" height="464" key="GridCell.Tab.0.bottom/0.25.2560.1341@0.25.2560.1341" timestamp="1616105266649" />
-    <state width="1259" height="464" key="GridCell.Tab.0.center" timestamp="1616105266648">
+    <state width="1259" height="464" key="GridCell.Tab.0.bottom/0.25.2560.1341@0.25.2560.1341" timestamp="1616183056910" />
+    <state width="1259" height="464" key="GridCell.Tab.0.center" timestamp="1616183056909">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state width="1259" height="464" key="GridCell.Tab.0.center/0.25.2560.1341@0.25.2560.1341" timestamp="1616105266648" />
-    <state width="1259" height="464" key="GridCell.Tab.0.left" timestamp="1616105266648">
+    <state width="1259" height="464" key="GridCell.Tab.0.center/0.25.2560.1341@0.25.2560.1341" timestamp="1616183056909" />
+    <state width="1259" height="464" key="GridCell.Tab.0.left" timestamp="1616183056909">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state width="1259" height="464" key="GridCell.Tab.0.left/0.25.2560.1341@0.25.2560.1341" timestamp="1616105266648" />
-    <state width="1259" height="464" key="GridCell.Tab.0.right" timestamp="1616105266649">
+    <state width="1259" height="464" key="GridCell.Tab.0.left/0.25.2560.1341@0.25.2560.1341" timestamp="1616183056909" />
+    <state width="1259" height="464" key="GridCell.Tab.0.right" timestamp="1616183056910">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state width="1259" height="464" key="GridCell.Tab.0.right/0.25.2560.1341@0.25.2560.1341" timestamp="1616105266649" />
-    <state width="1259" height="464" key="GridCell.Tab.1.bottom" timestamp="1616105263016">
+    <state width="1259" height="464" key="GridCell.Tab.0.right/0.25.2560.1341@0.25.2560.1341" timestamp="1616183056910" />
+    <state width="1259" height="464" key="GridCell.Tab.1.bottom" timestamp="1616183051888">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state width="1259" height="464" key="GridCell.Tab.1.bottom/0.25.2560.1341@0.25.2560.1341" timestamp="1616105263016" />
-    <state width="1259" height="464" key="GridCell.Tab.1.center" timestamp="1616105263016">
+    <state width="1259" height="464" key="GridCell.Tab.1.bottom/0.25.2560.1341@0.25.2560.1341" timestamp="1616183051888" />
+    <state width="1259" height="464" key="GridCell.Tab.1.center" timestamp="1616183051887">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state width="1259" height="464" key="GridCell.Tab.1.center/0.25.2560.1341@0.25.2560.1341" timestamp="1616105263016" />
-    <state width="1259" height="464" key="GridCell.Tab.1.left" timestamp="1616105263015">
+    <state width="1259" height="464" key="GridCell.Tab.1.center/0.25.2560.1341@0.25.2560.1341" timestamp="1616183051887" />
+    <state width="1259" height="464" key="GridCell.Tab.1.left" timestamp="1616183051887">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state width="1259" height="464" key="GridCell.Tab.1.left/0.25.2560.1341@0.25.2560.1341" timestamp="1616105263015" />
-    <state width="1259" height="464" key="GridCell.Tab.1.right" timestamp="1616105263016">
+    <state width="1259" height="464" key="GridCell.Tab.1.left/0.25.2560.1341@0.25.2560.1341" timestamp="1616183051887" />
+    <state width="1259" height="464" key="GridCell.Tab.1.right" timestamp="1616183051888">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state width="1259" height="464" key="GridCell.Tab.1.right/0.25.2560.1341@0.25.2560.1341" timestamp="1616105263016" />
+    <state width="1259" height="464" key="GridCell.Tab.1.right/0.25.2560.1341@0.25.2560.1341" timestamp="1616183051888" />
     <state x="256" y="145" key="MergeDialog" timestamp="1615654838011">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
@@ -642,20 +647,20 @@
       <screen x="0" y="25" width="2560" height="1345" />
     </state>
     <state x="910" y="463" key="MultipleFileMergeDialog/0.25.2560.1345@0.25.2560.1345" timestamp="1614524221932" />
-    <state x="881" y="433" key="Vcs.Push.Dialog.v2" timestamp="1616020392248">
+    <state x="881" y="433" key="Vcs.Push.Dialog.v2" timestamp="1616105891049">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state x="881" y="433" key="Vcs.Push.Dialog.v2/0.25.2560.1341@0.25.2560.1341" timestamp="1616020392248" />
+    <state x="881" y="433" key="Vcs.Push.Dialog.v2/0.25.2560.1341@0.25.2560.1341" timestamp="1616105891049" />
     <state x="881" y="434" key="Vcs.Push.Dialog.v2/0.25.2560.1345@0.25.2560.1345" timestamp="1614524304316" />
     <state x="1064" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615654706474">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
     <state x="1064" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.2560.1341@0.25.2560.1341" timestamp="1615654706474" />
     <state x="1064" y="615" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.2560.1345@0.25.2560.1345" timestamp="1614524214580" />
-    <state x="811" y="196" width="1117" height="1032" key="find.popup" timestamp="1616103037354">
+    <state x="811" y="196" width="1117" height="1032" key="find.popup" timestamp="1616181958293">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state x="811" y="196" width="1117" height="1032" key="find.popup/0.25.2560.1341@0.25.2560.1341" timestamp="1616103037354" />
+    <state x="811" y="196" width="1117" height="1032" key="find.popup/0.25.2560.1341@0.25.2560.1341" timestamp="1616181958293" />
     <state x="811" y="197" width="1117" height="1035" key="find.popup/0.25.2560.1345@0.25.2560.1345" timestamp="1614522925721" />
   </component>
   <component name="XDebuggerManager">
@@ -665,21 +670,6 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/CacheManager.kt</url>
           <line>35</line>
           <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/search/SearchPresenter.kt</url>
-          <line>52</line>
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/search/SearchPresenter.kt</url>
-          <line>54</line>
-          <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/search/SearchPresenter.kt</url>
-          <line>50</line>
-          <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/printToPdf/PrintToPdfPresenter.kt</url>

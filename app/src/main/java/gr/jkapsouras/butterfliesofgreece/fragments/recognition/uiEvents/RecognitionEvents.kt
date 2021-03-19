@@ -19,7 +19,7 @@ sealed class RecognitionEvents : UiEvent() {
     class LiveImageTaken(val initBitmap: Bitmap, val image:Bitmap, val orientation: Int, val cropToFrameTransform: Matrix): RecognitionEvents()
     object PermissionDenied : RecognitionEvents()
     class PermissionGranted(val permission: Permissions) : RecognitionEvents()
-    object SaveImage:RecognitionEvents()
+    class SaveImage(val fromLive : Boolean):RecognitionEvents()
 }
 
 sealed class Permissions{

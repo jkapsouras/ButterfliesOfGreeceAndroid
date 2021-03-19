@@ -251,21 +251,31 @@ class RecognitionPresenter(
              }
              RecognitionEvents.CloseLiveClicked ->
                  state.onNext(RecognitionViewStates.CloseLiveRecognitionView)
-             RecognitionEvents.SaveImage -> {
+             is RecognitionEvents.SaveImage -> {
                  if (recognitionState.imageData != null) {
                      state.onNext(
                          RecognitionViewStates.ImageSaved(
                              image = recognitionState.imageData!!,
-                             name = recognitionState.predictions[0].butterflyClass
+                             name = recognitionState.detections!![0]!!.title ?: ""
                          )
                      )
                  } else if (recognitionState.image != null) {
-                     state.onNext(
-                         RecognitionViewStates.ImageSavedBitmap(
-                             image = recognitionState.image!!,
-                             name = recognitionState.predictions[0].butterflyClass
+                     if(recognitionEvent.fromLive) {
+                         state.onNext(
+                             RecognitionViewStates.ImageSavedBitmap(
+                                 image = recognitionState.initImage!!,
+                                 name = recognitionState.detections!![0]!!.title ?: ""
+                             )
                          )
-                     )
+                     }
+                     else{
+                         state.onNext(
+                             RecognitionViewStates.ImageSavedBitmap(
+                                 image = recognitionState.image!!,
+                                 name = recognitionState.predictions[0].butterflyClass
+                             )
+                         )
+                     }
                  }
              }
          }

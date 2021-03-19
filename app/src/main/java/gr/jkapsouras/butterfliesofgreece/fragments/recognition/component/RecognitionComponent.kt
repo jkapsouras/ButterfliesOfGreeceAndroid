@@ -27,6 +27,7 @@ import gr.jkapsouras.butterfliesofgreece.base.ViewState
 import gr.jkapsouras.butterfliesofgreece.fragments.recognition.uiEvents.RecognitionEvents
 import gr.jkapsouras.butterfliesofgreece.fragments.recognition.viewStates.RecognitionViewStates
 import gr.jkapsouras.butterfliesofgreece.managers.detection.Detector
+import gr.jkapsouras.butterfliesofgreece.utils.ImageUtils
 import gr.jkapsouras.butterfliesofgreece.views.cameraView.CameraView
 import gr.jkapsouras.butterfliesofgreece.views.cameraView.MultiBoxTracker
 import gr.jkapsouras.butterfliesofgreece.views.cameraView.OverlayView
@@ -166,29 +167,31 @@ class RecognitionComponent(
                     overlayView.invalidate()
                 }
                 is RecognitionViewStates.LiveImageRecognized -> {
-                    cameraView.setResultToSession(detections = viewState.detections)
+                    if(viewState.detections!=null && viewState.detections.count()>0 && viewState.detections[0]!!.confidence!=null && viewState.detections[0]!!.confidence!! > 0.5F) {
+                        cameraView.setResultToSession(detections = viewState.detections)
 
-                    val tracker = MultiBoxTracker(cameraView.context)
-                    tracker.setFrameConfiguration(
-                        viewState.image.width,
-                        viewState.image.height,
-                        viewState.orientation
-                    );
-                    overlayView.tracker = tracker
+                        val tracker = MultiBoxTracker(cameraView.context)
+                        tracker.setFrameConfiguration(
+                            viewState.image.width,
+                            viewState.image.height,
+                            viewState.orientation
+                        );
+                        overlayView.tracker = tracker
 
-                    val mappedRecognitions: MutableList<Detector.RecognitionDetection> =
-                        ArrayList<Detector.RecognitionDetection>()
+                        val mappedRecognitions: MutableList<Detector.RecognitionDetection> =
+                            ArrayList<Detector.RecognitionDetection>()
 
-                    for (result in viewState.detections!!) {
-                        val location: RectF = result!!.getLocation()
-                        if (result!!.confidence!! >= 0.5F) {
-                            viewState.matrix.mapRect(location)
-                            result.setLocation(location)
-                            mappedRecognitions.add(result)
+                        for (result in viewState.detections!!) {
+                            val location: RectF = result!!.getLocation()
+                            if (result!!.confidence!! >= 0.5F) {
+                                viewState.matrix.mapRect(location)
+                                result.setLocation(location)
+                                mappedRecognitions.add(result)
+                            }
                         }
+                        tracker.trackResults(mappedRecognitions)
+                        overlayView.invalidate()
                     }
-                    tracker.trackResults(mappedRecognitions)
-                    overlayView.invalidate()
                 }
                 RecognitionViewStates.CloseLiveRecognitionView -> {
                     cameraView.visibility = View.GONE
@@ -199,6 +202,7 @@ class RecognitionComponent(
 
                 }
                 is RecognitionViewStates.ImageSavedBitmap -> {
+//                    ImageUtils.saveBitmap(viewState.image, activity, viewState.name)
                     saveImage(viewState.image, context = activity, viewState.name)
                 }
             }

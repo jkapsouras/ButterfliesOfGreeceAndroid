@@ -61,6 +61,10 @@ class CameraView  @JvmOverloads constructor(
             emitter.onNext(RecognitionEvents.CloseLiveClicked)
         }
 
+        view.button_save_camera_view.setOnClickListener {
+            emitter.onNext(RecognitionEvents.SaveImage(true))
+        }
+
         return emitter
     }
 
@@ -81,8 +85,7 @@ class CameraView  @JvmOverloads constructor(
 
     fun hideCamera(){
         cameraExecutor.shutdown()
-        view.label_live_recognized.text = ""
-        view.label_live_recognized.visibility = View.GONE
+        view.button_save_camera_view.visibility = View.GONE
     }
 
     private fun startCamera() {
@@ -145,8 +148,7 @@ class CameraView  @JvmOverloads constructor(
     }
 
     fun setResultToSession(detections: List<Detector.RecognitionDetection?>?){
-        view.label_live_recognized.visibility = View.VISIBLE
-        view.label_live_recognized.text = detections!![0]!!.title
+        view.button_save_camera_view.visibility = View.VISIBLE
     }
 
     private class LuminosityAnalyzer(
