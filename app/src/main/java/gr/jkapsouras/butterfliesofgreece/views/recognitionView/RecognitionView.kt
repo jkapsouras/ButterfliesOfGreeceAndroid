@@ -53,7 +53,7 @@ class RecognitionView  @JvmOverloads constructor(
         }
 
         button_save.setOnClickListener {
-            emitter.onNext(RecognitionEvents.SaveImage)
+            emitter.onNext(RecognitionEvents.SaveImage(false))
         }
 
         return emitter

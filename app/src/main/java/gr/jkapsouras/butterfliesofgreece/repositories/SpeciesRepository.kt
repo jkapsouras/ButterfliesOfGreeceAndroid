@@ -6,6 +6,10 @@ import io.reactivex.rxjava3.core.Observable
 
 class SpeciesRepository(private val storage: Storage) {
 
+    fun getAllSpecies():List<Specie>{
+        return storage.getAllSpecies()
+    }
+
     fun getSpeciesOfFamily(familyId:Int) : Observable<List<Specie>> {
         return Observable.just(storage.species(familyId))
     }

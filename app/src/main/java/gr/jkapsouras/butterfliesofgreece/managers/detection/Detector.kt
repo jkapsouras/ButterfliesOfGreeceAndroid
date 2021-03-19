@@ -27,6 +27,7 @@ interface Detector {
          * A sortable score for how good the recognition is relative to others. Higher should be better.
          */
         val confidence: Float?,
+        val isEndangered:Boolean,
         /** Optional location within the source image for the location of the recognized object.  */
         private var location: RectF?
     ) {

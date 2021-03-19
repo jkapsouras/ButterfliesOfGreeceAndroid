@@ -53,7 +53,7 @@ class RecognitionManager(val bitmap: Bitmap, val context: Context) {
     fun assetFilePath(context: Context, assetName: String?): String? {
         val file = File(context.filesDir, assetName)
         if (file.exists() && file.length() > 0) {
-            return file.getAbsolutePath()
+            return file.absolutePath
         }
         context.assets.open(assetName!!).use { `is` ->
             FileOutputStream(file).use { os ->
@@ -64,7 +64,7 @@ class RecognitionManager(val bitmap: Bitmap, val context: Context) {
                 }
                 os.flush()
             }
-            return file.getAbsolutePath()
+            return file.absolutePath
         }
     }
 }

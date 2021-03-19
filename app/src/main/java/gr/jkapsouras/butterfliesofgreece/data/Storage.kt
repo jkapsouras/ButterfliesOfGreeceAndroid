@@ -1,6 +1,7 @@
 package gr.jkapsouras.butterfliesofgreece.data
 
 import android.content.Context
+import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
@@ -10,6 +11,7 @@ import gr.jkapsouras.butterfliesofgreece.fragments.families.ViewArrange
 import gr.jkapsouras.butterfliesofgreece.fragments.printToPdf.state.PdfArrange
 import io.reactivex.rxjava3.core.Observable
 import java.io.IOException
+import java.lang.Exception
 import java.util.*
 
 class Storage(context: Context) {
@@ -27,13 +29,13 @@ class Storage(context: Context) {
         else {
             val sType = object : TypeToken<List<Family>>() {}.type
             val tmpFamilies = Gson().fromJson<List<Family>>(jsonData, sType)
-            tmpFamilies.map { family ->
-                Family(family.id, family.name,family.photo, family.species.map { specie ->
-                    Specie(specie.id, specie.name, specie.imageTitle, specie.photos.map { photo->
-                        ButterflyPhoto(photo.id, photo.source, photo.title, photo.author, photo.genre, photo.identified, family.id, specie.id, specie.name)
-                    }, family.id)
-                })
-            }
+                tmpFamilies.map { family ->
+                    Family(family.id, family.name,family.photo, family.species.map { specie ->
+                        Specie(specie.id, specie.name, specie.imageTitle, specie.photos.map { photo->
+                            ButterflyPhoto(photo.id, photo.source, photo.title, photo.author, photo.genre, photo.identified, family.id, specie.id, specie.name)
+                        }, family.id, isEndangered = specie.isEndangered, endangeredText =  specie.endangeredText)
+                    })
+                }
         }
     }
 
