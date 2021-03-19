@@ -31,6 +31,8 @@ android {
     aaptOptions
             {
                 cruncherEnabled = false
+                noCompress "tflite"
+                noCompress "lite"
             }
 }
 
@@ -121,4 +123,7 @@ dependencies {
     implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
 
     implementation 'com.github.yalantis:ucrop:2.2.6-native'
+
+    implementation 'org.tensorflow:tensorflow-lite:0.0.0-nightly'
+    implementation 'org.tensorflow:tensorflow-lite-select-tf-ops:0.0.0-nightly'
 }

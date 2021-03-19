@@ -1,13 +1,13 @@
 package gr.jkapsouras.butterfliesofgreece.fragments.recognition.component
 
 import android.Manifest
-import android.app.Activity
 import android.app.AlertDialog
 import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.graphics.RectF
 import android.net.Uri
 import android.os.Build
 import android.os.Environment
@@ -18,17 +18,19 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.constraintlayout.widget.Constraints
 import androidx.core.app.ActivityCompat.startActivityForResult
-import androidx.core.content.FileProvider
+import androidx.core.graphics.toRect
 import com.sansoft.butterflies.R
 import gr.jkapsouras.butterfliesofgreece.MainActivity
 import gr.jkapsouras.butterfliesofgreece.base.UiComponent
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.base.ViewState
-import gr.jkapsouras.butterfliesofgreece.fragments.main.events.MenuUiEvents
 import gr.jkapsouras.butterfliesofgreece.fragments.recognition.uiEvents.RecognitionEvents
 import gr.jkapsouras.butterfliesofgreece.fragments.recognition.viewStates.RecognitionViewStates
-import gr.jkapsouras.butterfliesofgreece.managers.LocationManager.Companion.TAG
+import gr.jkapsouras.butterfliesofgreece.managers.detection.Detector
+import gr.jkapsouras.butterfliesofgreece.utils.ImageUtils
 import gr.jkapsouras.butterfliesofgreece.views.cameraView.CameraView
+import gr.jkapsouras.butterfliesofgreece.views.cameraView.MultiBoxTracker
+import gr.jkapsouras.butterfliesofgreece.views.cameraView.OverlayView
 import gr.jkapsouras.butterfliesofgreece.views.recognitionView.RecognitionView
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.subjects.PublishSubject
@@ -37,8 +39,16 @@ import java.io.File.separator
 import java.io.FileOutputStream
 import java.io.OutputStream
 
-class RecognitionComponent(private val activity:MainActivity, private val chooseButton: Button, takePhotoButton: Button,
-                            liveSessionButton: Button, private val recognitionView: RecognitionView, private val cameraView: CameraView) : UiComponent {
+
+class RecognitionComponent(
+    private val activity: MainActivity,
+    private val chooseButton: Button,
+    takePhotoButton: Button,
+    liveSessionButton: Button,
+    private val recognitionView: RecognitionView,
+    private val cameraView: CameraView,
+    private val overlayView: OverlayView
+) : UiComponent {
 
     private val event: PublishSubject<UiEvent> = PublishSubject.create<UiEvent>()
     override val uiEvents: Observable<UiEvent>
@@ -60,7 +70,12 @@ class RecognitionComponent(private val activity:MainActivity, private val choose
             Log.d(Constraints.TAG, "live clicked")
         }
 
-        uiEvents = Observable.merge(recognitionView.uiEvents, event, activity.emitterEvents, cameraView.uiEvents)
+        uiEvents = Observable.merge(
+            recognitionView.uiEvents,
+            event,
+            activity.emitterEvents,
+            cameraView.uiEvents
+        )
 
         recognitionView.visibility = View.GONE
 
@@ -86,52 +101,50 @@ class RecognitionComponent(private val activity:MainActivity, private val choose
         if (viewState is RecognitionViewStates) {
             when (viewState) {
                 is RecognitionViewStates.ShowGallery -> {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                         if (activity.checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) ==
-                            PackageManager.PERMISSION_DENIED){
+                            PackageManager.PERMISSION_DENIED
+                        ) {
                             //permission denied
                             val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE);
                             //show popup to request runtime permission
                             activity.requestPermissions(permissions, 1001);
-                        }
-                        else{
+                        } else {
                             //permission already granted
                             pickImageFromGallery();
                         }
-                    }
-                    else{
+                    } else {
                         //system OS is < Marshmallow
                         pickImageFromGallery();
                     }
                 }
-                is RecognitionViewStates.ShowCamera ->{
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+                is RecognitionViewStates.ShowCamera -> {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                         if (activity.checkSelfPermission(Manifest.permission.CAMERA) ==
-                            PackageManager.PERMISSION_DENIED){
+                            PackageManager.PERMISSION_DENIED
+                        ) {
                             //permission denied
                             val permissions = arrayOf(Manifest.permission.CAMERA);
                             //show popup to request runtime permission
                             activity.requestPermissions(permissions, 201);
-                        }
-                        else{
+                        } else {
                             //permission already granted
                             pickImageFromCamera();
                         }
-                    }
-                    else{
+                    } else {
                         //system OS is < Marshmallow
                         pickImageFromCamera();
                     }
                 }
-                is RecognitionViewStates.ShowPermissionDenied ->{
+                is RecognitionViewStates.ShowPermissionDenied -> {
                     Toast.makeText(activity, "Permission denied", Toast.LENGTH_SHORT).show()
                 }
-                is RecognitionViewStates.ShowRecognitionView ->{
+                is RecognitionViewStates.ShowRecognitionView -> {
                     recognitionView.visibility = View.VISIBLE
                     chooseButton.visibility = View.INVISIBLE
                     recognitionView.showSelectedImage(image = viewState.image)
                 }
-                is RecognitionViewStates.ShowRecognitionViewBitmap ->{
+                is RecognitionViewStates.ShowRecognitionViewBitmap -> {
                     recognitionView.visibility = View.VISIBLE
                     chooseButton.visibility = View.INVISIBLE
                     recognitionView.showSelectedImage(image = viewState.image)
@@ -150,18 +163,46 @@ class RecognitionComponent(private val activity:MainActivity, private val choose
                 is RecognitionViewStates.ShowLiveRecognitionView -> {
                     cameraView.visibility = View.VISIBLE
                     cameraView.showCamera()
+                    overlayView.visibility = View.VISIBLE
+                    overlayView.invalidate()
                 }
                 is RecognitionViewStates.LiveImageRecognized -> {
-                    cameraView.setResultToSession(predictions = viewState.predictions)
+                    if(viewState.detections!=null && viewState.detections.count()>0 && viewState.detections[0]!!.confidence!=null && viewState.detections[0]!!.confidence!! > 0.5F) {
+                        cameraView.setResultToSession(detections = viewState.detections)
+
+                        val tracker = MultiBoxTracker(cameraView.context)
+                        tracker.setFrameConfiguration(
+                            viewState.image.width,
+                            viewState.image.height,
+                            viewState.orientation
+                        );
+                        overlayView.tracker = tracker
+
+                        val mappedRecognitions: MutableList<Detector.RecognitionDetection> =
+                            ArrayList<Detector.RecognitionDetection>()
+
+                        for (result in viewState.detections!!) {
+                            val location: RectF = result!!.getLocation()
+                            if (result!!.confidence!! >= 0.5F) {
+                                viewState.matrix.mapRect(location)
+                                result.setLocation(location)
+                                mappedRecognitions.add(result)
+                            }
+                        }
+                        tracker.trackResults(mappedRecognitions)
+                        overlayView.invalidate()
+                    }
                 }
                 RecognitionViewStates.CloseLiveRecognitionView -> {
                     cameraView.visibility = View.GONE
                     cameraView.hideCamera()
+                    overlayView.visibility = View.GONE
                 }
-                is RecognitionViewStates.ImageSaved ->{
+                is RecognitionViewStates.ImageSaved -> {
 
                 }
-                is RecognitionViewStates.ImageSavedBitmap ->{
+                is RecognitionViewStates.ImageSavedBitmap -> {
+//                    ImageUtils.saveBitmap(viewState.image, activity, viewState.name)
                     saveImage(viewState.image, context = activity, viewState.name)
                 }
             }
@@ -176,7 +217,10 @@ class RecognitionComponent(private val activity:MainActivity, private val choose
             values.put(MediaStore.Images.Media.IS_PENDING, true)
             // RELATIVE_PATH and IS_PENDING are introduced in API 29.
 
-            val uri: Uri? = context.contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
+            val uri: Uri? = context.contentResolver.insert(
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                values
+            )
             if (uri != null) {
                 saveImageToStream(bitmap, context.contentResolver.openOutputStream(uri))
                 values.put(MediaStore.Images.Media.IS_PENDING, false)
@@ -186,7 +230,9 @@ class RecognitionComponent(private val activity:MainActivity, private val choose
             else
                 showImageNotSaved()
         } else {
-            val directory = File(Environment.getExternalStorageDirectory().toString() + separator + folderName)
+            val directory = File(
+                Environment.getExternalStorageDirectory().toString() + separator + folderName
+            )
             // getExternalStorageDirectory is deprecated in API 29
 
             if (!directory.exists()) {

@@ -6,6 +6,7 @@ import android.graphics.*
 import android.util.AttributeSet
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.Surface
 import android.view.View
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageAnalysis
@@ -19,6 +20,8 @@ import com.sansoft.butterflies.R
 import gr.jkapsouras.butterfliesofgreece.MainActivity
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.fragments.recognition.uiEvents.RecognitionEvents
+import gr.jkapsouras.butterfliesofgreece.managers.detection.Detector
+import gr.jkapsouras.butterfliesofgreece.utils.ImageUtils
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.subjects.PublishSubject
 import kotlinx.android.synthetic.main.view_camera.view.*
@@ -58,6 +61,10 @@ class CameraView  @JvmOverloads constructor(
             emitter.onNext(RecognitionEvents.CloseLiveClicked)
         }
 
+        view.button_save_camera_view.setOnClickListener {
+            emitter.onNext(RecognitionEvents.SaveImage(true))
+        }
+
         return emitter
     }
 
@@ -78,8 +85,7 @@ class CameraView  @JvmOverloads constructor(
 
     fun hideCamera(){
         cameraExecutor.shutdown()
-        view.label_live_recognized.text = ""
-        view.label_live_recognized.visibility = View.GONE
+        view.button_save_camera_view.visibility = View.GONE
     }
 
     private fun startCamera() {
@@ -100,12 +106,19 @@ class CameraView  @JvmOverloads constructor(
             // Select back camera as a default
             val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
 
+
 //            imageCapture = ImageCapture.Builder()
 //                .build()
             val imageAnalyzer = ImageAnalysis.Builder()
                 .build()
                 .also {
-                    it.setAnalyzer(cameraExecutor, LuminosityAnalyzer(emitter, counter))
+                    it.setAnalyzer(
+                        cameraExecutor, LuminosityAnalyzer(
+                            emitter,
+                            counter,
+                            activity
+                        )
+                    )
 //                    { luma ->
 ////                        Log.d(MainActivity.TAG, "Average luminosity: $luma")
 //                        activity.runOnUiThread {
@@ -134,14 +147,14 @@ class CameraView  @JvmOverloads constructor(
         ContextCompat.checkSelfPermission(activity.baseContext, it) == PackageManager.PERMISSION_GRANTED
     }
 
-    fun setResultToSession(predictions: List<gr.jkapsouras.butterfliesofgreece.dto.Prediction>){
-        view.label_live_recognized.visibility = View.VISIBLE
-        view.label_live_recognized.text = predictions[0].butterflyClass
+    fun setResultToSession(detections: List<Detector.RecognitionDetection?>?){
+        view.button_save_camera_view.visibility = View.VISIBLE
     }
 
     private class LuminosityAnalyzer(
         private val emitter: PublishSubject<UiEvent>,
-        private var counter: Int
+        private var counter: Int,
+        private val activity: MainActivity
     ) : ImageAnalysis.Analyzer {
 
         private fun ByteBuffer.toByteArray(): ByteArray {
@@ -153,24 +166,48 @@ class CameraView  @JvmOverloads constructor(
 
         override fun analyze(image: ImageProxy) {
 
-//            val buffer = image.planes[0].buffer
-//            val data = buffer.toByteArray()
-//            val pixels = data.map { it.toInt() and 0xFF }
-//            val luma = pixels.average()
-
             val bitmap = image.toBitmap()
-//            val bitmap = imageProxyToBitmap(image)
+
+            val rotation = image.imageInfo.rotationDegrees
+            val previewWidth = bitmap.width
+            val previewHeight = bitmap.height
+            val sensorOrientation =  rotation - getScreenOrientation()
+
+            val frameToCropTransform =
+                ImageUtils.getTransformationMatrix(
+                    previewWidth, previewHeight,
+                    300, 300,
+                    sensorOrientation, true
+                )
+
+            val cropToFrameTransform = Matrix()
+            frameToCropTransform.invert(cropToFrameTransform)
+
+            val croppedBitmap = Bitmap.createBitmap(300, 300, Bitmap.Config.ARGB_8888)
+            val canvas =  Canvas(croppedBitmap)
+            canvas.drawBitmap(bitmap, frameToCropTransform, null)
 
             counter += 1
 
-//            if(counter>=25) {
+            if(counter>=25) {
                 Log.i("tsg", "counter: $counter")
-                emitter.onNext(RecognitionEvents.LiveImageTaken(bitmap!!))
+                emitter.onNext(RecognitionEvents.LiveImageTaken(bitmap, croppedBitmap!!, sensorOrientation, cropToFrameTransform))
                 counter = 0
-//            }
 
-//            listener(0.0)
+//                ImageUtils.saveBitmap(bitmap!!, context, "tempFolder");
+
+            }
+
             image.close()
+        }
+
+        fun getScreenOrientation(): Int {
+            return when (activity.windowManager.defaultDisplay.rotation) {
+                Surface.ROTATION_270 -> 270
+                Surface.ROTATION_180 -> 180
+                Surface.ROTATION_90 -> 90
+                else -> 0
+            }
         }
 
         private fun ImageProxy.toBitmap(): Bitmap {

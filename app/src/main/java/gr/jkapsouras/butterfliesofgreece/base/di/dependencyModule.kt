@@ -160,6 +160,7 @@ fun registerPresenters(module: Module) {
     module.factory {
         RecognitionPresenter(
             recognitionRepository =  get(),
+            speciesRepository = get(),
             backgroundThreadScheduler = get(),
             mainThreadScheduler = get()
         )
