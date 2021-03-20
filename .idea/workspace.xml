@@ -52,16 +52,13 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/species.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/species.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/RecognitionPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/RecognitionPresenter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/component/RecognitionComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/component/RecognitionComponent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/uiEvents/RecognitionEvents.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/recognition/uiEvents/RecognitionEvents.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/cameraView/CameraView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/cameraView/CameraView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/recognitionView/RecognitionView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/recognitionView/RecognitionView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/view_camera.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/view_camera.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,6 +130,11 @@
       </list>
     </option>
   </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="EXPORT_PRIVATE_KEY" value="false" />
+    <option name="KEY_STORE_PATH" value="$USER_HOME$/Library/Mobile Documents/com~apple~CloudDocs/ButterfliesModelPT/butterflies-key.keystore" />
+    <option name="KEY_ALIAS" value="BOG" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -153,6 +155,8 @@
     <property name="BundleExportedModule" value="ButterfliesOfGreeceAndroid.app" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="3cd4796c23b9" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-02-28T14:39:31.559Z" />
+    <property name="ExportApk.ApkPath" value="$PROJECT_DIR$/app" />
+    <property name="ExportApk.BuildVariants" value="release" />
     <property name="ResourceManagerPrefKey.ResourceType" value="DRAWABLE" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -542,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616105882270</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="small fixes +&#10;save image from live detection">
+      <created>1616187392527</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1616187392527</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -558,7 +569,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add small thumbnails" />
     <MESSAGE value="add big thumbnails" />
     <MESSAGE value="add font" />
     <MESSAGE value="add cache manager + photostoprintrepository" />
@@ -583,7 +593,8 @@
     <MESSAGE value="add some missing translations" />
     <MESSAGE value="add detection and tracking objects in overlayview" />
     <MESSAGE value="add proper colors in detection +&#10;add endangered in species and detection +&#10;add small changes in strings.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="add proper colors in detection +&#10;add endangered in species and detection +&#10;add small changes in strings.xml" />
+    <MESSAGE value="small fixes +&#10;save image from live detection" />
+    <option name="LAST_COMMIT_MESSAGE" value="small fixes +&#10;save image from live detection" />
   </component>
   <component name="WindowStateProjectService">
     <state x="805" y="433" key="#PSD" timestamp="1614549833667">
@@ -598,47 +609,47 @@
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
     <state x="1018" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.2560.1341@0.25.2560.1341" timestamp="1616178084570" />
-    <state x="335" y="171" key="CommitChangelistDialog2" timestamp="1616105881024">
+    <state x="335" y="171" key="CommitChangelistDialog2" timestamp="1616187388470">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state x="335" y="171" key="CommitChangelistDialog2/0.25.2560.1341@0.25.2560.1341" timestamp="1616105881024" />
+    <state x="335" y="171" key="CommitChangelistDialog2/0.25.2560.1341@0.25.2560.1341" timestamp="1616187388470" />
     <state x="335" y="171" key="CommitChangelistDialog2/0.25.2560.1345@0.25.2560.1345" timestamp="1614524003706" />
-    <state width="512" height="466" key="DebuggerActiveHint" timestamp="1616182169780">
+    <state width="999" height="466" key="DebuggerActiveHint" timestamp="1616260369089">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state width="512" height="466" key="DebuggerActiveHint/0.25.2560.1341@0.25.2560.1341" timestamp="1616182169780" />
-    <state width="1259" height="464" key="GridCell.Tab.0.bottom" timestamp="1616183056910">
+    <state width="999" height="466" key="DebuggerActiveHint/0.25.2560.1341@0.25.2560.1341" timestamp="1616260369089" />
+    <state width="2518" height="464" key="GridCell.Tab.0.bottom" timestamp="1616260569116">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state width="1259" height="464" key="GridCell.Tab.0.bottom/0.25.2560.1341@0.25.2560.1341" timestamp="1616183056910" />
-    <state width="1259" height="464" key="GridCell.Tab.0.center" timestamp="1616183056909">
+    <state width="2518" height="464" key="GridCell.Tab.0.bottom/0.25.2560.1341@0.25.2560.1341" timestamp="1616260569116" />
+    <state width="2518" height="464" key="GridCell.Tab.0.center" timestamp="1616260569115">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state width="1259" height="464" key="GridCell.Tab.0.center/0.25.2560.1341@0.25.2560.1341" timestamp="1616183056909" />
-    <state width="1259" height="464" key="GridCell.Tab.0.left" timestamp="1616183056909">
+    <state width="2518" height="464" key="GridCell.Tab.0.center/0.25.2560.1341@0.25.2560.1341" timestamp="1616260569115" />
+    <state width="2518" height="464" key="GridCell.Tab.0.left" timestamp="1616260569115">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state width="1259" height="464" key="GridCell.Tab.0.left/0.25.2560.1341@0.25.2560.1341" timestamp="1616183056909" />
-    <state width="1259" height="464" key="GridCell.Tab.0.right" timestamp="1616183056910">
+    <state width="2518" height="464" key="GridCell.Tab.0.left/0.25.2560.1341@0.25.2560.1341" timestamp="1616260569115" />
+    <state width="2518" height="464" key="GridCell.Tab.0.right" timestamp="1616260569116">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state width="1259" height="464" key="GridCell.Tab.0.right/0.25.2560.1341@0.25.2560.1341" timestamp="1616183056910" />
-    <state width="1259" height="464" key="GridCell.Tab.1.bottom" timestamp="1616183051888">
+    <state width="2518" height="464" key="GridCell.Tab.0.right/0.25.2560.1341@0.25.2560.1341" timestamp="1616260569116" />
+    <state width="2518" height="464" key="GridCell.Tab.1.bottom" timestamp="1616260565130">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state width="1259" height="464" key="GridCell.Tab.1.bottom/0.25.2560.1341@0.25.2560.1341" timestamp="1616183051888" />
-    <state width="1259" height="464" key="GridCell.Tab.1.center" timestamp="1616183051887">
+    <state width="2518" height="464" key="GridCell.Tab.1.bottom/0.25.2560.1341@0.25.2560.1341" timestamp="1616260565130" />
+    <state width="2518" height="464" key="GridCell.Tab.1.center" timestamp="1616260565130">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state width="1259" height="464" key="GridCell.Tab.1.center/0.25.2560.1341@0.25.2560.1341" timestamp="1616183051887" />
-    <state width="1259" height="464" key="GridCell.Tab.1.left" timestamp="1616183051887">
+    <state width="2518" height="464" key="GridCell.Tab.1.center/0.25.2560.1341@0.25.2560.1341" timestamp="1616260565130" />
+    <state width="2518" height="464" key="GridCell.Tab.1.left" timestamp="1616260565130">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state width="1259" height="464" key="GridCell.Tab.1.left/0.25.2560.1341@0.25.2560.1341" timestamp="1616183051887" />
-    <state width="1259" height="464" key="GridCell.Tab.1.right" timestamp="1616183051888">
+    <state width="2518" height="464" key="GridCell.Tab.1.left/0.25.2560.1341@0.25.2560.1341" timestamp="1616260565130" />
+    <state width="2518" height="464" key="GridCell.Tab.1.right" timestamp="1616260565130">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state width="1259" height="464" key="GridCell.Tab.1.right/0.25.2560.1341@0.25.2560.1341" timestamp="1616183051888" />
+    <state width="2518" height="464" key="GridCell.Tab.1.right/0.25.2560.1341@0.25.2560.1341" timestamp="1616260565130" />
     <state x="256" y="145" key="MergeDialog" timestamp="1615654838011">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
@@ -647,20 +658,20 @@
       <screen x="0" y="25" width="2560" height="1345" />
     </state>
     <state x="910" y="463" key="MultipleFileMergeDialog/0.25.2560.1345@0.25.2560.1345" timestamp="1614524221932" />
-    <state x="881" y="433" key="Vcs.Push.Dialog.v2" timestamp="1616105891049">
+    <state x="881" y="433" key="Vcs.Push.Dialog.v2" timestamp="1616187397336">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state x="881" y="433" key="Vcs.Push.Dialog.v2/0.25.2560.1341@0.25.2560.1341" timestamp="1616105891049" />
+    <state x="881" y="433" key="Vcs.Push.Dialog.v2/0.25.2560.1341@0.25.2560.1341" timestamp="1616187397336" />
     <state x="881" y="434" key="Vcs.Push.Dialog.v2/0.25.2560.1345@0.25.2560.1345" timestamp="1614524304316" />
     <state x="1064" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615654706474">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
     <state x="1064" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.2560.1341@0.25.2560.1341" timestamp="1615654706474" />
     <state x="1064" y="615" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.2560.1345@0.25.2560.1345" timestamp="1614524214580" />
-    <state x="811" y="196" width="1117" height="1032" key="find.popup" timestamp="1616181958293">
+    <state x="811" y="196" width="1117" height="1032" key="find.popup" timestamp="1616260380028">
       <screen x="0" y="25" width="2560" height="1341" />
     </state>
-    <state x="811" y="196" width="1117" height="1032" key="find.popup/0.25.2560.1341@0.25.2560.1341" timestamp="1616181958293" />
+    <state x="811" y="196" width="1117" height="1032" key="find.popup/0.25.2560.1341@0.25.2560.1341" timestamp="1616260380028" />
     <state x="811" y="197" width="1117" height="1035" key="find.popup/0.25.2560.1345@0.25.2560.1345" timestamp="1614522925721" />
   </component>
   <component name="XDebuggerManager">
