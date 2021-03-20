@@ -147,8 +147,12 @@ class CameraView  @JvmOverloads constructor(
         ContextCompat.checkSelfPermission(activity.baseContext, it) == PackageManager.PERMISSION_GRANTED
     }
 
-    fun setResultToSession(detections: List<Detector.RecognitionDetection?>?){
+    fun showSaveButton(){
         view.button_save_camera_view.visibility = View.VISIBLE
+    }
+
+    fun hideSaveButton(){
+        view.button_save_camera_view.visibility = View.GONE
     }
 
     private class LuminosityAnalyzer(

@@ -192,44 +192,47 @@ class RecognitionPresenter(
                          val result = detector.recognizeImage()
                          val species = speciesRepository.getAllSpecies()
                          val newResults : MutableList<Detector.RecognitionDetection> = LinkedList<Detector.RecognitionDetection>()
-                         for(r in result!!)
-                         {
+                         if(result == null || result.count()==0 || (result!![0]!!.confidence!! < 0.5)){
+                             recognitionState = recognitionState.with(predictions = emptyList(), detections = emptyList())
+                         }
+                         else {
+
+                             for (r in result!!) {
 //                             let objIndex = zip.0!.inferences.firstIndex(where: {r in
 //                                 specie = zip.1.first{s in s.name.lowercased() == r.className.lowercased()}
 //                             return (specie != nil && specie!.isEndangered != nil && (specie?.isEndangered == true))
 //                         });
-                            val specie = species.firstOrNull() {
-                                it.name == r!!.title ?: ""
-                            }
-                             if(specie!=null) {
-                                 var tmpString = specie!!.name
-                                 if (specie!!.isEndangered == true) {
-                                     tmpString += "\n" + specie!!.endangeredText
+                                 val specie = species.firstOrNull() {
+                                     it.name == r!!.title ?: ""
                                  }
-                                 newResults.add(
-                                     Detector.RecognitionDetection(
-                                         r!!.id,
-                                         tmpString,
-                                         r!!.confidence,
-                                         specie!!.isEndangered ?: false,
-                                         r!!.getLocation()
+                                 if (specie != null) {
+                                     var tmpString = specie!!.name
+                                     if (specie!!.isEndangered == true) {
+                                         tmpString += "\n" + specie!!.endangeredText
+                                     }
+                                     newResults.add(
+                                         Detector.RecognitionDetection(
+                                             r!!.id,
+                                             tmpString,
+                                             r!!.confidence,
+                                             specie!!.isEndangered ?: false,
+                                             r!!.getLocation()
+                                         )
                                      )
-                                 )
-                             }
-                             else
-                             {
-                                 newResults.add(
-                                     Detector.RecognitionDetection(
-                                         r!!.id,
-                                         r!!.title,
-                                         r!!.confidence,
-                                         false,
-                                         r!!.getLocation()
+                                 } else {
+                                     newResults.add(
+                                         Detector.RecognitionDetection(
+                                             r!!.id,
+                                             r!!.title,
+                                             r!!.confidence,
+                                             false,
+                                             r!!.getLocation()
+                                         )
                                      )
-                                 )
+                                 }
                              }
+                             recognitionState = recognitionState.with(detections = newResults)
                          }
-                         recognitionState = recognitionState.with(detections = newResults)
 //                         var result = recognitionRepository.offlineRecognize(BAvatar(recognitionState.image!!))
                          Observable.just(recognitionState)
                      }

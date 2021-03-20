@@ -168,7 +168,11 @@ class RecognitionComponent(
                 }
                 is RecognitionViewStates.LiveImageRecognized -> {
                     if(viewState.detections!=null && viewState.detections.count()>0 && viewState.detections[0]!!.confidence!=null && viewState.detections[0]!!.confidence!! > 0.5F) {
-                        cameraView.setResultToSession(detections = viewState.detections)
+                        cameraView.showSaveButton()
+                    }
+                    else{
+                        cameraView.hideSaveButton()
+                    }
 
                         val tracker = MultiBoxTracker(cameraView.context)
                         tracker.setFrameConfiguration(
@@ -191,7 +195,6 @@ class RecognitionComponent(
                         }
                         tracker.trackResults(mappedRecognitions)
                         overlayView.invalidate()
-                    }
                 }
                 RecognitionViewStates.CloseLiveRecognitionView -> {
                     cameraView.visibility = View.GONE
