@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/families_fragment"
+    android:background="@color/field"
+    android:name=".FamiliesFragment"
+    android:label="@string/field_photos"
+    >
+
+    <gr.jkapsouras.butterfliesofgreece.views.header.HeaderView
+        android:id="@+id/view_header"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@color/field_dark"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/view_table_photos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <gr.jkapsouras.butterfliesofgreece.views.photosTableView.PhotosTableView
+        android:id="@+id/view_table_photos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        android:background="@color/field"
+        app:layout_constraintTop_toBottomOf="@+id/view_header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+    />
+
+    <gr.jkapsouras.butterfliesofgreece.views.photosCollectionView.PhotosCollectionView
+        android:id="@+id/view_collection_photos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        android:background="@color/app_white"
+        app:layout_constraintTop_toBottomOf="@+id/view_header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

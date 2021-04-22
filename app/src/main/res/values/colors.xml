@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="app_white">#ffffff</color>
+    <color name="field">#e3e7f2</color>
+    <color name="field_dark">#5e6ea2</color>
+    <color name="introduction">#EBF4F6</color>
+    <color name="introduction_dark">#6fa4b2</color>
+    <color name="legal">#FAF2EE</color>
+    <color name="legal_dark">#c67d6a</color>
+    <color name="about">#F8F9EB</color>
+    <color name="about_dark">#afab14</color>
+    <color name="contribute">#E8E6F1</color>
+    <color name="contribute_dark">#75619e</color>
+    <color name="endangered">#F5EAE7</color>
+    <color name="endangered_dark">#b16b73</color>
+    <color name="recognition">#E8EEE8</color>
+    <color name="recognition_dark">#6b9972</color>
+    <color name="gray">#808080</color>
+    <color name="app_icon">#606CA3</color>
 </resources>
