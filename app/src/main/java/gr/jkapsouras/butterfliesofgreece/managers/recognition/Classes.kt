@@ -1,7 +1,5 @@
-package gr.jkapsouras.butterfliesofgreece.managers.recognition
-
 object ImageNetClasses {
-    val IMAGENET_CLASSES = arrayOf(
+    var IMAGENET_CLASSES = arrayOf(
         "Aglais io",
         "Aglais urticae",
         "Agriades dardanus",
@@ -31,9 +29,8 @@ object ImageNetClasses {
         "Cacyreus marshalli",
         "Callophrys rubi",
         "Carcharodus alceae",
-        "Carcharodus floccifera",
         "Carcharodus lavatherae",
-        "Carcharodus orientalis",
+        "Carcharodus orientalis floccifera complex",
         "Carcharodus stauderi",
         "Carterocephalus palaemon",
         "Celastrina argiolus",
@@ -134,8 +131,8 @@ object ImageNetClasses {
         "Melitaea phoebe",
         "Melitaea trivia",
         "Minois dryas",
+        "Muschampia alta proteides complex",
         "Muschampia cribrellum",
-        "Muschampia proto",
         "Muschampia tessellum",
         "Neolysandra coelestina",
         "Neptis rivularis",
@@ -187,8 +184,7 @@ object ImageNetClasses {
         "Pseudochazara tisiphone",
         "Pseudophilotes bavius",
         "Pseudophilotes vicrama",
-        "Pyrgus alveus",
-        "Pyrgus armoricanus",
+        "Pyrgus alveus armoricanus complex",
         "Pyrgus carthami",
         "Pyrgus cinarae",
         "Pyrgus malvae",
@@ -220,6 +216,6 @@ object ImageNetClasses {
         "Zerynthia cerisy",
         "Zerynthia cretica",
         "Zerynthia polyxena",
-        "Zizeeria karsandra",
+        "Zizeeria karsandra"
     )
 }

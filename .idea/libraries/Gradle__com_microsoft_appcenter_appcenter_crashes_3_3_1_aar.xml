@@ -4,6 +4,7 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e83f37470201e4b55466a6d6658bec16/jetified-appcenter-crashes-3.3.1/annotations.zip!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2b09c6a48431ee113e08247522aaa3cb/jetified-appcenter-crashes-3.3.1/annotations.zip!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/553c8bf08295f8de5b252f6f43c182fd/jetified-appcenter-crashes-3.3.1/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/600e578bc63ebfa0ee8b4c11b00e9b95/jetified-appcenter-crashes-3.3.1/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/421a179246b6a2a33e0880290cd89659/jetified-appcenter-crashes-3.3.1/res" />
@@ -18,6 +19,10 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/553c8bf08295f8de5b252f6f43c182fd/jetified-appcenter-crashes-3.3.1/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/553c8bf08295f8de5b252f6f43c182fd/jetified-appcenter-crashes-3.3.1/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/553c8bf08295f8de5b252f6f43c182fd/jetified-appcenter-crashes-3.3.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6bf4c91b7cfa0ad2a50411d75ef8f5b4/jetified-appcenter-crashes-3.3.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/600e578bc63ebfa0ee8b4c11b00e9b95/jetified-appcenter-crashes-3.3.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/600e578bc63ebfa0ee8b4c11b00e9b95/jetified-appcenter-crashes-3.3.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/600e578bc63ebfa0ee8b4c11b00e9b95/jetified-appcenter-crashes-3.3.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.microsoft.appcenter/appcenter-crashes/3.3.1/f21ab4c4230b9d2b96c0baf769f333032034bf4c/appcenter-crashes-3.3.1-javadoc.jar!/" />

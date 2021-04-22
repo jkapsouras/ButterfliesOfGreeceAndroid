@@ -9,8 +9,8 @@ android {
         applicationId "com.sansoft.butterflies"
         minSdkVersion 23
         targetSdkVersion 29
-        versionCode 200003
-        versionName "2.1.0"
+        versionCode 200004
+        versionName "2.1.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -41,6 +41,7 @@ allprojects {
         maven { url 'https://jitpack.io' }
         maven { url "https://oss.jfrog.org/libs-snapshot" }
         maven { url "https://plugins.gradle.org/m2/" }
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots"}
     }
 }
 
@@ -104,8 +105,10 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.7.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
 
-    implementation 'org.pytorch:pytorch_android:1.6.0'
-    implementation 'org.pytorch:pytorch_android_torchvision:1.6.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'org.pytorch:pytorch_android:1.9.0-SNAPSHOT'
+    implementation 'org.pytorch:pytorch_android_torchvision:1.9.0-SNAPSHOT'
+
 
     def camerax_version = "1.0.0-beta12"
     // The following line is optional, as the core library is included indirectly by camera-camera2

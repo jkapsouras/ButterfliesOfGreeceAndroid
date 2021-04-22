@@ -13,7 +13,7 @@ import java.io.IOException
 
 class RecognitionManager(val bitmap: Bitmap, val context: Context) {
 
-    private val module = Module.load(assetFilePath(context, "model.pt"));
+    private val module = Module.load(assetFilePath(context, "model-3.pt"));
 
     fun recognize() : List<Prediction>{
 

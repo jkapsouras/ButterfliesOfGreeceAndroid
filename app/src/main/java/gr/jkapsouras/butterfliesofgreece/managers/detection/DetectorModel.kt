@@ -5,15 +5,12 @@ import android.content.res.AssetManager
 import android.graphics.Bitmap
 import android.graphics.RectF
 import android.os.Trace
-import android.util.Log
-import gr.jkapsouras.butterfliesofgreece.managers.recognition.ImageNetClasses
 import org.tensorflow.lite.Interpreter
 import java.io.*
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import java.nio.MappedByteBuffer
 import java.nio.channels.FileChannel
-import java.nio.charset.Charset
 import kotlin.math.min
 
 /**

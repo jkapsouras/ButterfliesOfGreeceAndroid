@@ -13,6 +13,10 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/afdf33436e72b48c1076679130bdb555/jetified-appcenter-3.3.1/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/afdf33436e72b48c1076679130bdb555/jetified-appcenter-3.3.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/afdf33436e72b48c1076679130bdb555/jetified-appcenter-3.3.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b325bbe7cae67798be95bade2013d722/jetified-appcenter-3.3.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/996ed3cd0a981cf1738e67689eabdb3c/jetified-appcenter-3.3.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/996ed3cd0a981cf1738e67689eabdb3c/jetified-appcenter-3.3.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/996ed3cd0a981cf1738e67689eabdb3c/jetified-appcenter-3.3.1/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.microsoft.appcenter/appcenter/3.3.1/8f3baa900f8ae2dbfeb24a2d847e9e0d93b03301/appcenter-3.3.1-javadoc.jar!/" />
