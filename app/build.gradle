@@ -9,7 +9,7 @@ android {
         applicationId "com.sansoft.butterflies"
         minSdkVersion 23
         targetSdkVersion 29
-        versionCode 200004
+        versionCode 200005
         versionName "2.1.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
