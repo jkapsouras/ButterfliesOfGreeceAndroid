@@ -27,13 +27,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    androidResources {
+        noCompress 'lite'
+    }
 
-    aaptOptions
-            {
-                cruncherEnabled = false
-                noCompress "tflite"
-                noCompress "lite"
-            }
 }
 
 allprojects {

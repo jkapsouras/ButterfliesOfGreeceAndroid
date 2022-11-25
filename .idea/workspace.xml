@@ -48,38 +48,13 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efa0256b-32b0-4f2f-898e-86426287e8f4" name="Default Changelist" comment="Merge branch 'Feature/Detection'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/6.1.1/executionHistory/executionHistory.lock&#10;#&#9;.gradle/6.1.1/fileHashes/fileHashes.bin&#10;#&#9;.gradle/6.1.1/fileHashes/fileHashes.lock&#10;#&#9;.gradle/buildOutputCleanup/buildOutputCleanup.lock&#10;#&#9;.gradle/buildOutputCleanup/outputFiles.bin&#10;#&#9;.idea/caches/build_file_checksums.ser&#10;#&#9;.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_1_0.xml&#10;#&#9;.idea/libraries/Gradle__net_sf_kxml_kxml2_2_3_0.xml&#10;#&#9;.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_android_extensions_runtime_1_3_31.xml&#10;#&#9;.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_3_71.xml&#10;#&#9;.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_71.xml&#10;#&#9;.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_3_31.xml&#10;#&#9;.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_3_31_jar.xml&#10;#&#9;.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_4_10.xml&#10;#&#9;.idea/modules/app/ButterfliesOfGreeceAndroid.app.iml&#10;#&#9;README.md&#10;#&#9;local.properties">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_microsoft_appcenter_appcenter_3_3_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_microsoft_appcenter_appcenter_3_3_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_microsoft_appcenter_appcenter_analytics_3_3_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_microsoft_appcenter_appcenter_analytics_3_3_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_microsoft_appcenter_appcenter_crashes_3_3_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_microsoft_appcenter_appcenter_crashes_3_3_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/ButterfliesOfGreeceAndroid.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/ButterfliesOfGreeceAndroid.app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-    </list>
+    <list default="true" id="efa0256b-32b0-4f2f-898e-86426287e8f4" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[SerialNumber@3cd4796c23b9]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[3cd4796c23b9]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -309,12 +284,13 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ButterfliesOfGreeceAndroid:app [androidDependencies]" />
         <item itemvalue="Gradle.ButterfliesOfGreeceAndroid:app [androidDependencies]" />
       </list>
     </recent_temporary>
@@ -583,7 +559,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619074347824</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Merge branch 'Feature/Detection'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/6.1.1/executionHistory/executionHistory.lock&#10;#&#9;.gradle/6.1.1/fileHashes/fileHashes.bin&#10;#&#9;.gradle/6.1.1/fileHashes/fileHashes.lock&#10;#&#9;.gradle/buildOutputCleanup/buildOutputCleanup.lock&#10;#&#9;.gradle/buildOutputCleanup/outputFiles.bin&#10;#&#9;.idea/caches/build_file_checksums.ser&#10;#&#9;.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_1_0.xml&#10;#&#9;.idea/libraries/Gradle__net_sf_kxml_kxml2_2_3_0.xml&#10;#&#9;.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_android_extensions_runtime_1_3_31.xml&#10;#&#9;.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_3_71.xml&#10;#&#9;.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_71.xml&#10;#&#9;.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_3_31.xml&#10;#&#9;.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_3_31_jar.xml&#10;#&#9;.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_4_10.xml&#10;#&#9;.idea/modules/app/ButterfliesOfGreeceAndroid.app.iml&#10;#&#9;README.md&#10;#&#9;local.properties">
+      <created>1625030420088</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1625030420088</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -638,285 +621,5 @@
     <MESSAGE value="update model-3.pt and labelmap.txt" />
     <MESSAGE value="Merge branch 'Feature/Detection'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/6.1.1/executionHistory/executionHistory.lock&#10;#&#9;.gradle/6.1.1/fileHashes/fileHashes.bin&#10;#&#9;.gradle/6.1.1/fileHashes/fileHashes.lock&#10;#&#9;.gradle/buildOutputCleanup/buildOutputCleanup.lock&#10;#&#9;.gradle/buildOutputCleanup/outputFiles.bin&#10;#&#9;.idea/caches/build_file_checksums.ser&#10;#&#9;.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_1_0.xml&#10;#&#9;.idea/libraries/Gradle__net_sf_kxml_kxml2_2_3_0.xml&#10;#&#9;.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_android_extensions_runtime_1_3_31.xml&#10;#&#9;.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_3_71.xml&#10;#&#9;.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_71.xml&#10;#&#9;.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_3_31.xml&#10;#&#9;.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_3_31_jar.xml&#10;#&#9;.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_4_10.xml&#10;#&#9;.idea/modules/app/ButterfliesOfGreeceAndroid.app.iml&#10;#&#9;README.md&#10;#&#9;local.properties" />
     <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'Feature/Detection'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/6.1.1/executionHistory/executionHistory.lock&#10;#&#9;.gradle/6.1.1/fileHashes/fileHashes.bin&#10;#&#9;.gradle/6.1.1/fileHashes/fileHashes.lock&#10;#&#9;.gradle/buildOutputCleanup/buildOutputCleanup.lock&#10;#&#9;.gradle/buildOutputCleanup/outputFiles.bin&#10;#&#9;.idea/caches/build_file_checksums.ser&#10;#&#9;.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_1_0.xml&#10;#&#9;.idea/libraries/Gradle__net_sf_kxml_kxml2_2_3_0.xml&#10;#&#9;.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_android_extensions_runtime_1_3_31.xml&#10;#&#9;.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_3_71.xml&#10;#&#9;.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_71.xml&#10;#&#9;.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_3_31.xml&#10;#&#9;.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_3_31_jar.xml&#10;#&#9;.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_4_10.xml&#10;#&#9;.idea/modules/app/ButterfliesOfGreeceAndroid.app.iml&#10;#&#9;README.md&#10;#&#9;local.properties" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="805" y="432" key="#PSD" timestamp="1619036949294">
-      <screen x="0" y="25" width="2560" height="1343" />
-    </state>
-    <state x="805" y="432" key="#PSD/0.25.2560.1343@0.25.2560.1343" timestamp="1619036949294" />
-    <state x="805" y="433" key="#PSD/0.25.2560.1345@0.25.2560.1345" timestamp="1614549833667" />
-    <state x="961" y="293" key="#app" timestamp="1614512525700">
-      <screen x="0" y="25" width="2560" height="1345" />
-    </state>
-    <state x="961" y="293" key="#app/0.25.2560.1345@0.25.2560.1345" timestamp="1614512525700" />
-    <state x="968" y="436" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1617617973767">
-      <screen x="0" y="25" width="2560" height="1343" />
-    </state>
-    <state x="968" y="436" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.25.2560.1343@0.25.2560.1343" timestamp="1617617973767" />
-    <state x="1018" y="448" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1618557050563">
-      <screen x="0" y="25" width="2560" height="1343" />
-    </state>
-    <state x="1018" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.2560.1341@0.25.2560.1341" timestamp="1616178084570" />
-    <state x="1018" y="448" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.2560.1343@0.25.2560.1343" timestamp="1618557050563" />
-    <state x="1042" y="447" key="AndroidProcessChooserDialog" timestamp="1618558708110">
-      <screen x="0" y="25" width="2560" height="1343" />
-    </state>
-    <state x="1042" y="447" key="AndroidProcessChooserDialog/0.25.2560.1343@0.25.2560.1343" timestamp="1618558708110" />
-    <state x="335" y="156" key="CommitChangelistDialog2" timestamp="1619076256023">
-      <screen x="0" y="25" width="2560" height="1343" />
-    </state>
-    <state x="335" y="171" key="CommitChangelistDialog2/0.25.2560.1341@0.25.2560.1341" timestamp="1616260633120" />
-    <state x="335" y="156" key="CommitChangelistDialog2/0.25.2560.1343@0.25.2560.1343" timestamp="1619076256023" />
-    <state x="335" y="171" key="CommitChangelistDialog2/0.25.2560.1345@0.25.2560.1345" timestamp="1614524003706" />
-    <state width="999" height="466" key="DebuggerActiveHint" timestamp="1616260369089">
-      <screen x="0" y="25" width="2560" height="1341" />
-    </state>
-    <state width="999" height="466" key="DebuggerActiveHint/0.25.2560.1341@0.25.2560.1341" timestamp="1616260369089" />
-    <state width="1259" height="464" key="GridCell.Tab.0.bottom" timestamp="1619122346569">
-      <screen x="0" y="25" width="2560" height="1343" />
-    </state>
-    <state width="2518" height="464" key="GridCell.Tab.0.bottom/0.25.2560.1341@0.25.2560.1341" timestamp="1616276898972" />
-    <state width="1259" height="464" key="GridCell.Tab.0.bottom/0.25.2560.1343@0.25.2560.1343" timestamp="1619122346569" />
-    <state width="1259" height="464" key="GridCell.Tab.0.center" timestamp="1619122346569">
-      <screen x="0" y="25" width="2560" height="1343" />
-    </state>
-    <state width="2518" height="464" key="GridCell.Tab.0.center/0.25.2560.1341@0.25.2560.1341" timestamp="1616276898971" />
-    <state width="1259" height="464" key="GridCell.Tab.0.center/0.25.2560.1343@0.25.2560.1343" timestamp="1619122346569" />
-    <state width="1259" height="464" key="GridCell.Tab.0.left" timestamp="1619122346569">
-      <screen x="0" y="25" width="2560" height="1343" />
-    </state>
-    <state width="2518" height="464" key="GridCell.Tab.0.left/0.25.2560.1341@0.25.2560.1341" timestamp="1616276898971" />
-    <state width="1259" height="464" key="GridCell.Tab.0.left/0.25.2560.1343@0.25.2560.1343" timestamp="1619122346569" />
-    <state width="1259" height="464" key="GridCell.Tab.0.right" timestamp="1619122346569">
-      <screen x="0" y="25" width="2560" height="1343" />
-    </state>
-    <state width="2518" height="464" key="GridCell.Tab.0.right/0.25.2560.1341@0.25.2560.1341" timestamp="1616276898972" />
-    <state width="1259" height="464" key="GridCell.Tab.0.right/0.25.2560.1343@0.25.2560.1343" timestamp="1619122346569" />
-    <state width="1259" height="464" key="GridCell.Tab.1.bottom" timestamp="1619122346574">
-      <screen x="0" y="25" width="2560" height="1343" />
-    </state>
-    <state width="2518" height="464" key="GridCell.Tab.1.bottom/0.25.2560.1341@0.25.2560.1341" timestamp="1616276898973" />
-    <state width="1259" height="464" key="GridCell.Tab.1.bottom/0.25.2560.1343@0.25.2560.1343" timestamp="1619122346574" />
-    <state width="1259" height="464" key="GridCell.Tab.1.center" timestamp="1619122346570">
-      <screen x="0" y="25" width="2560" height="1343" />
-    </state>
-    <state width="2518" height="464" key="GridCell.Tab.1.center/0.25.2560.1341@0.25.2560.1341" timestamp="1616276898973" />
-    <state width="1259" height="464" key="GridCell.Tab.1.center/0.25.2560.1343@0.25.2560.1343" timestamp="1619122346570" />
-    <state width="1259" height="464" key="GridCell.Tab.1.left" timestamp="1619122346570">
-      <screen x="0" y="25" width="2560" height="1343" />
-    </state>
-    <state width="2518" height="464" key="GridCell.Tab.1.left/0.25.2560.1341@0.25.2560.1341" timestamp="1616276898972" />
-    <state width="1259" height="464" key="GridCell.Tab.1.left/0.25.2560.1343@0.25.2560.1343" timestamp="1619122346570" />
-    <state width="1259" height="464" key="GridCell.Tab.1.right" timestamp="1619122346570">
-      <screen x="0" y="25" width="2560" height="1343" />
-    </state>
-    <state width="2518" height="464" key="GridCell.Tab.1.right/0.25.2560.1341@0.25.2560.1341" timestamp="1616276898973" />
-    <state width="1259" height="464" key="GridCell.Tab.1.right/0.25.2560.1343@0.25.2560.1343" timestamp="1619122346570" />
-    <state x="256" y="145" key="MergeDialog" timestamp="1615654838011">
-      <screen x="0" y="25" width="2560" height="1341" />
-    </state>
-    <state x="256" y="145" key="MergeDialog/0.25.2560.1341@0.25.2560.1341" timestamp="1615654838011" />
-    <state x="910" y="462" key="MultipleFileMergeDialog" timestamp="1616260662859">
-      <screen x="0" y="25" width="2560" height="1341" />
-    </state>
-    <state x="910" y="462" key="MultipleFileMergeDialog/0.25.2560.1341@0.25.2560.1341" timestamp="1616260662859" />
-    <state x="910" y="463" key="MultipleFileMergeDialog/0.25.2560.1345@0.25.2560.1345" timestamp="1614524221932" />
-    <state x="781" y="331" key="SettingsEditor" timestamp="1618905034159">
-      <screen x="0" y="25" width="2560" height="1343" />
-    </state>
-    <state x="781" y="331" key="SettingsEditor/0.25.2560.1343@0.25.2560.1343" timestamp="1618905034159" />
-    <state x="881" y="434" key="Vcs.Push.Dialog.v2" timestamp="1619075490982">
-      <screen x="0" y="25" width="2560" height="1343" />
-    </state>
-    <state x="881" y="433" key="Vcs.Push.Dialog.v2/0.25.2560.1341@0.25.2560.1341" timestamp="1616260669849" />
-    <state x="881" y="434" key="Vcs.Push.Dialog.v2/0.25.2560.1343@0.25.2560.1343" timestamp="1619075490982" />
-    <state x="881" y="434" key="Vcs.Push.Dialog.v2/0.25.2560.1345@0.25.2560.1345" timestamp="1614524304316" />
-    <state x="1064" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1616260656916">
-      <screen x="0" y="25" width="2560" height="1341" />
-    </state>
-    <state x="1064" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.2560.1341@0.25.2560.1341" timestamp="1616260656916" />
-    <state x="1064" y="615" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.2560.1345@0.25.2560.1345" timestamp="1614524214580" />
-    <state x="811" y="196" width="1117" height="1034" key="find.popup" timestamp="1618558602769">
-      <screen x="0" y="25" width="2560" height="1343" />
-    </state>
-    <state x="811" y="196" width="1117" height="1032" key="find.popup/0.25.2560.1341@0.25.2560.1341" timestamp="1616260380028" />
-    <state x="811" y="196" width="1117" height="1034" key="find.popup/0.25.2560.1343@0.25.2560.1343" timestamp="1618558602769" />
-    <state x="811" y="197" width="1117" height="1035" key="find.popup/0.25.2560.1345@0.25.2560.1345" timestamp="1614522925721" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/CacheManager.kt</url>
-          <line>35</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/printToPdf/PrintToPdfPresenter.kt</url>
-          <line>51</line>
-          <option name="timeStamp" value="81" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/printToPdf/PrintToPdfPresenter.kt</url>
-          <line>71</line>
-          <option name="timeStamp" value="85" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/previewer/component/PdfPreviewComponent.kt</url>
-          <line>61</line>
-          <option name="timeStamp" value="114" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/PdfManager.kt</url>
-          <line>164</line>
-          <option name="timeStamp" value="122" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/LocationManager.kt</url>
-          <line>92</line>
-          <option name="timeStamp" value="123" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/LocationManager.kt</url>
-          <line>78</line>
-          <option name="timeStamp" value="137" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/LocationManager.kt</url>
-          <line>76</line>
-          <option name="timeStamp" value="140" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/contribute/ContributePresenter.kt</url>
-          <line>97</line>
-          <option name="timeStamp" value="148" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/contributeView/ContributeView.kt</url>
-          <line>108</line>
-          <option name="timeStamp" value="149" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/LocationManager.kt</url>
-          <line>145</line>
-          <option name="timeStamp" value="150" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/LocationManager.kt</url>
-          <line>169</line>
-          <option name="timeStamp" value="151" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/LocationManager.kt</url>
-          <line>168</line>
-          <option name="timeStamp" value="152" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/LocationManager.kt</url>
-          <line>156</line>
-          <option name="timeStamp" value="153" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/LocationManager.kt</url>
-          <line>139</line>
-          <option name="timeStamp" value="156" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/contribute/ContributePresenter.kt</url>
-          <line>120</line>
-          <option name="timeStamp" value="158" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/contributeView/ContributeView.kt</url>
-          <line>61</line>
-          <option name="timeStamp" value="159" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/contribute/ContributePresenter.kt</url>
-          <line>142</line>
-          <option name="timeStamp" value="160" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/contribute/ContributePresenter.kt</url>
-          <line>144</line>
-          <option name="timeStamp" value="161" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/contributeView/ContributeView.kt</url>
-          <line>93</line>
-          <option name="timeStamp" value="165" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/contribute/ContributePresenter.kt</url>
-          <line>153</line>
-          <option name="timeStamp" value="166" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/PdfManager.kt</url>
-          <line>37</line>
-          <option name="timeStamp" value="172" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/managers/PdfManager.kt</url>
-          <line>39</line>
-          <option name="timeStamp" value="173" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/contribute/components/ContributeComponent.kt</url>
-          <line>50</line>
-          <option name="timeStamp" value="175" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/contribute/components/ContributeComponent.kt</url>
-          <line>55</line>
-          <option name="timeStamp" value="177" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/FamiliesPresenter.kt</url>
-          <line>76</line>
-          <option name="timeStamp" value="178" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/FamiliesPresenter.kt</url>
-          <line>83</line>
-          <option name="timeStamp" value="180" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/fragments/families/FamiliesPresenter.kt</url>
-          <line>79</line>
-          <option name="timeStamp" value="182" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/views/recognitionView/RecognitionView.kt</url>
-          <line>91</line>
-          <option name="timeStamp" value="209" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/MainActivity.kt</url>
-          <line>164</line>
-          <option name="timeStamp" value="211" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/MainActivity.kt</url>
-          <line>159</line>
-          <option name="timeStamp" value="212" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/MainActivity.kt</url>
-          <line>172</line>
-          <option name="timeStamp" value="213" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/MainActivity.kt</url>
-          <line>177</line>
-          <option name="timeStamp" value="214" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/gr/jkapsouras/butterfliesofgreece/MainActivity.kt</url>
-          <line>189</line>
-          <option name="timeStamp" value="220" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
