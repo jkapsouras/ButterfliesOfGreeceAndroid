@@ -1,6 +1,8 @@
 package gr.jkapsouras.butterfliesofgreece.fragments.previewer
 
+import android.content.ContentValues
 import android.content.Context
+import android.util.Log
 import android.view.View
 import gr.jkapsouras.butterfliesofgreece.base.BasePresenter
 import gr.jkapsouras.butterfliesofgreece.base.GeneralViewState
@@ -26,30 +28,36 @@ class PdfPreviewPresenter(
     var pdfState: PdfPreviewerState = PdfPreviewerState("", emptyList(), PdfArrange.OnePerPage)
     private val pdfCreator: PdfManager = PdfManager()
     private lateinit var view: View
-    private lateinit var context:Context
+    private lateinit var context: Context
 
     override fun setupEvents() {
-        Observable.zip(photosToPrintRepository.getPdfArrange(), photosToPrintRepository.getPhotosToPrint(),
-            {pdfArrange, photos -> Pair(pdfArrange, photos)})
+        Observable.zip(photosToPrintRepository.getPdfArrange(),
+            photosToPrintRepository.getPhotosToPrint(),
+            { pdfArrange, photos -> Pair(pdfArrange, photos) })
             .subscribeOn(backgroundThreadScheduler.scheduler)
-            .map{data ->
-                pdfState = pdfState.with(pdfData = pdfCreator.createPdf(view = view, context = context, photos = data.second, pdfArrange = data.first), photos = data.second, pdfArrange = data.first)
+            .map { data ->
+                pdfState = pdfState.with(
+                    pdfData = pdfCreator.createPdf(
+                        view = view,
+                        context = context,
+                        photos = data.second,
+                        pdfArrange = data.first
+                    ), photos = data.second, pdfArrange = data.first
+                )
                 pdfState
             }
-            .subscribe{data ->
-                    state.onNext(PdfPreviewViewStates.ShowPdf(pdfData = pdfState.pdfData))
+            .subscribe { data ->
+                state.onNext(PdfPreviewViewStates.ShowPdf(pdfData = pdfState.pdfData))
             }
             .disposeWith(disposables)
     }
 
-    fun setView(view: View)
-    {
+    fun setView(view: View) {
         this.view = view
     }
 
-    fun setContext(context: Context)
-    {
-        this.context=context
+    fun setContext(context: Context) {
+        this.context = context
     }
 
     override fun handleEvent(uiEvent: UiEvent) {
@@ -57,11 +65,13 @@ class PdfPreviewPresenter(
             is PdfPreviewEvents -> {
                 when (uiEvent) {
                     is PdfPreviewEvents.SharePdf ->
-                    state.onNext(PdfPreviewViewStates.ShowShareDialog(pdfData = pdfState. pdfData))
+                        state.onNext(PdfPreviewViewStates.ShowShareDialog(pdfData = pdfState.pdfData))
+                    else ->
+                        Log.d(ContentValues.TAG, "nothing")
                 }
             }
             else ->
-            state.onNext(GeneralViewState.Idle)
+                state.onNext(GeneralViewState.Idle)
         }
     }
 }

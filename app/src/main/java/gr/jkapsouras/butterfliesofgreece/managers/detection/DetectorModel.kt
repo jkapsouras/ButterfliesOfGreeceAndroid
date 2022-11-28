@@ -101,7 +101,7 @@ class TFLiteObjectDetectionAPIModel private constructor() : Detector {
             )
         }
         numDetections = FloatArray(1)
-        val inputArray = arrayOf<Any?>(imgData)
+        val inputArray = arrayOf<Any>(imgData!!)
         val outputMap: MutableMap<Int, Any> = HashMap()
         outputMap[0] = outputLocations!!
         outputMap[1] = outputClasses!!

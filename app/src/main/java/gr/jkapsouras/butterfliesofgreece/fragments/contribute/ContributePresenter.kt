@@ -71,6 +71,8 @@ class ContributePresenter(
                     locationManager.askForPermissions()
                 LocationState.ShowSettings ->
                     this.state.onNext(ContributeViewStates.ShowSettingsDialog)
+                else ->
+                    Log.d(TAG, "nothing")
             }
         }
             .disposeWith(disposables)
@@ -82,6 +84,8 @@ class ContributePresenter(
                         emitter.onNext(ContributeEvents.LocationFetched(location = locationState.location))
                     LocationState.LocationErrored ->
                         state.onNext(ContributeViewStates.ShowLocationError)
+                    else ->
+                        Log.d(TAG, "nothing")
                 }
             }
             .disposeWith(disposables)

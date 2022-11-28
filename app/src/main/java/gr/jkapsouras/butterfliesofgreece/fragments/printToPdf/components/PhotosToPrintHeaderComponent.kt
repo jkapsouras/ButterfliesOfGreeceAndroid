@@ -1,5 +1,7 @@
 package gr.jkapsouras.butterfliesofgreece.fragments.printToPdf.components
 
+import android.content.ContentValues
+import android.util.Log
 import gr.jkapsouras.butterfliesofgreece.base.UiComponent
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.base.ViewState
@@ -34,6 +36,8 @@ class PhotosToPrintHeaderComponent(private val headerView: HeaderPrintToPdfView)
                     headerView.showArrange(arrange = viewState.currentArrange)
 //                    pikcerContainerView.alpha = 0;
                 }
+                else ->
+                    Log.d(ContentValues.TAG, "nothing")
             }
         }
     }

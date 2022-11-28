@@ -1,5 +1,7 @@
 package gr.jkapsouras.butterfliesofgreece.fragments.species.components
 
+import android.content.ContentValues
+import android.util.Log
 import gr.jkapsouras.butterfliesofgreece.base.UiComponent
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.base.ViewState
@@ -33,6 +35,8 @@ class SpeciesCollectionComponent(private val photosCollectionView: PhotosCollect
                         photosCollectionView.hide()
                     }
                 }
+                else ->
+                    Log.d(ContentValues.TAG, "nothing")
             }
         }
     }

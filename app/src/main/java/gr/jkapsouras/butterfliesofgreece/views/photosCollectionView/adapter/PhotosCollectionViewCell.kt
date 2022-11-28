@@ -1,5 +1,6 @@
 package gr.jkapsouras.butterfliesofgreece.views.photosCollectionView.adapter
 
+import android.content.ContentValues
 import android.content.Context
 import android.util.Log
 import android.util.TypedValue
@@ -37,6 +38,8 @@ class PhotosCollectionViewCell(itemView: View, private val emitter: PublishSubje
                           emitter.onNext(SpeciesEvents.SpecieClicked(specieId))
                 ShowingStep.Photos ->
                     emitter.onNext(PhotosEvents.PhotoClicked(photoId))
+                else ->
+                    Log.d(ContentValues.TAG, "nothing")
             }
             Log.d(Constraints.TAG, "field clicked")
         }
@@ -53,6 +56,8 @@ class PhotosCollectionViewCell(itemView: View, private val emitter: PublishSubje
 //                     if let photo = photo{
 //                         emitter.onNext(PrintToPdfEvents.delete(photo: photo))
 //                     }
+                else ->
+                    Log.d(ContentValues.TAG, "nothing")
             }
         }
     }

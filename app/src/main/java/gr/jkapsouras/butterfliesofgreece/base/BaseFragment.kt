@@ -83,6 +83,9 @@ abstract  class BaseFragment<P : BasePresenter> : Fragment(){
                 when (viewState){
                     is SearchViewStates.ToPhotosOfSpecie->
                         findNavController().navigate(R.id.navigate_to_species_from_search)
+                    else ->{
+                        Log.d(TAG, "nothing")
+                    }
                 }
             }
             is HeaderViewViewStates ->{
@@ -107,6 +110,9 @@ abstract  class BaseFragment<P : BasePresenter> : Fragment(){
                                 findNavController().navigate(R.id.navigate_to_print_from_photos)
                         }
                     }
+                    else ->{
+                        Log.d(TAG, "nothing")
+                    }
                 }
             }
             is MenuViewStates -> {
@@ -125,30 +131,45 @@ abstract  class BaseFragment<P : BasePresenter> : Fragment(){
                         findNavController().navigate(R.id.navigate_to_legal_fragment)
                     is MenuViewStates.ToRecognition ->
                         findNavController().navigate(R.id.navigate_to_recognition_fragment)
+                    else ->{
+                        Log.d(TAG, "nothing")
+                    }
                 }
             }
             is FamiliesViewViewStates ->{
                 when (viewState) {
                     is FamiliesViewViewStates.ToSpecies ->
                         findNavController().navigate(R.id.navigate_to_species)
+                    else ->{
+                        Log.d(TAG, "nothing")
+                    }
                 }
             }
             is SpeciesViewStates ->{
                 when(viewState){
                     is SpeciesViewStates.ToPhotos ->
                         findNavController().navigate((R.id.navigate_to_photos))
+                    else ->{
+                        Log.d(TAG, "nothing")
+                    }
                 }
             }
             is PhotosViewStates -> {
                 when(viewState){
                     is PhotosViewStates.ToPhoto ->
                         findNavController().navigate((R.id.navigate_to_modal))
+                    else ->{
+                        Log.d(TAG, "nothing")
+                    }
                 }
             }
             is ModalViewStates -> {
                 when (viewState) {
                     is ModalViewStates.CloseModal ->
                         findNavController().navigateUp()
+                    else ->{
+                        Log.d(TAG, "nothing")
+                    }
                 }
             }
             is PrintToPdfViewStates ->{
@@ -157,6 +178,9 @@ abstract  class BaseFragment<P : BasePresenter> : Fragment(){
                         findNavController().navigateUp()
                     is PrintToPdfViewStates.ToPrintPreview ->
                         findNavController().navigate(R.id.navigate_to_previewer)
+                    else ->{
+                        Log.d(TAG, "nothing")
+                    }
                 }
             }
         }

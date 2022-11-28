@@ -1,6 +1,7 @@
 package gr.jkapsouras.butterfliesofgreece.fragments.contribute.components
 
 import android.annotation.SuppressLint
+import android.content.ContentValues
 import android.util.Log
 import android.view.View
 import com.github.barteksc.pdfviewer.PDFView
@@ -63,6 +64,8 @@ class ContributeComponent(private val view: ContributeView,
                     view.webView_contribute.visibility = View.GONE
                     view.button_print.visibility = View.GONE
                 }
+                else ->
+                    Log.d(ContentValues.TAG, "nothing")
             }
         }
     }

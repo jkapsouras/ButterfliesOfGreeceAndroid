@@ -1,5 +1,7 @@
 package gr.jkapsouras.butterfliesofgreece.fragments.species.components
 
+import android.content.ContentValues
+import android.util.Log
 import gr.jkapsouras.butterfliesofgreece.base.UiComponent
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.base.ViewState
@@ -24,6 +26,8 @@ class SpeciesHeaderComponent(private val headerView: HeaderView) : UiComponent
                 is SpeciesViewStates.SwitchViewStyle -> {
                     headerView.changeViewForViewArrange(viewState.currentArrange)
                 }
+                else ->
+                    Log.d(ContentValues.TAG, "nothing")
             }
         }
         if (viewState is HeaderViewViewStates){
@@ -34,6 +38,8 @@ class SpeciesHeaderComponent(private val headerView: HeaderView) : UiComponent
                 is HeaderViewViewStates.SetHeaderTitle -> {
                     headerView.updateTitle(viewState.headerTitle)
                 }
+                else ->
+                    Log.d(ContentValues.TAG, "nothing")
             }
         }
     }

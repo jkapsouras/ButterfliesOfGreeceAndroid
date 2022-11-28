@@ -1,5 +1,7 @@
 package gr.jkapsouras.butterfliesofgreece.fragments.modal.components
 
+import android.content.ContentValues
+import android.util.Log
 import gr.jkapsouras.butterfliesofgreece.base.UiComponent
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.base.ViewState
@@ -17,6 +19,8 @@ class ModalPhotoComponent(private val owner:IModalPhotos) : UiComponent {
             when (viewState) {
                 is ModalViewStates.ShowPhotosStartingWith ->
                     owner.setUpPagesStartingWith(index = viewState.index, photos = viewState.photos)
+                else ->
+                    Log.d(ContentValues.TAG, "nothing")
             }
         }
     }

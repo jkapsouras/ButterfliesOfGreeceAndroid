@@ -1,5 +1,6 @@
 package gr.jkapsouras.butterfliesofgreece.views.photosTableView.adapter
 
+import android.content.ContentValues
 import android.util.Log
 import android.view.View
 import androidx.constraintlayout.widget.Constraints
@@ -46,6 +47,8 @@ class PhotosTableViewCell(itemView: View, private val emitter: PublishSubject<Ui
                 ShowingStep.Photos,
                 ShowingStep.PhotosToPrint ->
                     emitter.onNext(PhotosEvents.PhotoClicked(photoId))
+                else ->
+                    Log.d(ContentValues.TAG, "nothing")
             }
         }
 
@@ -59,6 +62,8 @@ class PhotosTableViewCell(itemView: View, private val emitter: PublishSubject<Ui
                     emitter.onNext(PhotosEvents.AddPhotoForPrintClicked(photoId))
                 ShowingStep.PhotosToPrint ->
                     emitter.onNext(PrintToPdfEvents.Delete(photo = photo!!))
+                else ->
+                    Log.d(ContentValues.TAG, "nothing")
             }
             Log.d(Constraints.TAG, "field clicked")
         }
