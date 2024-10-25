@@ -17,14 +17,13 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.sansoft.butterflies.R
+import com.sansoft.butterflies.databinding.ViewCameraBinding
 import gr.jkapsouras.butterfliesofgreece.MainActivity
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.fragments.recognition.uiEvents.RecognitionEvents
-import gr.jkapsouras.butterfliesofgreece.managers.detection.Detector
 import gr.jkapsouras.butterfliesofgreece.utils.ImageUtils
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.subjects.PublishSubject
-import kotlinx.android.synthetic.main.view_camera.view.*
 import java.io.ByteArrayOutputStream
 import java.nio.ByteBuffer
 import java.util.concurrent.ExecutorService
@@ -40,6 +39,8 @@ class CameraView  @JvmOverloads constructor(
 
     private val emitter = PublishSubject.create<UiEvent>()
     lateinit var view : View
+    private var _binding: ViewCameraBinding? = null
+    private val binding get() = _binding!!
     lateinit var activity : MainActivity
     var counter = 0
     private lateinit var cameraExecutor: ExecutorService
@@ -51,17 +52,17 @@ class CameraView  @JvmOverloads constructor(
     }
 
     private fun initialize(context: Context) {
-        view = LayoutInflater.from(context)
-            .inflate(R.layout.view_camera, this)
+        _binding = ViewCameraBinding.inflate(LayoutInflater.from(context), this, true)
+        view = binding.root
     }
 
     private fun viewEvents() : Observable<UiEvent>
     {
-        view.button_close_live_recognition_view.setOnClickListener {
+       binding.buttonCloseLiveRecognitionView.setOnClickListener {
             emitter.onNext(RecognitionEvents.CloseLiveClicked)
         }
 
-        view.button_save_camera_view.setOnClickListener {
+        binding.buttonSaveCameraView.setOnClickListener {
             emitter.onNext(RecognitionEvents.SaveImage(true))
         }
 
@@ -85,7 +86,7 @@ class CameraView  @JvmOverloads constructor(
 
     fun hideCamera(){
         cameraExecutor.shutdown()
-        view.button_save_camera_view.visibility = View.GONE
+        binding.buttonSaveCameraView.visibility = View.GONE
     }
 
     private fun startCamera() {
@@ -100,7 +101,7 @@ class CameraView  @JvmOverloads constructor(
             val preview = Preview.Builder()
                 .build()
                 .also {
-                    it.setSurfaceProvider(view_camera_preview.surfaceProvider)
+                    it.setSurfaceProvider(binding.viewCameraPreview.surfaceProvider)
                 }
 
             // Select back camera as a default
@@ -148,11 +149,11 @@ class CameraView  @JvmOverloads constructor(
     }
 
     fun showSaveButton(){
-        view.button_save_camera_view.visibility = View.VISIBLE
+        binding.buttonSaveCameraView.visibility = View.VISIBLE
     }
 
     fun hideSaveButton(){
-        view.button_save_camera_view.visibility = View.GONE
+        binding.buttonSaveCameraView.visibility = View.GONE
     }
 
     private class LuminosityAnalyzer(
@@ -195,10 +196,11 @@ class CameraView  @JvmOverloads constructor(
 
             if(counter>=25) {
                 Log.i("tsg", "counter: $counter")
-                emitter.onNext(RecognitionEvents.LiveImageTaken(bitmap, croppedBitmap!!, sensorOrientation, cropToFrameTransform))
+                emitter.onNext(RecognitionEvents.LiveImageTaken(bitmap,
+                    croppedBitmap, sensorOrientation, cropToFrameTransform))
                 counter = 0
 
-//                ImageUtils.saveBitmap(bitmap!!, context, "tempFolder");
+//                ImageUtils.saveBitmap(bitmap!!, activity, "tempFolder");
 
             }
 

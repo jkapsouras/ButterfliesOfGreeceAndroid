@@ -7,6 +7,7 @@ import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import com.sansoft.butterflies.R
+import com.sansoft.butterflies.databinding.ViewPhotosCollectionBinding
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
 import gr.jkapsouras.butterfliesofgreece.dto.Family
@@ -14,7 +15,6 @@ import gr.jkapsouras.butterfliesofgreece.dto.Specie
 import gr.jkapsouras.butterfliesofgreece.views.photosCollectionView.adapter.PhotosCollectionAdapter
 import gr.jkapsouras.butterfliesofgreece.views.photosTableView.adapter.ShowingStep
 import io.reactivex.rxjava3.core.Observable
-import kotlinx.android.synthetic.main.view_photos_collection.view.*
 
 class PhotosCollectionView  @JvmOverloads constructor(
     context: Context,
@@ -22,7 +22,8 @@ class PhotosCollectionView  @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) :
     ConstraintLayout(context, attrs, defStyleAttr) {
-
+    private var _binding: ViewPhotosCollectionBinding? = null
+    private val binding get() = _binding!!
     private val source = PhotosCollectionAdapter()
     lateinit var view: View
     val uiEvents: Observable<UiEvent>
@@ -33,8 +34,8 @@ class PhotosCollectionView  @JvmOverloads constructor(
     }
 
     private fun initialize(context: Context) {
-        view = LayoutInflater.from(context)
-            .inflate(R.layout.view_photos_collection, this)
+        _binding = ViewPhotosCollectionBinding.inflate(LayoutInflater.from(context), this, true)
+        view = binding.root
     }
 
     fun show()
@@ -55,24 +56,24 @@ class PhotosCollectionView  @JvmOverloads constructor(
     }
 
     fun showFamilies(families: List<Family>){
-        rv_photos_collection.layoutManager = GridLayoutManager( rv_photos_collection.context, 2, GridLayoutManager.VERTICAL, false)
-        rv_photos_collection.adapter = source
+        binding.rvPhotosCollection.layoutManager = GridLayoutManager( binding.rvPhotosCollection.context, 2, GridLayoutManager.VERTICAL, false)
+        binding.rvPhotosCollection.adapter = source
         source.setFamilies(families)
         source.setShowingStep( ShowingStep.Families)
         source.notifyDataSetChanged()
     }
 
     fun showSpecies(species: List<Specie>){
-        rv_photos_collection.layoutManager = GridLayoutManager( rv_photos_collection.context, 2, GridLayoutManager.VERTICAL, false)
-        rv_photos_collection.adapter = source
+        binding.rvPhotosCollection.layoutManager = GridLayoutManager( binding.rvPhotosCollection.context, 2, GridLayoutManager.VERTICAL, false)
+        binding.rvPhotosCollection.adapter = source
         source.setSpecies(species)
         source.setShowingStep( ShowingStep.Species)
         source.notifyDataSetChanged()
     }
 
     fun showPhotos(photos: List<ButterflyPhoto>){
-        rv_photos_collection.layoutManager = GridLayoutManager( rv_photos_collection.context, 2, GridLayoutManager.VERTICAL, false)
-        rv_photos_collection.adapter = source
+        binding.rvPhotosCollection.layoutManager = GridLayoutManager( binding.rvPhotosCollection.context, 2, GridLayoutManager.VERTICAL, false)
+        binding.rvPhotosCollection.adapter = source
         source.setPhotos(photos)
         source.setShowingStep(ShowingStep.Photos)
         source.notifyDataSetChanged()

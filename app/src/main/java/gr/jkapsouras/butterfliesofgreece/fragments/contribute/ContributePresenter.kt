@@ -4,6 +4,7 @@ import android.content.ContentValues.TAG
 import android.content.Context
 import android.util.Log
 import android.view.View
+import com.sansoft.butterflies.databinding.ViewContributeBinding
 import gr.jkapsouras.butterfliesofgreece.MainActivity
 import gr.jkapsouras.butterfliesofgreece.base.BasePresenter
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
@@ -45,6 +46,7 @@ class ContributePresenter(
     )
     private lateinit var view: View
     private lateinit var context:Context
+    private lateinit var binding:ViewContributeBinding
 
     fun setView(view: View)
     {
@@ -155,7 +157,7 @@ class ContributePresenter(
                                 contributeState =
                                     contributeState.prepareHtmlForExport(items = items)
                                 val pdfCreator = PdfManager()
-                            contributeState = contributeState.with(pdfData = pdfCreator.createRecordsTable (view = view, html = contributeState.exportedHtml))
+                            contributeState = contributeState.with(pdfData = pdfCreator.createRecordsTable (view = view, html = contributeState.exportedHtml, binding = binding))
                             state.onNext(ContributeViewStates.ShowExtractedPdf(pdfData = contributeState.pdfData ?: ""))
                             }
                             .flatMap {
@@ -178,5 +180,9 @@ class ContributePresenter(
                 }
             }
         }
+    }
+
+    fun setBinding(binding: ViewContributeBinding) {
+        this.binding = binding
     }
 }

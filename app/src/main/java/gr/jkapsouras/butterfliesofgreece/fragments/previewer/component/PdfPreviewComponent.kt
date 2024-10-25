@@ -2,6 +2,7 @@ package gr.jkapsouras.butterfliesofgreece.fragments.previewer.component
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.ContentValues
 import android.content.Intent
 import android.util.Log
 import android.view.View
@@ -16,6 +17,7 @@ import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.base.ViewState
 import gr.jkapsouras.butterfliesofgreece.fragments.previewer.uiEvents.PdfPreviewEvents
 import gr.jkapsouras.butterfliesofgreece.fragments.previewer.viewStates.PdfPreviewViewStates
+import gr.jkapsouras.butterfliesofgreece.fragments.printToPdf.uiEvents.PrintToPdfEvents
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.subjects.PublishSubject
 import java.io.File
@@ -71,7 +73,7 @@ class PdfPreviewComponent(val activity: Activity, val pdfView: PDFView, val butt
                 is PdfPreviewViewStates.ShowShareDialog -> {
                     val file = File(viewState.pdfData)
                     val bmpUri = FileProvider.getUriForFile(
-                        activity,
+                        activity.applicationContext,
                         "gr.jkapsouras.butterfliesofgreece.fileprovider",
                         file
                     )
@@ -82,7 +84,10 @@ class PdfPreviewComponent(val activity: Activity, val pdfView: PDFView, val butt
                     shareIntent.type = "application/pdf"
 
                     activity.startActivity(shareIntent)
+                 event.onNext(PdfPreviewEvents.DeleteData)
                 }
+                else ->
+                    Log.d(ContentValues.TAG, "nothing")
             }
         }
         if (viewState is GeneralViewState) {

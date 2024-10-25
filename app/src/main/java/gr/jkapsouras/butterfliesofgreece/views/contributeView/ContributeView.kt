@@ -3,24 +3,18 @@ package gr.jkapsouras.butterfliesofgreece.views.contributeView
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Context
-import android.content.DialogInterface
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.widget.addTextChangedListener
-import com.jakewharton.rxbinding4.view.clicks
 import com.sansoft.butterflies.R
+import com.sansoft.butterflies.databinding.ViewContributeBinding
 import gr.jkapsouras.butterfliesofgreece.MainActivity
-import gr.jkapsouras.butterfliesofgreece.base.DisposablesWrapper
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
-import gr.jkapsouras.butterfliesofgreece.base.disposeWith
 import gr.jkapsouras.butterfliesofgreece.fragments.contribute.uiEvents.ContributeEvents
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.subjects.PublishSubject
-import kotlinx.android.synthetic.main.dialog_generic.view.*
-import kotlinx.android.synthetic.main.view_contribute.view.*
 import java.time.LocalDate
 
 
@@ -33,6 +27,8 @@ class ContributeView  @JvmOverloads constructor(
 
     private val emitter = PublishSubject.create<UiEvent>()
     lateinit var view : View
+    private var _binding: ViewContributeBinding? = null
+    val binding get() = _binding!!
     lateinit var dialog: AlertDialog
     val uiEvents: Observable<UiEvent>
         get() = viewEvents()
@@ -42,59 +38,57 @@ class ContributeView  @JvmOverloads constructor(
     }
 
     private fun initialize(context: Context) {
-        view = LayoutInflater.from(context)
-            .inflate(R.layout.view_contribute, this)
+        _binding = ViewContributeBinding.inflate(LayoutInflater.from(context), this, true)
+        view = binding.root
     }
 
     private fun viewEvents() : Observable<UiEvent>
     {
-
-
-        label_date.setOnClickListener {
+        binding.labelDate.setOnClickListener {
             emitter.onNext(ContributeEvents.TextDateClicked)
         }
 
-        edit_date.setOnClickListener {
+       binding.editDate.setOnClickListener {
             emitter.onNext(ContributeEvents.TextDateClicked)
         }
 
-        edit_photo_name.addTextChangedListener  {
-            emitter.onNext(ContributeEvents.TextNameSet(edit_photo_name.text.toString()))
+       binding.editPhotoName.addTextChangedListener  {
+            emitter.onNext(ContributeEvents.TextNameSet(binding.editPhotoName.text.toString()))
         }
 
-        edit_altitude.addTextChangedListener  {
-            emitter.onNext(ContributeEvents.TextAltitudeSet(edit_altitude.text.toString()))
+        binding.editAltitude.addTextChangedListener  {
+            emitter.onNext(ContributeEvents.TextAltitudeSet(binding.editAltitude.text.toString()))
         }
 
-        edit_place.addTextChangedListener  {
-            emitter.onNext(ContributeEvents.TextPlaceSet(edit_place.text.toString()))
+        binding.editPlace.addTextChangedListener  {
+            emitter.onNext(ContributeEvents.TextPlaceSet(binding.editPlace.text.toString()))
         }
 
-        edit_stage.addTextChangedListener  {
-            emitter.onNext(ContributeEvents.TextStateSet(edit_stage.text.toString()))
+        binding.editStage.addTextChangedListener  {
+            emitter.onNext(ContributeEvents.TextStateSet(binding.editStage.text.toString()))
         }
 
-        edit_genus.addTextChangedListener  {
-            emitter.onNext(ContributeEvents.TextGenusSpeciesSet(edit_genus.text.toString()))
+        binding.editGenus.addTextChangedListener  {
+            emitter.onNext(ContributeEvents.TextGenusSpeciesSet(binding.editGenus.text.toString()))
         }
 
-        edit_name_species.addTextChangedListener  {
-            emitter.onNext(ContributeEvents.TextNameSpeciesSet(edit_name_species.text.toString()))
+        binding.editNameSpecies.addTextChangedListener  {
+            emitter.onNext(ContributeEvents.TextNameSpeciesSet(binding.editNameSpecies.text.toString()))
         }
 
-        edit_comments.addTextChangedListener  {
-            emitter.onNext(ContributeEvents.TextCommentsSet(edit_comments.text.toString()))
+        binding.editComments.addTextChangedListener  {
+            emitter.onNext(ContributeEvents.TextCommentsSet(binding.editComments.text.toString()))
         }
 
-        button_add_contribute.setOnClickListener {
+        binding.buttonAddContribute.setOnClickListener {
             emitter.onNext(ContributeEvents.AddClicked)
         }
 
-        button_share_contribute.setOnClickListener {
+       binding.buttonShareContribute.setOnClickListener {
             emitter.onNext(ContributeEvents.ExportClicked)
         }
 
-        button_print.setOnClickListener {
+       binding.buttonPrint.setOnClickListener {
             emitter.onNext(ContributeEvents.SharePdf)
         }
 
@@ -124,19 +118,19 @@ class ContributeView  @JvmOverloads constructor(
     }
 
     fun setDate(date: String){
-       edit_date.setText(date)
+       binding.editDate.setText(date)
     }
 
     fun setLocation(latitude: String, longitude: String){
-        edit_longitude.setText(longitude)
-        edit_latitude.setText(latitude)
-        edit_longitude.isClickable = false
-        edit_latitude.isClickable = false
+       binding.editLongitude.setText(longitude)
+       binding.editLatitude.setText(latitude)
+        binding.editLongitude.isClickable = false
+        binding.editLatitude.isClickable = false
     }
 
     fun locationError(controller: MainActivity){
-        edit_longitude.isClickable = true
-        edit_latitude.isClickable = true
+        binding.editLongitude.isClickable = true
+        binding.editLatitude.isClickable = true
 //        let alert = UIAlertController(title: Translations.LocationErrorTitle, message: Translations.LocationErrorMessage, preferredStyle: .alert)
 //        alert.addAction(UIAlertAction(title: Translations.Ok, style: .default, handler: nil))
 //        controller.present(alert, animated: true)

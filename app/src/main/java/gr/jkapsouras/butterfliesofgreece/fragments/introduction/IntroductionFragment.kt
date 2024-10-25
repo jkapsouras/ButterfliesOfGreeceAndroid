@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.sansoft.butterflies.R
-import kotlinx.android.synthetic.main.endangered_fragment.*
 
 class IntroductionFragment : Fragment(){
 

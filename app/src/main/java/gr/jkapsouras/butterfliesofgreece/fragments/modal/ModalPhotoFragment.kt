@@ -4,18 +4,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.sansoft.butterflies.R
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.modal_photo_fragment.*
+import com.sansoft.butterflies.databinding.ModalPhotoFragmentBinding
+import gr.jkapsouras.butterfliesofgreece.MainActivity
 import java.lang.Exception
 
 class ModalPhotoFragment : Fragment(){
+    private var _binding: ModalPhotoFragmentBinding? = null
+    private val binding get() = _binding!!
 
     lateinit var photos: List<String>
     private val layoutResource: Int
@@ -32,62 +33,64 @@ class ModalPhotoFragment : Fragment(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        (requireActivity() as AppCompatActivity).toolbar.visibility = View.GONE
+        (requireActivity() as MainActivity).binding.toolbar.visibility = View.GONE
     }
 
     override fun onStart() {
         super.onStart()
-        (requireActivity() as AppCompatActivity).toolbar.visibility = View.GONE
+        (requireActivity() as MainActivity).binding.toolbar.visibility = View.GONE
     }
 
     override fun onResume() {
         super.onResume()
-        (requireActivity() as AppCompatActivity).toolbar.visibility = View.GONE
+        (requireActivity() as MainActivity).binding.toolbar.visibility = View.GONE
     }
 
     override fun onStop() {
         super.onStop()
-        (requireActivity() as AppCompatActivity).toolbar.visibility = View.VISIBLE
+        (requireActivity() as MainActivity).binding.toolbar.visibility = View.VISIBLE
     }
 
     override fun onPause() {
         super.onPause()
-        (requireActivity() as AppCompatActivity).toolbar.visibility = View.VISIBLE
+        (requireActivity() as MainActivity).binding.toolbar.visibility = View.VISIBLE
     }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(layoutResource, container, false)
+    ): View {
+        _binding = ModalPhotoFragmentBinding.inflate(inflater, container, false)
+
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        (requireActivity() as AppCompatActivity).toolbar.visibility = View.GONE
+        (requireActivity() as MainActivity).binding.toolbar.visibility = View.GONE
 
-        button_close_modal.setOnClickListener {
+         binding.buttonCloseModal.setOnClickListener {
             findNavController().navigateUp()
-            (requireActivity() as AppCompatActivity).toolbar.visibility = View.VISIBLE
+            (requireActivity() as MainActivity).binding.toolbar.visibility = View.VISIBLE
         }
 
         val position = requireArguments().getInt(ARG_POSITION)
         try {
-            val iden = iv_modal_photo.resources.getIdentifier(
+            val iden = binding.ivModalPhoto.resources.getIdentifier(
                 "thumb_big_${photos[position]}",
                 "drawable",
-                iv_modal_photo.context.packageName
+                binding.ivModalPhoto.context.packageName
             )
             iden.let { tmpiden ->
-                val drawable = ResourcesCompat.getDrawable(iv_modal_photo.resources, tmpiden, null)
+                val drawable = ResourcesCompat.getDrawable(binding.ivModalPhoto.resources, tmpiden, null)
                 drawable.let {
-                    iv_modal_photo.setImageResource(tmpiden)
+                    binding.ivModalPhoto.setImageResource(tmpiden)
                 }
             }
         } catch (e: Exception) {
-            iv_modal_photo.setImageDrawable(
+            binding.ivModalPhoto.setImageDrawable(
                 ContextCompat.getDrawable(
-                    iv_modal_photo.context,
+                    binding.ivModalPhoto.context,
                     R.drawable.thumb_default
                 )
             )

@@ -1,19 +1,23 @@
 package gr.jkapsouras.butterfliesofgreece.fragments.modal
 
+import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.viewpager2.widget.ViewPager2
 import com.sansoft.butterflies.R
+import com.sansoft.butterflies.databinding.ModalFragmentBinding
 import gr.jkapsouras.butterfliesofgreece.base.BaseFragment
 import gr.jkapsouras.butterfliesofgreece.base.UiComponent
 import gr.jkapsouras.butterfliesofgreece.fragments.modal.adapter.ModalPhotoAdapter
 import gr.jkapsouras.butterfliesofgreece.fragments.modal.components.ModalPhotoComponent
-import kotlinx.android.synthetic.main.modal_fragment.*
 import org.koin.android.ext.android.inject
 
 class ModalFragment : BaseFragment<ModalPresenter>(), IModalPhotos {
-
+    private var _binding: ModalFragmentBinding? = null
+    private val binding get() = _binding!!
     companion object {
         private val TAG = ModalFragment::class.java
     }
@@ -32,9 +36,15 @@ class ModalFragment : BaseFragment<ModalPresenter>(), IModalPhotos {
      override val layoutResource: Int
         get() = R.layout.modal_fragment
 
-     override  fun initView(view: View): View {
-         photosAdapter = ModalPhotoAdapter(activity as AppCompatActivity)
-         return view
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = ModalFragmentBinding.inflate(inflater, container, false)
+        photosAdapter = ModalPhotoAdapter(activity as AppCompatActivity)
+
+        return binding.root
     }
 
      override  fun initializeComponents(constraintLayout: ConstraintLayout): List<UiComponent> {
@@ -45,10 +55,10 @@ class ModalFragment : BaseFragment<ModalPresenter>(), IModalPhotos {
     override fun setUpPagesStartingWith(index: Int, photos: List<String>) {
         photosAdapter.setData(photos)
         photosAdapter.notifyDataSetChanged()
-        modal_view_pager.adapter = photosAdapter
-        modal_view_pager.registerOnPageChangeCallback(onPhotoPageChangeCallback)
+        binding.modalViewPager.adapter = photosAdapter
+        binding.modalViewPager.registerOnPageChangeCallback(onPhotoPageChangeCallback)
         photosAdapter.notifyDataSetChanged()
-        modal_view_pager.setCurrentItem(index, true)
+        binding.modalViewPager.setCurrentItem(index, true)
         photosAdapter.notifyDataSetChanged()
     }
 

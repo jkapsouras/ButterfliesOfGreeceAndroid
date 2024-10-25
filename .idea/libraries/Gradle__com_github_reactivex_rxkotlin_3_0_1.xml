@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: com.github.reactivex:rxkotlin:3.0.1">
+  <library name="Gradle: com.github.reactivex:rxkotlin:3.0.1" external-system-id="GRADLE">
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.reactivex/rxkotlin/3.0.1/8f779dc54ccbadf83a41702bc5cf2ed94d034d64/rxkotlin-3.0.1.jar!/" />
     </CLASSES>

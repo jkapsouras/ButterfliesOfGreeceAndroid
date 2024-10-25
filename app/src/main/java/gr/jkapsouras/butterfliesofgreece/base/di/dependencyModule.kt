@@ -173,7 +173,7 @@ fun registerPresenters(module: Module) {
     module.factory { RecognitionRepository(get()) }
 }
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
-        return Retrofit.Builder().baseUrl("http://butterfliesofgreece-env.eba-w5n3apy5.us-east-1.elasticbeanstalk.com").client(okHttpClient)
+        return Retrofit.Builder().baseUrl("http://butterflyapi.in").client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .build()

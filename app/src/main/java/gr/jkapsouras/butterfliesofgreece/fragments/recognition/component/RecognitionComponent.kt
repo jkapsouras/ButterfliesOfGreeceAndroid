@@ -119,20 +119,15 @@ class RecognitionComponent(
                     }
                 }
                 is RecognitionViewStates.ShowCamera -> {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        if (activity.checkSelfPermission(Manifest.permission.CAMERA) ==
-                            PackageManager.PERMISSION_DENIED
-                        ) {
-                            //permission denied
-                            val permissions = arrayOf(Manifest.permission.CAMERA)
-                            //show popup to request runtime permission
-                            activity.requestPermissions(permissions, 201)
-                        } else {
-                            //permission already granted
-                            pickImageFromCamera()
-                        }
+                    if (activity.checkSelfPermission(Manifest.permission.CAMERA) ==
+                        PackageManager.PERMISSION_DENIED
+                    ) {
+                        //permission denied
+                        val permissions = arrayOf(Manifest.permission.CAMERA)
+                        //show popup to request runtime permission
+                        activity.requestPermissions(permissions, 201)
                     } else {
-                        //system OS is < Marshmallow
+                        //permission already granted
                         pickImageFromCamera()
                     }
                 }
@@ -214,7 +209,7 @@ class RecognitionComponent(
 
     /// @param folderName can be your app's name
     private fun saveImage(bitmap: Bitmap, context: Context, folderName: String) {
-        if (android.os.Build.VERSION.SDK_INT >= 29) {
+        if (Build.VERSION.SDK_INT >= 29) {
             val values = contentValues()
             values.put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/" + folderName)
             values.put(MediaStore.Images.Media.IS_PENDING, true)

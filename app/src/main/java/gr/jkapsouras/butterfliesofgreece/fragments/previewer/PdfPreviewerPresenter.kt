@@ -36,18 +36,24 @@ class PdfPreviewPresenter(
             { pdfArrange, photos -> Pair(pdfArrange, photos) })
             .subscribeOn(backgroundThreadScheduler.scheduler)
             .map { data ->
-                pdfState = pdfState.with(
-                    pdfData = pdfCreator.createPdf(
-                        view = view,
-                        context = context,
-                        photos = data.second,
-                        pdfArrange = data.first
-                    ), photos = data.second, pdfArrange = data.first
-                )
+                pdfState = if (data.second.isEmpty())
+                    PdfPreviewerState("", emptyList(), PdfArrange.OnePerPage)
+                else
+                    pdfState.with(
+                        pdfData = pdfCreator.createPdf(
+                            view = view,
+                            context = context,
+                            photos = data.second,
+                            pdfArrange = data.first
+                        ), photos = data.second, pdfArrange = data.first
+                    )
                 pdfState
             }
             .subscribe { data ->
-                state.onNext(PdfPreviewViewStates.ShowPdf(pdfData = pdfState.pdfData))
+                if(data.pdfData.isEmpty())
+                    state.onNext(PdfPreviewViewStates.ToMainMenu)
+                else
+                    state.onNext(PdfPreviewViewStates.ShowPdf(pdfData = pdfState.pdfData))
             }
             .disposeWith(disposables)
     }
@@ -66,6 +72,10 @@ class PdfPreviewPresenter(
                 when (uiEvent) {
                     is PdfPreviewEvents.SharePdf ->
                         state.onNext(PdfPreviewViewStates.ShowShareDialog(pdfData = pdfState.pdfData))
+                    is PdfPreviewEvents.DeleteData ->
+                        photosToPrintRepository.deleteAll()
+                            .subscribe()
+                            .disposeWith(disposables)
                     else ->
                         Log.d(ContentValues.TAG, "nothing")
                 }

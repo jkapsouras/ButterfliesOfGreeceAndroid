@@ -4,12 +4,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sansoft.butterflies.R
+import com.sansoft.butterflies.databinding.RowPhotosCollectionBinding
+import com.sansoft.butterflies.databinding.RowPhotosTableBinding
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
 import gr.jkapsouras.butterfliesofgreece.dto.Family
 import gr.jkapsouras.butterfliesofgreece.dto.Specie
 import io.reactivex.rxjava3.subjects.PublishSubject
-import kotlinx.android.synthetic.main.row_photos_table.view.*
 
 enum class ShowingStep {
     Families,
@@ -28,8 +29,10 @@ class PhotosTableAdapter : RecyclerView.Adapter<PhotosTableViewCell>() {
     private var fromSearch = false
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotosTableViewCell {
+        val binding = RowPhotosTableBinding
+            .inflate(LayoutInflater.from(parent.context), parent, false)
         return PhotosTableViewCell(
-            LayoutInflater.from(parent.context).inflate(R.layout.row_photos_table, parent, false),
+            binding,
             emitter
         )
     }

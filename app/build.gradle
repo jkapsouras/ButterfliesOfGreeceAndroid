@@ -1,13 +1,23 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 32
+
+    packagingOptions {
+        pickFirst 'lib/x86/libc++_shared.so'
+        pickFirst 'lib/x86_64/libc++_shared.so'
+        pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+        pickFirst 'lib/arm64-v8a/libc++_shared.so'
+    }
+    buildFeatures {
+        viewBinding = true
+        buildConfig = true
+    }
     defaultConfig {
         applicationId "com.sansoft.butterflies"
-        minSdkVersion 23
-        targetSdkVersion 32
+        minSdkVersion 26
+        compileSdk 34
+        targetSdkVersion 34
         versionCode 200006
         versionName "2.1.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -29,6 +39,10 @@ android {
     androidResources {
         noCompress 'lite'
     }
+    buildFeatures {
+        buildConfig = true
+    }
+    namespace 'com.sansoft.butterflies'
 
 }
 
@@ -46,25 +60,25 @@ allprojects {
 dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
-    def nav_version = "2.3.1"
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.6'
+    def nav_version = "2.8.3"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.3.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    implementation "org.koin:koin-core:$koin_version"
-    implementation "org.koin:koin-core-ext:$koin_version"
-    testImplementation "org.koin:koin-test:$koin_version"
-    implementation "org.koin:koin-androidx-scope:$koin_version"
-    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
-    implementation "org.koin:koin-androidx-fragment:$koin_version"
-    implementation "org.koin:koin-androidx-ext:$koin_version"
-    implementation "androidx.constraintlayout:constraintlayout:2.0.4"
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.6.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+    implementation("io.insert-koin:koin-android:$koin_android_version")
+//    implementation "org.koin:koin-core-ext:$koin_version"
+//    testImplementation "org.koin:koin-test:$koin_version"
+//    implementation "org.koin:koin-androidx-scope:$koin_version"
+//    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+//    implementation "org.koin:koin-androidx-fragment:$koin_version"
+//    implementation "org.koin:koin-androidx-ext:$koin_version"
+    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
     
 
     implementation 'com.github.reactivex:rxkotlin:3.0.1'
@@ -72,8 +86,11 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxjava:3.0.6'
 
     // Kotlin
+    implementation "androidx.fragment:fragment-ktx:1.8.4"
+    implementation "androidx.fragment:fragment:1.8.4"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
 
     // Feature module Support
     implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
@@ -81,7 +98,7 @@ dependencies {
     // Testing Navigation
     androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
 
-    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.google.code.gson:gson:2.10.1'
     implementation 'com.jakewharton.rxbinding4:rxbinding:4.0.0'
     implementation 'com.jakewharton.rxbinding4:rxbinding-core:4.0.0'
     implementation 'com.jakewharton.rxbinding4:rxbinding-appcompat:4.0.0'
@@ -94,17 +111,17 @@ dependencies {
     implementation 'com.jakewharton.rxbinding4:rxbinding-viewpager2:4.0.0'
     implementation 'com.jakewharton.rxbinding4:rxbinding-material:4.0.0'
 
-    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
-    implementation 'com.google.android.gms:play-services-location:17.1.0'
+    implementation 'com.github.mhiew:android-pdf-viewer:3.2.0-beta.1'
+    implementation 'com.google.android.gms:play-services-location:21.3.0'
 
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.7.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
 
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
 
-    implementation 'org.pytorch:pytorch_android:1.8.0-SNAPSHOT'
-    implementation 'org.pytorch:pytorch_android_torchvision:1.8.0-SNAPSHOT'
+    implementation 'org.pytorch:pytorch_android:1.10.0'
+    implementation 'org.pytorch:pytorch_android_torchvision:1.10.0'
 
 
     def camerax_version = "1.0.0-beta12"
@@ -114,16 +131,16 @@ dependencies {
     // If you want to additionally use the CameraX Lifecycle library
     implementation "androidx.camera:camera-lifecycle:${camerax_version}"
     // If you want to additionally use the CameraX View class
-    implementation "androidx.camera:camera-view:1.0.0-alpha19"
+    implementation "androidx.camera:camera-view:1.3.4"
     // If you want to additionally use the CameraX Extensions library
-    implementation "androidx.camera:camera-extensions:1.0.0-alpha19"
+    implementation "androidx.camera:camera-extensions:1.3.4"
 
-    def appCenterSdkVersion = '3.3.1'
+    def appCenterSdkVersion = '5.0.4'
     implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
     implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
 
     implementation 'com.github.yalantis:ucrop:2.2.6-native'
 
-    implementation 'org.tensorflow:tensorflow-lite:0.0.0-nightly'
-    implementation 'org.tensorflow:tensorflow-lite-select-tf-ops:0.0.0-nightly'
+    implementation 'org.tensorflow:tensorflow-lite:0.0.0-nightly-SNAPSHOT'
+    implementation 'org.tensorflow:tensorflow-lite-select-tf-ops:0.0.0-nightly-SNAPSHOT'
 }

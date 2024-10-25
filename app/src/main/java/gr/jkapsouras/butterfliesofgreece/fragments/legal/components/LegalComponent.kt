@@ -15,8 +15,6 @@ import gr.jkapsouras.butterfliesofgreece.fragments.legal.uiEvents.LegalEvents
 import gr.jkapsouras.butterfliesofgreece.fragments.legal.viewStates.LegalViewStates
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.subjects.PublishSubject
-import kotlinx.android.synthetic.main.about_fragment.*
-import kotlinx.android.synthetic.main.endangered_fragment.*
 
 class LegalComponent(val pdfView: PDFView, val okButton: Button, val termsButton: Button,
                      val formButton: Button, val viewPopup: View, val messageLabel: TextView

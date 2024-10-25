@@ -8,11 +8,11 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import com.jakewharton.rxbinding4.view.clicks
 import com.sansoft.butterflies.R
+import com.sansoft.butterflies.databinding.ViewHeaderBinding
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.fragments.families.ViewArrange
 import gr.jkapsouras.butterfliesofgreece.views.header.uiEvents.HeaderViewEvents
 import io.reactivex.rxjava3.core.Observable
-import kotlinx.android.synthetic.main.view_header.view.*
 
 class HeaderView  @JvmOverloads constructor(
     context: Context,
@@ -21,6 +21,8 @@ class HeaderView  @JvmOverloads constructor(
 ) :
     ConstraintLayout(context, attrs, defStyleAttr){
 
+    private var _binding: ViewHeaderBinding? = null
+    private val binding get() = _binding!!
     lateinit var view : View
     val uiEvents: Observable<UiEvent>
         get() = viewEvents()
@@ -30,15 +32,15 @@ class HeaderView  @JvmOverloads constructor(
     }
 
     private fun initialize(context: Context) {
-        view = LayoutInflater.from(context)
-            .inflate(R.layout.view_header, this)
+        _binding = ViewHeaderBinding.inflate(LayoutInflater.from(context), this, true)
+        view = binding.root
     }
 
     private fun viewEvents() : Observable<UiEvent>
     {
-        return Observable.merge(bt_change_view_style.clicks().map{HeaderViewEvents.SwitchViewStyleClicked},
-            bt_search_species.clicks().map{HeaderViewEvents.SearchBarClicked},
-            bt_show_added_photos.clicks().map{HeaderViewEvents.PrintPhotosClicked})
+        return Observable.merge(binding.btChangeViewStyle.clicks().map{HeaderViewEvents.SwitchViewStyleClicked},
+            binding.btSearchSpecies.clicks().map{HeaderViewEvents.SearchBarClicked},
+            binding.btShowAddedPhotos.clicks().map{HeaderViewEvents.PrintPhotosClicked})
     }
 
     fun show()
@@ -56,17 +58,17 @@ class HeaderView  @JvmOverloads constructor(
     fun changeViewForViewArrange(viewArrange: ViewArrange){
         when (viewArrange) {
             ViewArrange.Grid ->
-                bt_change_view_style.setImageDrawable(ContextCompat.getDrawable(view.context, R.drawable.list_icon))
+                binding.btChangeViewStyle.setImageDrawable(ContextCompat.getDrawable(view.context, R.drawable.list_icon))
             ViewArrange.List ->
-                bt_change_view_style.setImageDrawable(ContextCompat.getDrawable(view.context, R.drawable.grid_icon))
+                binding.btChangeViewStyle.setImageDrawable(ContextCompat.getDrawable(view.context, R.drawable.grid_icon))
         }
     }
 
     fun updateNumberOfPhotos(number:Int){
-        tv_number_view_header.text = number.toString()
+        binding.tvNumberViewHeader.text = number.toString()
     }
 
     fun updateTitle(title:String){
-        tv_title_view_header.text = title
+        binding.tvTitleViewHeader.text = title
     }
 }

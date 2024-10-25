@@ -56,13 +56,13 @@ class TFLiteObjectDetectionAPIModel private constructor() : Detector {
     private var tfLiteModel: MappedByteBuffer? = null
     private var tfLiteOptions: Interpreter.Options? = null
     private var tfLite: Interpreter? = null
-    override  fun recognizeImage(bitmap: Bitmap?): List<Detector.RecognitionDetection?>?{
+    override  fun recognizeImage(bitmap: Bitmap?): List<Detector.RecognitionDetection?> {
         // Log this method so that it can be analyzed with systrace.
         Trace.beginSection("recognizeImage")
         Trace.beginSection("preprocessBitmap")
         // Preprocess the image data from 0-255 int to normalized float based
         // on the provided parameters.
-        bitmap!!.getPixels(intValues, 0, bitmap.width, 0, 0, bitmap.width, bitmap.height)
+        bitmap!!.getPixels(intValues!!, 0, bitmap.width, 0, 0, bitmap.width, bitmap.height)
         imgData!!.rewind()
         for (i in 0 until inputSize) {
             for (j in 0 until inputSize) {

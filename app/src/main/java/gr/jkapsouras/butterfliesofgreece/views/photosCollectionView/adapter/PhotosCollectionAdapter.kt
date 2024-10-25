@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sansoft.butterflies.R
+import com.sansoft.butterflies.databinding.RowPhotosCollectionBinding
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
 import gr.jkapsouras.butterfliesofgreece.dto.Family
@@ -21,7 +22,9 @@ class PhotosCollectionAdapter : RecyclerView.Adapter<PhotosCollectionViewCell>()
     private var showingStep = ShowingStep.Families
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotosCollectionViewCell {
-        return PhotosCollectionViewCell(LayoutInflater.from(parent.context).inflate(R.layout.row_photos_collection, parent, false), emitter)
+        val binding = RowPhotosCollectionBinding
+            .inflate(LayoutInflater.from(parent.context), parent, false)
+        return PhotosCollectionViewCell(binding, emitter)
     }
 
     override fun onBindViewHolder(holder: PhotosCollectionViewCell, position: Int) {

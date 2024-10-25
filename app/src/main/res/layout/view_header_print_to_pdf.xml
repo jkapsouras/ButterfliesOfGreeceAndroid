@@ -47,15 +47,15 @@
         android:id="@+id/iv_delete_images"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_margin="@dimen/medium"
+        android:layout_marginEnd="@dimen/medium"
         android:src="@drawable/delete_icon"
-        android:tint="@color/field"
+        app:tint="@color/field"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
         android:padding="4dp"
-        app:layout_constraintTop_toTopOf="@+id/iv_print_images"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_print_images"
-        app:layout_constraintEnd_toStartOf="@+id/iv_print_images"
+        app:layout_constraintTop_toTopOf="@id/iv_print_images"
+        app:layout_constraintBottom_toBottomOf="@id/iv_print_images"
+        app:layout_constraintEnd_toStartOf="@id/iv_print_images"
         />
 
     <ImageButton
@@ -71,6 +71,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth="30dp"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

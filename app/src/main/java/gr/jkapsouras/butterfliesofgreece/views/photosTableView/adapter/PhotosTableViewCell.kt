@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.sansoft.butterflies.R
+import com.sansoft.butterflies.databinding.RowPhotosTableBinding
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
 import gr.jkapsouras.butterfliesofgreece.dto.Family
@@ -18,11 +19,10 @@ import gr.jkapsouras.butterfliesofgreece.fragments.printToPdf.uiEvents.PrintToPd
 import gr.jkapsouras.butterfliesofgreece.fragments.search.uiEvents.SearchEvents
 import gr.jkapsouras.butterfliesofgreece.fragments.species.uiEvents.SpeciesEvents
 import io.reactivex.rxjava3.subjects.PublishSubject
-import kotlinx.android.synthetic.main.row_photos_table.view.*
 import java.lang.Exception
 
-class PhotosTableViewCell(itemView: View, private val emitter: PublishSubject<UiEvent>) :
-    RecyclerView.ViewHolder(itemView) {
+class PhotosTableViewCell(val binding: RowPhotosTableBinding, private val emitter: PublishSubject<UiEvent>) :
+    RecyclerView.ViewHolder(binding.root) {
 
     var familyId: Int = -1
     var specieId: Int = -1
@@ -52,7 +52,7 @@ class PhotosTableViewCell(itemView: View, private val emitter: PublishSubject<Ui
             }
         }
 
-        itemView.iv_add_image_row_table.setOnClickListener {
+        binding.ivAddImageRowTable.setOnClickListener {
             when (showingStep) {
                 ShowingStep.Families ->
                     emitter.onNext(FamilyEvents.AddPhotosForPrintClicked(familyId))
@@ -71,7 +71,7 @@ class PhotosTableViewCell(itemView: View, private val emitter: PublishSubject<Ui
 
     fun update(family: Family, showingStep: ShowingStep) {
         this.showingStep = showingStep
-        itemView.label_photo_table_name.text = family.name
+        binding.labelPhotoTableName.text = family.name
         familyId = family.id
         try {
             val iden = itemView.resources.getIdentifier(
@@ -82,11 +82,11 @@ class PhotosTableViewCell(itemView: View, private val emitter: PublishSubject<Ui
             iden.let { tmpiden ->
                 val drawable = ResourcesCompat.getDrawable(itemView.resources, tmpiden, null)
                 drawable.let {
-                    itemView.iv_image_row_table.setImageResource(tmpiden)
+                    binding.ivImageRowTable.setImageResource(tmpiden)
                 }
             }
         } catch (e: Exception) {
-            itemView.iv_image_row_table.setImageDrawable(
+            binding.ivImageRowTable.setImageDrawable(
                 ContextCompat.getDrawable(
                     itemView.context,
                     R.drawable.thumb_default
@@ -98,7 +98,7 @@ class PhotosTableViewCell(itemView: View, private val emitter: PublishSubject<Ui
     fun update(specie: Specie, showingStep: ShowingStep, fromSearch: Boolean) {
         this.showingStep = showingStep
         this.fromSearch = fromSearch
-        itemView.label_photo_table_name.text = specie.name
+        binding.labelPhotoTableName.text = specie.name
         specieId = specie.id
         this.specie = specie
         try {
@@ -110,11 +110,11 @@ class PhotosTableViewCell(itemView: View, private val emitter: PublishSubject<Ui
             iden.let { tmpiden ->
                 val drawable = ResourcesCompat.getDrawable(itemView.resources, tmpiden, null)
                 drawable.let {
-                    itemView.iv_image_row_table.setImageResource(tmpiden)
+                    binding.ivImageRowTable.setImageResource(tmpiden)
                 }
             }
         } catch (e: Exception) {
-            itemView.iv_image_row_table.setImageDrawable(
+            binding.ivImageRowTable.setImageDrawable(
                 ContextCompat.getDrawable(
                     itemView.context,
                     R.drawable.thumb_default
@@ -123,14 +123,14 @@ class PhotosTableViewCell(itemView: View, private val emitter: PublishSubject<Ui
         }
 
         when {
-            fromSearch -> itemView.iv_add_image_row_table.visibility = View.INVISIBLE
-            else -> itemView.iv_add_image_row_table.visibility = View.VISIBLE
+            fromSearch -> binding.ivAddImageRowTable.visibility = View.INVISIBLE
+            else -> binding.ivAddImageRowTable.visibility = View.VISIBLE
         }
     }
 
     fun update(photo: ButterflyPhoto, showingStep: ShowingStep) {
         this.showingStep = showingStep
-        itemView.label_photo_table_name.text = photo.author
+        binding.labelPhotoTableName.text = photo.author
         photoId = photo.id
         this.photo = photo
         try {
@@ -142,17 +142,17 @@ class PhotosTableViewCell(itemView: View, private val emitter: PublishSubject<Ui
             iden.let { tmpiden ->
                 val drawable = ResourcesCompat.getDrawable(itemView.resources, tmpiden, null)
                 drawable.let {
-                    itemView.iv_image_row_table.setImageResource(tmpiden)
+                    binding.ivImageRowTable.setImageResource(tmpiden)
                 }
             }
         } catch (e: Exception) {
-            itemView.iv_image_row_table.setImageDrawable(
+            binding.ivImageRowTable.setImageDrawable(
                 ContextCompat.getDrawable(
                     itemView.context,
                     R.drawable.thumb_default
                 )
             )
         }
-        itemView.iv_add_image_row_table.setImageResource(if (showingStep == ShowingStep.Photos)  R.drawable.plus_icon else R.drawable.minus_icon)
+        binding.ivAddImageRowTable.setImageResource(if (showingStep == ShowingStep.Photos)  R.drawable.plus_icon else R.drawable.minus_icon)
     }
 }

@@ -14,6 +14,7 @@ import gr.jkapsouras.butterfliesofgreece.fragments.families.viewStates.FamiliesV
 import gr.jkapsouras.butterfliesofgreece.fragments.main.ViewStates.MenuViewStates
 import gr.jkapsouras.butterfliesofgreece.fragments.modal.viewStates.ModalViewStates
 import gr.jkapsouras.butterfliesofgreece.fragments.photos.viewStates.PhotosViewStates
+import gr.jkapsouras.butterfliesofgreece.fragments.previewer.viewStates.PdfPreviewViewStates
 import gr.jkapsouras.butterfliesofgreece.fragments.printToPdf.viewStates.PrintToPdfViewStates
 import gr.jkapsouras.butterfliesofgreece.fragments.search.viewStates.SearchViewStates
 import gr.jkapsouras.butterfliesofgreece.fragments.species.viewStates.SpeciesViewStates
@@ -34,16 +35,16 @@ abstract  class BaseFragment<P : BasePresenter> : Fragment(){
     lateinit var components:List<UiComponent>
 
     protected abstract val layoutResource:Int
-    internal abstract fun  initView(view:View) : View
+//    internal abstract fun  initView(view:View) : View
     abstract fun  initializeComponents(constraintLayout: ConstraintLayout):List<UiComponent>
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return initView(inflater.inflate(layoutResource, container, false))
-    }
+//    override fun onCreateView(
+//        inflater: LayoutInflater,
+//        container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        return initView(inflater.inflate(layoutResource, container, false))
+//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -60,14 +61,14 @@ abstract  class BaseFragment<P : BasePresenter> : Fragment(){
         val state = presenter.subscribe(events).publish()
 
         components.forEach{component->
-                    state?.subscribe { viewstate->
+                    state.subscribe { viewstate->
                         component.renderViewState(viewstate)
                     }
                         ?.disposeWith(presenter.disposables)
         }
 
-         state?.filter { it.isTransition }?.subscribe{ viewState -> transitionStateReceived(viewState)}?.disposeWith(presenter.disposables)
-        state?.connect()?.disposeWith(presenter.disposables)
+         state.filter { it.isTransition }?.subscribe{ viewState -> transitionStateReceived(viewState)}?.disposeWith(presenter.disposables)
+        state.connect()?.disposeWith(presenter.disposables)
         presenter.setupEvents()
     }
 
@@ -178,6 +179,15 @@ abstract  class BaseFragment<P : BasePresenter> : Fragment(){
                         findNavController().navigateUp()
                     is PrintToPdfViewStates.ToPrintPreview ->
                         findNavController().navigate(R.id.navigate_to_previewer)
+                    else ->{
+                        Log.d(TAG, "nothing")
+                    }
+                }
+            }
+            is PdfPreviewViewStates ->{
+                when(viewState){
+                    is PdfPreviewViewStates.ToMainMenu->
+                        findNavController().navigate(R.id.navigate_to_mainMenu)
                     else ->{
                         Log.d(TAG, "nothing")
                     }

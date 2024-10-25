@@ -27,13 +27,13 @@ import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
 import com.sansoft.butterflies.R
+import com.sansoft.butterflies.databinding.ActivityMainBinding
 import com.yalantis.ucrop.UCrop
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.fragments.recognition.uiEvents.Permissions
 import gr.jkapsouras.butterfliesofgreece.fragments.recognition.uiEvents.RecognitionEvents
 import gr.jkapsouras.butterfliesofgreece.managers.LocationManager
 import io.reactivex.rxjava3.subjects.PublishSubject
-import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
@@ -45,15 +45,21 @@ class MainActivity : AppCompatActivity() {
     val emitterEvents: PublishSubject<UiEvent> = PublishSubject.create()
     var imageUri: Uri? = null
     var imageBitmap: Bitmap? = null
+    private var _binding: ActivityMainBinding? = null
+    val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        _binding = ActivityMainBinding.inflate(layoutInflater)
+
+        val view = binding.root
 
         val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
 
         StrictMode.setThreadPolicy(policy)
 
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(view)
 
         AppCenter.start(
             application, "db3cabaa-d642-449c-bb9e-35a2cb14bb35",
@@ -72,45 +78,45 @@ class MainActivity : AppCompatActivity() {
 
             when (destination.id){
                 R.id.contributeFragment -> {
-                    toolbar.context.setTheme(R.style.ContributeTheme)
-                    toolbar.setBackgroundColor(applicationContext.getColor(R.color.contribute))
-                    toolbar.setTitleTextColor(applicationContext.getColor(R.color.contribute_dark))
+                    binding.toolbar.context.setTheme(R.style.ContributeTheme)
+                    binding.toolbar.setBackgroundColor(applicationContext.getColor(R.color.contribute))
+                    binding.toolbar.setTitleTextColor(applicationContext.getColor(R.color.contribute_dark))
                 }
                 R.id.endangeredFragment -> {
-                    toolbar.context.setTheme(R.style.EndangeredTheme)
-                    toolbar.setBackgroundColor(applicationContext.getColor(R.color.endangered))
-                    toolbar.setTitleTextColor(applicationContext.getColor(R.color.endangered_dark))
+                    binding.toolbar.context.setTheme(R.style.EndangeredTheme)
+                    binding.toolbar.setBackgroundColor(applicationContext.getColor(R.color.endangered))
+                    binding.toolbar.setTitleTextColor(applicationContext.getColor(R.color.endangered_dark))
                 }
                 R.id.introductionFragment -> {
-                    toolbar.context.setTheme(R.style.IntroductionTheme)
-                    toolbar.setBackgroundColor(applicationContext.getColor(R.color.introduction))
-                    toolbar.setTitleTextColor(applicationContext.getColor(R.color.introduction_dark))
+                    binding.toolbar.context.setTheme(R.style.IntroductionTheme)
+                    binding.toolbar.setBackgroundColor(applicationContext.getColor(R.color.introduction))
+                    binding.toolbar.setTitleTextColor(applicationContext.getColor(R.color.introduction_dark))
                 }
                 R.id.aboutFragment -> {
-                    toolbar.context.setTheme(R.style.AboutTheme)
-                    toolbar.setBackgroundColor(applicationContext.getColor(R.color.about))
-                    toolbar.setTitleTextColor(applicationContext.getColor(R.color.about_dark))
+                    binding.toolbar.context.setTheme(R.style.AboutTheme)
+                    binding.toolbar.setBackgroundColor(applicationContext.getColor(R.color.about))
+                    binding.toolbar.setTitleTextColor(applicationContext.getColor(R.color.about_dark))
                 }
                 R.id.legalFragment -> {
-                    toolbar.context.setTheme(R.style.LegalTheme)
-                    toolbar.setBackgroundColor(applicationContext.getColor(R.color.legal))
-                    toolbar.setTitleTextColor(applicationContext.getColor(R.color.legal_dark))
+                    binding.toolbar.context.setTheme(R.style.LegalTheme)
+                    binding.toolbar.setBackgroundColor(applicationContext.getColor(R.color.legal))
+                    binding.toolbar.setTitleTextColor(applicationContext.getColor(R.color.legal_dark))
                 }
                 R.id.recognitionFragment -> {
-                    toolbar.context.setTheme(R.style.RecognitionTheme)
-                    toolbar.setBackgroundColor(applicationContext.getColor(R.color.recognition))
-                    toolbar.setTitleTextColor(applicationContext.getColor(R.color.recognition_dark))
+                    binding.toolbar.context.setTheme(R.style.RecognitionTheme)
+                    binding.toolbar.setBackgroundColor(applicationContext.getColor(R.color.recognition))
+                    binding.toolbar.setTitleTextColor(applicationContext.getColor(R.color.recognition_dark))
                 }
                 R.id.searchFragment ->
-                    search_bar.visibility = View.VISIBLE
+                    binding.searchBar.visibility = View.VISIBLE
                 else ->
-                    search_bar.visibility = View.GONE
+                    binding.searchBar.visibility = View.GONE
             }
             val appBarConfiguration = AppBarConfiguration(navController.graph)
-            toolbar.setupWithNavController(navController, appBarConfiguration)
+            binding.toolbar.setupWithNavController(navController, appBarConfiguration)
         }
         val appBarConfiguration = AppBarConfiguration(navController.graph)
-        toolbar.setupWithNavController(navController, appBarConfiguration)
+        binding.toolbar.setupWithNavController(navController, appBarConfiguration)
     }
 
     override fun onStart() {
@@ -125,6 +131,7 @@ class MainActivity : AppCompatActivity() {
         requestCode: Int, permissions: Array<String>,
         grantResults: IntArray
     ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         Log.i(LocationManager.TAG, "onRequestPermissionResult")
         if (requestCode == LocationManager.REQUEST_PERMISSIONS_REQUEST_CODE) {
             if (grantResults.isEmpty()) {
@@ -279,11 +286,11 @@ class MainActivity : AppCompatActivity() {
         val path = File(externalCacheDir, "camera")
         if (!path.exists()) path.mkdirs()
         val image = File(path, fileName)
-        val x = getUriForFile(this, "$packageName.fileprovider", image)
+        val x = getUriForFile(this, "gr.jkapsouras.butterfliesofgreece.fileprovider", image)
         return x
     }
 
-    private fun queryName(resolver: ContentResolver, uri: Uri): String? {
+    private fun queryName(resolver: ContentResolver, uri: Uri): String {
         val returnCursor: Cursor = resolver.query(uri, null, null, null, null)!!
         val nameIndex: Int = returnCursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)
         returnCursor.moveToFirst()

@@ -9,12 +9,12 @@ import android.widget.ArrayAdapter
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.jakewharton.rxbinding4.view.clicks
 import com.sansoft.butterflies.R
+import com.sansoft.butterflies.databinding.ViewHeaderPrintToPdfBinding
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.fragments.printToPdf.state.PdfArrange
 import gr.jkapsouras.butterfliesofgreece.fragments.printToPdf.uiEvents.PrintToPdfEvents
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.subjects.PublishSubject
-import kotlinx.android.synthetic.main.view_header_print_to_pdf.view.*
 
 class HeaderPrintToPdfView  @JvmOverloads constructor(
     context: Context,
@@ -22,7 +22,8 @@ class HeaderPrintToPdfView  @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) :
     ConstraintLayout(context, attrs, defStyleAttr) {
-
+    private var _binding: ViewHeaderPrintToPdfBinding? = null
+    private val binding get() = _binding!!
     private val arranges: List<PdfArrange>
     get() = listOf(PdfArrange.OnePerPage, PdfArrange.TwoPerPage, PdfArrange.FourPerPage, PdfArrange.SixPerPage)
     private val event: PublishSubject<UiEvent> = PublishSubject.create<UiEvent>()
@@ -36,12 +37,12 @@ class HeaderPrintToPdfView  @JvmOverloads constructor(
     }
 
     private fun initialize(context: Context) {
-        view = LayoutInflater.from(context)
-            .inflate(R.layout.view_header_print_to_pdf, this)
+        _binding = ViewHeaderPrintToPdfBinding.inflate(LayoutInflater.from(context), this, true)
+        view = binding.root
 
         val adapter = ArrayAdapter<PdfArrange>(view.context, R.layout.spinner_text, arranges)
-        view.spinner_images_per_page.adapter = adapter
-        view.spinner_images_per_page.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        binding.spinnerImagesPerPage.adapter = adapter
+        binding.spinnerImagesPerPage.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {
 
             }
@@ -54,17 +55,17 @@ class HeaderPrintToPdfView  @JvmOverloads constructor(
     }
 
     private fun viewEvents(): Observable<UiEvent> {
-        return Observable.merge(view.iv_delete_images.clicks().map{PrintToPdfEvents.DeleteAll},
-            view.iv_print_images.clicks().map{PrintToPdfEvents.PrintPhotos},
+        return Observable.merge(binding.ivDeleteImages.clicks().map{PrintToPdfEvents.DeleteAll},
+            binding.ivPrintImages.clicks().map{PrintToPdfEvents.PrintPhotos},
         event)
     }
 
     fun showPhotosToPrint(numberOfPhotos:Int){
-        view.tv_print_to_pdf_title.text = "$numberOfPhotos ${tv_print_to_pdf_title.context.getString(R.string.photos)}"
+        binding.tvPrintToPdfTitle.text = "$numberOfPhotos ${ binding.tvPrintToPdfTitle.context.getString(R.string.photos)}"
     }
 
     fun showArrange(arrange: PdfArrange){
         val i = arranges.indexOf(arrange)
-        spinner_images_per_page.setSelection(i)
+        binding.spinnerImagesPerPage.setSelection(i)
     }
 }

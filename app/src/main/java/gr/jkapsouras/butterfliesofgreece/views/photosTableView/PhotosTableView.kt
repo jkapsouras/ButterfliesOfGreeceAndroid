@@ -7,6 +7,7 @@ import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sansoft.butterflies.R
+import com.sansoft.butterflies.databinding.ViewPhotosTableBinding
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
 import gr.jkapsouras.butterfliesofgreece.dto.Family
@@ -14,7 +15,6 @@ import gr.jkapsouras.butterfliesofgreece.dto.Specie
 import gr.jkapsouras.butterfliesofgreece.views.photosTableView.adapter.PhotosTableAdapter
 import gr.jkapsouras.butterfliesofgreece.views.photosTableView.adapter.ShowingStep
 import io.reactivex.rxjava3.core.Observable
-import kotlinx.android.synthetic.main.view_photos_table.view.*
 
 
 class PhotosTableView  @JvmOverloads constructor(
@@ -23,7 +23,8 @@ class PhotosTableView  @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) :
     ConstraintLayout(context, attrs, defStyleAttr) {
-
+    private var _binding: ViewPhotosTableBinding? = null
+    private val binding get() = _binding!!
     private val source = PhotosTableAdapter()
     lateinit var view : View
     val uiEvents: Observable<UiEvent>
@@ -34,8 +35,8 @@ class PhotosTableView  @JvmOverloads constructor(
     }
 
     private fun initialize(context: Context) {
-        view = LayoutInflater.from(context)
-            .inflate(R.layout.view_photos_table, this)
+        _binding = ViewPhotosTableBinding.inflate(LayoutInflater.from(context), this, true)
+        view = binding.root
     }
 
     fun show()
@@ -56,16 +57,16 @@ class PhotosTableView  @JvmOverloads constructor(
     }
 
     fun showFamilies(families: List<Family>){
-        rv_photos_table.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        rv_photos_table.adapter = source
+        binding.rvPhotosTable.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.rvPhotosTable.adapter = source
         source.setFamilies(families)
         source.setShowingStep( ShowingStep.Families)
         source.notifyDataSetChanged()
     }
 
     fun showSpecies(species: List<Specie>, fromSearch: Boolean){
-        rv_photos_table.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        rv_photos_table.adapter = source
+        binding.rvPhotosTable.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.rvPhotosTable.adapter = source
         source.setSpecies(species)
         source.setShowingStep( ShowingStep.Species)
         source.setFromSearch(fromSearch)
@@ -73,16 +74,16 @@ class PhotosTableView  @JvmOverloads constructor(
     }
 
     fun showPhotos(photos: List<ButterflyPhoto>){
-        rv_photos_table.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        rv_photos_table.adapter = source
+        binding.rvPhotosTable.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.rvPhotosTable.adapter = source
         source.setPhotos(photos)
         source.setShowingStep( ShowingStep.Photos)
         source.notifyDataSetChanged()
     }
 
     fun showPhotosToPrint(photos: List<ButterflyPhoto>){
-        rv_photos_table.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        rv_photos_table.adapter = source
+        binding.rvPhotosTable.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.rvPhotosTable.adapter = source
         source.setPhotos(photos)
         source.setShowingStep( ShowingStep.PhotosToPrint)
         source.notifyDataSetChanged()

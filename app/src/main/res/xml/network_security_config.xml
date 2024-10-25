@@ -19,7 +19,7 @@
 
     <domain-config>
         <!-- Make sure your URL Server here -->
-        <domain includeSubdomains="true">butterfliesofgreece-env.eba-w5n3apy5.us-east-1.elasticbeanstalk.com</domain>
+        <domain includeSubdomains="true">butterflyapi.in</domain>
         <trust-anchors>
             <certificates src="user"/>
             <certificates src="system"/>

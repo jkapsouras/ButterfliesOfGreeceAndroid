@@ -41,9 +41,9 @@ class CacheManager(override val prefs: SharedPreferences) : ICacheManager{
     override fun getPhotosToPrint(): Observable<List<ButterflyPhoto>> {
         val gson = Gson()
         val sType = object : TypeToken<List<ButterflyPhoto>>() {}.type
-        return Observable.just(prefs.getString(photosToPrint, ""))
+        return Observable.just(prefs.getString(photosToPrint, "") ?: "")
             .map{
-                return@map if(it!=null && it!="")
+                return@map if(it!="")
                     gson.fromJson<List<ButterflyPhoto>>(it, sType)
                 else
                     emptyList<ButterflyPhoto>()
@@ -87,9 +87,9 @@ class CacheManager(override val prefs: SharedPreferences) : ICacheManager{
     override fun getContributionItems(): Observable<List<ContributionItem>> {
         val gson = Gson()
         val sType = object : TypeToken<List<ContributionItem>>() {}.type
-        return Observable.just(prefs.getString(contributionItems, ""))
+        return Observable.just(prefs.getString(contributionItems, "") ?: "")
             .map{
-                return@map if(it!=null && it!="")
+                return@map if(it!="")
                     gson.fromJson(it, sType)
                 else
                     emptyList()

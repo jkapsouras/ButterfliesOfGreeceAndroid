@@ -96,7 +96,11 @@
     <fragment
         android:id="@+id/pdfPreviewerFragment"
         android:name="gr.jkapsouras.butterfliesofgreece.fragments.previewer.PdfPreviewerFragment"
-        android:label="@string/pdf_file" />
+        android:label="@string/pdf_file" >
+        <action
+            android:id="@+id/navigate_to_mainMenu"
+            app:destination="@id/mainMenuFragment" />
+    </fragment>
     <fragment
         android:id="@+id/contributeFragment"
         android:name="gr.jkapsouras.butterfliesofgreece.fragments.contribute.ContributeFragment"

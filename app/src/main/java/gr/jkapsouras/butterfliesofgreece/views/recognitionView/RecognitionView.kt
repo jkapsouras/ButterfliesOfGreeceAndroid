@@ -8,12 +8,12 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.sansoft.butterflies.R
+import com.sansoft.butterflies.databinding.ViewRecognitionBinding
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
 import gr.jkapsouras.butterfliesofgreece.dto.Prediction
 import gr.jkapsouras.butterfliesofgreece.fragments.recognition.uiEvents.RecognitionEvents
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.subjects.PublishSubject
-import kotlinx.android.synthetic.main.view_recognition.view.*
 
 class RecognitionView  @JvmOverloads constructor(
     context: Context,
@@ -21,7 +21,8 @@ class RecognitionView  @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) :
     ConstraintLayout(context, attrs, defStyleAttr){
-
+    private var _binding: ViewRecognitionBinding? = null
+    private val binding get() = _binding!!
     lateinit var view: View
     private val emitter: PublishSubject<UiEvent> = PublishSubject.create<UiEvent>()
 
@@ -33,26 +34,26 @@ class RecognitionView  @JvmOverloads constructor(
     }
 
     private fun initialize(context: Context) {
-        view = LayoutInflater.from(context)
-            .inflate(R.layout.view_recognition, this)
+        _binding = ViewRecognitionBinding.inflate(LayoutInflater.from(context), this, true)
+        view = binding.root
 
     }
 
     private fun viewEvents(): Observable<UiEvent> {
 
-        button_online_recognition.setOnClickListener {
+        binding.buttonOnlineRecognition.setOnClickListener {
             emitter.onNext(RecognitionEvents.OnlineClicked)
         }
 
-        button_offline_recognition.setOnClickListener {
+        binding.buttonOfflineRecognition.setOnClickListener {
             emitter.onNext(RecognitionEvents.OfflineClicked)
         }
 
-        button_close_recognition_view.setOnClickListener {
+        binding.buttonCloseRecognitionView.setOnClickListener {
             emitter.onNext(RecognitionEvents.CloseClicked)
         }
 
-        button_save.setOnClickListener {
+        binding.buttonSave.setOnClickListener {
             emitter.onNext(RecognitionEvents.SaveImage(false))
         }
 
@@ -60,41 +61,41 @@ class RecognitionView  @JvmOverloads constructor(
     }
 
     fun showSelectedImage(image: Uri){
-        image_recognized.setImageURI(image)
-        button_online_recognition.visibility = View.VISIBLE
-        button_offline_recognition.visibility = View.VISIBLE
-        label_recognized.text = ""
-        label_recognized.visibility = View.GONE
-        button_save.visibility = View.GONE
+       binding.imageRecognized.setImageURI(image)
+        binding.buttonOnlineRecognition.visibility = View.VISIBLE
+        binding.buttonOfflineRecognition.visibility = View.VISIBLE
+        binding.labelRecognized.text = ""
+        binding.labelRecognized.visibility = View.GONE
+        binding.buttonSave.visibility = View.GONE
     }
 
     fun showSelectedImage(image: Bitmap){
-        image_recognized.setImageBitmap(image)
-        button_online_recognition.visibility = View.VISIBLE
-        button_offline_recognition.visibility = View.VISIBLE
-        label_recognized.text = ""
-        label_recognized.visibility = View.GONE
-        button_save.visibility = View.GONE
+        binding.imageRecognized.setImageBitmap(image)
+        binding.buttonOnlineRecognition.visibility = View.VISIBLE
+        binding.buttonOfflineRecognition.visibility = View.VISIBLE
+        binding.labelRecognized.text = ""
+        binding.labelRecognized.visibility = View.GONE
+        binding.buttonSave.visibility = View.GONE
     }
 
     fun showLoading() {
-        loading_recognition.visibility = View.VISIBLE
-        button_online_recognition.visibility = View.GONE
-        button_offline_recognition.visibility = View.GONE
+        binding.loadingRecognition.visibility = View.VISIBLE
+        binding.buttonOnlineRecognition.visibility = View.GONE
+        binding.buttonOfflineRecognition.visibility = View.GONE
     }
 
     fun hideLoading(){
-        loading_recognition.visibility = View.GONE
-        button_online_recognition.visibility = View.VISIBLE
-        button_offline_recognition.visibility = View.VISIBLE
+        binding.loadingRecognition.visibility = View.GONE
+        binding.buttonOnlineRecognition.visibility = View.VISIBLE
+        binding.buttonOfflineRecognition.visibility = View.VISIBLE
     }
 
     fun imageRecognized(predictions:List<Prediction>) {
-        button_online_recognition.visibility = View.VISIBLE
-        button_offline_recognition.visibility = View.VISIBLE
-        label_recognized.visibility = View.VISIBLE
-        label_recognized.text =
-            "${label_recognized.context.getString(R.string.photo_recognized_first)} ${predictions[0].butterflyClass}"//" \(Translations.RecognizedSecond) \(predictions[0].prob)%"
-        button_save.visibility = View.VISIBLE
+        binding.buttonOnlineRecognition.visibility = View.VISIBLE
+        binding.buttonOfflineRecognition.visibility = View.VISIBLE
+        binding.labelRecognized.visibility = View.VISIBLE
+        binding.labelRecognized.text =
+            "${binding.labelRecognized.context.getString(R.string.photo_recognized_first)} ${predictions[0].butterflyClass}"//" \(Translations.RecognizedSecond) \(predictions[0].prob)%"
+        binding.buttonSave.visibility = View.VISIBLE
     }
 }

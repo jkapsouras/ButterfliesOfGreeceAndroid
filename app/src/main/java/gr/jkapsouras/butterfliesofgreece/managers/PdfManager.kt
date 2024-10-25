@@ -14,9 +14,9 @@ import android.util.Log
 import android.view.View
 import android.webkit.WebView
 import com.sansoft.butterflies.R
+import com.sansoft.butterflies.databinding.ViewContributeBinding
 import gr.jkapsouras.butterfliesofgreece.dto.ButterflyPhoto
 import gr.jkapsouras.butterfliesofgreece.fragments.printToPdf.state.PdfArrange
-import kotlinx.android.synthetic.main.view_contribute.view.*
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -27,9 +27,8 @@ class PdfManager {
     private val pageWidth = 8.5 * 72.0
     private val pageHeight = 11 * 72.0
 
-    fun createRecordsTable(view: View, html: String): String {
-
-        val wv = view.webView_contribute
+    fun createRecordsTable(view: View, html: String, binding: ViewContributeBinding): String {
+        val wv = binding.webViewContribute
 
         wv.loadDataWithBaseURL(null, html, "text/html; charset=UTF-8", "UTF-8", null)
 
@@ -187,7 +186,7 @@ class PdfManager {
 
         val secondLineBounds = Rect()
         textPaint.getTextBounds(secondLineText, 0, secondLineText.length, secondLineBounds)
-        var b:Bitmap
+        var b:Bitmap?
         try {
             val iden = view.resources.getIdentifier(
                 "thumb_big_${photo.source}",
@@ -195,7 +194,14 @@ class PdfManager {
                 view.context.packageName
             )
             iden.let { tmpiden ->
-                b = BitmapFactory.decodeResource(view.resources, tmpiden)
+                try {
+                    b = BitmapFactory.decodeResource(view.resources, tmpiden)
+                }
+                catch (e: Exception) {
+                    b = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
+                }
+                if (tmpiden == 0 )
+                    b = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
             }
         } catch (e: Exception) {
             b = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
@@ -203,9 +209,9 @@ class PdfManager {
 
         val scb = scale(b, pageWidth.toInt(), pageHeight.toInt())
         val imageRect = Rect(0, 0, scb.first, scb.second)
-        page.canvas.drawBitmap(b, null, imageRect, null)
+        page.canvas.drawBitmap(b!!, null, imageRect, null)
 
-        b.recycle()
+        b?.recycle()
 
         val backgroundRect =  Rect(
             imageRect.left,
@@ -278,6 +284,8 @@ class PdfManager {
             )
             iden.let { tmpiden ->
                 b1 = BitmapFactory.decodeResource(view.resources, tmpiden)
+                if (tmpiden == 0 )
+                    b1 = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
             }
         } catch (e: Exception) {
             b1 = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
@@ -358,6 +366,8 @@ class PdfManager {
             )
             iden.let { tmpiden ->
                 b2 = BitmapFactory.decodeResource(view.resources, tmpiden)
+                if (tmpiden == 0 )
+                    b2 = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
             }
         } catch (e: Exception) {
             b2 = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
@@ -473,6 +483,8 @@ class PdfManager {
             )
             iden.let { tmpiden ->
                 b1 = BitmapFactory.decodeResource(view.resources, tmpiden)
+                if (tmpiden == 0 )
+                    b1 = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
             }
         } catch (e: Exception) {
             b1 = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
@@ -552,6 +564,8 @@ class PdfManager {
             )
             iden.let { tmpiden ->
                 b2 = BitmapFactory.decodeResource(view.resources, tmpiden)
+                if (tmpiden == 0 )
+                    b2 = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
             }
         } catch (e: Exception) {
             b2 = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
@@ -636,6 +650,8 @@ class PdfManager {
             )
             iden.let { tmpiden ->
                 b3 = BitmapFactory.decodeResource(view.resources, tmpiden)
+                if (tmpiden == 0 )
+                    b3 = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
             }
         } catch (e: Exception) {
             b3 = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
@@ -720,6 +736,8 @@ class PdfManager {
             )
             iden.let { tmpiden ->
                 b4 = BitmapFactory.decodeResource(view.resources, tmpiden)
+                if (tmpiden == 0 )
+                    b4 = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
             }
         } catch (e: Exception) {
             b4 = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
@@ -836,6 +854,8 @@ class PdfManager {
             )
             iden.let { tmpiden ->
                 b1 = BitmapFactory.decodeResource(view.resources, tmpiden)
+                if (tmpiden == 0 )
+                    b1 = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
             }
         } catch (e: Exception) {
             b1 = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
@@ -915,6 +935,8 @@ class PdfManager {
             )
             iden.let { tmpiden ->
                 b2 = BitmapFactory.decodeResource(view.resources, tmpiden)
+                if (tmpiden == 0 )
+                    b2 = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
             }
         } catch (e: Exception) {
             b2 = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
@@ -999,6 +1021,8 @@ class PdfManager {
             )
             iden.let { tmpiden ->
                 b3 = BitmapFactory.decodeResource(view.resources, tmpiden)
+                if (tmpiden == 0 )
+                    b3 = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
             }
         } catch (e: Exception) {
             b3 = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
@@ -1083,6 +1107,8 @@ class PdfManager {
             )
             iden.let { tmpiden ->
                 b4 = BitmapFactory.decodeResource(view.resources, tmpiden)
+                if (tmpiden == 0 )
+                    b4 = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
             }
         } catch (e: Exception) {
             b4 = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
@@ -1167,6 +1193,8 @@ class PdfManager {
             )
             iden.let { tmpiden ->
                 b5 = BitmapFactory.decodeResource(view.resources, tmpiden)
+                if (tmpiden == 0 )
+                    b5 = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
             }
         } catch (e: Exception) {
             b5 = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
@@ -1251,6 +1279,8 @@ class PdfManager {
             )
             iden.let { tmpiden ->
                 b6 = BitmapFactory.decodeResource(view.resources, tmpiden)
+                if (tmpiden == 0 )
+                    b6 = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
             }
         } catch (e: Exception) {
             b6 = BitmapFactory.decodeResource(view.resources, R.drawable.full_default)
@@ -1319,19 +1349,21 @@ class PdfManager {
         return page
     }
 
-    private fun scale(bitmap: Bitmap, maxWidth: Int, maxHeight: Int): Pair<Int, Int> {
+    private fun scale(bitmap: Bitmap?, maxWidth: Int, maxHeight: Int): Pair<Int, Int> {
         // Determine the constrained dimension, which determines both dimensions.
         val width: Int
         val height: Int
-        val widthRatio = bitmap.width.toFloat() / maxWidth
-        val heightRatio = bitmap.height.toFloat() / maxHeight
+        val bwidth = bitmap?.width ?: 0
+        val bheight = bitmap?.height ?: 0
+        val widthRatio = bwidth.toFloat() / maxWidth
+        val heightRatio = bheight.toFloat() / maxHeight
         // Width constrained.
         if (widthRatio >= heightRatio) {
             width = maxWidth
-            height = (width.toFloat() / bitmap.width * bitmap.height).toInt()
+            height = (width.toFloat() / bwidth * bheight).toInt()
         } else {
             height = maxHeight
-            width = (height.toFloat() / bitmap.height * bitmap.width).toInt()
+            width = (height.toFloat() / bheight * bwidth).toInt()
         }
         return Pair(width, height)
     }

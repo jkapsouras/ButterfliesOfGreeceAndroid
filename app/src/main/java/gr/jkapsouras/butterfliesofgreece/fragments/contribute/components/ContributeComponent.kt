@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.util.Log
 import android.view.View
-import com.github.barteksc.pdfviewer.PDFView
 import gr.jkapsouras.butterfliesofgreece.MainActivity
 import gr.jkapsouras.butterfliesofgreece.base.UiComponent
 import gr.jkapsouras.butterfliesofgreece.base.UiEvent
@@ -16,8 +15,6 @@ import gr.jkapsouras.butterfliesofgreece.managers.PdfManager
 import gr.jkapsouras.butterfliesofgreece.views.contributeView.ContributeView
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.subjects.PublishSubject
-import kotlinx.android.synthetic.main.view_contribute.view.*
-import java.io.File
 
 class ContributeComponent(private val view: ContributeView,
                           private  val owner: MainActivity) : UiComponent {
@@ -50,19 +47,19 @@ class ContributeComponent(private val view: ContributeView,
                     view.showItem(added = false, controller = owner)
                 is ContributeViewStates.ShowExtractedPdf -> {
                     Log.d(TAG, "renderViewState: ")
-                    view.webView_contribute.visibility = View.VISIBLE
-                    view.button_print.visibility = View.VISIBLE
+                    view.binding.webViewContribute.visibility = View.VISIBLE
+                    view.binding.buttonPrint.visibility = View.VISIBLE
                 }
                 is ContributeViewStates.ShowShareDialog -> {
                     Log.d(TAG, "renderViewState: ")
                     val pdfCreator = PdfManager()
-                    pdfCreator.createWebPrintJob(view.context, view.webView_contribute)
+                    pdfCreator.createWebPrintJob(view.context, view.binding.webViewContribute)
                     event.onNext(ContributeEvents.ClosePdf)
                 }
                 ContributeViewStates.ClosePdf -> {
                     Log.d(TAG, "renderViewState: ")
-                    view.webView_contribute.visibility = View.GONE
-                    view.button_print.visibility = View.GONE
+                    view.binding.webViewContribute.visibility = View.GONE
+                    view.binding.buttonPrint.visibility = View.GONE
                 }
                 else ->
                     Log.d(ContentValues.TAG, "nothing")
